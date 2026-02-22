@@ -352,6 +352,146 @@ a {
   font-size: 0.95rem;
 }
 
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.policy-shell {
+  max-width: var(--max-width);
+}
+
+.policy-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+}
+
+.policy-updated {
+  color: var(--ink-muted);
+  margin-top: 0.6rem;
+}
+
+.policy-card {
+  margin-top: 1.4rem;
+  display: grid;
+  gap: 0;
+  padding: clamp(1.2rem, 2.2vw, 1.9rem);
+}
+
+.policy-block {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.policy-block + .policy-block {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.policy-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.policy-layout {
+  margin-top: 1.4rem;
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+}
+
+.policy-layout .policy-card {
+  margin-top: 0;
+}
+
+.policy-sidebar {
+  position: sticky;
+  top: 92px;
+}
+
+.nutrition-label {
+  background: #fff;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.45);
+  padding: 0.7rem 0.75rem 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nutrition-heading {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.nutrition-subhead {
+  margin: 0.15rem 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.nutrition-serving {
+  margin: 0.3rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.nutrition-rule {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 0.45rem 0;
+}
+
+.nutrition-rule.thick {
+  border-top-width: 8px;
+}
+
+.nutrition-big {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.nutrition-big span {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.25rem 0;
+  border-top: 1px solid #000;
+  font-size: 0.82rem;
+}
+
+.nutrition-row strong {
+  text-align: right;
+}
+
+.nutrition-footnote {
+  margin: 0.55rem 0 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid #000;
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -415,6 +555,14 @@ a {
   .feature-grid,
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+
+  .policy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-sidebar {
+    position: static;
   }
 
   .contact {
