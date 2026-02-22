@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Stand Software | 40 Below</title>
+    <meta
+      name="description"
+      content="40 Below is a beautifully simple weather app from Fruit Stand Software, showing local temperature in Fahrenheit and Celsius with forecast, widgets, and privacy-aware sharing."
+    />
+    <meta property="og:title" content="Fruit Stand Software | 40 Below" />
+    <meta
+      property="og:description"
+      content="The official home of Fruit Stand Software and 40 Below, a focused weather app."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://fruitstandsoftware.com/social-card.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Literata:opsz,wght@7..72,500;7..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top" aria-label="Fruit Stand Software homepage">
+          <span class="brand-mark" aria-hidden="true">FS</span>
+          <span class="brand-text">Fruit Stand Software</span>
+        </a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#forty-below">40 Below</a>
+          <a href="#features">Features</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Now available from Fruit Stand Software</p>
+            <h1>40 Below</h1>
+            <p class="lead">
+              A weather app built around one clear idea: temperature should be instantly readable
+              in both Fahrenheit and Celsius. 40 Below uses your current location, shows what it
+              feels like, and keeps the interface calm and fast.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://apps.apple.com/app/id6758684366" target="_blank" rel="noopener noreferrer">View on the App Store</a>
+              <a class="btn btn-ghost" href="#features">Explore Features</a>
+            </div>
+          </div>
+          <div class="reveal">
+            <img
+              src="Cupertino-morning.png"
+              alt="40 Below app screen showing current temperature in Cupertino in the morning"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container split reveal">
+          <div>
+            <p class="eyebrow">Fruit Stand Software</p>
+            <h2>Independent software, deliberate design</h2>
+          </div>
+          <p>
+            Fruit Stand Software builds focused tools with tight UX and practical purpose.
+            40 Below is our flagship app: a modern weather experience with dual-unit clarity,
+            dynamic color systems, and thoughtful privacy controls.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-accent" id="forty-below">
+        <div class="container">
+          <p class="eyebrow reveal">What 40 Below does</p>
+          <h2 class="reveal">Local weather, reduced to what matters most</h2>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <h3>Live Temperature in F and C</h3>
+              <p>
+                See Fahrenheit and Celsius side by side at all times, including feels-like values.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Hourly Forecast Panel</h3>
+              <p>
+                On iOS, swipe up to reveal the next 10 hours with temperature and feels-like context.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Location-Aware by Default</h3>
+              <p>
+                Uses your current location to show local conditions, with clear permission handling.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Weather-Driven Gradients</h3>
+              <p>
+                Background palettes adapt to time of day and temperature range for immediate visual mood.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <p class="eyebrow reveal">Feature set</p>
+          <h2 class="reveal">Built details from the app project</h2>
+          <ol class="timeline">
+            <li class="reveal">
+              <span>Sharing</span>
+              Generate branded share images with optional location removal for privacy.
+            </li>
+            <li class="reveal">
+              <span>Widgets</span>
+              Temperature widget supports multiple widget families with configurable location input.
+            </li>
+            <li class="reveal">
+              <span>Localization</span>
+              Shipped with 20 language localizations, including English, Spanish, French, Japanese,
+              Korean, Arabic, and more.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-accent" id="platforms">
+        <div class="container">
+          <p class="eyebrow reveal">Platform support</p>
+          <h2 class="reveal">Designed for Apple platforms</h2>
+          <div class="faq-grid">
+            <article class="faq-item reveal">
+              <h3>Main app</h3>
+              <p>
+                Built with SwiftUI for iPhone, iPad, Mac, and Apple Vision platform targets.
+              </p>
+            </article>
+            <article class="faq-item reveal">
+              <h3>Widget extension</h3>
+              <p>
+                Widget families are included for iOS, macOS, watchOS, and visionOS contexts.
+              </p>
+            </article>
+            <article class="faq-item reveal">
+              <h3>Weather data sources</h3>
+              <p>
+                Powered by Apple Weather, with source attribution shown in-app.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact reveal">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Questions about 40 Below?</h2>
+            <p>
+              Reach out for support, press, or partnership inquiries.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="mailto:hello@fruitstandsoftware.com?subject=40%20Below%20Inquiry">
+            Email Fruit Stand Software
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Fruit Stand Software</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
