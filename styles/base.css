@@ -515,6 +515,7 @@ body.lightbox-open {
   }
 
   .lightbox-arrow {
+    display: none;
     position: absolute;
     bottom: 1rem;
     z-index: 2;
