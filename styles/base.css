@@ -468,6 +468,10 @@ body.lightbox-open {
   justify-items: center;
 }
 
+.footer-locale-switcher {
+  margin-top: 0.35rem;
+}
+
 .footer-link {
   color: var(--blue);
   text-decoration: none;
