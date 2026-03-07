@@ -77,6 +77,40 @@ html:lang(ko) {
     sans-serif;
 }
 
+html:lang(ar-SA) {
+  --font-display:
+    "Geeza Pro",
+    "Damascus",
+    "Noto Naskh Arabic",
+    "SF Pro Display",
+    "SF Pro Text",
+    sans-serif;
+  --font-body:
+    "Geeza Pro",
+    "Damascus",
+    "Noto Naskh Arabic",
+    "SF Pro Text",
+    "SF Pro Display",
+    sans-serif;
+}
+
+html:lang(hi) {
+  --font-display:
+    "Devanagari Sangam MN",
+    "Kohinoor Devanagari",
+    "Noto Sans Devanagari",
+    "SF Pro Display",
+    "SF Pro Text",
+    sans-serif;
+  --font-body:
+    "Devanagari Sangam MN",
+    "Kohinoor Devanagari",
+    "Noto Sans Devanagari",
+    "SF Pro Text",
+    "SF Pro Display",
+    sans-serif;
+}
+
 html:lang(zh-Hans),
 html:lang(zh-Hant) {
   --font-display:
