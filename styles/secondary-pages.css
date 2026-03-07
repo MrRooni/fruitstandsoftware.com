@@ -107,72 +107,88 @@
 
 .policy-aside-card {
   align-self: start;
+  position: sticky;
+  top: 6rem;
 }
 
 .nutrition-label {
-  display: grid;
-  gap: 0.55rem;
-  padding: 1rem;
+  padding: 0.7rem 0.75rem 0.75rem;
   border: 3px solid #000;
   border-radius: 10px;
   background: #fff;
   color: #000;
-  box-shadow: none;
+  box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.45);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .nutrition-heading {
   color: #000;
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: none;
 }
 
 .nutrition-subhead {
-  font-size: 1.25rem;
-  font-weight: 800;
+  margin-top: 0.15rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .nutrition-serving {
-  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .nutrition-big {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  font-size: 1.3rem;
-  font-weight: 800;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.1;
 }
 
 .nutrition-big span {
-  font-size: 1rem;
+  font-size: 0.92rem;
   font-weight: 700;
+  text-align: right;
 }
 
 .nutrition-rule {
+  border: 0;
   border-top: 1px solid #000;
+  margin: 0.45rem 0;
 }
 
 .nutrition-rule.thick {
-  border-top-width: 3px;
+  border-top-width: 8px;
 }
 
 .nutrition-row {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  font-size: 0.95rem;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  border-top: 1px solid #000;
+  font-size: 0.82rem;
 }
 
 .nutrition-row strong {
   font-weight: 800;
+  text-align: right;
 }
 
 .nutrition-footnote {
-  margin-top: 0.4rem;
-  font-size: 0.78rem;
-  line-height: 1.4;
+  margin-top: 0.55rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #000;
+  font-size: 0.68rem;
+  line-height: 1.35;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -199,5 +215,9 @@
 @media (max-width: 860px) {
   .policy-page-grid {
     grid-template-columns: 1fr;
+  }
+
+  .policy-aside-card {
+    position: static;
   }
 }
