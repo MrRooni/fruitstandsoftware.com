@@ -91,6 +91,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn('currentHour < NOON_HOUR ? "Cold_Morning_Dark.png" : "Warm_Night_Dark.png"', script)
         self.assertIn('window.matchMedia("(prefers-color-scheme: dark)")', script)
         self.assertIn("const SWIPE_THRESHOLD = 48;", script)
+        self.assertIn('"touchmove"', script)
+        self.assertIn("--lightbox-drag-x", script)
         self.assertIn('event.key === "ArrowRight"', script)
         self.assertIn('event.key === "ArrowLeft"', script)
         self.assertIn("initGalleryLightbox();", script)
