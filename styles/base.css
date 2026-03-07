@@ -105,7 +105,10 @@ a {
 .nav-brand {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
   gap: 0.65rem;
+  padding: 0.25rem 0;
   font-size: 1rem;
 }
 
@@ -436,6 +439,15 @@ body.lightbox-open {
   .nav-shell {
     min-height: auto;
     padding-block: 0.85rem;
+  }
+
+  .nav-brand {
+    min-width: 2.75rem;
+    padding: 0.25rem;
+  }
+
+  .nav-brand span {
+    display: none;
   }
 
   .nav-actions {
