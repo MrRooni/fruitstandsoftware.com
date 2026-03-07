@@ -1,0 +1,40 @@
+body.page-3 {
+  --page: #ffffff;
+  --surface: #ffffff;
+  --font-display: "IBM Plex Mono", monospace;
+  --font-body: "Space Grotesk", sans-serif;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+}
+
+.page-3 .page-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 1rem;
+}
+
+.page-3 .hero,
+.page-3 .content-block,
+.page-3 .screen-frame {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.page-3 .hero {
+  min-height: 100%;
+  background:
+    linear-gradient(135deg, rgba(85, 178, 242, 0.12), rgba(255, 255, 255, 0.96)),
+    #ffffff;
+}
+
+.page-3 .poster-shot {
+  align-self: stretch;
+}
+
+.page-3 h1 {
+  letter-spacing: -0.06em;
+}
+
+.page-3 .feature-list {
+  gap: 1rem;
+}

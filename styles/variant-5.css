@@ -1,0 +1,38 @@
+body.page-5 {
+  --page: #ffffff;
+  --surface: #ffffff;
+  --font-display: "Fraunces", serif;
+  background:
+    linear-gradient(180deg, rgba(85, 178, 242, 0.08) 0, transparent 18rem),
+    #ffffff;
+}
+
+.page-5 .deck-shell {
+  max-width: 1220px;
+}
+
+.page-5 .hero {
+  grid-template-columns: 0.82fr 1.18fr;
+  align-items: end;
+  background: #ffffff;
+}
+
+.page-5 .deck-columns {
+  margin-top: 1.25rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+}
+
+.page-5 .stack-column {
+  gap: 1.25rem;
+}
+
+.page-5 .content-block,
+.page-5 .screen-frame {
+  border-radius: 1rem;
+}
+
+.page-5 .screen-frame {
+  transform: rotate(-1.4deg);
+  transform-origin: center bottom;
+}

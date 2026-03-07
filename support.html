@@ -8,73 +8,51 @@
       name="description"
       content="Support for 40 Below. Email support@fruitstandsoftware.com if you need help or run into trouble."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Literata:opsz,wght@7..72,500;7..72,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/secondary-pages.css" />
+    <link rel="stylesheet" href="styles/variant-1.css" />
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header" id="top">
-      <div class="container nav-wrap">
-        <a class="brand" href="index.html" aria-label="Fruit Stand Software homepage">
-          <span class="brand-mark" aria-hidden="true">FS</span>
-          <span class="brand-text">Fruit Stand Software</span>
+  <body class="page page-1">
+    <header class="top-nav">
+      <div class="nav-shell">
+        <a class="nav-brand" href="index.html" aria-label="40 Below home">
+          <span>40 Below</span>
         </a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
-          Menu
-        </button>
-        <nav id="site-nav" class="site-nav" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="gallery.html">Image Gallery</a>
-          <a href="support.html" aria-current="page">Support</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
+        <nav aria-label="Primary">
+          <a class="nav-link" href="support.html" aria-current="page">Support</a>
         </nav>
       </div>
     </header>
 
-    <main id="main">
-      <section class="hero section">
-        <div class="container split reveal">
-          <div>
-            <p class="eyebrow">Support</p>
-            <h1>Need help with 40 Below?</h1>
-          </div>
-          <p class="lead">
-            If you're having trouble with the app or need help with anything related to 40 Below,
-            send an email and we'll take a look.
-          </p>
-        </div>
+    <main id="main" class="secondary-shell">
+      <section class="secondary-header-card reveal">
+        <p>Support</p>
+        <h1 class="secondary-page-title">Need help with 40 Below?</h1>
+        <p class="secondary-page-lead">
+          If you're having trouble with the app or need help with anything related to 40 Below,
+          send an email and we'll take a look.
+        </p>
       </section>
 
-      <section class="section">
-        <div class="container contact reveal">
-          <div>
-            <p class="eyebrow">Email support</p>
-            <h2>Get in touch</h2>
-            <p>Email <a href="mailto:support@fruitstandsoftware.com">support@fruitstandsoftware.com</a> if you have trouble or need help.</p>
+      <section class="support-grid">
+        <div class="support-card reveal">
+          <p>
+            Email <a href="mailto:support@fruitstandsoftware.com">support@fruitstandsoftware.com</a> if
+            you have trouble or need help.
+          </p>
+          <div class="support-actions">
+            <a class="support-button" href="mailto:support@fruitstandsoftware.com?subject=40%20Below%20Support">
+              Email Support
+            </a>
           </div>
-          <a class="btn btn-primary" href="mailto:support@fruitstandsoftware.com?subject=40%20Below%20Support">
-            Email Support
-          </a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-wrap">
+    <footer class="site-footer secondary-footer">
+      <div class="footer-stack">
         <p>© <span id="year"></span> Fruit Stand Software</p>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="gallery.html">Image Gallery</a>
-          <a href="support.html">Support</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="#top">Back to top</a>
-        </div>
+        <a class="footer-link" href="privacy-policy.html">Privacy Policy</a>
       </div>
     </footer>
 

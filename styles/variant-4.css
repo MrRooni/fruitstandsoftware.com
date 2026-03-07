@@ -1,0 +1,35 @@
+body.page-4 {
+  --page: #262626;
+  --surface: #303030;
+  --ink: #ffffff;
+  --muted: rgba(255, 255, 255, 0.72);
+  --line: rgba(255, 255, 255, 0.12);
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+  --font-display: "Fraunces", serif;
+  background:
+    radial-gradient(circle at top center, rgba(85, 178, 242, 0.22), transparent 22%),
+    linear-gradient(180deg, #262626 0%, #1d1d1d 100%);
+}
+
+.page-4 .page-shell {
+  max-width: 1240px;
+}
+
+.page-4 .hero {
+  grid-template-columns: 1.05fr 0.95fr;
+  background: linear-gradient(180deg, rgba(48, 48, 48, 0.96), rgba(38, 38, 38, 0.98));
+}
+
+.page-4 .hero-subtitle {
+  color: var(--sky);
+}
+
+.page-4 .release-block,
+.page-4 .compact-block,
+.page-4 .prose-block {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.page-4 .screen-frame {
+  background: linear-gradient(180deg, rgba(85, 178, 242, 0.18), rgba(255, 255, 255, 0.04));
+}

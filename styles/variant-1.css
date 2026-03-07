@@ -1,0 +1,35 @@
+body.page-1 {
+  --page: #ffffff;
+  --surface: #ffffff;
+  background:
+    radial-gradient(circle at top left, rgba(85, 178, 242, 0.18), transparent 22%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.page-1 .page-shell {
+  max-width: 1160px;
+}
+
+.page-1 .nav-shell {
+  max-width: 1160px;
+  padding-inline: clamp(1.25rem, 3vw, 2rem);
+}
+
+.page-1 .hero {
+  grid-template-columns: 0.98fr 1.02fr;
+  align-items: start;
+}
+
+.page-1 .hero-copy {
+  align-content: start;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.page-1 {
+    --page: #1f2124;
+    --surface: #2f3236;
+    background:
+      radial-gradient(circle at top left, rgba(85, 178, 242, 0.16), transparent 22%),
+      linear-gradient(180deg, #24272b 0%, #1f2124 100%);
+  }
+}
