@@ -1,0 +1,203 @@
+.secondary-shell {
+  width: min(100% - 2rem, 1160px);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 0;
+}
+
+.secondary-header-card,
+.support-card,
+.policy-main-card,
+.policy-aside-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.secondary-header-card,
+.support-card,
+.policy-main-card,
+.policy-aside-card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.secondary-header-card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.secondary-page-title {
+  margin: 0;
+}
+
+.secondary-page-lead {
+  max-width: 42rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+}
+
+.support-grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.4rem);
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.support-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.support-button {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.secondary-footer {
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.policy-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 20rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.policy-main-card {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.policy-block {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.policy-block h3,
+.policy-block h4,
+.nutrition-heading,
+.nutrition-subhead,
+.nutrition-serving,
+.nutrition-big,
+.nutrition-row,
+.nutrition-footnote {
+  margin: 0;
+}
+
+.policy-block ul {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.policy-aside-card {
+  align-self: start;
+}
+
+.nutrition-label {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  border: 3px solid #000;
+  border-radius: 10px;
+  background: #fff;
+  color: #000;
+  box-shadow: none;
+}
+
+.nutrition-heading {
+  color: #000;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nutrition-subhead {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.nutrition-serving {
+  font-size: 0.9rem;
+}
+
+.nutrition-big {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.nutrition-big span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.nutrition-rule {
+  border-top: 1px solid #000;
+}
+
+.nutrition-rule.thick {
+  border-top-width: 3px;
+}
+
+.nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.nutrition-row strong {
+  font-weight: 800;
+}
+
+.nutrition-footnote {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nutrition-label {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+  }
+
+  .nutrition-heading,
+  .nutrition-subhead,
+  .nutrition-serving,
+  .nutrition-big,
+  .nutrition-row,
+  .nutrition-footnote {
+    color: #000;
+  }
+
+  .nutrition-rule {
+    border-top-color: #000;
+  }
+}
+
+@media (max-width: 860px) {
+  .policy-page-grid {
+    grid-template-columns: 1fr;
+  }
+}

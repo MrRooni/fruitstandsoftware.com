@@ -1,0 +1,48 @@
+body.page-2 {
+  --page: #f5fbff;
+  --surface: #ffffff;
+  --font-display: "Outfit", sans-serif;
+  background:
+    linear-gradient(90deg, rgba(28, 98, 160, 0.92) 0 34%, transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #eef7ff 100%);
+}
+
+.page-2 .page-shell {
+  max-width: 1240px;
+}
+
+.page-2 .hero {
+  grid-template-columns: 0.88fr 1.12fr;
+  align-items: start;
+}
+
+.page-2 .hero-copy {
+  color: var(--white);
+  padding: 0.5rem;
+}
+
+.page-2 .hero-copy .hero-subtitle,
+.page-2 .hero-copy .hero-promo,
+.page-2 .hero-copy p {
+  color: var(--white);
+}
+
+.page-2 .hero-copy .content-block {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+}
+
+.page-2 .hero-visual-stack {
+  align-content: start;
+}
+
+.page-2 .compact-block {
+  background: #ffffff;
+}
+
+@media (max-width: 860px) {
+  body.page-2 {
+    background: linear-gradient(180deg, rgba(28, 98, 160, 0.96) 0 28rem, #f5fbff 28rem 100%);
+  }
+}
