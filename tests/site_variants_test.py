@@ -129,6 +129,15 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("python3 scripts/build_localized_site.py", readme)
         self.assertIn("/en-US/", readme)
 
+    def test_base_css_has_cjk_font_fallbacks(self):
+        css = (ROOT / "styles" / "base.css").read_text(encoding="utf-8")
+
+        self.assertIn('html:lang(ja)', css)
+        self.assertIn('html:lang(ko)', css)
+        self.assertIn('"Hiragino Sans"', css)
+        self.assertIn('"Yu Gothic"', css)
+        self.assertIn('"Apple SD Gothic Neo"', css)
+
 
 if __name__ == "__main__":
     unittest.main()
