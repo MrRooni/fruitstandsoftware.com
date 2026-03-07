@@ -1,0 +1,1 @@
+Sieh die Temperatur an deinem Standort in Fahrenheit und Celsius, prüfe die Stundenprognose und teile in Sekunden eine klare Temperaturkarte.

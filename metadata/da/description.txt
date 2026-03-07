@@ -1,0 +1,10 @@
+40 Below er designet og bygget med ét centralt formål: at vise dig den aktuelle udendørstemperatur i både Fahrenheit og Celsius. Mange af os har venner, familie og kolleger i andre lande, og selv den enkleste småsnak om vejret kan give lidt friktion, når man bruger forskellige temperaturskalaer. 40 Below skærer igennem det hele. Med den tydelige temperaturvisning i centrum er du altid kun et øjeblik fra at kunne fortælle andre, hvordan vejret føles, i en skala de forstår.
+
+Internationale teams, rejsende, udlandsdanskere og husstande med blandede måleenheder vil alle få glæde af denne praktiske lille vejrapp.
+
+Ekstra gennemtænkte funktioner:
+- Se den "føles som"-temperatur i både °F og °C
+- Tjek temperaturprognosen for de kommende timer, så du kan planlægge dagen
+- Del et flot temperaturkort med eller uden din placering
+
+40 Below bruger din placering til at vise lokale forhold. Du kan til enhver tid styre adgang til placering i Indstillinger.

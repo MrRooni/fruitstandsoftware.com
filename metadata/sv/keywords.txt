@@ -1,0 +1,1 @@
+temperatur,väder,fahrenheit,celsius,prognos,resa,lokal,upplevd,dela

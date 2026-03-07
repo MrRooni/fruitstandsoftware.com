@@ -1,0 +1,1 @@
+Näe nykyinen lämpötila Fahrenheit- ja Celsius-asteina, tarkista tuntiennuste ja jaa selkeä lämpötilakortti sekunneissa.

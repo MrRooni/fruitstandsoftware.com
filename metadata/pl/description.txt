@@ -1,0 +1,10 @@
+40 Below powstało z jednym głównym celem: pokazywać aktualną temperaturę na zewnątrz jednocześnie w Fahrenheitach i Celsjuszu. Wielu z nas ma przyjaciół, rodzinę i współpracowników mieszkających w innych krajach, a nawet najprostsza rozmowa o pogodzie potrafi być mniej płynna, gdy każda strona myśli w innej skali. 40 Below usuwa ten problem. Dzięki wyraźnie pokazanej temperaturze na środku ekranu zawsze możesz w kilka chwil powiedzieć komuś, jaka jest pogoda, w skali, którą zrozumie.
+
+Międzynarodowe zespoły, podróżnicy, emigranci i domy korzystające z różnych jednostek z pewnością docenią tę niewielką, ale bardzo praktyczną aplikację pogodową.
+
+Dodatkowe, przemyślane funkcje:
+- Sprawdź temperaturę odczuwalną również w °F i °C
+- Zobacz prognozę temperatury na najbliższe godziny, aby lepiej zaplanować dzień
+- Udostępnij estetyczną kartę temperatury z lokalizacją lub bez niej
+
+40 Below używa Twojej lokalizacji, aby pokazywać lokalne warunki. Dostęp do lokalizacji możesz w każdej chwili zmienić w Ustawieniach.

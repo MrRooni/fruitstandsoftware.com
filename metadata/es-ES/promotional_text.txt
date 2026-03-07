@@ -1,0 +1,1 @@
+Consulta la temperatura donde estás en Fahrenheit y Celsius, revisa la previsión por horas y comparte una tarjeta de temperatura limpia en segundos.

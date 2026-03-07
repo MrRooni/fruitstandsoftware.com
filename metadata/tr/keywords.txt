@@ -1,0 +1,1 @@
+sıcaklık,hava,fahrenheit,celsius,tahmin,seyahat,yerel,hissedilen,paylaş

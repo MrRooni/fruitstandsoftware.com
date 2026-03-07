@@ -1,0 +1,1 @@
+Guarda la temperatura dove ti trovi in Fahrenheit e Celsius, controlla le previsioni orarie e condividi in pochi secondi una scheda pulita della temperatura.

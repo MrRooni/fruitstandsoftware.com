@@ -1,0 +1,1 @@
+temperatura,pogoda,fahrenheit,celsjusz,prognoza,podróż,lokalnie,odczuwalna,udostępnij

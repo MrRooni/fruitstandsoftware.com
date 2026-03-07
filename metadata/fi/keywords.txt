@@ -1,0 +1,1 @@
+lämpötila,sää,fahrenheit,celsius,ennuste,matka,paikallinen,tuntuu,jaa
