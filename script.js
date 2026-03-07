@@ -120,6 +120,23 @@ function initGalleryLightbox() {
   let activeIndex = 0;
   let lastFocused = null;
   let touchStartX = 0;
+  let touchDeltaX = 0;
+  let isDragging = false;
+
+  function setDragOffset(offsetX) {
+    lightboxImage.style.setProperty("--lightbox-drag-x", `${offsetX}px`);
+    const progress = Math.min(Math.abs(offsetX) / 180, 1);
+    const opacity = 1 - progress * 0.18;
+    lightboxImage.style.setProperty("--lightbox-drag-opacity", `${opacity}`);
+  }
+
+  function resetDragOffset() {
+    touchStartX = 0;
+    touchDeltaX = 0;
+    isDragging = false;
+    stage.classList.remove("is-dragging");
+    setDragOffset(0);
+  }
 
   function renderLightboxImage() {
     const image = galleryImages[activeIndex];
@@ -131,6 +148,7 @@ function initGalleryLightbox() {
   function openLightbox(index) {
     activeIndex = index;
     lastFocused = document.activeElement;
+    resetDragOffset();
     renderLightboxImage();
     lightbox.hidden = false;
     document.body.classList.add("lightbox-open");
@@ -138,6 +156,7 @@ function initGalleryLightbox() {
   }
 
   function closeLightbox() {
+    resetDragOffset();
     lightbox.hidden = true;
     document.body.classList.remove("lightbox-open");
     if (lastFocused instanceof HTMLElement) {
@@ -147,11 +166,13 @@ function initGalleryLightbox() {
 
   function showNextImage() {
     activeIndex = (activeIndex + 1) % galleryImages.length;
+    resetDragOffset();
     renderLightboxImage();
   }
 
   function showPreviousImage() {
     activeIndex = (activeIndex - 1 + galleryImages.length) % galleryImages.length;
+    resetDragOffset();
     renderLightboxImage();
   }
 
@@ -172,18 +193,45 @@ function initGalleryLightbox() {
   stage.addEventListener(
     "touchstart",
     (event) => {
-      touchStartX = event.changedTouches[0].clientX;
+      if (event.touches.length !== 1) {
+        resetDragOffset();
+        return;
+      }
+
+      touchStartX = event.touches[0].clientX;
+      touchDeltaX = 0;
+      isDragging = true;
+      stage.classList.add("is-dragging");
     },
     { passive: true }
   );
 
   stage.addEventListener(
+    "touchmove",
+    (event) => {
+      if (!isDragging || event.touches.length !== 1) {
+        return;
+      }
+
+      touchDeltaX = event.touches[0].clientX - touchStartX;
+      setDragOffset(touchDeltaX);
+      event.preventDefault();
+    },
+    { passive: false }
+  );
+
+  stage.addEventListener(
     "touchend",
     (event) => {
+      if (!isDragging) {
+        return;
+      }
+
       const touchEndX = event.changedTouches[0].clientX;
       const deltaX = touchEndX - touchStartX;
 
       if (Math.abs(deltaX) < SWIPE_THRESHOLD) {
+        resetDragOffset();
         return;
       }
 
@@ -195,6 +243,8 @@ function initGalleryLightbox() {
     },
     { passive: true }
   );
+
+  stage.addEventListener("touchcancel", resetDragOffset, { passive: true });
 
   document.addEventListener("keydown", (event) => {
     if (lightbox.hidden) {
