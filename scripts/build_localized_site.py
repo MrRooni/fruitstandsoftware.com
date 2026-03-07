@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import json
 import re
 from pathlib import Path
@@ -106,56 +107,32 @@ def javascript_value(value: object) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def render_site_data(locale: str) -> str:
+def escape_html(value: object) -> str:
+    return html.escape(str(value), quote=True)
+
+
+def render_paragraph_block(paragraphs: list[str], indent: str) -> str:
+    return "\n".join(f"{indent}<p>{escape_html(paragraph)}</p>" for paragraph in paragraphs)
+
+
+def render_feature_list(features: list[str], indent: str) -> str:
+    return "\n".join(f"{indent}<li>{escape_html(feature)}</li>" for feature in features)
+
+
+def render_homepage(locale: str) -> str:
     description = parse_description(locale)
-    product_name = read_metadata(locale, "name.txt")
+    title = read_metadata(locale, "name.txt")
     subtitle = read_metadata(locale, "subtitle.txt")
     promotional_text = read_metadata(locale, "promotional_text.txt")
     keywords = read_metadata(locale, "keywords.txt")
     release_notes = read_metadata(locale, "release_notes.txt")
-
-    return "\n".join(
-        [
-            "window.siteData = {",
-            f"  locale: {javascript_value(locale)},",
-            f"  availableLocales: {javascript_value(LOCALES)},",
-            '  assetBasePath: "../",',
-            "  seo: {",
-            f"    title: {javascript_value(f'{product_name} | {subtitle}')},",
-            f"    description: {javascript_value(promotional_text)},",
-            f"    ogTitle: {javascript_value(product_name)},",
-            f"    ogDescription: {javascript_value(promotional_text)},",
-            f"    keywords: {javascript_value(keywords)},",
-            "  },",
-            "  product: {",
-            f"    name: {javascript_value(product_name)},",
-            f"    subtitle: {javascript_value(subtitle)},",
-            f"    promotionalText: {javascript_value(promotional_text)},",
-            f"    descriptionParagraphs: {javascript_value(description['description_paragraphs'])},",
-            f"    featureHeading: {javascript_value(description['feature_heading'])},",
-            f"    features: {javascript_value(description['features'])},",
-            f"    locationText: {javascript_value(description['location_text'])},",
-            f"    releaseNotes: {javascript_value(release_notes)},",
-            "    screenshot: {",
-            f"      alt: {javascript_value(f'{product_name} — {subtitle}')},",
-            "    },",
-            "  },",
-            "  footer: {",
-            f"    copyright: {javascript_value(COPYRIGHT)},",
-            "  },",
-            "};",
-        ]
-    )
-
-
-def render_homepage(locale: str) -> str:
-    title = read_metadata(locale, "name.txt")
-    subtitle = read_metadata(locale, "subtitle.txt")
-    promotional_text = read_metadata(locale, "promotional_text.txt")
     hreflang_links = render_hreflang_links("home")
     footer_locale_switcher = render_locale_switcher(
         locale, indent="        ", wrapper_class="footer-locale-switcher"
     )
+    description_html = render_paragraph_block(description["description_paragraphs"], "            ")
+    features_html = render_feature_list(description["features"], "              ")
+    screenshot_alt = escape_html(f"{title} — {subtitle}")
 
     return f"""<!doctype html>
 <html lang="{locale}">
@@ -169,12 +146,12 @@ def render_homepage(locale: str) -> str:
     />
     <meta
       name="keywords"
-      content="{read_metadata(locale, "keywords.txt")}"
+      content="{escape_html(keywords)}"
     />
-    <meta property="og:title" content="{title}" />
+    <meta property="og:title" content="{escape_html(title)}" />
     <meta
       property="og:description"
-      content="{promotional_text}"
+      content="{escape_html(promotional_text)}"
     />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="{canonical_url(locale, "home")}" />
@@ -229,22 +206,24 @@ def render_homepage(locale: str) -> str:
               />
               <img
                 src="../40BelowRetro Exports/40BelowRetro-iOS-Default-68x68@2x.png"
-                alt="40 Below app icon"
+                alt="{escape_html(title)} app icon"
                 width="144"
                 height="144"
               />
             </picture>
             <div class="hero-heading-group">
-              <h1 data-site="product-name"></h1>
-              <p class="hero-subtitle" data-site="product-subtitle"></p>
+              <h1>{escape_html(title)}</h1>
+              <p class="hero-subtitle">{escape_html(subtitle)}</p>
             </div>
           </div>
-          <p class="hero-promo" data-site="product-promo"></p>
+          <p class="hero-promo">{escape_html(promotional_text)}</p>
           <div class="hero-description prose-block">
-            <div data-site="description-paragraphs"></div>
-            <p class="feature-heading" data-site="feature-heading"></p>
-            <ul class="feature-list" data-site="feature-list"></ul>
-            <p data-site="location-text"></p>
+{description_html}
+            <p class="feature-heading">{escape_html(description["feature_heading"])}</p>
+            <ul class="feature-list">
+{features_html}
+            </ul>
+            <p>{escape_html(description["location_text"])}</p>
           </div>
         </div>
         <figure class="screen-frame">
@@ -255,9 +234,8 @@ def render_homepage(locale: str) -> str:
               media="(prefers-color-scheme: dark)"
             />
             <img
-              data-site="screenshot"
               src="../Warm_Midday_Light.png"
-              alt="40 Below app screen"
+              alt="{screenshot_alt}"
               width="500"
               height="1036"
             />
@@ -266,7 +244,7 @@ def render_homepage(locale: str) -> str:
       </section>
 
       <section class="content-block release-block reveal">
-        <p class="release-copy" data-site="release-notes-rich"></p>
+        <p class="release-copy">{escape_html(release_notes)}</p>
       </section>
 
       <section class="content-block gallery-block reveal" aria-labelledby="gallery-heading">
@@ -359,13 +337,12 @@ def render_homepage(locale: str) -> str:
 
     <footer class="site-footer">
       <div class="footer-stack">
-        <p data-site="footer-copyright"></p>
+        <p>{escape_html(COPYRIGHT)}</p>
         <a class="footer-link" href="/{locale}/privacy-policy.html">Privacy Policy</a>
 {footer_locale_switcher}
       </div>
     </footer>
 
-    <script src="site-data.js"></script>
     <script src="../script.js"></script>
   </body>
 </html>
@@ -540,7 +517,9 @@ def build() -> None:
         locale_dir = ROOT / locale
         locale_dir.mkdir(exist_ok=True)
         (locale_dir / "index.html").write_text(render_homepage(locale), encoding="utf-8")
-        (locale_dir / "site-data.js").write_text(render_site_data(locale), encoding="utf-8")
+        site_data_path = locale_dir / "site-data.js"
+        if site_data_path.exists():
+            site_data_path.unlink()
         (locale_dir / "support.html").write_text(
             render_secondary_page(
                 locale,

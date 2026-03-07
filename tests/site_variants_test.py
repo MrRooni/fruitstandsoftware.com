@@ -37,20 +37,19 @@ class SiteVariantsTest(unittest.TestCase):
             homepage = (locale_dir / "index.html").read_text(encoding="utf-8")
             support = (locale_dir / "support.html").read_text(encoding="utf-8")
             privacy = (locale_dir / "privacy-policy.html").read_text(encoding="utf-8")
-            site_data = (locale_dir / "site-data.js").read_text(encoding="utf-8")
 
             self.assertIn(f'<html lang="{locale}">', homepage)
             self.assertIn(f'rel="canonical" href="https://fruitstandsoftware.com/{locale}/"', homepage)
             self.assertIn("rel=\"alternate\" hreflang=\"x-default\" href=\"https://fruitstandsoftware.com/\"", homepage)
-            self.assertIn('src="site-data.js"', homepage)
+            self.assertNotIn('src="site-data.js"', homepage)
             self.assertIn('src="../script.js"', homepage)
             self.assertIn('class="locale-switcher"', homepage)
             self.assertIn("footer-locale-switcher", homepage)
             self.assertNotIn('class="nav-actions" aria-label="Primary">\n          <a class="nav-link" href="/' + locale + '/support.html">Support</a>\n          <label class="locale-switcher-wrap">', homepage)
             self.assertIn(f'href="/{locale}/support.html"', homepage)
             self.assertIn(f'href="/{locale}/privacy-policy.html"', homepage)
-            self.assertIn(f"window.siteData = {{", site_data)
-            self.assertIn(f'locale: "{locale}"', site_data)
+            self.assertNotIn('data-site="', homepage)
+            self.assertNotIn("window.siteData", homepage)
 
             self.assertIn(f'<html lang="{locale}">', support)
             self.assertIn(f'<html lang="{locale}">', privacy)
@@ -81,17 +80,28 @@ class SiteVariantsTest(unittest.TestCase):
     def test_english_and_non_english_locales_use_expected_copy(self):
         english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
         spanish_homepage = (ROOT / "es-ES" / "index.html").read_text(encoding="utf-8")
-        british_site_data = (ROOT / "en-GB" / "site-data.js").read_text(encoding="utf-8")
+        british_homepage = (ROOT / "en-GB" / "index.html").read_text(encoding="utf-8")
 
         self.assertIn("Local Temperature in °F & °C", english_homepage)
         self.assertIn("Temperatura local en °F y °C", spanish_homepage)
         self.assertIn("Consulta la temperatura donde estás en Fahrenheit y Celsius", spanish_homepage)
-        self.assertIn("colleagues", british_site_data)
-        self.assertIn("centre", british_site_data)
+        self.assertIn("colleagues", british_homepage)
+        self.assertIn("centre", british_homepage)
         self.assertIn('option value="en-US" selected="selected">US</option>', english_homepage)
         self.assertIn('option value="en-GB">UK</option>', english_homepage)
         self.assertIn('option value="nl-NL">NL</option>', english_homepage)
         self.assertIn('option value="it">IT</option>', english_homepage)
+
+    def test_localized_homepage_content_is_present_in_html(self):
+        english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
+        japanese_homepage = (ROOT / "ja" / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn("<h1>40 Below</h1>", english_homepage)
+        self.assertIn("Additional, thoughtful features:", english_homepage)
+        self.assertIn("Welcome to the first version of 40 Below!", english_homepage)
+        self.assertIn("現在地の気温を華氏と摂氏で確認", japanese_homepage)
+        self.assertNotIn('data-site="product-name"', english_homepage)
+        self.assertNotIn('data-site="release-notes-rich"', english_homepage)
 
     def test_script_contains_locale_switcher_and_matching_logic(self):
         script = (ROOT / "script.js").read_text(encoding="utf-8")
@@ -112,6 +122,7 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("initGalleryLightbox();", script)
         self.assertIn('"touchend"', script)
         self.assertIn("handledTouch", script)
+        self.assertNotIn("window.siteData", script)
         self.assertIn("touch-action: manipulation;", styles)
 
     def test_generator_and_docs_exist(self):
