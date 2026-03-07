@@ -45,6 +45,8 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertIn('src="site-data.js"', homepage)
             self.assertIn('src="../script.js"', homepage)
             self.assertIn('class="locale-switcher"', homepage)
+            self.assertIn("footer-locale-switcher", homepage)
+            self.assertNotIn('class="nav-actions" aria-label="Primary">\n          <a class="nav-link" href="/' + locale + '/support.html">Support</a>\n          <label class="locale-switcher-wrap">', homepage)
             self.assertIn(f'href="/{locale}/support.html"', homepage)
             self.assertIn(f'href="/{locale}/privacy-policy.html"', homepage)
             self.assertIn(f"window.siteData = {{", site_data)
@@ -54,6 +56,8 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertIn(f'<html lang="{locale}">', privacy)
             self.assertIn('class="locale-switcher"', support)
             self.assertIn('class="locale-switcher"', privacy)
+            self.assertIn("footer-locale-switcher", support)
+            self.assertIn("footer-locale-switcher", privacy)
             self.assertIn("Need help with 40 Below?", support)
             self.assertIn("Privacy Policy", privacy)
 
@@ -84,6 +88,10 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("Consulta la temperatura donde estás en Fahrenheit y Celsius", spanish_homepage)
         self.assertIn("colleagues", british_site_data)
         self.assertIn("centre", british_site_data)
+        self.assertIn('option value="en-US" selected="selected">US</option>', english_homepage)
+        self.assertIn('option value="en-GB">UK</option>', english_homepage)
+        self.assertIn('option value="nl-NL">NL</option>', english_homepage)
+        self.assertIn('option value="it">IT</option>', english_homepage)
 
     def test_script_contains_locale_switcher_and_matching_logic(self):
         script = (ROOT / "script.js").read_text(encoding="utf-8")

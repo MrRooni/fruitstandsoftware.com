@@ -64,20 +64,40 @@ def render_hreflang_links(page_kind: str) -> str:
     return "\n".join(links)
 
 
-def render_locale_switcher(locale: str) -> str:
+def locale_switcher_label(locale: str) -> str:
+    overrides = {
+        "en-GB": "UK",
+        "zh-Hans": "CN",
+        "zh-Hant": "TW",
+    }
+    if locale in overrides:
+        return overrides[locale]
+
+    if "-" in locale:
+        return locale.split("-")[1].upper()
+
+    return locale[:2].upper()
+
+
+def render_locale_switcher(locale: str, indent: str = "          ", wrapper_class: str = "") -> str:
     options = []
     for candidate in LOCALES:
         selected = ' selected="selected"' if candidate == locale else ""
-        options.append(f'              <option value="{candidate}"{selected}>{candidate}</option>')
+        label = locale_switcher_label(candidate)
+        options.append(f'{indent}      <option value="{candidate}"{selected}>{label}</option>')
+
+    classes = "locale-switcher-wrap"
+    if wrapper_class:
+        classes = f"{classes} {wrapper_class}"
 
     return "\n".join(
         [
-            '          <label class="locale-switcher-wrap">',
-            '            <span class="visually-hidden">Choose language</span>',
-            '            <select class="locale-switcher" aria-label="Choose language">',
+            f'{indent}<label class="{classes}">',
+            f'{indent}  <span class="visually-hidden">Choose language</span>',
+            f'{indent}  <select class="locale-switcher" aria-label="Choose language">',
             *options,
-            "            </select>",
-            "          </label>",
+            f"{indent}  </select>",
+            f"{indent}</label>",
         ]
     )
 
@@ -133,7 +153,9 @@ def render_homepage(locale: str) -> str:
     subtitle = read_metadata(locale, "subtitle.txt")
     promotional_text = read_metadata(locale, "promotional_text.txt")
     hreflang_links = render_hreflang_links("home")
-    locale_switcher = render_locale_switcher(locale)
+    footer_locale_switcher = render_locale_switcher(
+        locale, indent="        ", wrapper_class="footer-locale-switcher"
+    )
 
     return f"""<!doctype html>
 <html lang="{locale}">
@@ -170,7 +192,6 @@ def render_homepage(locale: str) -> str:
         </a>
         <nav class="nav-actions" aria-label="Primary">
           <a class="nav-link" href="/{locale}/support.html">Support</a>
-{locale_switcher}
           <a
             class="nav-store-link"
             href="{APP_STORE_URL}"
@@ -340,6 +361,7 @@ def render_homepage(locale: str) -> str:
       <div class="footer-stack">
         <p data-site="footer-copyright"></p>
         <a class="footer-link" href="/{locale}/privacy-policy.html">Privacy Policy</a>
+{footer_locale_switcher}
       </div>
     </footer>
 
@@ -360,8 +382,9 @@ def extract_main_content(filename: str) -> str:
 
 def render_secondary_page(locale: str, page_kind: str, title: str, description: str, body: str) -> str:
     hreflang_links = render_hreflang_links(page_kind)
-    locale_switcher = render_locale_switcher(locale)
-    current_page = "support.html" if page_kind == "support" else "privacy-policy.html"
+    footer_locale_switcher = render_locale_switcher(
+        locale, indent="        ", wrapper_class="footer-locale-switcher"
+    )
     footer_link = f"/{locale}/privacy-policy.html"
 
     return f"""<!doctype html>
@@ -390,7 +413,6 @@ def render_secondary_page(locale: str, page_kind: str, title: str, description: 
         </a>
         <nav class="nav-actions" aria-label="Primary">
           <a class="nav-link" href="/{locale}/support.html"{' aria-current="page"' if page_kind == "support" else ""}>Support</a>
-{locale_switcher}
           <a
             class="nav-store-link"
             href="{APP_STORE_URL}"
@@ -425,6 +447,7 @@ def render_secondary_page(locale: str, page_kind: str, title: str, description: 
       <div class="footer-stack">
         <p>© <span id="year"></span> Fruit Stand Software</p>
         <a class="footer-link" href="{footer_link}">Privacy Policy</a>
+{footer_locale_switcher}
       </div>
     </footer>
 
