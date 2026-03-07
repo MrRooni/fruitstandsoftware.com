@@ -1,0 +1,1 @@
+Bulunduğunuz yerdeki sıcaklığı Fahrenheit ve Celsius olarak görün, saatlik tahmini kontrol edin ve sade bir sıcaklık kartını saniyeler içinde paylaşın.

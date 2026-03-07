@@ -1,0 +1,10 @@
+40 Below tek bir temel amaç etrafında tasarlanıp geliştirildi: size mevcut dış ortam sıcaklığını hem Fahrenheit hem de Celsius olarak göstermek. Birçoğumuzun başka ülkelerde yaşayan arkadaşları, aile üyeleri ve iş arkadaşları var; bu yüzden en basit hava durumu sohbeti bile farklı sıcaklık ölçekleri kullanıldığında biraz sürtünme yaratabiliyor. 40 Below bunu ortadan kaldırır. Ön plandaki belirgin sıcaklık göstergesi sayesinde, havanın nasıl olduğunu karşı tarafın anlayacağı ölçekte anlatmanız her zaman yalnızca birkaç saniye sürer.
+
+Uluslararası ekipler, gezginler, yurt dışında yaşayanlar ve farklı birimlerin kullanıldığı evler bu pratik küçük hava durumu uygulamasını gerçekten faydalı bulacaktır.
+
+Düşünülmüş ek özellikler:
+- “Hissedilen” sıcaklığı da hem °F hem de °C olarak görün
+- Gününüzü planlamak için önümüzdeki saatlerin sıcaklık tahminine bakın
+- Konumunuzla birlikte ya da konumsuz, şık bir sıcaklık kartı paylaşın
+
+40 Below yerel koşulları göstermek için konumunuzu kullanır. Konum erişimini istediğiniz zaman Ayarlar'dan kontrol edebilirsiniz.

@@ -1,0 +1,1 @@
+Veja a temperatura onde você está em Fahrenheit e Celsius, confira a previsão por hora e compartilhe um cartão de temperatura limpo em segundos.

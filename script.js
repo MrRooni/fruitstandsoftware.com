@@ -80,7 +80,6 @@ function renderSite() {
   renderReleaseNotes();
 
   document.querySelectorAll('[data-site="screenshot"]').forEach((node) => {
-    node.setAttribute("src", site.product.screenshot.src);
     node.setAttribute("alt", site.product.screenshot.alt);
   });
 }

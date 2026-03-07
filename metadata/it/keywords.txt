@@ -1,0 +1,1 @@
+temperatura,meteo,fahrenheit,celsius,previsioni,viaggio,locale,percepita,condividi

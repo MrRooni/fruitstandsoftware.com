@@ -1,0 +1,10 @@
+40 Below se ha diseñado y creado con un objetivo muy claro: mostrarte la temperatura exterior actual tanto en Fahrenheit como en Celsius. Muchos tenemos amigos, familiares y compañeros de trabajo que viven en otros países, y hasta la conversación más sencilla sobre el tiempo puede volverse incómoda cuando cada persona usa una escala distinta. 40 Below elimina esa fricción. Con la temperatura destacada en el centro, siempre estarás a un instante de poder decirle a alguien qué tiempo hace en la escala que entiende.
+
+Equipos internacionales, viajeros, expatriados y hogares que conviven con distintas unidades encontrarán utilidad en esta pequeña y práctica app del tiempo.
+
+Otras funciones pensadas con cuidado:
+- Consulta la sensación térmica también en °F y °C
+- Revisa la previsión de temperatura para las próximas horas y organiza mejor tu día
+- Comparte una bonita tarjeta de temperatura con o sin tu ubicación
+
+40 Below usa tu ubicación para mostrar las condiciones locales. Puedes controlar el acceso a la ubicación en cualquier momento desde Ajustes.

@@ -1,0 +1,1 @@
+temperatura,clima,fahrenheit,celsius,previsão,viagem,local,sensação,compartilhar

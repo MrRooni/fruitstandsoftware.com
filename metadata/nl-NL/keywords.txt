@@ -1,0 +1,1 @@
+temperatuur,weer,fahrenheit,celsius,verwachting,reizen,lokaal,gevoelstemperatuur,delen

@@ -1,0 +1,1 @@
+temperatur,vær,fahrenheit,celsius,varsel,reise,lokal,føles,deling

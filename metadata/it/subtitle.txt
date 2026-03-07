@@ -1,0 +1,1 @@
+Temperatura locale in °F e °C

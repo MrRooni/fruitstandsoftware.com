@@ -1,0 +1,1 @@
+Consultez la température autour de vous en Fahrenheit et en Celsius, vérifiez la prévision horaire et partagez une carte de température épurée en quelques secondes.

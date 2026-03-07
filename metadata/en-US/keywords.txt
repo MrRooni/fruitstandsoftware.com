@@ -1,0 +1,1 @@
+temperature,weather,fahrenheit,celsius,forecast,travel,local,feelslike,share

@@ -1,0 +1,1 @@
+Lokalna temperatura w °F i °C

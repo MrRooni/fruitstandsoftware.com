@@ -27,8 +27,30 @@
         <a class="nav-brand" href="index.html" aria-label="40 Below home">
           <span>40 Below</span>
         </a>
-        <nav aria-label="Primary">
+        <nav class="nav-actions" aria-label="Primary">
           <a class="nav-link" href="support.html">Support</a>
+          <a
+            class="nav-store-link"
+            href="https://apps.apple.com/app/id6758684366"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download 40 Below on the App Store"
+          >
+            <img
+              class="badge-light"
+              src="Download-on-the-App-Store/US/Download_on_App_Store/Black_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download on the App Store"
+              width="152"
+              height="52"
+            />
+            <img
+              class="badge-dark"
+              src="Download-on-the-App-Store/US/Download_on_App_Store/White_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
+              alt="Download on the App Store"
+              width="152"
+              height="52"
+            />
+          </a>
         </nav>
       </div>
     </header>
@@ -55,28 +77,6 @@
             </div>
           </div>
           <p class="hero-promo" data-site="product-promo"></p>
-          <a
-            class="app-store-link"
-            href="https://apps.apple.com/app/id6758684366"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download 40 Below on the App Store"
-          >
-            <img
-              class="badge-light"
-              src="Download-on-the-App-Store/US/Download_on_App_Store/Black_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-              alt="Download on the App Store"
-              width="180"
-              height="60"
-            />
-            <img
-              class="badge-dark"
-              src="Download-on-the-App-Store/US/Download_on_App_Store/White_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
-              alt="Download on the App Store"
-              width="180"
-              height="60"
-            />
-          </a>
           <div class="hero-description prose-block">
             <div data-site="description-paragraphs"></div>
             <p class="feature-heading" data-site="feature-heading"></p>
@@ -85,13 +85,16 @@
           </div>
         </div>
         <figure class="screen-frame">
-          <img
-            data-site="screenshot"
-            src="Cupertino-morning.png"
-            alt="40 Below app screen"
-            width="500"
-            height="1036"
-          />
+          <picture>
+            <source srcset="Cold_Morning_Dark.png" media="(prefers-color-scheme: dark)" />
+            <img
+              data-site="screenshot"
+              src="Warm_Midday_Light.png"
+              alt="40 Below app screen"
+              width="500"
+              height="1036"
+            />
+          </picture>
         </figure>
       </section>
 

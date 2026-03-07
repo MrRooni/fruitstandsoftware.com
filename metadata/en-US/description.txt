@@ -1,0 +1,10 @@
+40 Below was designed and built around one central purpose: to show you the current outdoor temperature in both Fahrenheit and Celsius. Many of us have friends, family, and coworkers who live in other countries, and the simplest form of chit-chat can have some friction when those relationships cross the F/C border. 40 Below cuts through all of that. With its prominent temperature reading front and center, you're always a moment away from being able to tell someone what the weather is like in a temperature scale they will understand.
+
+International teams, travelers, ex-pats, and mixed-unit households alike will all find utility in this handy little weather app.
+
+Additional, thoughtful features:
+- See the “feels like” temperature (also in ºF and ºC, funnily enough!)
+- Check the temperature forecast for the hours ahead so you can plan out your day
+- Share a beautifully rendered temperature card with or without your location
+
+40 Below uses your location to show local conditions. You can control location access at any time in Settings.

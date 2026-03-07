@@ -1,0 +1,10 @@
+40 Below on suunniteltu ja rakennettu yhtä keskeistä tarkoitusta varten: näyttämään tämänhetkinen ulkolämpötila sekä Fahrenheit- että Celsius-asteina. Monilla meistä on ystäviä, perheenjäseniä ja työtovereita muissa maissa, ja jopa yksinkertainen säästä jutteleminen voi tuntua kömpelöltä, jos käytössä ovat eri lämpötila-asteikot. 40 Below poistaa tämän kitkan. Kun lämpötila näkyy selkeästi sovelluksen keskiössä, voit aina hetkessä kertoa toiselle, millainen sää on juuri sillä asteikolla, jonka hän ymmärtää.
+
+Kansainväliset tiimit, matkailijat, ulkosuomalaiset ja sekayksiköitä käyttävät kotitaloudet saavat kaikki iloa tästä kätevästä sääsovelluksesta.
+
+Lisäksi harkittuja ominaisuuksia:
+- Näe "tuntuu kuin" -lämpötila myös Fahrenheit- ja Celsius-asteina
+- Tarkista seuraavien tuntien lämpötilaennuste ja suunnittele päiväsi paremmin
+- Jaa tyylikäs lämpötilakortti sijaintisi kanssa tai ilman sitä
+
+40 Below käyttää sijaintiasi paikallisten olosuhteiden näyttämiseen. Voit hallita sijainnin käyttöoikeutta milloin tahansa Asetuksissa.
