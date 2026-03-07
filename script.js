@@ -106,14 +106,28 @@ function updateScreenshotForThemeAndTime() {
 function initGalleryLightbox() {
   const lightbox = document.querySelector("[data-lightbox]");
   const lightboxImage = document.querySelector("[data-lightbox-image]");
+  const previousImage = document.querySelector("[data-lightbox-prev-image]");
+  const nextImage = document.querySelector("[data-lightbox-next-image]");
   const lightboxStatus = document.getElementById("lightbox-title");
   const stage = document.querySelector("[data-lightbox-stage]");
+  const viewport = document.querySelector("[data-lightbox-viewport]");
+  const track = document.querySelector("[data-lightbox-track]");
   const previousButton = document.querySelector("[data-gallery-prev]");
   const nextButton = document.querySelector("[data-gallery-next]");
   const closeButtons = document.querySelectorAll("[data-lightbox-close]");
   const thumbs = document.querySelectorAll("[data-gallery-index]");
 
-  if (!lightbox || !lightboxImage || !lightboxStatus || !stage || thumbs.length === 0) {
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !previousImage ||
+    !nextImage ||
+    !lightboxStatus ||
+    !stage ||
+    !viewport ||
+    !track ||
+    thumbs.length === 0
+  ) {
     return;
   }
 
@@ -122,12 +136,19 @@ function initGalleryLightbox() {
   let touchStartX = 0;
   let touchDeltaX = 0;
   let isDragging = false;
+  let isAnimating = false;
+  let pendingStep = 0;
 
-  function setDragOffset(offsetX) {
-    lightboxImage.style.setProperty("--lightbox-drag-x", `${offsetX}px`);
-    const progress = Math.min(Math.abs(offsetX) / 180, 1);
-    const opacity = 1 - progress * 0.18;
-    lightboxImage.style.setProperty("--lightbox-drag-opacity", `${opacity}`);
+  function getWrappedIndex(index) {
+    return (index + galleryImages.length) % galleryImages.length;
+  }
+
+  function updateTrackMetrics() {
+    track.style.setProperty("--lightbox-track-base", `${-viewport.clientWidth}px`);
+  }
+
+  function setTrackOffset(offsetX) {
+    track.style.setProperty("--lightbox-track-drag-x", `${offsetX}px`);
   }
 
   function resetDragOffset() {
@@ -135,14 +156,41 @@ function initGalleryLightbox() {
     touchDeltaX = 0;
     isDragging = false;
     stage.classList.remove("is-dragging");
-    setDragOffset(0);
+    setTrackOffset(0);
   }
 
   function renderLightboxImage() {
+    const previous = galleryImages[getWrappedIndex(activeIndex - 1)];
     const image = galleryImages[activeIndex];
+    const next = galleryImages[getWrappedIndex(activeIndex + 1)];
+
+    previousImage.setAttribute("src", previous.src);
+    previousImage.setAttribute("alt", previous.alt);
     lightboxImage.setAttribute("src", image.src);
     lightboxImage.setAttribute("alt", image.alt);
+    nextImage.setAttribute("src", next.src);
+    nextImage.setAttribute("alt", next.alt);
     lightboxStatus.textContent = `${image.label} (${activeIndex + 1}/${galleryImages.length})`;
+  }
+
+  function finishSnap(nextIndex) {
+    activeIndex = getWrappedIndex(nextIndex);
+    track.classList.remove("is-snapping");
+    resetDragOffset();
+    renderLightboxImage();
+    updateTrackMetrics();
+    pendingStep = 0;
+    isAnimating = false;
+  }
+
+  function snapToStep(step) {
+    const offset = step * viewport.clientWidth;
+    isAnimating = true;
+    pendingStep = step;
+    isDragging = false;
+    stage.classList.remove("is-dragging");
+    track.classList.add("is-snapping");
+    setTrackOffset(offset);
   }
 
   function openLightbox(index) {
@@ -150,13 +198,17 @@ function initGalleryLightbox() {
     lastFocused = document.activeElement;
     resetDragOffset();
     renderLightboxImage();
+    updateTrackMetrics();
     lightbox.hidden = false;
     document.body.classList.add("lightbox-open");
     previousButton.focus();
   }
 
   function closeLightbox() {
+    pendingStep = 0;
+    isAnimating = false;
     resetDragOffset();
+    track.classList.remove("is-snapping");
     lightbox.hidden = true;
     document.body.classList.remove("lightbox-open");
     if (lastFocused instanceof HTMLElement) {
@@ -165,15 +217,19 @@ function initGalleryLightbox() {
   }
 
   function showNextImage() {
-    activeIndex = (activeIndex + 1) % galleryImages.length;
-    resetDragOffset();
-    renderLightboxImage();
+    if (isAnimating) {
+      return;
+    }
+
+    snapToStep(-1);
   }
 
   function showPreviousImage() {
-    activeIndex = (activeIndex - 1 + galleryImages.length) % galleryImages.length;
-    resetDragOffset();
-    renderLightboxImage();
+    if (isAnimating) {
+      return;
+    }
+
+    snapToStep(1);
   }
 
   thumbs.forEach((thumb) => {
@@ -198,6 +254,10 @@ function initGalleryLightbox() {
         return;
       }
 
+      if (isAnimating) {
+        return;
+      }
+
       touchStartX = event.touches[0].clientX;
       touchDeltaX = 0;
       isDragging = true;
@@ -214,7 +274,7 @@ function initGalleryLightbox() {
       }
 
       touchDeltaX = event.touches[0].clientX - touchStartX;
-      setDragOffset(touchDeltaX);
+      setTrackOffset(touchDeltaX);
       event.preventDefault();
     },
     { passive: false }
@@ -231,7 +291,7 @@ function initGalleryLightbox() {
       const deltaX = touchEndX - touchStartX;
 
       if (Math.abs(deltaX) < SWIPE_THRESHOLD) {
-        resetDragOffset();
+        snapToStep(0);
         return;
       }
 
@@ -244,7 +304,39 @@ function initGalleryLightbox() {
     { passive: true }
   );
 
-  stage.addEventListener("touchcancel", resetDragOffset, { passive: true });
+  stage.addEventListener(
+    "touchcancel",
+    () => {
+      if (isDragging) {
+        snapToStep(0);
+      }
+    },
+    { passive: true }
+  );
+
+  track.addEventListener("transitionend", (event) => {
+    if (event.propertyName !== "transform" || !track.classList.contains("is-snapping")) {
+      return;
+    }
+
+    if (pendingStep === -1) {
+      finishSnap(activeIndex + 1);
+      return;
+    }
+
+    if (pendingStep === 1) {
+      finishSnap(activeIndex - 1);
+      return;
+    }
+
+    finishSnap(activeIndex);
+  });
+
+  window.addEventListener("resize", () => {
+    if (!lightbox.hidden && !isAnimating) {
+      updateTrackMetrics();
+    }
+  });
 
   document.addEventListener("keydown", (event) => {
     if (lightbox.hidden) {
