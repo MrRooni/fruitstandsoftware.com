@@ -95,6 +95,7 @@ class SiteVariantsTest(unittest.TestCase):
 
     def test_script_contains_locale_switcher_and_matching_logic(self):
         script = (ROOT / "script.js").read_text(encoding="utf-8")
+        styles = (ROOT / "styles" / "base.css").read_text(encoding="utf-8")
 
         self.assertIn("const DEFAULT_LOCALE = \"en-US\";", script)
         self.assertIn("const LOCALE_STORAGE_KEY = \"fruitstandsoftware.locale\";", script)
@@ -109,6 +110,9 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("sameLanguageLocale", script)
         self.assertIn("initLocaleSwitcher();", script)
         self.assertIn("initGalleryLightbox();", script)
+        self.assertIn('"touchend"', script)
+        self.assertIn("handledTouch", script)
+        self.assertIn("touch-action: manipulation;", styles)
 
     def test_generator_and_docs_exist(self):
         generator = ROOT / "scripts" / "build_localized_site.py"
