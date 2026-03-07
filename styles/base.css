@@ -518,6 +518,7 @@ body.lightbox-open {
     position: absolute;
     bottom: 1rem;
     z-index: 2;
+    transform: none;
   }
 
   .lightbox-stage [data-gallery-prev] {

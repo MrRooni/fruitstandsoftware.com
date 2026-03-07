@@ -245,6 +245,31 @@ function initGalleryLightbox() {
     snapToStep(1);
   }
 
+  function bindControlPress(button, action) {
+    let handledPointer = false;
+
+    if ("PointerEvent" in window) {
+      button.addEventListener("pointerup", (event) => {
+        handledPointer = true;
+        event.preventDefault();
+        event.stopPropagation();
+        action();
+      });
+    }
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (handledPointer) {
+        handledPointer = false;
+        return;
+      }
+
+      action();
+    });
+  }
+
   thumbs.forEach((thumb) => {
     thumb.addEventListener("click", () => {
       const index = Number.parseInt(thumb.getAttribute("data-gallery-index") || "0", 10);
@@ -252,11 +277,11 @@ function initGalleryLightbox() {
     });
   });
 
-  previousButton.addEventListener("click", showPreviousImage);
-  nextButton.addEventListener("click", showNextImage);
+  bindControlPress(previousButton, showPreviousImage);
+  bindControlPress(nextButton, showNextImage);
 
   closeButtons.forEach((button) => {
-    button.addEventListener("click", closeLightbox);
+    bindControlPress(button, closeLightbox);
   });
 
   stage.addEventListener(
