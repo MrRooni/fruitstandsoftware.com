@@ -1,4 +1,3 @@
-const site = window.siteData || null;
 const DEFAULT_LOCALE = "en-US";
 const LOCALE_STORAGE_KEY = "fruitstandsoftware.locale";
 const NOON_HOUR = 12;
@@ -37,10 +36,6 @@ const galleryImages = [
 ];
 
 function getAvailableLocales() {
-  if (site?.availableLocales?.length) {
-    return site.availableLocales;
-  }
-
   return Array.from(document.querySelectorAll(".locale-switcher option"))
     .map((option) => option.value)
     .filter(Boolean);
@@ -96,60 +91,6 @@ function buildLocalePath(locale, currentPath = window.location.pathname) {
   return `/${locale}/`;
 }
 
-function toAssetPath(source) {
-  if (!source) {
-    return source;
-  }
-
-  const prefix = site?.assetBasePath || "";
-  return `${prefix}${source}`;
-}
-
-function setText(key, value) {
-  document.querySelectorAll(`[data-site="${key}"]`).forEach((node) => {
-    node.textContent = value;
-  });
-}
-
-function setMeta(selector, content) {
-  const node = document.querySelector(selector);
-  if (node && content) {
-    node.setAttribute("content", content);
-  }
-}
-
-function renderParagraphs(key, paragraphs) {
-  document.querySelectorAll(`[data-site="${key}"]`).forEach((node) => {
-    node.replaceChildren();
-    paragraphs.forEach((paragraph) => {
-      const item = document.createElement("p");
-      item.textContent = paragraph;
-      node.append(item);
-    });
-  });
-}
-
-function renderList(key, items) {
-  document.querySelectorAll(`[data-site="${key}"]`).forEach((node) => {
-    node.replaceChildren();
-    items.forEach((item) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = item;
-      node.append(listItem);
-    });
-  });
-}
-
-function renderReleaseNotes() {
-  if (!site?.product?.releaseNotes) {
-    return;
-  }
-
-  document.querySelectorAll('[data-site="release-notes-rich"]').forEach((node) => {
-    node.textContent = site.product.releaseNotes;
-  });
-}
-
 function updateScreenshotForThemeAndTime() {
   const darkSource = document.getElementById("hero-screenshot-dark-source");
   if (!darkSource) {
@@ -160,7 +101,7 @@ function updateScreenshotForThemeAndTime() {
   const darkScreenshot =
     currentHour < NOON_HOUR ? "Cold_Morning_Dark.png" : "Warm_Night_Dark.png";
 
-  darkSource.setAttribute("srcset", toAssetPath(darkScreenshot));
+  darkSource.setAttribute("srcset", `../${darkScreenshot}`);
 }
 
 function initGalleryLightbox() {
@@ -235,11 +176,11 @@ function initGalleryLightbox() {
     const image = galleryImages[activeIndex];
     const next = galleryImages[getWrappedIndex(activeIndex + 1)];
 
-    previousImage.setAttribute("src", toAssetPath(previous.src));
+    previousImage.setAttribute("src", `../${previous.src}`);
     previousImage.setAttribute("alt", previous.alt);
-    lightboxImage.setAttribute("src", toAssetPath(image.src));
+    lightboxImage.setAttribute("src", `../${image.src}`);
     lightboxImage.setAttribute("alt", image.alt);
-    nextImage.setAttribute("src", toAssetPath(next.src));
+    nextImage.setAttribute("src", `../${next.src}`);
     nextImage.setAttribute("alt", next.alt);
     lightboxStatus.textContent = `${image.label} (${activeIndex + 1}/${galleryImages.length})`;
   }
@@ -469,43 +410,13 @@ function initGalleryLightbox() {
   });
 }
 
-function renderSite() {
-  if (!site) {
-    return;
-  }
-
-  document.documentElement.lang = site.locale;
-  document.title = site.seo.title;
-  setMeta('meta[name="description"]', site.seo.description);
-  setMeta('meta[property="og:title"]', site.seo.ogTitle);
-  setMeta('meta[property="og:description"]', site.seo.ogDescription);
-  setMeta('meta[name="keywords"]', site.seo.keywords);
-
-  setText("product-name", site.product.name);
-  setText("product-subtitle", site.product.subtitle);
-  setText("product-promo", site.product.promotionalText);
-  setText("feature-heading", site.product.featureHeading);
-  setText("location-text", site.product.locationText);
-  setText("footer-copyright", site.footer.copyright);
-
-  renderParagraphs("description-paragraphs", site.product.descriptionParagraphs);
-  renderList("feature-list", site.product.features);
-  renderReleaseNotes();
-
-  document.querySelectorAll('[data-site="screenshot"]').forEach((node) => {
-    node.setAttribute("alt", site.product.screenshot.alt);
-  });
-
-  updateScreenshotForThemeAndTime();
-}
-
 function initLocaleSwitcher() {
   const switchers = document.querySelectorAll(".locale-switcher");
   if (switchers.length === 0) {
     return;
   }
 
-  const currentLocale = site?.locale || document.documentElement.lang || DEFAULT_LOCALE;
+  const currentLocale = document.documentElement.lang || DEFAULT_LOCALE;
 
   switchers.forEach((switcher) => {
     switcher.value = currentLocale;
@@ -563,7 +474,7 @@ function observeColorSchemeChanges() {
   darkMode.addListener(updateScreenshotForThemeAndTime);
 }
 
-renderSite();
+updateScreenshotForThemeAndTime();
 initLocaleSwitcher();
 initYear();
 initReveal();
