@@ -143,6 +143,10 @@ function initGalleryLightbox() {
     return (index + galleryImages.length) % galleryImages.length;
   }
 
+  function isTouchOnControl(target) {
+    return target instanceof Element && Boolean(target.closest(".lightbox-arrow, .lightbox-close"));
+  }
+
   function updateTrackMetrics() {
     const viewportWidth = viewport.clientWidth;
 
@@ -258,6 +262,11 @@ function initGalleryLightbox() {
   stage.addEventListener(
     "touchstart",
     (event) => {
+      if (isTouchOnControl(event.target)) {
+        resetDragOffset();
+        return;
+      }
+
       if (event.touches.length !== 1) {
         resetDragOffset();
         return;
@@ -278,6 +287,10 @@ function initGalleryLightbox() {
   stage.addEventListener(
     "touchmove",
     (event) => {
+      if (isTouchOnControl(event.target)) {
+        return;
+      }
+
       if (!isDragging || event.touches.length !== 1) {
         return;
       }
@@ -292,6 +305,11 @@ function initGalleryLightbox() {
   stage.addEventListener(
     "touchend",
     (event) => {
+      if (isTouchOnControl(event.target)) {
+        resetDragOffset();
+        return;
+      }
+
       if (!isDragging) {
         return;
       }
