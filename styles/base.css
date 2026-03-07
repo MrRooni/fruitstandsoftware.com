@@ -365,6 +365,30 @@ h2 {
   min-height: 0;
 }
 
+.lightbox-viewport {
+  overflow: hidden;
+}
+
+.lightbox-track {
+  display: flex;
+  width: 300%;
+  transform: translate3d(
+    calc(var(--lightbox-track-base, 0px) + var(--lightbox-track-drag-x, 0px)),
+    0,
+    0
+  );
+}
+
+.lightbox-track.is-snapping {
+  transition: transform 220ms ease;
+}
+
+.lightbox-slide {
+  flex: 0 0 33.333333%;
+  display: grid;
+  place-items: center;
+}
+
 .lightbox-image {
   width: min(100%, 520px);
   aspect-ratio: 1000 / 2072;
@@ -374,15 +398,10 @@ h2 {
   object-fit: contain;
   border-radius: 0;
   box-shadow: none;
-  transform: translate3d(var(--lightbox-drag-x, 0), 0, 0);
-  opacity: var(--lightbox-drag-opacity, 1);
-  transition:
-    transform 220ms ease,
-    opacity 220ms ease;
   will-change: transform;
 }
 
-.lightbox-stage.is-dragging .lightbox-image {
+.lightbox-stage.is-dragging .lightbox-track {
   transition: none;
 }
 
