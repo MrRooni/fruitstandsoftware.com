@@ -306,23 +306,25 @@ function initGalleryLightbox() {
   }
 
   function bindControlPress(button, action) {
-    let handledPointer = false;
+    let handledTouch = false;
 
-    if ("PointerEvent" in window) {
-      button.addEventListener("pointerup", (event) => {
-        handledPointer = true;
+    button.addEventListener(
+      "touchend",
+      (event) => {
+        handledTouch = true;
         event.preventDefault();
         event.stopPropagation();
         action();
-      });
-    }
+      },
+      { passive: false }
+    );
 
     button.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
 
-      if (handledPointer) {
-        handledPointer = false;
+      if (handledTouch) {
+        handledTouch = false;
         return;
       }
 
