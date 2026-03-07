@@ -1,4 +1,6 @@
-const site = window.siteData;
+const site = window.siteData || null;
+const DEFAULT_LOCALE = "en-US";
+const LOCALE_STORAGE_KEY = "fruitstandsoftware.locale";
 const NOON_HOUR = 12;
 const SWIPE_THRESHOLD = 48;
 const galleryImages = [
@@ -34,6 +36,75 @@ const galleryImages = [
   },
 ];
 
+function getAvailableLocales() {
+  if (site?.availableLocales?.length) {
+    return site.availableLocales;
+  }
+
+  return Array.from(document.querySelectorAll(".locale-switcher option"))
+    .map((option) => option.value)
+    .filter(Boolean);
+}
+
+function normalizeLocale(locale) {
+  return (locale || "").trim();
+}
+
+function sameLanguageLocale(requestedLocale, availableLocales) {
+  const requestedBase = normalizeLocale(requestedLocale).split("-")[0].toLowerCase();
+  if (!requestedBase) {
+    return "";
+  }
+
+  return (
+    availableLocales.find((candidate) => candidate.split("-")[0].toLowerCase() === requestedBase) || ""
+  );
+}
+
+function resolveLocale(requestedLocales, availableLocales = getAvailableLocales()) {
+  for (const requestedLocale of requestedLocales) {
+    const normalized = normalizeLocale(requestedLocale);
+    if (!normalized) {
+      continue;
+    }
+
+    const exactLocale = availableLocales.find(
+      (candidate) => candidate.toLowerCase() === normalized.toLowerCase()
+    );
+    if (exactLocale) {
+      return exactLocale;
+    }
+
+    const languageMatch = sameLanguageLocale(normalized, availableLocales);
+    if (languageMatch) {
+      return languageMatch;
+    }
+  }
+
+  return DEFAULT_LOCALE;
+}
+
+function buildLocalePath(locale, currentPath = window.location.pathname) {
+  if (currentPath.endsWith("/support.html")) {
+    return `/${locale}/support.html`;
+  }
+
+  if (currentPath.endsWith("/privacy-policy.html")) {
+    return `/${locale}/privacy-policy.html`;
+  }
+
+  return `/${locale}/`;
+}
+
+function toAssetPath(source) {
+  if (!source) {
+    return source;
+  }
+
+  const prefix = site?.assetBasePath || "";
+  return `${prefix}${source}`;
+}
+
 function setText(key, value) {
   document.querySelectorAll(`[data-site="${key}"]`).forEach((node) => {
     node.textContent = value;
@@ -42,7 +113,7 @@ function setText(key, value) {
 
 function setMeta(selector, content) {
   const node = document.querySelector(selector);
-  if (node) {
+  if (node && content) {
     node.setAttribute("content", content);
   }
 }
@@ -70,23 +141,12 @@ function renderList(key, items) {
 }
 
 function renderReleaseNotes() {
-  const intro =
-    "Welcome to the first version of 40 Below! I hope you enjoy it as much as I enjoyed making it. 40 Below will never prompt you for a review, but if you're feeling kind, ";
-  const linkedSentence = "a nice 5-star review would sure be great.";
+  if (!site?.product?.releaseNotes) {
+    return;
+  }
 
   document.querySelectorAll('[data-site="release-notes-rich"]').forEach((node) => {
-    node.replaceChildren();
-
-    node.append(document.createTextNode(intro));
-
-    const link = document.createElement("a");
-    link.className = "release-action";
-    link.href = "https://apps.apple.com/app/id6759849820?action=write-review";
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = linkedSentence;
-
-    node.append(link);
+    node.textContent = site.product.releaseNotes;
   });
 }
 
@@ -100,7 +160,7 @@ function updateScreenshotForThemeAndTime() {
   const darkScreenshot =
     currentHour < NOON_HOUR ? "Cold_Morning_Dark.png" : "Warm_Night_Dark.png";
 
-  darkSource.setAttribute("srcset", darkScreenshot);
+  darkSource.setAttribute("srcset", toAssetPath(darkScreenshot));
 }
 
 function initGalleryLightbox() {
@@ -175,11 +235,11 @@ function initGalleryLightbox() {
     const image = galleryImages[activeIndex];
     const next = galleryImages[getWrappedIndex(activeIndex + 1)];
 
-    previousImage.setAttribute("src", previous.src);
+    previousImage.setAttribute("src", toAssetPath(previous.src));
     previousImage.setAttribute("alt", previous.alt);
-    lightboxImage.setAttribute("src", image.src);
+    lightboxImage.setAttribute("src", toAssetPath(image.src));
     lightboxImage.setAttribute("alt", image.alt);
-    nextImage.setAttribute("src", next.src);
+    nextImage.setAttribute("src", toAssetPath(next.src));
     nextImage.setAttribute("alt", next.alt);
     lightboxStatus.textContent = `${image.label} (${activeIndex + 1}/${galleryImages.length})`;
   }
@@ -437,6 +497,36 @@ function renderSite() {
   updateScreenshotForThemeAndTime();
 }
 
+function initLocaleSwitcher() {
+  const switchers = document.querySelectorAll(".locale-switcher");
+  if (switchers.length === 0) {
+    return;
+  }
+
+  const currentLocale = site?.locale || document.documentElement.lang || DEFAULT_LOCALE;
+
+  switchers.forEach((switcher) => {
+    switcher.value = currentLocale;
+    switcher.addEventListener("change", () => {
+      const nextLocale = switcher.value || resolveLocale(navigator.languages || []);
+
+      try {
+        window.localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+      } catch (error) {
+        // Ignore storage access failures and continue navigating.
+      }
+
+      window.location.assign(buildLocalePath(nextLocale));
+    });
+  });
+}
+
+function initYear() {
+  document.querySelectorAll("#year").forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
+}
+
 function initReveal() {
   const revealItems = document.querySelectorAll(".reveal");
 
@@ -472,6 +562,8 @@ function observeColorSchemeChanges() {
 }
 
 renderSite();
+initLocaleSwitcher();
+initYear();
 initReveal();
 observeColorSchemeChanges();
 initGalleryLightbox();
