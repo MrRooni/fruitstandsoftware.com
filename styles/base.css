@@ -110,6 +110,7 @@ a {
   gap: 0.65rem;
   padding: 0.25rem 0;
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .nav-brand-icon {
@@ -367,6 +368,8 @@ h2 {
 
 .lightbox-viewport {
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 .lightbox-track {
@@ -454,7 +457,7 @@ body.lightbox-open {
   transform: translateY(0);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .nav-shell {
     min-height: auto;
     padding-block: 0.85rem;
@@ -499,6 +502,11 @@ body.lightbox-open {
   .lightbox-stage {
     grid-template-columns: 1fr;
     touch-action: pan-y;
+  }
+
+  .lightbox-viewport {
+    width: min(100%, 420px);
+    margin-inline: auto;
   }
 
   .lightbox-image {

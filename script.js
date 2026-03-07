@@ -144,7 +144,14 @@ function initGalleryLightbox() {
   }
 
   function updateTrackMetrics() {
-    track.style.setProperty("--lightbox-track-base", `${-viewport.clientWidth}px`);
+    const viewportWidth = viewport.clientWidth;
+
+    if (viewportWidth <= 0) {
+      return false;
+    }
+
+    track.style.setProperty("--lightbox-track-base", `${-viewportWidth}px`);
+    return true;
   }
 
   function setTrackOffset(offsetX) {
@@ -198,9 +205,11 @@ function initGalleryLightbox() {
     lastFocused = document.activeElement;
     resetDragOffset();
     renderLightboxImage();
-    updateTrackMetrics();
     lightbox.hidden = false;
     document.body.classList.add("lightbox-open");
+    requestAnimationFrame(() => {
+      updateTrackMetrics();
+    });
     previousButton.focus();
   }
 
@@ -334,7 +343,9 @@ function initGalleryLightbox() {
 
   window.addEventListener("resize", () => {
     if (!lightbox.hidden && !isAnimating) {
-      updateTrackMetrics();
+      requestAnimationFrame(() => {
+        updateTrackMetrics();
+      });
     }
   });
 
