@@ -76,6 +76,8 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertIn(f'href="/{locale}/privacy-policy.html"', homepage)
             self.assertNotIn('data-site="', homepage)
             self.assertNotIn("window.siteData", homepage)
+            self.assertIn(f'>{translation["shell"]["nav_support"]}</a>', homepage)
+            self.assertIn(f'>{translation["shell"]["footer_privacy"]}</a>', homepage)
 
             self.assertIn(f'<html lang="{locale}" dir="{direction}">', support)
             self.assertIn(f'<html lang="{locale}" dir="{direction}">', privacy)
@@ -115,6 +117,7 @@ class SiteVariantsTest(unittest.TestCase):
         korean_privacy = (ROOT / "ko" / "privacy-policy.html").read_text(encoding="utf-8")
         arabic_privacy = (ROOT / "ar-SA" / "privacy-policy.html").read_text(encoding="utf-8")
         spanish_support = (ROOT / "es-ES" / "support.html").read_text(encoding="utf-8")
+        simplified_chinese_homepage = (ROOT / "zh-Hans" / "index.html").read_text(encoding="utf-8")
 
         self.assertIn("Local Temperature in °F & °C", english_homepage)
         self.assertIn("Temperatura local en °F y °C", spanish_homepage)
@@ -133,6 +136,11 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("الموقع", arabic_privacy)
         self.assertIn("¿Necesitas ayuda con 40 Below?", spanish_support)
         self.assertIn("Enviar un correo a soporte", spanish_support)
+        self.assertIn("Elegir idioma", spanish_homepage)
+        self.assertIn("/Download-on-the-App-Store/ES/", spanish_homepage)
+        self.assertIn("言語を選択", (ROOT / "ja" / "index.html").read_text(encoding="utf-8"))
+        self.assertIn("/Download-on-the-App-Store/JP/", (ROOT / "ja" / "index.html").read_text(encoding="utf-8"))
+        self.assertIn("选择语言", simplified_chinese_homepage)
         self.assertNotIn("Need help with 40 Below?", japanese_support)
         self.assertNotIn("Privacy Policy", korean_privacy)
 
