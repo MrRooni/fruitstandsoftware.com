@@ -87,7 +87,179 @@ def locale_text_direction(locale: str) -> str:
     return "rtl" if locale.split("-")[0] in {"ar", "fa", "he", "ur"} else "ltr"
 
 
+def localized_ui_strings(locale: str) -> dict[str, str]:
+    strings = {
+        "ar-SA": {
+            "choose_language": "اختر اللغة",
+            "home": "الصفحة الرئيسية لتطبيق 40 Below",
+            "primary_nav": "التنقل الرئيسي",
+            "app_store": "نزّل 40 Below من App Store",
+        },
+        "da": {
+            "choose_language": "Vælg sprog",
+            "home": "40 Below forside",
+            "primary_nav": "Primær navigation",
+            "app_store": "Hent 40 Below i App Store",
+        },
+        "de-DE": {
+            "choose_language": "Sprache wählen",
+            "home": "40 Below Startseite",
+            "primary_nav": "Hauptnavigation",
+            "app_store": "40 Below im App Store laden",
+        },
+        "en-CA": {
+            "choose_language": "Choose language",
+            "home": "40 Below home",
+            "primary_nav": "Primary",
+            "app_store": "Download 40 Below on the App Store",
+        },
+        "en-GB": {
+            "choose_language": "Choose language",
+            "home": "40 Below home",
+            "primary_nav": "Primary",
+            "app_store": "Download 40 Below on the App Store",
+        },
+        "en-US": {
+            "choose_language": "Choose language",
+            "home": "40 Below home",
+            "primary_nav": "Primary",
+            "app_store": "Download 40 Below on the App Store",
+        },
+        "es-ES": {
+            "choose_language": "Elegir idioma",
+            "home": "Inicio de 40 Below",
+            "primary_nav": "Navegación principal",
+            "app_store": "Descarga 40 Below en el App Store",
+        },
+        "fi": {
+            "choose_language": "Valitse kieli",
+            "home": "40 Below -etusivu",
+            "primary_nav": "Ensisijainen navigointi",
+            "app_store": "Lataa 40 Below App Storesta",
+        },
+        "fr-FR": {
+            "choose_language": "Choisir la langue",
+            "home": "Accueil de 40 Below",
+            "primary_nav": "Navigation principale",
+            "app_store": "Télécharger 40 Below sur l’App Store",
+        },
+        "hi": {
+            "choose_language": "भाषा चुनें",
+            "home": "40 Below होम",
+            "primary_nav": "मुख्य नेविगेशन",
+            "app_store": "App Store पर 40 Below डाउनलोड करें",
+        },
+        "it": {
+            "choose_language": "Scegli la lingua",
+            "home": "Home di 40 Below",
+            "primary_nav": "Navigazione principale",
+            "app_store": "Scarica 40 Below sull’App Store",
+        },
+        "ja": {
+            "choose_language": "言語を選択",
+            "home": "40 Belowのホーム",
+            "primary_nav": "主要ナビゲーション",
+            "app_store": "App Storeで40 Belowをダウンロード",
+        },
+        "ko": {
+            "choose_language": "언어 선택",
+            "home": "40 Below 홈",
+            "primary_nav": "기본 탐색",
+            "app_store": "App Store에서 40 Below 다운로드",
+        },
+        "nl-NL": {
+            "choose_language": "Taal kiezen",
+            "home": "40 Below-home",
+            "primary_nav": "Hoofdnavigatie",
+            "app_store": "Download 40 Below in de App Store",
+        },
+        "no": {
+            "choose_language": "Velg språk",
+            "home": "40 Below hjem",
+            "primary_nav": "Hovednavigasjon",
+            "app_store": "Last ned 40 Below i App Store",
+        },
+        "pl": {
+            "choose_language": "Wybierz język",
+            "home": "Strona główna 40 Below",
+            "primary_nav": "Nawigacja główna",
+            "app_store": "Pobierz 40 Below w App Store",
+        },
+        "pt-BR": {
+            "choose_language": "Escolher idioma",
+            "home": "Página inicial do 40 Below",
+            "primary_nav": "Navegação principal",
+            "app_store": "Baixe 40 Below na App Store",
+        },
+        "sv": {
+            "choose_language": "Välj språk",
+            "home": "40 Below startsida",
+            "primary_nav": "Huvudnavigering",
+            "app_store": "Hämta 40 Below i App Store",
+        },
+        "tr": {
+            "choose_language": "Dil seçin",
+            "home": "40 Below ana sayfası",
+            "primary_nav": "Birincil gezinme",
+            "app_store": "40 Below’u App Store’dan indirin",
+        },
+        "zh-Hans": {
+            "choose_language": "选择语言",
+            "home": "40 Below 首页",
+            "primary_nav": "主导航",
+            "app_store": "在 App Store 下载 40 Below",
+        },
+        "zh-Hant": {
+            "choose_language": "選擇語言",
+            "home": "40 Below 首頁",
+            "primary_nav": "主要導覽",
+            "app_store": "在 App Store 下載 40 Below",
+        },
+    }
+    return strings[locale]
+
+
+def app_store_badge_code(locale: str) -> str:
+    return {
+        "ar-SA": "AR",
+        "da": "DK",
+        "de-DE": "DE",
+        "en-CA": "US",
+        "en-GB": "US",
+        "en-US": "US",
+        "es-ES": "ES",
+        "fi": "FI",
+        "fr-FR": "FR",
+        "hi": "IN",
+        "it": "IT",
+        "ja": "JP",
+        "ko": "KR",
+        "nl-NL": "NL",
+        "no": "NO",
+        "pl": "PL",
+        "pt-BR": "PTBR",
+        "sv": "SE",
+        "tr": "TR",
+        "zh-Hans": "US",
+        "zh-Hant": "US",
+    }[locale]
+
+
+def app_store_badge_paths(locale: str) -> dict[str, str]:
+    badge_code = app_store_badge_code(locale)
+    badge_dir = f"../Download-on-the-App-Store/{badge_code}/Download_on_App_Store"
+    black_dir = ROOT / "Download-on-the-App-Store" / badge_code / "Download_on_App_Store" / "Black_lockup" / "SVG"
+    white_dir = ROOT / "Download-on-the-App-Store" / badge_code / "Download_on_App_Store" / "White_lockup" / "SVG"
+    black_file = sorted(black_dir.glob("*.svg"))[0].name
+    white_file = sorted(white_dir.glob("*.svg"))[0].name
+    return {
+        "light": f"{badge_dir}/Black_lockup/SVG/{black_file}",
+        "dark": f"{badge_dir}/White_lockup/SVG/{white_file}",
+    }
+
+
 def render_locale_switcher(locale: str, indent: str = "          ", wrapper_class: str = "") -> str:
+    ui_strings = localized_ui_strings(locale)
     options = []
     for candidate in LOCALES:
         selected = ' selected="selected"' if candidate == locale else ""
@@ -101,8 +273,8 @@ def render_locale_switcher(locale: str, indent: str = "          ", wrapper_clas
     return "\n".join(
         [
             f'{indent}<label class="{classes}">',
-            f'{indent}  <span class="visually-hidden">Choose language</span>',
-            f'{indent}  <select class="locale-switcher" aria-label="Choose language">',
+            f'{indent}  <span class="visually-hidden">{escape_html(ui_strings["choose_language"])}</span>',
+            f'{indent}  <select class="locale-switcher" aria-label="{escape_html(ui_strings["choose_language"])}">',
             *options,
             f"{indent}  </select>",
             f"{indent}</label>",
@@ -237,6 +409,10 @@ def render_privacy_main(locale: str) -> str:
 
 
 def render_homepage(locale: str) -> str:
+    translation = get_secondary_page_translation(locale)
+    shell = translation["shell"]
+    ui_strings = localized_ui_strings(locale)
+    badge_paths = app_store_badge_paths(locale)
     description = parse_description(locale)
     title = read_metadata(locale, "name.txt")
     subtitle = read_metadata(locale, "subtitle.txt")
@@ -281,30 +457,30 @@ def render_homepage(locale: str) -> str:
   <body class="page page-1">
     <header class="top-nav">
       <div class="nav-shell">
-        <a class="nav-brand" href="/{locale}/" aria-label="40 Below home">
+        <a class="nav-brand" href="/{locale}/" aria-label="{escape_html(ui_strings["home"])}">
           <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
           <span>40 Below</span>
         </a>
-        <nav class="nav-actions" aria-label="Primary">
-          <a class="nav-link" href="/{locale}/support.html">Support</a>
+        <nav class="nav-actions" aria-label="{escape_html(ui_strings["primary_nav"])}">
+          <a class="nav-link" href="/{locale}/support.html">{escape_html(shell["nav_support"])}</a>
           <a
             class="nav-store-link"
             href="{APP_STORE_URL}"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download 40 Below on the App Store"
+            aria-label="{escape_html(ui_strings["app_store"])}"
           >
             <img
               class="badge-light"
-              src="../Download-on-the-App-Store/US/Download_on_App_Store/Black_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-              alt="Download on the App Store"
+              src="{badge_paths["light"]}"
+              alt="{escape_html(ui_strings["app_store"])}"
               width="152"
               height="52"
             />
             <img
               class="badge-dark"
-              src="../Download-on-the-App-Store/US/Download_on_App_Store/White_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
-              alt="Download on the App Store"
+              src="{badge_paths["dark"]}"
+              alt="{escape_html(ui_strings["app_store"])}"
               width="152"
               height="52"
             />
@@ -456,7 +632,7 @@ def render_homepage(locale: str) -> str:
     <footer class="site-footer">
       <div class="footer-stack">
         <p>{escape_html(COPYRIGHT)}</p>
-        <a class="footer-link" href="/{locale}/privacy-policy.html">Privacy Policy</a>
+        <a class="footer-link" href="/{locale}/privacy-policy.html">{escape_html(shell["footer_privacy"])}</a>
 {footer_locale_switcher}
       </div>
     </footer>
@@ -471,6 +647,8 @@ def render_secondary_page(locale: str, page_kind: str) -> str:
     translation = get_secondary_page_translation(locale)
     shell = translation["shell"]
     page = translation[page_kind]
+    ui_strings = localized_ui_strings(locale)
+    badge_paths = app_store_badge_paths(locale)
     hreflang_links = render_hreflang_links(page_kind)
     text_direction = locale_text_direction(locale)
     footer_locale_switcher = render_locale_switcher(
@@ -499,30 +677,30 @@ def render_secondary_page(locale: str, page_kind: str) -> str:
   <body class="page page-1">
     <header class="top-nav">
       <div class="nav-shell">
-        <a class="nav-brand" href="/{locale}/" aria-label="40 Below home">
+        <a class="nav-brand" href="/{locale}/" aria-label="{escape_html(ui_strings["home"])}">
           <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
           <span>40 Below</span>
         </a>
-        <nav class="nav-actions" aria-label="Primary">
+        <nav class="nav-actions" aria-label="{escape_html(ui_strings["primary_nav"])}">
           <a class="nav-link" href="/{locale}/support.html"{' aria-current="page"' if page_kind == "support" else ""}>{escape_html(shell["nav_support"])}</a>
           <a
             class="nav-store-link"
             href="{APP_STORE_URL}"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download 40 Below on the App Store"
+            aria-label="{escape_html(ui_strings["app_store"])}"
           >
             <img
               class="badge-light"
-              src="../Download-on-the-App-Store/US/Download_on_App_Store/Black_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-              alt="Download on the App Store"
+              src="{badge_paths["light"]}"
+              alt="{escape_html(ui_strings["app_store"])}"
               width="152"
               height="52"
             />
             <img
               class="badge-dark"
-              src="../Download-on-the-App-Store/US/Download_on_App_Store/White_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
-              alt="Download on the App Store"
+              src="{badge_paths["dark"]}"
+              alt="{escape_html(ui_strings["app_store"])}"
               width="152"
               height="52"
             />
