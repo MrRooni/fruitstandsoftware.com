@@ -436,12 +436,35 @@ def render_secondary_page(locale: str, page_kind: str, title: str, description: 
 
 def render_root_redirect() -> str:
     available_locales = javascript_value(LOCALES)
+    title = read_metadata(DEFAULT_LOCALE, "name.txt")
+    promotional_text = read_metadata(DEFAULT_LOCALE, "promotional_text.txt")
+    social_image_url = f"{SITE_URL}/SocialImage.png"
     return f"""<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>40 Below</title>
+    <title>{escape_html(title)}</title>
+    <meta
+      name="description"
+      content="{escape_html(promotional_text)}"
+    />
+    <meta property="og:title" content="{escape_html(title)}" />
+    <meta
+      property="og:description"
+      content="{escape_html(promotional_text)}"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{SITE_URL}/" />
+    <meta property="og:image" content="{social_image_url}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{escape_html(title)}" />
+    <meta
+      name="twitter:description"
+      content="{escape_html(promotional_text)}"
+    />
+    <meta name="twitter:image" content="{social_image_url}" />
+    <link rel="canonical" href="{SITE_URL}/" />
     <meta http-equiv="refresh" content="0; url=/{DEFAULT_LOCALE}/" />
     <script>
       const DEFAULT_LOCALE = "{DEFAULT_LOCALE}";
