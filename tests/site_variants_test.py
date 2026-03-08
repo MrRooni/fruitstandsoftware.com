@@ -16,6 +16,25 @@ class SiteVariantsTest(unittest.TestCase):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
 
         self.assertIn('<html lang="en">', html)
+        self.assertIn('name="description"', html)
+        self.assertIn(
+            'content="See the temperature where you are in Fahrenheit and Celsius, check the hourly forecast, and share a clean temperature card in seconds."',
+            html,
+        )
+        self.assertIn('<meta property="og:title" content="40 Below" />', html)
+        self.assertIn('property="og:description"', html)
+        self.assertIn('<meta property="og:type" content="website" />', html)
+        self.assertIn('<meta property="og:url" content="https://fruitstandsoftware.com/" />', html)
+        self.assertIn(
+            '<meta property="og:image" content="https://fruitstandsoftware.com/SocialImage.png" />',
+            html,
+        )
+        self.assertIn('<meta name="twitter:card" content="summary_large_image" />', html)
+        self.assertIn(
+            '<meta name="twitter:image" content="https://fruitstandsoftware.com/SocialImage.png" />',
+            html,
+        )
+        self.assertIn('<link rel="canonical" href="https://fruitstandsoftware.com/" />', html)
         self.assertIn("Redirecting to the best language for your browser", html)
         self.assertIn('http-equiv="refresh"', html)
         self.assertIn('content="0; url=/en-US/"', html)
