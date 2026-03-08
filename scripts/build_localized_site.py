@@ -8,6 +8,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 METADATA_DIR = ROOT / "metadata"
+SECONDARY_PAGE_TRANSLATIONS = json.loads(
+    (ROOT / "secondary-page-translations.json").read_text(encoding="utf-8")
+)
 DEFAULT_LOCALE = "en-US"
 SITE_URL = "https://fruitstandsoftware.com"
 COPYRIGHT = "2026 © Fruit Stand Software, LLC"
@@ -80,6 +83,10 @@ def locale_switcher_label(locale: str) -> str:
     return locale[:2].upper()
 
 
+def locale_text_direction(locale: str) -> str:
+    return "rtl" if locale.split("-")[0] in {"ar", "fa", "he", "ur"} else "ltr"
+
+
 def render_locale_switcher(locale: str, indent: str = "          ", wrapper_class: str = "") -> str:
     options = []
     for candidate in LOCALES:
@@ -119,6 +126,116 @@ def render_feature_list(features: list[str], indent: str) -> str:
     return "\n".join(f"{indent}<li>{escape_html(feature)}</li>" for feature in features)
 
 
+def get_secondary_page_translation(locale: str) -> dict[str, object]:
+    return SECONDARY_PAGE_TRANSLATIONS.get(locale, SECONDARY_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
+
+
+def render_paragraphs(paragraphs: list[str], indent: str) -> str:
+    return "\n".join(f"{indent}<p>{escape_html(paragraph)}</p>" for paragraph in paragraphs)
+
+
+def render_list_items(items: list[str], indent: str) -> str:
+    return "\n".join(f"{indent}<li>{escape_html(item)}</li>" for item in items)
+
+
+def render_support_main(locale: str) -> str:
+    translation = get_secondary_page_translation(locale)
+    support = translation["support"]
+    email_link = '<a href="mailto:support@fruitstandsoftware.com">support@fruitstandsoftware.com</a>'
+    body = escape_html(support["body"]).replace("{email}", email_link)
+    subject = html.escape(str(support["subject"]).replace(" ", "%20"), quote=True)
+
+    return f"""      <section class="secondary-header-card reveal">
+        <p>{escape_html(support["eyebrow"])}</p>
+        <h1 class="secondary-page-title">{escape_html(support["title"])}</h1>
+      </section>
+
+      <section class="support-grid">
+        <div class="support-card reveal">
+          <p>{body}</p>
+          <div class="support-actions">
+            <a class="support-button" href="mailto:support@fruitstandsoftware.com?subject={subject}">
+              {escape_html(support["button"])}
+            </a>
+          </div>
+        </div>
+      </section>"""
+
+
+def render_privacy_sections(sections: list[dict[str, object]]) -> str:
+    rendered_sections = []
+    for section in sections:
+        parts = [
+            '              <section class="policy-block">',
+            f'                <h3>{escape_html(section["title"])}</h3>',
+        ]
+        if section.get("subtitle"):
+            parts.append(f'                <h4>{escape_html(section["subtitle"])}</h4>')
+        if section.get("paragraphs"):
+            parts.append(render_paragraphs(section["paragraphs"], "                "))
+        if section.get("list"):
+            parts.append("                <ul>")
+            parts.append(render_list_items(section["list"], "                  "))
+            parts.append("                </ul>")
+        if section.get("closing"):
+            parts.append(f'                <p>{escape_html(section["closing"])}</p>')
+        parts.append("              </section>")
+        rendered_sections.append("\n".join(parts))
+
+    return "\n\n".join(rendered_sections)
+
+
+def render_privacy_aside(aside: dict[str, object]) -> str:
+    rows = "\n".join(
+        [
+            "                <div class=\"nutrition-row\">"
+            f"\n                  <span>{escape_html(row['label'])}</span>"
+            f"\n                  <strong>{escape_html(row['value'])}</strong>"
+            "\n                </div>"
+            for row in aside["rows"]
+        ]
+    )
+
+    return f"""            <aside class="policy-aside-card reveal" aria-label="{escape_html(aside["aria_label"])}">
+              <section class="nutrition-label">
+                <p class="nutrition-heading">{escape_html(aside["heading"])}</p>
+                <p class="nutrition-subhead">{escape_html(aside["subhead"])}</p>
+                <p class="nutrition-serving">{escape_html(aside["serving"])}</p>
+                <p class="nutrition-rule thick"></p>
+                <p class="nutrition-big">{escape_html(aside["big_label"])} <span>{escape_html(aside["big_value"])}</span></p>
+                <p class="nutrition-rule"></p>
+{rows}
+                <p class="nutrition-footnote">
+                  {escape_html(aside["footnote"])}
+                </p>
+              </section>
+            </aside>"""
+
+
+def render_privacy_main(locale: str) -> str:
+    translation = get_secondary_page_translation(locale)
+    privacy = translation["privacy"]
+    intro_html = render_paragraphs(privacy["intro"], "                ")
+    sections_html = render_privacy_sections(privacy["sections"])
+    aside_html = render_privacy_aside(privacy["aside"])
+
+    return f"""      <section class="secondary-header-card reveal">
+        <p>{escape_html(privacy["eyebrow"])}</p>
+        <h1 class="secondary-page-title">{escape_html(privacy["title"])}</h1>
+        <p class="policy-updated"><strong>{escape_html(privacy["updated_label"])}</strong> {escape_html(privacy["updated_value"])}</p>
+      </section>
+
+      <div class="policy-page-grid">
+            <article class="policy-main-card reveal">
+{intro_html}
+
+{sections_html}
+            </article>
+
+{aside_html}
+      </div>"""
+
+
 def render_homepage(locale: str) -> str:
     description = parse_description(locale)
     title = read_metadata(locale, "name.txt")
@@ -127,6 +244,7 @@ def render_homepage(locale: str) -> str:
     keywords = read_metadata(locale, "keywords.txt")
     release_notes = read_metadata(locale, "release_notes.txt")
     hreflang_links = render_hreflang_links("home")
+    text_direction = locale_text_direction(locale)
     footer_locale_switcher = render_locale_switcher(
         locale, indent="        ", wrapper_class="footer-locale-switcher"
     )
@@ -135,7 +253,7 @@ def render_homepage(locale: str) -> str:
     screenshot_alt = escape_html(f"{title} — {subtitle}")
 
     return f"""<!doctype html>
-<html lang="{locale}">
+<html lang="{locale}" dir="{text_direction}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -349,30 +467,27 @@ def render_homepage(locale: str) -> str:
 """
 
 
-def extract_main_content(filename: str) -> str:
-    source = (ROOT / filename).read_text(encoding="utf-8")
-    match = re.search(r'<main id="main" class="secondary-shell">(.*?)</main>', source, re.S)
-    if not match:
-        raise RuntimeError(f"Could not extract main content from {filename}")
-    return match.group(1).strip()
-
-
-def render_secondary_page(locale: str, page_kind: str, title: str, description: str, body: str) -> str:
+def render_secondary_page(locale: str, page_kind: str) -> str:
+    translation = get_secondary_page_translation(locale)
+    shell = translation["shell"]
+    page = translation[page_kind]
     hreflang_links = render_hreflang_links(page_kind)
+    text_direction = locale_text_direction(locale)
     footer_locale_switcher = render_locale_switcher(
         locale, indent="        ", wrapper_class="footer-locale-switcher"
     )
     footer_link = f"/{locale}/privacy-policy.html"
+    main_content = render_support_main(locale) if page_kind == "support" else render_privacy_main(locale)
 
     return f"""<!doctype html>
-<html lang="{locale}">
+<html lang="{locale}" dir="{text_direction}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <title>{escape_html(page["page_title"])}</title>
     <meta
       name="description"
-      content="{description}"
+      content="{escape_html(page["meta_description"])}"
     />
     <link rel="canonical" href="{canonical_url(locale, page_kind)}" />
 {hreflang_links}
@@ -389,7 +504,7 @@ def render_secondary_page(locale: str, page_kind: str, title: str, description: 
           <span>40 Below</span>
         </a>
         <nav class="nav-actions" aria-label="Primary">
-          <a class="nav-link" href="/{locale}/support.html"{' aria-current="page"' if page_kind == "support" else ""}>Support</a>
+          <a class="nav-link" href="/{locale}/support.html"{' aria-current="page"' if page_kind == "support" else ""}>{escape_html(shell["nav_support"])}</a>
           <a
             class="nav-store-link"
             href="{APP_STORE_URL}"
@@ -417,13 +532,13 @@ def render_secondary_page(locale: str, page_kind: str, title: str, description: 
     </header>
 
     <main id="main" class="secondary-shell">
-{body}
+{main_content}
     </main>
 
     <footer class="site-footer secondary-footer">
       <div class="footer-stack">
         <p>© <span id="year"></span> Fruit Stand Software</p>
-        <a class="footer-link" href="{footer_link}">Privacy Policy</a>
+        <a class="footer-link" href="{footer_link}">{escape_html(shell["footer_privacy"])}</a>
 {footer_locale_switcher}
       </div>
     </footer>
@@ -533,9 +648,6 @@ def render_root_redirect() -> str:
 
 
 def build() -> None:
-    support_body = extract_main_content("support.html")
-    privacy_body = extract_main_content("privacy-policy.html")
-
     for locale in LOCALES:
         locale_dir = ROOT / locale
         locale_dir.mkdir(exist_ok=True)
@@ -543,26 +655,8 @@ def build() -> None:
         site_data_path = locale_dir / "site-data.js"
         if site_data_path.exists():
             site_data_path.unlink()
-        (locale_dir / "support.html").write_text(
-            render_secondary_page(
-                locale,
-                "support",
-                "Support | Fruit Stand Software",
-                "Support for 40 Below. Email support@fruitstandsoftware.com if you need help or run into trouble.",
-                support_body,
-            ),
-            encoding="utf-8",
-        )
-        (locale_dir / "privacy-policy.html").write_text(
-            render_secondary_page(
-                locale,
-                "privacy",
-                "Privacy Policy | Fruit Stand Software",
-                "Privacy policy for 40 Below by Fruit Stand Software.",
-                privacy_body,
-            ),
-            encoding="utf-8",
-        )
+        (locale_dir / "support.html").write_text(render_secondary_page(locale, "support"), encoding="utf-8")
+        (locale_dir / "privacy-policy.html").write_text(render_secondary_page(locale, "privacy"), encoding="utf-8")
 
     (ROOT / "index.html").write_text(render_root_redirect(), encoding="utf-8")
 

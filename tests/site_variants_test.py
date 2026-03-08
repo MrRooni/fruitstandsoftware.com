@@ -1,3 +1,4 @@
+import json
 import pathlib
 import unittest
 
@@ -9,6 +10,9 @@ LOCALES = sorted(
     if path.is_dir() and path.name != "review_information"
 )
 DEFAULT_LOCALE = "en-US"
+SECONDARY_TRANSLATIONS = json.loads(
+    (ROOT / "secondary-page-translations.json").read_text(encoding="utf-8")
+)
 
 
 class SiteVariantsTest(unittest.TestCase):
@@ -48,6 +52,7 @@ class SiteVariantsTest(unittest.TestCase):
 
     def test_all_locales_have_generated_pages(self):
         self.assertGreater(len(LOCALES), 1)
+        self.assertEqual(sorted(SECONDARY_TRANSLATIONS), LOCALES)
 
         for locale in LOCALES:
             locale_dir = ROOT / locale
@@ -56,8 +61,10 @@ class SiteVariantsTest(unittest.TestCase):
             homepage = (locale_dir / "index.html").read_text(encoding="utf-8")
             support = (locale_dir / "support.html").read_text(encoding="utf-8")
             privacy = (locale_dir / "privacy-policy.html").read_text(encoding="utf-8")
+            translation = SECONDARY_TRANSLATIONS[locale]
+            direction = "rtl" if locale.split("-")[0] in {"ar", "fa", "he", "ur"} else "ltr"
 
-            self.assertIn(f'<html lang="{locale}">', homepage)
+            self.assertIn(f'<html lang="{locale}" dir="{direction}">', homepage)
             self.assertIn(f'rel="canonical" href="https://fruitstandsoftware.com/{locale}/"', homepage)
             self.assertIn("rel=\"alternate\" hreflang=\"x-default\" href=\"https://fruitstandsoftware.com/\"", homepage)
             self.assertNotIn('src="site-data.js"', homepage)
@@ -70,14 +77,18 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertNotIn('data-site="', homepage)
             self.assertNotIn("window.siteData", homepage)
 
-            self.assertIn(f'<html lang="{locale}">', support)
-            self.assertIn(f'<html lang="{locale}">', privacy)
+            self.assertIn(f'<html lang="{locale}" dir="{direction}">', support)
+            self.assertIn(f'<html lang="{locale}" dir="{direction}">', privacy)
             self.assertIn('class="locale-switcher"', support)
             self.assertIn('class="locale-switcher"', privacy)
             self.assertIn("footer-locale-switcher", support)
             self.assertIn("footer-locale-switcher", privacy)
-            self.assertIn("Need help with 40 Below?", support)
-            self.assertIn("Privacy Policy", privacy)
+            self.assertIn("secondary-page-title", support)
+            self.assertIn("policy-page-grid", privacy)
+            self.assertIn(translation["support"]["title"], support)
+            self.assertIn(translation["privacy"]["title"], privacy)
+            self.assertIn(translation["shell"]["nav_support"], support)
+            self.assertIn(translation["shell"]["footer_privacy"], privacy)
 
             for alternate_locale in LOCALES:
                 homepage_link = (
@@ -100,6 +111,10 @@ class SiteVariantsTest(unittest.TestCase):
         english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
         spanish_homepage = (ROOT / "es-ES" / "index.html").read_text(encoding="utf-8")
         british_homepage = (ROOT / "en-GB" / "index.html").read_text(encoding="utf-8")
+        japanese_support = (ROOT / "ja" / "support.html").read_text(encoding="utf-8")
+        korean_privacy = (ROOT / "ko" / "privacy-policy.html").read_text(encoding="utf-8")
+        arabic_privacy = (ROOT / "ar-SA" / "privacy-policy.html").read_text(encoding="utf-8")
+        spanish_support = (ROOT / "es-ES" / "support.html").read_text(encoding="utf-8")
 
         self.assertIn("Local Temperature in °F & °C", english_homepage)
         self.assertIn("Temperatura local en °F y °C", spanish_homepage)
@@ -110,6 +125,16 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn('option value="en-GB">UK</option>', english_homepage)
         self.assertIn('option value="nl-NL">NL</option>', english_homepage)
         self.assertIn('option value="it">IT</option>', english_homepage)
+        self.assertIn("40 Belowのサポートが必要ですか？", japanese_support)
+        self.assertIn("サポートにメールする", japanese_support)
+        self.assertIn("개인정보 처리방침", korean_privacy)
+        self.assertIn("위치 정보", korean_privacy)
+        self.assertIn("سياسة الخصوصية", arabic_privacy)
+        self.assertIn("الموقع", arabic_privacy)
+        self.assertIn("¿Necesitas ayuda con 40 Below?", spanish_support)
+        self.assertIn("Enviar un correo a soporte", spanish_support)
+        self.assertNotIn("Need help with 40 Below?", japanese_support)
+        self.assertNotIn("Privacy Policy", korean_privacy)
 
     def test_localized_homepage_content_is_present_in_html(self):
         english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
@@ -147,6 +172,8 @@ class SiteVariantsTest(unittest.TestCase):
     def test_generator_and_docs_exist(self):
         generator = ROOT / "scripts" / "build_localized_site.py"
         self.assertTrue(generator.exists(), "Missing localization generator")
+        translations = ROOT / "secondary-page-translations.json"
+        self.assertTrue(translations.exists(), "Missing secondary page translation source")
 
         generator_source = generator.read_text(encoding="utf-8")
         self.assertIn("metadata", generator_source)
@@ -154,6 +181,7 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("release_notes.txt", generator_source)
         self.assertIn("support.html", generator_source)
         self.assertIn("privacy-policy.html", generator_source)
+        self.assertIn("secondary-page-translations.json", generator_source)
 
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("python3 scripts/build_localized_site.py", readme)
