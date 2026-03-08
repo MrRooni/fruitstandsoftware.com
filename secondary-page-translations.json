@@ -1,0 +1,3278 @@
+{
+  "ar-SA": {
+    "shell": {
+      "nav_support": "الدعم",
+      "footer_privacy": "سياسة الخصوصية"
+    },
+    "support": {
+      "page_title": "الدعم | Fruit Stand Software",
+      "meta_description": "الدعم الخاص بتطبيق 40 Below. راسل support@fruitstandsoftware.com إذا كنت تحتاج إلى مساعدة أو واجهت مشكلة.",
+      "eyebrow": "الدعم",
+      "title": "هل تحتاج إلى مساعدة بشأن 40 Below؟",
+      "body": "راسل {email} إذا واجهت مشكلة أو كنت تحتاج إلى مساعدة.",
+      "button": "إرسال رسالة إلى الدعم",
+      "subject": "دعم 40 Below"
+    },
+    "privacy": {
+      "page_title": "سياسة الخصوصية | Fruit Stand Software",
+      "meta_description": "سياسة الخصوصية لتطبيق 40 Below من Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "سياسة الخصوصية",
+      "updated_label": "آخر تحديث:",
+      "updated_value": "22 فبراير 2026",
+      "intro": [
+        "صُمم تطبيق 40 Below من Fruit Stand Software لعرض معلومات الطقس الخاصة بموقعك ومساعدتك على مشاركة تلك المعلومات إذا رغبت في ذلك.",
+        "توضح هذه السياسة بلغة واضحة ما المعلومات التي يستخدمها التطبيق وكيف يتم التعامل معها.",
+        "الخلاصة السريعة هي أننا لا نجمع أي شيء، ولا يُرسل أي شيء إلينا."
+      ],
+      "sections": [
+        {
+          "title": "المعلومات التي نستخدمها",
+          "subtitle": "الموقع",
+          "paragraphs": [
+            "يستخدم 40 Below موقعك على جهازك لعرض حالة الطقس في المكان الذي توجد فيه.",
+            "يمكنك إيقاف الوصول إلى الموقع في أي وقت من إعدادات جهازك."
+          ],
+          "list": [
+            "لا يصل التطبيق إلى موقعك إلا إذا منحت الإذن بذلك.",
+            "يُستخدم الموقع لطلب بيانات الطقس.",
+            "لا نرسل موقعك إلينا ولا نخزنه لدينا.",
+            "لا يُشارك الموقع إلا مع مزود بيانات الطقس من أجل جلب التوقعات."
+          ]
+        },
+        {
+          "title": "إعدادات التطبيق وتفضيلاته",
+          "paragraphs": [
+            "قد يخزن التطبيق أجزاء صغيرة من المعلومات على جهازك، مثل:",
+            "تبقى هذه المعلومات على جهازك ولا تتم مشاركتها معنا."
+          ],
+          "list": [
+            "آخر درجات حرارة معروفة",
+            "آخر معلومات عن الموقع الذي تمت مشاهدته إن وُجدت، مثل الإحداثيات وأسماء الأماكن"
+          ]
+        },
+        {
+          "title": "الصور المشتركة",
+          "paragraphs": [
+            "يمكن لتطبيق 40 Below إنشاء صورة لمعلومات الطقس إذا اخترت مشاركتها."
+          ],
+          "list": [
+            "يتم إنشاء الصور محليًا على جهازك.",
+            "لا نستلم الصور المشتركة ولا نخزنها.",
+            "إذا شاركت صورة، فسيتم التعامل معها بواسطة التطبيق أو الخدمة التي تختارها، مثل الرسائل أو البريد أو وسائل التواصل، وليس من قبلنا."
+          ]
+        },
+        {
+          "title": "المعلومات التي نجمعها",
+          "paragraphs": [
+            "يجمع 40 Below المعلومات التالية عنك:"
+          ],
+          "list": [
+            "لا شيء."
+          ],
+          "closing": "نحن لا نبيع البيانات الشخصية ولا نؤجرها ولا نتاجر بها."
+        },
+        {
+          "title": "خدمات الجهات الخارجية",
+          "paragraphs": [
+            "لا يتضمن 40 Below أيًا من الآتي:"
+          ],
+          "list": [
+            "شبكات إعلانية",
+            "تتبع من جهات خارجية",
+            "وسطاء بيانات",
+            "حِزم تطوير برمجيات لوسائل التواصل الاجتماعي"
+          ],
+          "closing": "إذا تغير ذلك، فسيتم تحديث هذه السياسة."
+        },
+        {
+          "title": "خصوصية الأطفال",
+          "paragraphs": [
+            "لا يجمع 40 Below معلومات شخصية من الأطفال. وبما أن التطبيق لا يجمع بيانات شخصية، فهو مناسب للجمهور العام."
+          ]
+        },
+        {
+          "title": "تخزين البيانات وأمانها",
+          "paragraphs": [
+            "تُخزن جميع بيانات التطبيق، مثل الإعدادات والتفضيلات، محليًا على جهازك. نحن لا نشغل خوادم لتخزين بيانات المستخدمين."
+          ]
+        },
+        {
+          "title": "خياراتك",
+          "paragraphs": [
+            "يمكنك التحكم في الخصوصية في أي وقت:"
+          ],
+          "list": [
+            "إيقاف الوصول إلى الموقع من إعدادات الجهاز",
+            "حذف التطبيق لإزالة جميع التفضيلات المخزنة"
+          ],
+          "closing": "يؤدي حذف التطبيق إلى إزالة جميع البيانات المحلية."
+        },
+        {
+          "title": "التغييرات على هذه السياسة",
+          "paragraphs": [
+            "إذا تغيرت ممارسات الخصوصية في التطبيق، فسيتم تحديث هذه السياسة. وسيعكس تاريخ \"آخر تحديث\" في أعلى الصفحة أحدث نسخة دائمًا."
+          ]
+        },
+        {
+          "title": "ملخص خصوصية App Store",
+          "paragraphs": [
+            "لأغراض الشفافية في App Store:"
+          ],
+          "list": [
+            "البيانات المرتبطة بك: لا يوجد",
+            "البيانات المستخدمة للتتبع: لا يوجد",
+            "البيانات التي يتم جمعها: الموقع، ويُستخدم فقط لتوفير الطقس",
+            "البيانات المخزنة بواسطة المطور: لا يوجد"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "ملصق حقائق الخصوصية",
+        "heading": "حقائق الخصوصية",
+        "subhead": "40 Below",
+        "serving": "لكل استخدام للتطبيق",
+        "big_label": "البيانات التي يتم جمعها",
+        "big_value": "في الحد الأدنى",
+        "rows": [
+          {
+            "label": "البيانات المرتبطة بك",
+            "value": "0%"
+          },
+          {
+            "label": "التتبع بين التطبيقات",
+            "value": "0%"
+          },
+          {
+            "label": "الإعلانات / الوسطاء",
+            "value": "0%"
+          },
+          {
+            "label": "استخدام بيانات الموقع",
+            "value": "للطقس فقط"
+          },
+          {
+            "label": "الصور المشتركة",
+            "value": "على الجهاز"
+          },
+          {
+            "label": "حسابات المستخدمين",
+            "value": "لا يوجد"
+          },
+          {
+            "label": "تخزين المطور",
+            "value": "لا يوجد"
+          }
+        ],
+        "footnote": "* تنسيق الملخص مستوحى من بطاقات الحقائق الغذائية. راجع نص السياسة لمعرفة التفاصيل الكاملة."
+      }
+    }
+  },
+  "da": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Privatlivspolitik"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support for 40 Below. Skriv til support@fruitstandsoftware.com, hvis du har brug for hjælp eller oplever problemer.",
+      "eyebrow": "Support",
+      "title": "Har du brug for hjælp til 40 Below?",
+      "body": "Skriv til {email}, hvis du oplever problemer eller har brug for hjælp.",
+      "button": "Skriv til support",
+      "subject": "40 Below support"
+    },
+    "privacy": {
+      "page_title": "Privatlivspolitik | Fruit Stand Software",
+      "meta_description": "Privatlivspolitik for 40 Below fra Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Privatlivspolitik",
+      "updated_label": "Senest opdateret:",
+      "updated_value": "22. februar 2026",
+      "intro": [
+        "40 Below fra Fruit Stand Software er lavet til at vise vejroplysninger for din placering og hjælpe dig med at dele dem, hvis du ønsker det.",
+        "Denne politik forklarer med klare ord, hvilke oplysninger appen bruger, og hvordan de håndteres.",
+        "Den korte version er, at vi ikke indsamler noget, og at intet sendes til os."
+      ],
+      "sections": [
+        {
+          "title": "Oplysninger vi bruger",
+          "subtitle": "Placering",
+          "paragraphs": [
+            "40 Below bruger din placering på din enhed til at vise vejret dér, hvor du er.",
+            "Du kan altid slå adgang til placering fra i indstillingerne på din enhed."
+          ],
+          "list": [
+            "Appen bruger kun din placering, hvis du giver tilladelse.",
+            "Placeringen bruges til at hente vejrinformation.",
+            "Din placering sendes ikke til os og gemmes ikke af os.",
+            "Placeringen deles kun med vejrudbyderen for at hente prognoser."
+          ]
+        },
+        {
+          "title": "Appindstillinger og præferencer",
+          "paragraphs": [
+            "Appen kan gemme små mængder information på din enhed, for eksempel:",
+            "Disse oplysninger bliver på din enhed og deles ikke med os."
+          ],
+          "list": [
+            "Senest kendte temperaturer",
+            "Senest viste placeringsoplysninger, hvis de er tilgængelige, såsom koordinater og stednavne"
+          ]
+        },
+        {
+          "title": "Delte billeder",
+          "paragraphs": [
+            "40 Below kan lave et billede af vejroplysninger, hvis du vælger at dele det."
+          ],
+          "list": [
+            "Billeder oprettes lokalt på din enhed.",
+            "Vi modtager eller gemmer ikke delte billeder.",
+            "Hvis du deler et billede, håndteres det af den app eller tjeneste, du vælger, som Beskeder, Mail eller sociale medier, ikke af os."
+          ]
+        },
+        {
+          "title": "Oplysninger vi indsamler",
+          "paragraphs": [
+            "40 Below indsamler følgende oplysninger om dig:"
+          ],
+          "list": [
+            "Intet."
+          ],
+          "closing": "Vi sælger, udlejer eller handler ikke med persondata."
+        },
+        {
+          "title": "Tredjepartstjenester",
+          "paragraphs": [
+            "40 Below indeholder ikke:"
+          ],
+          "list": [
+            "Annoncenetværk",
+            "Sporing fra tredjeparter",
+            "Datamæglere",
+            "Sociale medie-SDK'er"
+          ],
+          "closing": "Hvis det ændrer sig, bliver denne politik opdateret."
+        },
+        {
+          "title": "Børns privatliv",
+          "paragraphs": [
+            "40 Below indsamler ikke personlige oplysninger fra børn. Fordi appen ikke indsamler persondata, er den egnet til et bredt publikum."
+          ]
+        },
+        {
+          "title": "Lagring og sikkerhed",
+          "paragraphs": [
+            "Alle appdata, såsom indstillinger og præferencer, gemmes lokalt på din enhed. Vi driver ikke servere, der gemmer brugerdata."
+          ]
+        },
+        {
+          "title": "Dine valg",
+          "paragraphs": [
+            "Du kan styre privatlivet når som helst:"
+          ],
+          "list": [
+            "Slå adgang til placering fra i enhedsindstillinger",
+            "Slet appen for at fjerne alle gemte præferencer"
+          ],
+          "closing": "Når du sletter appen, slettes alle lokale data."
+        },
+        {
+          "title": "Ændringer i denne politik",
+          "paragraphs": [
+            "Hvis appens privatlivspraksis ændrer sig, bliver denne politik opdateret. Datoen \"Senest opdateret\" øverst vil altid vise den nyeste version."
+          ]
+        },
+        {
+          "title": "App Store-oversigt over privatliv",
+          "paragraphs": [
+            "For gennemsigtighed i App Store:"
+          ],
+          "list": [
+            "Data knyttet til dig: Ingen",
+            "Data brugt til sporing: Ingen",
+            "Data der indsamles: Placering, kun for at vise vejret",
+            "Data lagret af udvikleren: Ingen"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Privatlivsfakta",
+        "heading": "Privatlivsfakta",
+        "subhead": "40 Below",
+        "serving": "Per brug af appen",
+        "big_label": "Indsamlede data",
+        "big_value": "Minimal",
+        "rows": [
+          {
+            "label": "Data knyttet til dig",
+            "value": "0%"
+          },
+          {
+            "label": "Sporing på tværs af apps",
+            "value": "0%"
+          },
+          {
+            "label": "Annoncer / mæglere",
+            "value": "0%"
+          },
+          {
+            "label": "Brug af lokationsdata",
+            "value": "Kun vejr"
+          },
+          {
+            "label": "Delte billeder",
+            "value": "På enheden"
+          },
+          {
+            "label": "Brugerkonti",
+            "value": "Ingen"
+          },
+          {
+            "label": "Udviklerlagring",
+            "value": "Ingen"
+          }
+        ],
+        "footnote": "* Oversigten er inspireret af næringsdeklarationer. Se politikteksten for alle detaljer."
+      }
+    }
+  },
+  "de-DE": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Datenschutz"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support für 40 Below. Schreib an support@fruitstandsoftware.com, wenn du Hilfe brauchst oder ein Problem hast.",
+      "eyebrow": "Support",
+      "title": "Brauchst du Hilfe mit 40 Below?",
+      "body": "Schreib an {email}, wenn du ein Problem hast oder Hilfe brauchst.",
+      "button": "Support per E-Mail",
+      "subject": "40 Below Support"
+    },
+    "privacy": {
+      "page_title": "Datenschutzerklärung | Fruit Stand Software",
+      "meta_description": "Datenschutzerklärung für 40 Below von Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Datenschutzerklärung",
+      "updated_label": "Zuletzt aktualisiert:",
+      "updated_value": "22. Februar 2026",
+      "intro": [
+        "40 Below von Fruit Stand Software wurde entwickelt, um Wetterinformationen für deinen Standort anzuzeigen und dir beim Teilen dieser Informationen zu helfen, wenn du das möchtest.",
+        "Diese Erklärung erläutert in klarer Sprache, welche Informationen die App verwendet und wie damit umgegangen wird.",
+        "Die Kurzfassung lautet: Wir sammeln nichts und es wird nichts an uns gesendet."
+      ],
+      "sections": [
+        {
+          "title": "Welche Informationen wir verwenden",
+          "subtitle": "Standort",
+          "paragraphs": [
+            "40 Below verwendet den Standort deines Geräts, um dir die Wetterbedingungen an dem Ort zu zeigen, an dem du dich befindest.",
+            "Du kannst den Standortzugriff jederzeit in den Geräteeinstellungen deaktivieren."
+          ],
+          "list": [
+            "Die App greift nur auf deinen Standort zu, wenn du das erlaubst.",
+            "Der Standort wird verwendet, um Wetterdaten anzufordern.",
+            "Dein Standort wird nicht an uns gesendet und nicht von uns gespeichert.",
+            "Der Standort wird nur mit dem Wetterdatenanbieter geteilt, um Vorhersagen abzurufen."
+          ]
+        },
+        {
+          "title": "App-Einstellungen und Präferenzen",
+          "paragraphs": [
+            "Die App kann kleine Datenmengen auf deinem Gerät speichern, zum Beispiel:",
+            "Diese Informationen bleiben auf deinem Gerät und werden nicht mit uns geteilt."
+          ],
+          "list": [
+            "Zuletzt bekannte Temperaturen",
+            "Zuletzt angezeigte Standortinformationen, sofern verfügbar, etwa Koordinaten und Ortsnamen"
+          ]
+        },
+        {
+          "title": "Geteilte Bilder",
+          "paragraphs": [
+            "40 Below kann ein Bild mit Wetterinformationen erstellen, wenn du es teilen möchtest."
+          ],
+          "list": [
+            "Bilder werden lokal auf deinem Gerät erzeugt.",
+            "Wir erhalten oder speichern keine geteilten Bilder.",
+            "Wenn du ein Bild teilst, wird es von der App oder dem Dienst verarbeitet, den du auswählst, etwa Nachrichten, Mail oder soziale Netzwerke, nicht von uns."
+          ]
+        },
+        {
+          "title": "Welche Informationen wir erfassen",
+          "paragraphs": [
+            "40 Below erfasst die folgenden Informationen über dich:"
+          ],
+          "list": [
+            "Nichts."
+          ],
+          "closing": "Wir verkaufen, vermieten oder handeln nicht mit personenbezogenen Daten."
+        },
+        {
+          "title": "Dienste von Drittanbietern",
+          "paragraphs": [
+            "40 Below enthält keine:"
+          ],
+          "list": [
+            "Werbenetzwerke",
+            "Drittanbieter-Tracking",
+            "Datenbroker",
+            "Social-Media-SDKs"
+          ],
+          "closing": "Falls sich das ändert, wird diese Erklärung aktualisiert."
+        },
+        {
+          "title": "Datenschutz von Kindern",
+          "paragraphs": [
+            "40 Below sammelt keine personenbezogenen Daten von Kindern. Da die App keine personenbezogenen Daten sammelt, ist sie für ein allgemeines Publikum geeignet."
+          ]
+        },
+        {
+          "title": "Datenspeicherung und Sicherheit",
+          "paragraphs": [
+            "Alle App-Daten, etwa Einstellungen und Präferenzen, werden lokal auf deinem Gerät gespeichert. Wir betreiben keine Server, auf denen Nutzerdaten gespeichert werden."
+          ]
+        },
+        {
+          "title": "Deine Möglichkeiten",
+          "paragraphs": [
+            "Du kannst den Datenschutz jederzeit steuern:"
+          ],
+          "list": [
+            "Standortzugriff in den Geräteeinstellungen deaktivieren",
+            "Die App löschen, um alle gespeicherten Präferenzen zu entfernen"
+          ],
+          "closing": "Wenn du die App löschst, werden alle lokalen Daten entfernt."
+        },
+        {
+          "title": "Änderungen an dieser Erklärung",
+          "paragraphs": [
+            "Wenn sich die Datenschutzpraktiken der App ändern, wird diese Erklärung aktualisiert. Das Datum „Zuletzt aktualisiert“ oben auf der Seite zeigt immer die neueste Version."
+          ]
+        },
+        {
+          "title": "App Store-Datenschutzübersicht",
+          "paragraphs": [
+            "Zur Transparenz im App Store:"
+          ],
+          "list": [
+            "Mit dir verknüpfte Daten: Keine",
+            "Für Tracking verwendete Daten: Keine",
+            "Erfasste Daten: Standort, nur zur Bereitstellung von Wetterinformationen",
+            "Vom Entwickler gespeicherte Daten: Keine"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Datenschutzfakten",
+        "heading": "Datenschutzfakten",
+        "subhead": "40 Below",
+        "serving": "Pro App-Nutzung",
+        "big_label": "Erfasste Daten",
+        "big_value": "Minimal",
+        "rows": [
+          {
+            "label": "Mit dir verknüpft",
+            "value": "0%"
+          },
+          {
+            "label": "App-übergreifendes Tracking",
+            "value": "0%"
+          },
+          {
+            "label": "Werbung / Broker",
+            "value": "0%"
+          },
+          {
+            "label": "Nutzung von Standortdaten",
+            "value": "Nur Wetter"
+          },
+          {
+            "label": "Geteilte Bilder",
+            "value": "Auf dem Gerät"
+          },
+          {
+            "label": "Benutzerkonten",
+            "value": "Keine"
+          },
+          {
+            "label": "Speicherung beim Entwickler",
+            "value": "Keine"
+          }
+        ],
+        "footnote": "* Das Zusammenfassungsformat ist von Nährwertkennzeichnungen inspiriert. Alle Einzelheiten findest du im vollständigen Text."
+      }
+    }
+  },
+  "en-CA": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Privacy Policy"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support for 40 Below. Email support@fruitstandsoftware.com if you need help or run into trouble.",
+      "eyebrow": "Support",
+      "title": "Need help with 40 Below?",
+      "body": "Email {email} if you have trouble or need help.",
+      "button": "Email Support",
+      "subject": "40 Below Support"
+    },
+    "privacy": {
+      "page_title": "Privacy Policy | Fruit Stand Software",
+      "meta_description": "Privacy policy for 40 Below by Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Privacy Policy",
+      "updated_label": "Last updated:",
+      "updated_value": "February 22, 2026",
+      "intro": [
+        "40 Below by Fruit Stand Software is designed to show weather information for your location and help you share that information if you choose.",
+        "This policy explains, in clear language, what information the app uses and how it is handled.",
+        "The short version is that we collect nothing and nothing is sent to us."
+      ],
+      "sections": [
+        {
+          "title": "Information We Use",
+          "subtitle": "Location",
+          "paragraphs": [
+            "40 Below uses your device location to show weather conditions where you are.",
+            "You can turn off location access at any time in your device settings."
+          ],
+          "list": [
+            "The app only accesses your location if you allow it.",
+            "Location is used to request weather data.",
+            "Your location is not sent to us or stored by us.",
+            "Location is shared only with the weather data provider to retrieve forecasts."
+          ]
+        },
+        {
+          "title": "App Settings and Preferences",
+          "paragraphs": [
+            "The app may store small pieces of information on your device, such as:",
+            "This information stays on your device and is not shared with us."
+          ],
+          "list": [
+            "Last known temperatures",
+            "Last viewed location information, if available, including coordinates and place names"
+          ]
+        },
+        {
+          "title": "Shared Images",
+          "paragraphs": [
+            "40 Below can generate an image of weather information if you choose to share it."
+          ],
+          "list": [
+            "Images are created locally on your device.",
+            "We do not receive or store shared images.",
+            "If you share an image, it is handled by the app or service you choose, such as Messages, Mail, or social media, not by us."
+          ]
+        },
+        {
+          "title": "Information We Collect",
+          "paragraphs": [
+            "40 Below collects the following information about you:"
+          ],
+          "list": [
+            "Nothing."
+          ],
+          "closing": "We do not sell, rent, or trade personal data."
+        },
+        {
+          "title": "Third-Party Services",
+          "paragraphs": [
+            "40 Below does not include any:"
+          ],
+          "list": [
+            "Advertising networks",
+            "Third-party tracking",
+            "Data brokers",
+            "Social media SDKs"
+          ],
+          "closing": "If that changes, this policy will be updated."
+        },
+        {
+          "title": "Children's Privacy",
+          "paragraphs": [
+            "40 Below does not collect personal information from children. Because the app does not collect personal data, it is suitable for general audiences."
+          ]
+        },
+        {
+          "title": "Data Storage and Security",
+          "paragraphs": [
+            "All app data, such as settings and preferences, is stored locally on your device. We do not operate servers that store user data."
+          ]
+        },
+        {
+          "title": "Your Choices",
+          "paragraphs": [
+            "You can control privacy at any time:"
+          ],
+          "list": [
+            "Turn off location access in device settings",
+            "Delete the app to remove all stored preferences"
+          ],
+          "closing": "Deleting the app removes all local data."
+        },
+        {
+          "title": "Changes to This Policy",
+          "paragraphs": [
+            "If the app's privacy practices change, this policy will be updated. The “Last updated” date at the top will always reflect the latest version."
+          ]
+        },
+        {
+          "title": "App Store Privacy Summary",
+          "paragraphs": [
+            "For App Store transparency:"
+          ],
+          "list": [
+            "Data linked to you: None",
+            "Data used for tracking: None",
+            "Data collected: Location, used only to provide weather",
+            "Data stored by developer: None"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Privacy Facts",
+        "heading": "Privacy Facts",
+        "subhead": "40 Below",
+        "serving": "Per app use",
+        "big_label": "Data Collected",
+        "big_value": "Minimal",
+        "rows": [
+          {
+            "label": "Data linked to you",
+            "value": "0%"
+          },
+          {
+            "label": "Cross-app tracking",
+            "value": "0%"
+          },
+          {
+            "label": "Ads / brokers",
+            "value": "0%"
+          },
+          {
+            "label": "Location data usage",
+            "value": "Weather only"
+          },
+          {
+            "label": "Shared images",
+            "value": "On-device"
+          },
+          {
+            "label": "User accounts",
+            "value": "None"
+          },
+          {
+            "label": "Developer storage",
+            "value": "None"
+          }
+        ],
+        "footnote": "* Summary format inspired by nutrition labelling. See the policy text for full details."
+      }
+    }
+  },
+  "en-GB": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Privacy Policy"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support for 40 Below. Email support@fruitstandsoftware.com if you need help or run into trouble.",
+      "eyebrow": "Support",
+      "title": "Need help with 40 Below?",
+      "body": "Email {email} if you have trouble or need help.",
+      "button": "Email Support",
+      "subject": "40 Below Support"
+    },
+    "privacy": {
+      "page_title": "Privacy Policy | Fruit Stand Software",
+      "meta_description": "Privacy policy for 40 Below by Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Privacy Policy",
+      "updated_label": "Last updated:",
+      "updated_value": "22 February 2026",
+      "intro": [
+        "40 Below by Fruit Stand Software is designed to show weather information for your location and help you share that information if you choose.",
+        "This policy explains, in clear language, what information the app uses and how it is handled.",
+        "The short version is that we collect nothing and nothing is sent to us."
+      ],
+      "sections": [
+        {
+          "title": "Information We Use",
+          "subtitle": "Location",
+          "paragraphs": [
+            "40 Below uses your device location to show weather conditions where you are.",
+            "You can turn off location access at any time in your device settings."
+          ],
+          "list": [
+            "The app only accesses your location if you allow it.",
+            "Location is used to request weather data.",
+            "Your location is not sent to us or stored by us.",
+            "Location is shared only with the weather data provider to retrieve forecasts."
+          ]
+        },
+        {
+          "title": "App Settings and Preferences",
+          "paragraphs": [
+            "The app may store small pieces of information on your device, such as:",
+            "This information stays on your device and is not shared with us."
+          ],
+          "list": [
+            "Last known temperatures",
+            "Last viewed location information, if available, including coordinates and place names"
+          ]
+        },
+        {
+          "title": "Shared Images",
+          "paragraphs": [
+            "40 Below can generate an image of weather information if you choose to share it."
+          ],
+          "list": [
+            "Images are created locally on your device.",
+            "We do not receive or store shared images.",
+            "If you share an image, it is handled by the app or service you choose, such as Messages, Mail, or social media, not by us."
+          ]
+        },
+        {
+          "title": "Information We Collect",
+          "paragraphs": [
+            "40 Below collects the following information about you:"
+          ],
+          "list": [
+            "Nothing."
+          ],
+          "closing": "We do not sell, rent, or trade personal data."
+        },
+        {
+          "title": "Third-Party Services",
+          "paragraphs": [
+            "40 Below does not include any:"
+          ],
+          "list": [
+            "Advertising networks",
+            "Third-party tracking",
+            "Data brokers",
+            "Social media SDKs"
+          ],
+          "closing": "If that changes, this policy will be updated."
+        },
+        {
+          "title": "Children's Privacy",
+          "paragraphs": [
+            "40 Below does not collect personal information from children. Because the app does not collect personal data, it is suitable for general audiences."
+          ]
+        },
+        {
+          "title": "Data Storage and Security",
+          "paragraphs": [
+            "All app data, such as settings and preferences, is stored locally on your device. We do not operate servers that store user data."
+          ]
+        },
+        {
+          "title": "Your Choices",
+          "paragraphs": [
+            "You can control privacy at any time:"
+          ],
+          "list": [
+            "Turn off location access in device settings",
+            "Delete the app to remove all stored preferences"
+          ],
+          "closing": "Deleting the app removes all local data."
+        },
+        {
+          "title": "Changes to This Policy",
+          "paragraphs": [
+            "If the app's privacy practices change, this policy will be updated. The “Last updated” date at the top will always reflect the latest version."
+          ]
+        },
+        {
+          "title": "App Store Privacy Summary",
+          "paragraphs": [
+            "For App Store transparency:"
+          ],
+          "list": [
+            "Data linked to you: None",
+            "Data used for tracking: None",
+            "Data collected: Location, used only to provide weather",
+            "Data stored by developer: None"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Privacy Facts",
+        "heading": "Privacy Facts",
+        "subhead": "40 Below",
+        "serving": "Per app use",
+        "big_label": "Data Collected",
+        "big_value": "Minimal",
+        "rows": [
+          {
+            "label": "Data linked to you",
+            "value": "0%"
+          },
+          {
+            "label": "Cross-app tracking",
+            "value": "0%"
+          },
+          {
+            "label": "Ads / brokers",
+            "value": "0%"
+          },
+          {
+            "label": "Location data usage",
+            "value": "Weather only"
+          },
+          {
+            "label": "Shared images",
+            "value": "On-device"
+          },
+          {
+            "label": "User accounts",
+            "value": "None"
+          },
+          {
+            "label": "Developer storage",
+            "value": "None"
+          }
+        ],
+        "footnote": "* Summary format inspired by nutrition labelling. See the policy text for full details."
+      }
+    }
+  },
+  "en-US": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Privacy Policy"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support for 40 Below. Email support@fruitstandsoftware.com if you need help or run into trouble.",
+      "eyebrow": "Support",
+      "title": "Need help with 40 Below?",
+      "body": "Email {email} if you have trouble or need help.",
+      "button": "Email Support",
+      "subject": "40 Below Support"
+    },
+    "privacy": {
+      "page_title": "Privacy Policy | Fruit Stand Software",
+      "meta_description": "Privacy policy for 40 Below by Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Privacy Policy",
+      "updated_label": "Last updated:",
+      "updated_value": "February 22, 2026",
+      "intro": [
+        "40 Below by Fruit Stand Software is designed to show weather information for your location and help you share that information if you choose.",
+        "This policy explains, in clear language, what information the app uses and how it is handled.",
+        "The short version is that we collect nothing and nothing is sent to us."
+      ],
+      "sections": [
+        {
+          "title": "Information We Use",
+          "subtitle": "Location",
+          "paragraphs": [
+            "40 Below uses your device location to show weather conditions where you are.",
+            "You can turn off location access at any time in your device settings."
+          ],
+          "list": [
+            "The app only accesses your location if you allow it.",
+            "Location is used to request weather data.",
+            "Your location is not sent to us or stored by us.",
+            "Location is shared only with the weather data provider to retrieve forecasts."
+          ]
+        },
+        {
+          "title": "App Settings and Preferences",
+          "paragraphs": [
+            "The app may store small pieces of information on your device, such as:",
+            "This information stays on your device and is not shared with us."
+          ],
+          "list": [
+            "Last known temperatures",
+            "Last viewed location information, if available, including coordinates and place names"
+          ]
+        },
+        {
+          "title": "Shared Images",
+          "paragraphs": [
+            "40 Below can generate an image of weather information if you choose to share it."
+          ],
+          "list": [
+            "Images are created locally on your device.",
+            "We do not receive or store shared images.",
+            "If you share an image, it is handled by the app or service you choose, such as Messages, Mail, or social media, not by us."
+          ]
+        },
+        {
+          "title": "Information We Collect",
+          "paragraphs": [
+            "40 Below collects the following information about you:"
+          ],
+          "list": [
+            "Nothing."
+          ],
+          "closing": "We do not sell, rent, or trade personal data."
+        },
+        {
+          "title": "Third-Party Services",
+          "paragraphs": [
+            "40 Below does not include any:"
+          ],
+          "list": [
+            "Advertising networks",
+            "Third-party tracking",
+            "Data brokers",
+            "Social media SDKs"
+          ],
+          "closing": "If that changes, this policy will be updated."
+        },
+        {
+          "title": "Children's Privacy",
+          "paragraphs": [
+            "40 Below does not collect personal information from children. Because the app does not collect personal data, it is suitable for general audiences."
+          ]
+        },
+        {
+          "title": "Data Storage and Security",
+          "paragraphs": [
+            "All app data, such as settings and preferences, is stored locally on your device. We do not operate servers that store user data."
+          ]
+        },
+        {
+          "title": "Your Choices",
+          "paragraphs": [
+            "You can control privacy at any time:"
+          ],
+          "list": [
+            "Turn off location access in device settings",
+            "Delete the app to remove all stored preferences"
+          ],
+          "closing": "Deleting the app removes all local data."
+        },
+        {
+          "title": "Changes to This Policy",
+          "paragraphs": [
+            "If the app's privacy practices change, this policy will be updated. The “Last updated” date at the top will always reflect the latest version."
+          ]
+        },
+        {
+          "title": "App Store Privacy Summary",
+          "paragraphs": [
+            "For App Store transparency:"
+          ],
+          "list": [
+            "Data linked to you: None",
+            "Data used for tracking: None",
+            "Data collected: Location, used only to provide weather",
+            "Data stored by developer: None"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Privacy Facts",
+        "heading": "Privacy Facts",
+        "subhead": "40 Below",
+        "serving": "Per app use",
+        "big_label": "Data Collected",
+        "big_value": "Minimal",
+        "rows": [
+          {
+            "label": "Data linked to you",
+            "value": "0%"
+          },
+          {
+            "label": "Cross-app tracking",
+            "value": "0%"
+          },
+          {
+            "label": "Ads / brokers",
+            "value": "0%"
+          },
+          {
+            "label": "Location data usage",
+            "value": "Weather only"
+          },
+          {
+            "label": "Shared images",
+            "value": "On-device"
+          },
+          {
+            "label": "User accounts",
+            "value": "None"
+          },
+          {
+            "label": "Developer storage",
+            "value": "None"
+          }
+        ],
+        "footnote": "* Summary format inspired by nutrition labeling. See the policy text for full details."
+      }
+    }
+  },
+  "es-ES": {
+    "shell": {
+      "nav_support": "Soporte",
+      "footer_privacy": "Política de privacidad"
+    },
+    "support": {
+      "page_title": "Soporte | Fruit Stand Software",
+      "meta_description": "Soporte para 40 Below. Escribe a support@fruitstandsoftware.com si necesitas ayuda o tienes algún problema.",
+      "eyebrow": "Soporte",
+      "title": "¿Necesitas ayuda con 40 Below?",
+      "body": "Escribe a {email} si tienes algún problema o necesitas ayuda.",
+      "button": "Enviar un correo a soporte",
+      "subject": "Soporte de 40 Below"
+    },
+    "privacy": {
+      "page_title": "Política de privacidad | Fruit Stand Software",
+      "meta_description": "Política de privacidad de 40 Below de Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Política de privacidad",
+      "updated_label": "Última actualización:",
+      "updated_value": "22 de febrero de 2026",
+      "intro": [
+        "40 Below, de Fruit Stand Software, está diseñado para mostrarte información meteorológica de tu ubicación y ayudarte a compartirla si así lo decides.",
+        "Esta política explica con un lenguaje claro qué información utiliza la app y cómo se maneja.",
+        "La versión corta es que no recopilamos nada y no se nos envía nada."
+      ],
+      "sections": [
+        {
+          "title": "Información que usamos",
+          "subtitle": "Ubicación",
+          "paragraphs": [
+            "40 Below utiliza la ubicación de tu dispositivo para mostrar las condiciones meteorológicas del lugar en el que estás.",
+            "Puedes desactivar el acceso a la ubicación en cualquier momento desde los ajustes del dispositivo."
+          ],
+          "list": [
+            "La app solo accede a tu ubicación si se lo permites.",
+            "La ubicación se usa para solicitar datos del tiempo.",
+            "Tu ubicación no se nos envía ni la almacenamos.",
+            "La ubicación solo se comparte con el proveedor de datos meteorológicos para obtener previsiones."
+          ]
+        },
+        {
+          "title": "Ajustes y preferencias de la app",
+          "paragraphs": [
+            "La app puede guardar pequeños fragmentos de información en tu dispositivo, como por ejemplo:",
+            "Esta información permanece en tu dispositivo y no se comparte con nosotros."
+          ],
+          "list": [
+            "Últimas temperaturas conocidas",
+            "Última información de la ubicación consultada, si está disponible, como coordenadas y nombres de lugares"
+          ]
+        },
+        {
+          "title": "Imágenes compartidas",
+          "paragraphs": [
+            "40 Below puede generar una imagen con información meteorológica si decides compartirla."
+          ],
+          "list": [
+            "Las imágenes se crean localmente en tu dispositivo.",
+            "No recibimos ni almacenamos imágenes compartidas.",
+            "Si compartes una imagen, la gestionará la app o el servicio que elijas, como Mensajes, Mail o redes sociales, no nosotros."
+          ]
+        },
+        {
+          "title": "Información que recopilamos",
+          "paragraphs": [
+            "40 Below recopila la siguiente información sobre ti:"
+          ],
+          "list": [
+            "Nada."
+          ],
+          "closing": "No vendemos, alquilamos ni comerciamos con datos personales."
+        },
+        {
+          "title": "Servicios de terceros",
+          "paragraphs": [
+            "40 Below no incluye:"
+          ],
+          "list": [
+            "Redes publicitarias",
+            "Seguimiento de terceros",
+            "Corredores de datos",
+            "SDK de redes sociales"
+          ],
+          "closing": "Si esto cambia, actualizaremos esta política."
+        },
+        {
+          "title": "Privacidad infantil",
+          "paragraphs": [
+            "40 Below no recopila información personal de menores. Como la app no recopila datos personales, es adecuada para el público general."
+          ]
+        },
+        {
+          "title": "Almacenamiento y seguridad de los datos",
+          "paragraphs": [
+            "Todos los datos de la app, como ajustes y preferencias, se almacenan localmente en tu dispositivo. No operamos servidores que almacenen datos de usuarios."
+          ]
+        },
+        {
+          "title": "Tus opciones",
+          "paragraphs": [
+            "Puedes controlar la privacidad en cualquier momento:"
+          ],
+          "list": [
+            "Desactivar el acceso a la ubicación en los ajustes del dispositivo",
+            "Eliminar la app para borrar todas las preferencias guardadas"
+          ],
+          "closing": "Al eliminar la app se eliminan todos los datos locales."
+        },
+        {
+          "title": "Cambios en esta política",
+          "paragraphs": [
+            "Si cambian las prácticas de privacidad de la app, esta política se actualizará. La fecha de \"Última actualización\" de la parte superior siempre reflejará la versión más reciente."
+          ]
+        },
+        {
+          "title": "Resumen de privacidad del App Store",
+          "paragraphs": [
+            "Para ofrecer transparencia en el App Store:"
+          ],
+          "list": [
+            "Datos vinculados contigo: Ninguno",
+            "Datos usados para seguimiento: Ninguno",
+            "Datos recopilados: Ubicación, solo para ofrecer el tiempo",
+            "Datos almacenados por el desarrollador: Ninguno"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Datos de privacidad",
+        "heading": "Datos de privacidad",
+        "subhead": "40 Below",
+        "serving": "Por uso de la app",
+        "big_label": "Datos recopilados",
+        "big_value": "Mínimos",
+        "rows": [
+          {
+            "label": "Datos vinculados contigo",
+            "value": "0%"
+          },
+          {
+            "label": "Seguimiento entre apps",
+            "value": "0%"
+          },
+          {
+            "label": "Anuncios / intermediarios",
+            "value": "0%"
+          },
+          {
+            "label": "Uso de datos de ubicación",
+            "value": "Solo tiempo"
+          },
+          {
+            "label": "Imágenes compartidas",
+            "value": "En el dispositivo"
+          },
+          {
+            "label": "Cuentas de usuario",
+            "value": "Ninguna"
+          },
+          {
+            "label": "Almacenamiento del desarrollador",
+            "value": "Ninguno"
+          }
+        ],
+        "footnote": "* El formato del resumen está inspirado en las etiquetas nutricionales. Consulta el texto de la política para ver todos los detalles."
+      }
+    }
+  },
+  "fi": {
+    "shell": {
+      "nav_support": "Tuki",
+      "footer_privacy": "Tietosuojakäytäntö"
+    },
+    "support": {
+      "page_title": "Tuki | Fruit Stand Software",
+      "meta_description": "40 Below -sovelluksen tuki. Lähetä viesti osoitteeseen support@fruitstandsoftware.com, jos tarvitset apua tai kohtaat ongelman.",
+      "eyebrow": "Tuki",
+      "title": "Tarvitsetko apua 40 Below’n kanssa?",
+      "body": "Lähetä viesti osoitteeseen {email}, jos kohtaat ongelman tai tarvitset apua.",
+      "button": "Lähetä tukiviesti",
+      "subject": "40 Below tuki"
+    },
+    "privacy": {
+      "page_title": "Tietosuojakäytäntö | Fruit Stand Software",
+      "meta_description": "Fruit Stand Softwaren 40 Below -sovelluksen tietosuojakäytäntö.",
+      "eyebrow": "40 Below",
+      "title": "Tietosuojakäytäntö",
+      "updated_label": "Viimeksi päivitetty:",
+      "updated_value": "22. helmikuuta 2026",
+      "intro": [
+        "Fruit Stand Softwaren 40 Below on suunniteltu näyttämään säätiedot sijaintisi perusteella ja auttamaan niiden jakamisessa, jos haluat tehdä niin.",
+        "Tässä käytännössä kerrotaan selkeästi, mitä tietoja sovellus käyttää ja miten niitä käsitellään.",
+        "Lyhyesti sanottuna emme kerää mitään eikä meille lähetetä mitään."
+      ],
+      "sections": [
+        {
+          "title": "Käyttämämme tiedot",
+          "subtitle": "Sijainti",
+          "paragraphs": [
+            "40 Below käyttää laitteesi sijaintia näyttääkseen sääolosuhteet siellä, missä olet.",
+            "Voit poistaa sijainnin käytön käytöstä milloin tahansa laitteen asetuksissa."
+          ],
+          "list": [
+            "Sovellus käyttää sijaintiasi vain, jos annat siihen luvan.",
+            "Sijaintia käytetään säätietojen pyytämiseen.",
+            "Sijaintiasi ei lähetetä meille eikä tallenneta meille.",
+            "Sijainti jaetaan vain sääpalvelun tarjoajalle ennusteiden hakemista varten."
+          ]
+        },
+        {
+          "title": "Sovelluksen asetukset ja mieltymykset",
+          "paragraphs": [
+            "Sovellus voi tallentaa pieniä määriä tietoa laitteellesi, kuten:",
+            "Nämä tiedot pysyvät laitteellasi eikä niitä jaeta meille."
+          ],
+          "list": [
+            "Viimeksi tunnetut lämpötilat",
+            "Viimeksi katsotut sijaintitiedot, jos ne ovat saatavilla, kuten koordinaatit ja paikannimet"
+          ]
+        },
+        {
+          "title": "Jaetut kuvat",
+          "paragraphs": [
+            "40 Below voi luoda sääkuvan, jos päätät jakaa sen."
+          ],
+          "list": [
+            "Kuvat luodaan paikallisesti laitteellasi.",
+            "Emme vastaanota tai tallenna jaettuja kuvia.",
+            "Jos jaat kuvan, sitä käsittelee valitsemasi sovellus tai palvelu, kuten Viestit, Mail tai sosiaalinen media, emme me."
+          ]
+        },
+        {
+          "title": "Keräämämme tiedot",
+          "paragraphs": [
+            "40 Below kerää sinusta seuraavat tiedot:"
+          ],
+          "list": [
+            "Ei mitään."
+          ],
+          "closing": "Emme myy, vuokraa tai vaihda henkilötietoja."
+        },
+        {
+          "title": "Kolmannen osapuolen palvelut",
+          "paragraphs": [
+            "40 Below ei sisällä:"
+          ],
+          "list": [
+            "Mainosverkkoja",
+            "Kolmannen osapuolen seurantaa",
+            "Datavälittäjiä",
+            "Sosiaalisen median SDK-kirjastoja"
+          ],
+          "closing": "Jos tämä muuttuu, käytäntö päivitetään."
+        },
+        {
+          "title": "Lasten yksityisyys",
+          "paragraphs": [
+            "40 Below ei kerää lasten henkilötietoja. Koska sovellus ei kerää henkilötietoja, se sopii yleisölle."
+          ]
+        },
+        {
+          "title": "Tietojen säilytys ja turvallisuus",
+          "paragraphs": [
+            "Kaikki sovelluksen tiedot, kuten asetukset ja mieltymykset, tallennetaan paikallisesti laitteellesi. Emme ylläpidä palvelimia, joille käyttäjätietoja tallennetaan."
+          ]
+        },
+        {
+          "title": "Valintasi",
+          "paragraphs": [
+            "Voit hallita yksityisyyttä milloin tahansa:"
+          ],
+          "list": [
+            "Poista sijainnin käyttö käytöstä laitteen asetuksissa",
+            "Poista sovellus poistaaksesi kaikki tallennetut mieltymykset"
+          ],
+          "closing": "Sovelluksen poistaminen poistaa kaikki paikalliset tiedot."
+        },
+        {
+          "title": "Muutokset tähän käytäntöön",
+          "paragraphs": [
+            "Jos sovelluksen tietosuojakäytännöt muuttuvat, tämä käytäntö päivitetään. Sivun yläreunan \"Viimeksi päivitetty\" -päiväys kertoo aina uusimman version."
+          ]
+        },
+        {
+          "title": "App Storen tietosuojayhteenveto",
+          "paragraphs": [
+            "App Storen läpinäkyvyyttä varten:"
+          ],
+          "list": [
+            "Sinuun liitetyt tiedot: Ei mitään",
+            "Seurantaan käytetyt tiedot: Ei mitään",
+            "Kerätyt tiedot: Sijainti, vain sään näyttämistä varten",
+            "Kehittäjän tallentamat tiedot: Ei mitään"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Tietosuojatiedot",
+        "heading": "Tietosuojatiedot",
+        "subhead": "40 Below",
+        "serving": "Sovelluksen käyttöä kohden",
+        "big_label": "Kerätyt tiedot",
+        "big_value": "Vähäiset",
+        "rows": [
+          {
+            "label": "Sinuun liitetyt tiedot",
+            "value": "0%"
+          },
+          {
+            "label": "Sovellusten välinen seuranta",
+            "value": "0%"
+          },
+          {
+            "label": "Mainokset / välittäjät",
+            "value": "0%"
+          },
+          {
+            "label": "Sijaintitietojen käyttö",
+            "value": "Vain sää"
+          },
+          {
+            "label": "Jaetut kuvat",
+            "value": "Laitteella"
+          },
+          {
+            "label": "Käyttäjätilit",
+            "value": "Ei mitään"
+          },
+          {
+            "label": "Kehittäjän tallennus",
+            "value": "Ei mitään"
+          }
+        ],
+        "footnote": "* Yhteenvetomuoto on saanut vaikutteita ravintoarvomerkinnöistä. Katso kaikki yksityiskohdat varsinaisesta käytännöstä."
+      }
+    }
+  },
+  "fr-FR": {
+    "shell": {
+      "nav_support": "Assistance",
+      "footer_privacy": "Politique de confidentialité"
+    },
+    "support": {
+      "page_title": "Assistance | Fruit Stand Software",
+      "meta_description": "Assistance pour 40 Below. Écrivez à support@fruitstandsoftware.com si vous avez besoin d’aide ou rencontrez un problème.",
+      "eyebrow": "Assistance",
+      "title": "Besoin d’aide avec 40 Below ?",
+      "body": "Écrivez à {email} si vous rencontrez un problème ou si vous avez besoin d’aide.",
+      "button": "Contacter l’assistance",
+      "subject": "Assistance 40 Below"
+    },
+    "privacy": {
+      "page_title": "Politique de confidentialité | Fruit Stand Software",
+      "meta_description": "Politique de confidentialité de 40 Below par Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Politique de confidentialité",
+      "updated_label": "Dernière mise à jour :",
+      "updated_value": "22 février 2026",
+      "intro": [
+        "40 Below, proposé par Fruit Stand Software, est conçu pour afficher les informations météo liées à votre position et vous aider à les partager si vous le souhaitez.",
+        "Cette politique explique en termes clairs quelles informations l’app utilise et comment elles sont traitées.",
+        "En bref, nous ne collectons rien et rien ne nous est envoyé."
+      ],
+      "sections": [
+        {
+          "title": "Informations que nous utilisons",
+          "subtitle": "Position",
+          "paragraphs": [
+            "40 Below utilise la position de votre appareil pour afficher les conditions météo là où vous vous trouvez.",
+            "Vous pouvez désactiver l’accès à la position à tout moment dans les réglages de votre appareil."
+          ],
+          "list": [
+            "L’app n’accède à votre position que si vous l’y autorisez.",
+            "La position sert à demander des données météo.",
+            "Votre position ne nous est pas envoyée et n’est pas stockée par nous.",
+            "La position n’est partagée qu’avec le fournisseur de données météo afin d’obtenir les prévisions."
+          ]
+        },
+        {
+          "title": "Réglages et préférences de l’app",
+          "paragraphs": [
+            "L’app peut stocker de petites quantités d’informations sur votre appareil, par exemple :",
+            "Ces informations restent sur votre appareil et ne sont pas partagées avec nous."
+          ],
+          "list": [
+            "Les dernières températures connues",
+            "Les dernières informations de position consultées, si disponibles, comme les coordonnées et les noms de lieux"
+          ]
+        },
+        {
+          "title": "Images partagées",
+          "paragraphs": [
+            "40 Below peut générer une image contenant des informations météo si vous choisissez de la partager."
+          ],
+          "list": [
+            "Les images sont créées localement sur votre appareil.",
+            "Nous ne recevons ni ne stockons les images partagées.",
+            "Si vous partagez une image, elle est traitée par l’app ou le service que vous choisissez, comme Messages, Mail ou un réseau social, et non par nous."
+          ]
+        },
+        {
+          "title": "Informations que nous collectons",
+          "paragraphs": [
+            "40 Below collecte les informations suivantes à votre sujet :"
+          ],
+          "list": [
+            "Aucune."
+          ],
+          "closing": "Nous ne vendons pas, ne louons pas et n’échangeons pas de données personnelles."
+        },
+        {
+          "title": "Services tiers",
+          "paragraphs": [
+            "40 Below n’inclut aucun des éléments suivants :"
+          ],
+          "list": [
+            "Réseaux publicitaires",
+            "Suivi tiers",
+            "Courtiers en données",
+            "SDK de réseaux sociaux"
+          ],
+          "closing": "Si cela change, cette politique sera mise à jour."
+        },
+        {
+          "title": "Vie privée des enfants",
+          "paragraphs": [
+            "40 Below ne collecte pas d’informations personnelles auprès des enfants. Comme l’app ne collecte pas de données personnelles, elle convient à un public général."
+          ]
+        },
+        {
+          "title": "Stockage et sécurité des données",
+          "paragraphs": [
+            "Toutes les données de l’app, comme les réglages et préférences, sont stockées localement sur votre appareil. Nous n’exploitons pas de serveurs stockant des données utilisateur."
+          ]
+        },
+        {
+          "title": "Vos choix",
+          "paragraphs": [
+            "Vous pouvez contrôler votre confidentialité à tout moment :"
+          ],
+          "list": [
+            "Désactiver l’accès à la position dans les réglages de l’appareil",
+            "Supprimer l’app pour effacer toutes les préférences enregistrées"
+          ],
+          "closing": "La suppression de l’app efface toutes les données locales."
+        },
+        {
+          "title": "Modifications de cette politique",
+          "paragraphs": [
+            "Si les pratiques de confidentialité de l’app évoluent, cette politique sera mise à jour. La date « Dernière mise à jour » en haut de la page reflétera toujours la version la plus récente."
+          ]
+        },
+        {
+          "title": "Résumé de confidentialité App Store",
+          "paragraphs": [
+            "Pour la transparence dans l’App Store :"
+          ],
+          "list": [
+            "Données liées à vous : Aucune",
+            "Données utilisées pour le suivi : Aucune",
+            "Données collectées : Position, utilisée uniquement pour fournir la météo",
+            "Données stockées par le développeur : Aucune"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Données de confidentialité",
+        "heading": "Données de confidentialité",
+        "subhead": "40 Below",
+        "serving": "Par utilisation de l’app",
+        "big_label": "Données collectées",
+        "big_value": "Minimales",
+        "rows": [
+          { "label": "Données liées à vous", "value": "0%" },
+          { "label": "Suivi inter-apps", "value": "0%" },
+          { "label": "Publicités / courtiers", "value": "0%" },
+          { "label": "Utilisation des données de position", "value": "Météo uniquement" },
+          { "label": "Images partagées", "value": "Sur l’appareil" },
+          { "label": "Comptes utilisateur", "value": "Aucun" },
+          { "label": "Stockage développeur", "value": "Aucun" }
+        ],
+        "footnote": "* Le format de ce résumé s’inspire des étiquettes nutritionnelles. Consultez le texte complet pour tous les détails."
+      }
+    }
+  },
+  "ja": {
+    "shell": {
+      "nav_support": "サポート",
+      "footer_privacy": "プライバシーポリシー"
+    },
+    "support": {
+      "page_title": "サポート | Fruit Stand Software",
+      "meta_description": "40 Below のサポートページです。困ったことがある場合やサポートが必要な場合は support@fruitstandsoftware.com までご連絡ください。",
+      "eyebrow": "サポート",
+      "title": "40 Belowのサポートが必要ですか？",
+      "body": "不具合がある場合やサポートが必要な場合は、{email} までご連絡ください。",
+      "button": "サポートにメールする",
+      "subject": "40 Below サポート"
+    },
+    "privacy": {
+      "page_title": "プライバシーポリシー | Fruit Stand Software",
+      "meta_description": "Fruit Stand Software による 40 Below のプライバシーポリシーです。",
+      "eyebrow": "40 Below",
+      "title": "プライバシーポリシー",
+      "updated_label": "最終更新日:",
+      "updated_value": "2026年2月22日",
+      "intro": [
+        "Fruit Stand Software の 40 Below は、現在地の天気情報を表示し、必要に応じてその情報を共有できるように設計されています。",
+        "このポリシーでは、アプリがどの情報を使用し、それがどのように扱われるかを、できるだけわかりやすく説明します。",
+        "要点だけ先にお伝えすると、私たちは何も収集しておらず、何も私たちへ送信されません。"
+      ],
+      "sections": [
+        {
+          "title": "使用する情報",
+          "subtitle": "位置情報",
+          "paragraphs": [
+            "40 Below は、現在地の天気を表示するために、お使いのデバイス上の位置情報を使用します。",
+            "位置情報へのアクセスは、デバイスの設定からいつでも無効にできます。"
+          ],
+          "list": [
+            "アプリが位置情報にアクセスするのは、あなたが許可した場合のみです。",
+            "位置情報は天気データの取得に使われます。",
+            "あなたの位置情報が私たちに送信されたり、私たちによって保存されたりすることはありません。",
+            "位置情報は予報取得のために天気データ提供元にのみ共有されます。"
+          ]
+        },
+        {
+          "title": "アプリの設定と保存される情報",
+          "paragraphs": [
+            "アプリは、次のような小さな情報をデバイス上に保存することがあります。",
+            "これらの情報はデバイス内にのみ保存され、私たちと共有されることはありません。"
+          ],
+          "list": [
+            "最後に確認した気温",
+            "利用可能な場合、最後に表示した場所に関する情報（座標や地名など）"
+          ]
+        },
+        {
+          "title": "共有される画像",
+          "paragraphs": [
+            "40 Below は、共有したい場合に天気情報の画像を生成できます。"
+          ],
+          "list": [
+            "画像はデバイス上でローカルに作成されます。",
+            "私たちが共有画像を受け取ったり保存したりすることはありません。",
+            "画像を共有した場合、その画像はあなたが選んだアプリやサービス（メッセージ、メール、SNS など）によって扱われ、私たちが扱うことはありません。"
+          ]
+        },
+        {
+          "title": "収集する情報",
+          "paragraphs": [
+            "40 Below があなたについて収集する情報は次のとおりです。"
+          ],
+          "list": [
+            "ありません。"
+          ],
+          "closing": "私たちは個人データを販売、貸与、取引しません。"
+        },
+        {
+          "title": "第三者サービス",
+          "paragraphs": [
+            "40 Below には次のものは含まれていません。"
+          ],
+          "list": [
+            "広告ネットワーク",
+            "第三者によるトラッキング",
+            "データブローカー",
+            "ソーシャルメディア SDK"
+          ],
+          "closing": "これが変わる場合は、このポリシーを更新します。"
+        },
+        {
+          "title": "子どものプライバシー",
+          "paragraphs": [
+            "40 Below は子どもの個人情報を収集しません。アプリは個人データを収集しないため、一般向けの利用に適しています。"
+          ]
+        },
+        {
+          "title": "データの保存と安全性",
+          "paragraphs": [
+            "設定や各種の保存内容を含むアプリデータは、すべてデバイス上にローカル保存されます。私たちはユーザーデータを保存するサーバーを運用していません。"
+          ]
+        },
+        {
+          "title": "あなたができること",
+          "paragraphs": [
+            "プライバシーに関する設定はいつでも変更できます。"
+          ],
+          "list": [
+            "デバイスの設定で位置情報へのアクセスをオフにする",
+            "アプリを削除して保存済みの設定をすべて消去する"
+          ],
+          "closing": "アプリを削除すると、ローカルに保存されたデータも削除されます。"
+        },
+        {
+          "title": "このポリシーの変更",
+          "paragraphs": [
+            "アプリのプライバシー対応に変更がある場合、このポリシーを更新します。ページ上部の「最終更新日」は常に最新の版を示します。"
+          ]
+        },
+        {
+          "title": "App Store のプライバシー概要",
+          "paragraphs": [
+            "App Store での透明性のため、次のとおり整理しています。"
+          ],
+          "list": [
+            "あなたに関連付けられるデータ: なし",
+            "トラッキングに使用されるデータ: なし",
+            "収集されるデータ: 位置情報（天気表示のためにのみ使用）",
+            "開発者が保存するデータ: なし"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "プライバシー情報ラベル",
+        "heading": "プライバシー情報",
+        "subhead": "40 Below",
+        "serving": "アプリ利用ごと",
+        "big_label": "収集されるデータ",
+        "big_value": "最小限",
+        "rows": [
+          { "label": "あなたに関連付けられるデータ", "value": "0%" },
+          { "label": "アプリ間トラッキング", "value": "0%" },
+          { "label": "広告 / ブローカー", "value": "0%" },
+          { "label": "位置情報の利用", "value": "天気のみ" },
+          { "label": "共有画像", "value": "デバイス上" },
+          { "label": "ユーザーアカウント", "value": "なし" },
+          { "label": "開発者による保存", "value": "なし" }
+        ],
+        "footnote": "* この概要形式は栄養成分表示を参考にしています。詳しくはポリシー本文をご確認ください。"
+      }
+    }
+  },
+  "ko": {
+    "shell": {
+      "nav_support": "지원",
+      "footer_privacy": "개인정보 처리방침"
+    },
+    "support": {
+      "page_title": "지원 | Fruit Stand Software",
+      "meta_description": "40 Below 지원 페이지입니다. 도움이 필요하거나 문제가 있으면 support@fruitstandsoftware.com으로 이메일을 보내 주세요.",
+      "eyebrow": "지원",
+      "title": "40 Below에 대한 도움이 필요하신가요?",
+      "body": "문제가 있거나 도움이 필요하면 {email}(으)로 이메일을 보내 주세요.",
+      "button": "지원팀에 이메일 보내기",
+      "subject": "40 Below 지원"
+    },
+    "privacy": {
+      "page_title": "개인정보 처리방침 | Fruit Stand Software",
+      "meta_description": "Fruit Stand Software의 40 Below 개인정보 처리방침입니다.",
+      "eyebrow": "40 Below",
+      "title": "개인정보 처리방침",
+      "updated_label": "최종 업데이트:",
+      "updated_value": "2026년 2월 22일",
+      "intro": [
+        "Fruit Stand Software의 40 Below는 현재 위치의 날씨 정보를 보여 주고, 원할 경우 그 정보를 공유할 수 있도록 설계되었습니다.",
+        "이 방침은 앱이 어떤 정보를 사용하는지, 그리고 그 정보가 어떻게 처리되는지를 쉬운 말로 설명합니다.",
+        "요약하면, 우리는 아무것도 수집하지 않으며 우리에게 전송되는 것도 없습니다."
+      ],
+      "sections": [
+        {
+          "title": "사용하는 정보",
+          "subtitle": "위치 정보",
+          "paragraphs": [
+            "40 Below는 현재 있는 곳의 날씨를 보여 주기 위해 기기의 위치 정보를 사용합니다.",
+            "위치 정보 접근 권한은 기기 설정에서 언제든지 끌 수 있습니다."
+          ],
+          "list": [
+            "앱은 사용자가 허용한 경우에만 위치 정보에 접근합니다.",
+            "위치 정보는 날씨 데이터를 요청하는 데 사용됩니다.",
+            "사용자의 위치 정보는 우리에게 전송되거나 우리에 의해 저장되지 않습니다.",
+            "위치 정보는 예보를 가져오기 위해 날씨 데이터 제공업체에만 공유됩니다."
+          ]
+        },
+        {
+          "title": "앱 설정 및 환경설정",
+          "paragraphs": [
+            "앱은 다음과 같은 작은 정보를 기기에 저장할 수 있습니다.",
+            "이 정보는 기기에만 남으며 우리와 공유되지 않습니다."
+          ],
+          "list": [
+            "마지막으로 확인한 기온",
+            "가능한 경우 마지막으로 본 위치 정보(좌표와 장소 이름 등)"
+          ]
+        },
+        {
+          "title": "공유 이미지",
+          "paragraphs": [
+            "40 Below는 사용자가 공유를 선택하면 날씨 정보를 담은 이미지를 만들 수 있습니다."
+          ],
+          "list": [
+            "이미지는 기기 안에서 로컬로 생성됩니다.",
+            "우리는 공유된 이미지를 받거나 저장하지 않습니다.",
+            "이미지를 공유하면 메시지, 메일, 소셜 미디어 같은 사용자가 고른 앱이나 서비스가 이를 처리하며, 우리는 이를 처리하지 않습니다."
+          ]
+        },
+        {
+          "title": "수집하는 정보",
+          "paragraphs": [
+            "40 Below가 사용자에 대해 수집하는 정보는 다음과 같습니다."
+          ],
+          "list": [
+            "없음."
+          ],
+          "closing": "우리는 개인정보를 판매, 임대 또는 거래하지 않습니다."
+        },
+        {
+          "title": "제3자 서비스",
+          "paragraphs": [
+            "40 Below에는 다음이 포함되지 않습니다."
+          ],
+          "list": [
+            "광고 네트워크",
+            "제3자 추적",
+            "데이터 브로커",
+            "소셜 미디어 SDK"
+          ],
+          "closing": "이 내용이 바뀌면 이 방침도 업데이트됩니다."
+        },
+        {
+          "title": "아동의 개인정보",
+          "paragraphs": [
+            "40 Below는 아동의 개인정보를 수집하지 않습니다. 앱이 개인정보를 수집하지 않으므로 일반 사용자를 위한 앱으로 적합합니다."
+          ]
+        },
+        {
+          "title": "데이터 저장 및 보안",
+          "paragraphs": [
+            "설정과 환경설정 같은 앱 데이터는 모두 기기에 로컬로 저장됩니다. 우리는 사용자 데이터를 저장하는 서버를 운영하지 않습니다."
+          ]
+        },
+        {
+          "title": "사용자의 선택",
+          "paragraphs": [
+            "개인정보 관련 설정은 언제든지 직접 조절할 수 있습니다."
+          ],
+          "list": [
+            "기기 설정에서 위치 정보 접근 끄기",
+            "앱을 삭제해 저장된 환경설정 모두 제거하기"
+          ],
+          "closing": "앱을 삭제하면 로컬 데이터도 모두 삭제됩니다."
+        },
+        {
+          "title": "이 방침의 변경",
+          "paragraphs": [
+            "앱의 개인정보 처리 방식이 바뀌면 이 방침이 업데이트됩니다. 페이지 상단의 \"최종 업데이트\" 날짜는 항상 최신 버전을 반영합니다."
+          ]
+        },
+        {
+          "title": "App Store 개인정보 요약",
+          "paragraphs": [
+            "App Store의 투명성 정보를 위해 다음과 같이 정리합니다."
+          ],
+          "list": [
+            "사용자와 연결된 데이터: 없음",
+            "추적에 사용되는 데이터: 없음",
+            "수집되는 데이터: 위치 정보, 날씨 제공 목적에만 사용",
+            "개발자가 저장하는 데이터: 없음"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "개인정보 요약 라벨",
+        "heading": "개인정보 정보",
+        "subhead": "40 Below",
+        "serving": "앱 사용 기준",
+        "big_label": "수집되는 데이터",
+        "big_value": "최소 수준",
+        "rows": [
+          { "label": "사용자와 연결된 데이터", "value": "0%" },
+          { "label": "앱 간 추적", "value": "0%" },
+          { "label": "광고 / 브로커", "value": "0%" },
+          { "label": "위치 정보 사용", "value": "날씨 전용" },
+          { "label": "공유 이미지", "value": "기기 내" },
+          { "label": "사용자 계정", "value": "없음" },
+          { "label": "개발자 저장", "value": "없음" }
+        ],
+        "footnote": "* 이 요약 형식은 영양 성분 표시에서 영감을 받았습니다. 자세한 내용은 정책 본문을 확인해 주세요."
+      }
+    }
+  },
+  "hi": {
+    "shell": {
+      "nav_support": "सहायता",
+      "footer_privacy": "गोपनीयता नीति"
+    },
+    "support": {
+      "page_title": "सहायता | Fruit Stand Software",
+      "meta_description": "40 Below के लिए सहायता। मदद चाहिए या कोई समस्या आ रही है तो support@fruitstandsoftware.com पर ईमेल करें।",
+      "eyebrow": "सहायता",
+      "title": "क्या आपको 40 Below के लिए मदद चाहिए?",
+      "body": "यदि आपको कोई दिक्कत आ रही है या मदद चाहिए, तो {email} पर ईमेल करें।",
+      "button": "सहायता को ईमेल करें",
+      "subject": "40 Below सहायता"
+    },
+    "privacy": {
+      "page_title": "गोपनीयता नीति | Fruit Stand Software",
+      "meta_description": "Fruit Stand Software के 40 Below के लिए गोपनीयता नीति।",
+      "eyebrow": "40 Below",
+      "title": "गोपनीयता नीति",
+      "updated_label": "आखिरी अपडेट:",
+      "updated_value": "22 फ़रवरी 2026",
+      "intro": [
+        "Fruit Stand Software का 40 Below आपके स्थान की मौसम जानकारी दिखाने और यदि आप चाहें तो उसे साझा करने में मदद करने के लिए बनाया गया है।",
+        "यह नीति साफ भाषा में बताती है कि ऐप कौन सी जानकारी उपयोग करता है और उसे कैसे संभाला जाता है।",
+        "संक्षेप में: हम कुछ भी एकत्र नहीं करते और कुछ भी हमें भेजा नहीं जाता।"
+      ],
+      "sections": [
+        {
+          "title": "हम कौन सी जानकारी उपयोग करते हैं",
+          "subtitle": "स्थान",
+          "paragraphs": [
+            "40 Below आपके डिवाइस के स्थान का उपयोग आपके आसपास का मौसम दिखाने के लिए करता है।",
+            "आप अपने डिवाइस की सेटिंग्स में किसी भी समय स्थान एक्सेस बंद कर सकते हैं।"
+          ],
+          "list": [
+            "ऐप आपके स्थान तक तभी पहुंचता है जब आप अनुमति देते हैं।",
+            "स्थान का उपयोग मौसम डेटा प्राप्त करने के लिए किया जाता है।",
+            "आपका स्थान हमें नहीं भेजा जाता और हमारे द्वारा संग्रहीत नहीं किया जाता।",
+            "पूर्वानुमान प्राप्त करने के लिए स्थान केवल मौसम डेटा प्रदाता के साथ साझा किया जाता है।"
+          ]
+        },
+        {
+          "title": "ऐप सेटिंग्स और प्राथमिकताएँ",
+          "paragraphs": [
+            "ऐप आपके डिवाइस पर कुछ छोटी जानकारी सहेज सकता है, जैसे:",
+            "यह जानकारी आपके डिवाइस पर ही रहती है और हमारे साथ साझा नहीं की जाती।"
+          ],
+          "list": [
+            "हाल में ज्ञात तापमान",
+            "हाल में देखे गए स्थान की जानकारी, यदि उपलब्ध हो, जैसे निर्देशांक और स्थान के नाम"
+          ]
+        },
+        {
+          "title": "साझा की गई तस्वीरें",
+          "paragraphs": [
+            "यदि आप चाहें, तो 40 Below मौसम जानकारी की एक तस्वीर बना सकता है जिसे आप साझा कर सकें।"
+          ],
+          "list": [
+            "तस्वीरें आपके डिवाइस पर स्थानीय रूप से बनाई जाती हैं।",
+            "हम साझा की गई तस्वीरें प्राप्त या संग्रहीत नहीं करते।",
+            "यदि आप कोई तस्वीर साझा करते हैं, तो उसे वही ऐप या सेवा संभालती है जिसे आप चुनते हैं, जैसे Messages, Mail या सोशल मीडिया, हम नहीं।"
+          ]
+        },
+        {
+          "title": "हम कौन सी जानकारी एकत्र करते हैं",
+          "paragraphs": [
+            "40 Below आपके बारे में निम्नलिखित जानकारी एकत्र करता है:"
+          ],
+          "list": [
+            "कुछ भी नहीं।"
+          ],
+          "closing": "हम व्यक्तिगत डेटा को न बेचते हैं, न किराए पर देते हैं, न उसका व्यापार करते हैं।"
+        },
+        {
+          "title": "तृतीय-पक्ष सेवाएँ",
+          "paragraphs": [
+            "40 Below में निम्न में से कुछ भी शामिल नहीं है:"
+          ],
+          "list": [
+            "विज्ञापन नेटवर्क",
+            "तृतीय-पक्ष ट्रैकिंग",
+            "डेटा ब्रोकर",
+            "सोशल मीडिया SDK"
+          ],
+          "closing": "यदि इसमें बदलाव होता है, तो यह नीति अपडेट की जाएगी।"
+        },
+        {
+          "title": "बच्चों की गोपनीयता",
+          "paragraphs": [
+            "40 Below बच्चों की व्यक्तिगत जानकारी एकत्र नहीं करता। क्योंकि ऐप व्यक्तिगत डेटा एकत्र नहीं करता, यह सामान्य उपयोगकर्ताओं के लिए उपयुक्त है।"
+          ]
+        },
+        {
+          "title": "डेटा भंडारण और सुरक्षा",
+          "paragraphs": [
+            "सेटिंग्स और प्राथमिकताओं जैसे सभी ऐप डेटा आपके डिवाइस पर स्थानीय रूप से संग्रहीत होते हैं। हम उपयोगकर्ता डेटा रखने वाले सर्वर संचालित नहीं करते।"
+          ]
+        },
+        {
+          "title": "आपके विकल्प",
+          "paragraphs": [
+            "आप किसी भी समय अपनी गोपनीयता को नियंत्रित कर सकते हैं:"
+          ],
+          "list": [
+            "डिवाइस सेटिंग्स में स्थान एक्सेस बंद करें",
+            "सहेजी गई सभी प्राथमिकताएँ हटाने के लिए ऐप हटाएँ"
+          ],
+          "closing": "ऐप हटाने से सभी स्थानीय डेटा हट जाते हैं।"
+        },
+        {
+          "title": "इस नीति में बदलाव",
+          "paragraphs": [
+            "यदि ऐप की गोपनीयता पद्धतियों में बदलाव होता है, तो यह नीति अपडेट की जाएगी। ऊपर दी गई \"आखिरी अपडेट\" तिथि हमेशा नवीनतम संस्करण दिखाएगी।"
+          ]
+        },
+        {
+          "title": "App Store गोपनीयता सारांश",
+          "paragraphs": [
+            "App Store में पारदर्शिता के लिए:"
+          ],
+          "list": [
+            "आपसे जुड़ा डेटा: कोई नहीं",
+            "ट्रैकिंग के लिए उपयोग किया गया डेटा: कोई नहीं",
+            "एकत्र किया गया डेटा: स्थान, केवल मौसम दिखाने के लिए",
+            "डेवलपर द्वारा संग्रहीत डेटा: कोई नहीं"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "गोपनीयता तथ्य",
+        "heading": "गोपनीयता तथ्य",
+        "subhead": "40 Below",
+        "serving": "प्रति ऐप उपयोग",
+        "big_label": "एकत्रित डेटा",
+        "big_value": "न्यूनतम",
+        "rows": [
+          { "label": "आपसे जुड़ा डेटा", "value": "0%" },
+          { "label": "ऐप के बीच ट्रैकिंग", "value": "0%" },
+          { "label": "विज्ञापन / ब्रोकर", "value": "0%" },
+          { "label": "स्थान डेटा का उपयोग", "value": "केवल मौसम" },
+          { "label": "साझा की गई तस्वीरें", "value": "डिवाइस पर" },
+          { "label": "उपयोगकर्ता खाते", "value": "कोई नहीं" },
+          { "label": "डेवलपर स्टोरेज", "value": "कोई नहीं" }
+        ],
+        "footnote": "* यह सारांश प्रारूप पोषण लेबल से प्रेरित है। पूरी जानकारी के लिए नीति का पूरा पाठ देखें।"
+      }
+    }
+  },
+  "it": {
+    "shell": {
+      "nav_support": "Supporto",
+      "footer_privacy": "Informativa sulla privacy"
+    },
+    "support": {
+      "page_title": "Supporto | Fruit Stand Software",
+      "meta_description": "Supporto per 40 Below. Scrivi a support@fruitstandsoftware.com se hai bisogno di aiuto o riscontri un problema.",
+      "eyebrow": "Supporto",
+      "title": "Hai bisogno di aiuto con 40 Below?",
+      "body": "Scrivi a {email} se riscontri un problema o hai bisogno di aiuto.",
+      "button": "Contatta il supporto via email",
+      "subject": "Supporto 40 Below"
+    },
+    "privacy": {
+      "page_title": "Informativa sulla privacy | Fruit Stand Software",
+      "meta_description": "Informativa sulla privacy di 40 Below di Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Informativa sulla privacy",
+      "updated_label": "Ultimo aggiornamento:",
+      "updated_value": "22 febbraio 2026",
+      "intro": [
+        "40 Below di Fruit Stand Software è progettata per mostrare le informazioni meteo della tua posizione e aiutarti a condividerle, se lo desideri.",
+        "Questa informativa spiega in modo chiaro quali informazioni usa l'app e come vengono trattate.",
+        "In breve: non raccogliamo nulla e non ci viene inviato nulla."
+      ],
+      "sections": [
+        {
+          "title": "Informazioni che utilizziamo",
+          "subtitle": "Posizione",
+          "paragraphs": [
+            "40 Below usa la posizione del tuo dispositivo per mostrare le condizioni meteo del luogo in cui ti trovi.",
+            "Puoi disattivare l'accesso alla posizione in qualsiasi momento dalle impostazioni del dispositivo."
+          ],
+          "list": [
+            "L'app accede alla tua posizione solo se lo consenti.",
+            "La posizione viene usata per richiedere i dati meteo.",
+            "La tua posizione non ci viene inviata e non viene conservata da noi.",
+            "La posizione viene condivisa solo con il fornitore dei dati meteo per recuperare le previsioni."
+          ]
+        },
+        {
+          "title": "Impostazioni e preferenze dell'app",
+          "paragraphs": [
+            "L'app può memorizzare piccole quantità di informazioni sul tuo dispositivo, ad esempio:",
+            "Queste informazioni restano sul tuo dispositivo e non vengono condivise con noi."
+          ],
+          "list": [
+            "Ultime temperature note",
+            "Ultime informazioni sulla posizione visualizzata, se disponibili, incluse coordinate e nomi dei luoghi"
+          ]
+        },
+        {
+          "title": "Immagini condivise",
+          "paragraphs": [
+            "40 Below può generare un'immagine con le informazioni meteo se scegli di condividerla."
+          ],
+          "list": [
+            "Le immagini vengono create localmente sul tuo dispositivo.",
+            "Non riceviamo né conserviamo le immagini condivise.",
+            "Se condividi un'immagine, verrà gestita dall'app o dal servizio che scegli, come Messaggi, Mail o i social media, non da noi."
+          ]
+        },
+        {
+          "title": "Informazioni che raccogliamo",
+          "paragraphs": [
+            "40 Below raccoglie le seguenti informazioni su di te:"
+          ],
+          "list": [
+            "Nessuna."
+          ],
+          "closing": "Non vendiamo, affittiamo né scambiamo dati personali."
+        },
+        {
+          "title": "Servizi di terze parti",
+          "paragraphs": [
+            "40 Below non include:"
+          ],
+          "list": [
+            "Reti pubblicitarie",
+            "Tracciamento di terze parti",
+            "Data broker",
+            "SDK di social media"
+          ],
+          "closing": "Se questo dovesse cambiare, aggiorneremo questa informativa."
+        },
+        {
+          "title": "Privacy dei minori",
+          "paragraphs": [
+            "40 Below non raccoglie dati personali dei minori. Poiché l'app non raccoglie dati personali, è adatta a un pubblico generale."
+          ]
+        },
+        {
+          "title": "Conservazione e sicurezza dei dati",
+          "paragraphs": [
+            "Tutti i dati dell'app, come impostazioni e preferenze, sono conservati localmente sul tuo dispositivo. Non gestiamo server che memorizzano dati degli utenti."
+          ]
+        },
+        {
+          "title": "Le tue scelte",
+          "paragraphs": [
+            "Puoi controllare la privacy in qualsiasi momento:"
+          ],
+          "list": [
+            "Disattivare l'accesso alla posizione nelle impostazioni del dispositivo",
+            "Eliminare l'app per rimuovere tutte le preferenze salvate"
+          ],
+          "closing": "Eliminando l'app vengono rimossi tutti i dati locali."
+        },
+        {
+          "title": "Modifiche a questa informativa",
+          "paragraphs": [
+            "Se le pratiche sulla privacy dell'app cambiano, questa informativa verrà aggiornata. La data \"Ultimo aggiornamento\" in alto indicherà sempre la versione più recente."
+          ]
+        },
+        {
+          "title": "Riepilogo privacy dell'App Store",
+          "paragraphs": [
+            "Per trasparenza nell'App Store:"
+          ],
+          "list": [
+            "Dati collegati a te: Nessuno",
+            "Dati usati per il tracciamento: Nessuno",
+            "Dati raccolti: Posizione, usata solo per fornire il meteo",
+            "Dati archiviati dallo sviluppatore: Nessuno"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Dati sulla privacy",
+        "heading": "Dati sulla privacy",
+        "subhead": "40 Below",
+        "serving": "Per utilizzo dell'app",
+        "big_label": "Dati raccolti",
+        "big_value": "Minimi",
+        "rows": [
+          { "label": "Dati collegati a te", "value": "0%" },
+          { "label": "Tracciamento tra app", "value": "0%" },
+          { "label": "Pubblicità / broker", "value": "0%" },
+          { "label": "Uso dei dati di posizione", "value": "Solo meteo" },
+          { "label": "Immagini condivise", "value": "Sul dispositivo" },
+          { "label": "Account utente", "value": "Nessuno" },
+          { "label": "Archiviazione sviluppatore", "value": "Nessuna" }
+        ],
+        "footnote": "* Il formato del riepilogo si ispira alle etichette nutrizionali. Consulta il testo completo dell'informativa per tutti i dettagli."
+      }
+    }
+  },
+  "nl-NL": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Privacybeleid"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support voor 40 Below. Mail naar support@fruitstandsoftware.com als je hulp nodig hebt of ergens tegenaan loopt.",
+      "eyebrow": "Support",
+      "title": "Hulp nodig met 40 Below?",
+      "body": "Mail naar {email} als je problemen hebt of hulp nodig hebt.",
+      "button": "Mail support",
+      "subject": "40 Below support"
+    },
+    "privacy": {
+      "page_title": "Privacybeleid | Fruit Stand Software",
+      "meta_description": "Privacybeleid voor 40 Below van Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Privacybeleid",
+      "updated_label": "Laatst bijgewerkt:",
+      "updated_value": "22 februari 2026",
+      "intro": [
+        "40 Below van Fruit Stand Software is ontworpen om weersinformatie voor je locatie te tonen en je te helpen die informatie te delen als je daarvoor kiest.",
+        "Dit beleid legt in duidelijke taal uit welke informatie de app gebruikt en hoe daarmee wordt omgegaan.",
+        "De korte versie: we verzamelen niets en er wordt niets naar ons verzonden."
+      ],
+      "sections": [
+        {
+          "title": "Informatie die we gebruiken",
+          "subtitle": "Locatie",
+          "paragraphs": [
+            "40 Below gebruikt de locatie van je apparaat om het weer te tonen op de plek waar je bent.",
+            "Je kunt toegang tot je locatie op elk moment uitschakelen in de instellingen van je apparaat."
+          ],
+          "list": [
+            "De app gebruikt je locatie alleen als je daarvoor toestemming geeft.",
+            "Locatie wordt gebruikt om weergegevens op te vragen.",
+            "Je locatie wordt niet naar ons verzonden en niet door ons opgeslagen.",
+            "Je locatie wordt alleen gedeeld met de weerdataprovider om voorspellingen op te halen."
+          ]
+        },
+        {
+          "title": "App-instellingen en voorkeuren",
+          "paragraphs": [
+            "De app kan kleine stukjes informatie op je apparaat opslaan, zoals:",
+            "Deze informatie blijft op je apparaat en wordt niet met ons gedeeld."
+          ],
+          "list": [
+            "Laatst bekende temperaturen",
+            "Laatst bekeken locatiegegevens, indien beschikbaar, inclusief coördinaten en plaatsnamen"
+          ]
+        },
+        {
+          "title": "Gedeelde afbeeldingen",
+          "paragraphs": [
+            "40 Below kan een afbeelding van de weersinformatie genereren als je ervoor kiest die te delen."
+          ],
+          "list": [
+            "Afbeeldingen worden lokaal op je apparaat gemaakt.",
+            "We ontvangen of bewaren geen gedeelde afbeeldingen.",
+            "Als je een afbeelding deelt, wordt die verwerkt door de app of dienst die je kiest, zoals Berichten, Mail of sociale media, niet door ons."
+          ]
+        },
+        {
+          "title": "Informatie die we verzamelen",
+          "paragraphs": [
+            "40 Below verzamelt de volgende informatie over jou:"
+          ],
+          "list": [
+            "Niets."
+          ],
+          "closing": "Wij verkopen, verhuren of verhandelen geen persoonsgegevens."
+        },
+        {
+          "title": "Diensten van derden",
+          "paragraphs": [
+            "40 Below bevat geen:"
+          ],
+          "list": [
+            "Advertentienetwerken",
+            "Tracking door derden",
+            "Databrokers",
+            "Sociale-media-SDK's"
+          ],
+          "closing": "Als dat verandert, werken we dit beleid bij."
+        },
+        {
+          "title": "Privacy van kinderen",
+          "paragraphs": [
+            "40 Below verzamelt geen persoonsgegevens van kinderen. Omdat de app geen persoonsgegevens verzamelt, is deze geschikt voor een algemeen publiek."
+          ]
+        },
+        {
+          "title": "Gegevensopslag en beveiliging",
+          "paragraphs": [
+            "Alle appgegevens, zoals instellingen en voorkeuren, worden lokaal op je apparaat opgeslagen. We beheren geen servers waarop gebruikersgegevens worden opgeslagen."
+          ]
+        },
+        {
+          "title": "Jouw keuzes",
+          "paragraphs": [
+            "Je kunt je privacy op elk moment beheren:"
+          ],
+          "list": [
+            "Schakel locatietoegang uit in de instellingen van je apparaat",
+            "Verwijder de app om alle opgeslagen voorkeuren te verwijderen"
+          ],
+          "closing": "Als je de app verwijdert, worden alle lokale gegevens verwijderd."
+        },
+        {
+          "title": "Wijzigingen in dit beleid",
+          "paragraphs": [
+            "Als de privacypraktijken van de app veranderen, wordt dit beleid bijgewerkt. De datum \"Laatst bijgewerkt\" bovenaan geeft altijd de nieuwste versie aan."
+          ]
+        },
+        {
+          "title": "Samenvatting privacy App Store",
+          "paragraphs": [
+            "Voor transparantie in de App Store:"
+          ],
+          "list": [
+            "Gegevens gekoppeld aan jou: Geen",
+            "Gegevens gebruikt voor tracking: Geen",
+            "Verzamelde gegevens: Locatie, alleen gebruikt om weerinformatie te tonen",
+            "Gegevens opgeslagen door ontwikkelaar: Geen"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Privacyfeiten",
+        "heading": "Privacyfeiten",
+        "subhead": "40 Below",
+        "serving": "Per appgebruik",
+        "big_label": "Verzamelde gegevens",
+        "big_value": "Minimaal",
+        "rows": [
+          { "label": "Gegevens gekoppeld aan jou", "value": "0%" },
+          { "label": "Tracking tussen apps", "value": "0%" },
+          { "label": "Advertenties / brokers", "value": "0%" },
+          { "label": "Gebruik van locatiegegevens", "value": "Alleen weer" },
+          { "label": "Gedeelde afbeeldingen", "value": "Op apparaat" },
+          { "label": "Gebruikersaccounts", "value": "Geen" },
+          { "label": "Opslag door ontwikkelaar", "value": "Geen" }
+        ],
+        "footnote": "* De opmaak van deze samenvatting is geïnspireerd op voedingswaardelabels. Zie de volledige beleidstekst voor alle details."
+      }
+    }
+  },
+  "no": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Personvernerklæring"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support for 40 Below. Send e-post til support@fruitstandsoftware.com hvis du trenger hjelp eller opplever problemer.",
+      "eyebrow": "Support",
+      "title": "Trenger du hjelp med 40 Below?",
+      "body": "Send e-post til {email} hvis du opplever problemer eller trenger hjelp.",
+      "button": "Send e-post til support",
+      "subject": "40 Below support"
+    },
+    "privacy": {
+      "page_title": "Personvernerklæring | Fruit Stand Software",
+      "meta_description": "Personvernerklæring for 40 Below fra Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Personvernerklæring",
+      "updated_label": "Sist oppdatert:",
+      "updated_value": "22. februar 2026",
+      "intro": [
+        "40 Below fra Fruit Stand Software er laget for å vise værinformasjon for stedet du er på, og hjelpe deg med å dele denne informasjonen hvis du ønsker det.",
+        "Denne erklæringen forklarer med tydelig språk hvilken informasjon appen bruker og hvordan den håndteres.",
+        "Kort fortalt: Vi samler ikke inn noe, og ingenting sendes til oss."
+      ],
+      "sections": [
+        {
+          "title": "Informasjon vi bruker",
+          "subtitle": "Posisjon",
+          "paragraphs": [
+            "40 Below bruker posisjonen på enheten din for å vise værforholdene der du er.",
+            "Du kan når som helst slå av tilgang til posisjon i innstillingene på enheten din."
+          ],
+          "list": [
+            "Appen bruker bare posisjonen din hvis du gir tillatelse.",
+            "Posisjon brukes til å hente værdata.",
+            "Posisjonen din sendes ikke til oss og lagres ikke av oss.",
+            "Posisjon deles bare med leverandøren av værdata for å hente prognoser."
+          ]
+        },
+        {
+          "title": "Appinnstillinger og preferanser",
+          "paragraphs": [
+            "Appen kan lagre små mengder informasjon på enheten din, for eksempel:",
+            "Denne informasjonen blir værende på enheten din og deles ikke med oss."
+          ],
+          "list": [
+            "Sist kjente temperaturer",
+            "Sist viste stedsinformasjon, hvis tilgjengelig, inkludert koordinater og stedsnavn"
+          ]
+        },
+        {
+          "title": "Delte bilder",
+          "paragraphs": [
+            "40 Below kan lage et bilde av værinformasjonen hvis du velger å dele den."
+          ],
+          "list": [
+            "Bilder opprettes lokalt på enheten din.",
+            "Vi mottar eller lagrer ikke delte bilder.",
+            "Hvis du deler et bilde, håndteres det av appen eller tjenesten du velger, som Meldinger, Mail eller sosiale medier, ikke av oss."
+          ]
+        },
+        {
+          "title": "Informasjon vi samler inn",
+          "paragraphs": [
+            "40 Below samler inn følgende informasjon om deg:"
+          ],
+          "list": [
+            "Ingenting."
+          ],
+          "closing": "Vi selger, leier ikke ut eller handler med personopplysninger."
+        },
+        {
+          "title": "Tjenester fra tredjeparter",
+          "paragraphs": [
+            "40 Below inneholder ikke:"
+          ],
+          "list": [
+            "Annonsenettverk",
+            "Sporing fra tredjeparter",
+            "Datameglere",
+            "SDK-er for sosiale medier"
+          ],
+          "closing": "Hvis dette endrer seg, vil denne erklæringen bli oppdatert."
+        },
+        {
+          "title": "Barns personvern",
+          "paragraphs": [
+            "40 Below samler ikke inn personopplysninger fra barn. Siden appen ikke samler inn persondata, passer den for et generelt publikum."
+          ]
+        },
+        {
+          "title": "Lagring og sikkerhet",
+          "paragraphs": [
+            "Alle appdata, som innstillinger og preferanser, lagres lokalt på enheten din. Vi driver ikke servere som lagrer brukerdata."
+          ]
+        },
+        {
+          "title": "Dine valg",
+          "paragraphs": [
+            "Du kan kontrollere personvernet når som helst:"
+          ],
+          "list": [
+            "Slå av tilgang til posisjon i enhetsinnstillingene",
+            "Slett appen for å fjerne alle lagrede preferanser"
+          ],
+          "closing": "Når du sletter appen, fjernes alle lokale data."
+        },
+        {
+          "title": "Endringer i denne erklæringen",
+          "paragraphs": [
+            "Hvis appens personvernpraksis endrer seg, vil denne erklæringen bli oppdatert. Datoen for \"Sist oppdatert\" øverst vil alltid vise den nyeste versjonen."
+          ]
+        },
+        {
+          "title": "App Store-personvernsammendrag",
+          "paragraphs": [
+            "For åpenhet i App Store:"
+          ],
+          "list": [
+            "Data knyttet til deg: Ingen",
+            "Data brukt til sporing: Ingen",
+            "Data som samles inn: Posisjon, kun brukt for å vise vær",
+            "Data lagret av utvikleren: Ingen"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Personvernfakta",
+        "heading": "Personvernfakta",
+        "subhead": "40 Below",
+        "serving": "Per appbruk",
+        "big_label": "Data som samles inn",
+        "big_value": "Minimalt",
+        "rows": [
+          { "label": "Data knyttet til deg", "value": "0%" },
+          { "label": "Sporing på tvers av apper", "value": "0%" },
+          { "label": "Annonser / meglere", "value": "0%" },
+          { "label": "Bruk av posisjonsdata", "value": "Kun vær" },
+          { "label": "Delte bilder", "value": "På enheten" },
+          { "label": "Brukerkontoer", "value": "Ingen" },
+          { "label": "Lagring hos utvikler", "value": "Ingen" }
+        ],
+        "footnote": "* Formatet på sammendraget er inspirert av næringsdeklarasjoner. Se hele erklæringen for fullstendige detaljer."
+      }
+    }
+  },
+  "pl": {
+    "shell": {
+      "nav_support": "Pomoc",
+      "footer_privacy": "Polityka prywatności"
+    },
+    "support": {
+      "page_title": "Pomoc | Fruit Stand Software",
+      "meta_description": "Pomoc dla 40 Below. Napisz na support@fruitstandsoftware.com, jeśli potrzebujesz pomocy lub masz problem.",
+      "eyebrow": "Pomoc",
+      "title": "Potrzebujesz pomocy z 40 Below?",
+      "body": "Napisz na {email}, jeśli masz problem lub potrzebujesz pomocy.",
+      "button": "Napisz do pomocy",
+      "subject": "Pomoc 40 Below"
+    },
+    "privacy": {
+      "page_title": "Polityka prywatności | Fruit Stand Software",
+      "meta_description": "Polityka prywatności aplikacji 40 Below od Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Polityka prywatności",
+      "updated_label": "Ostatnia aktualizacja:",
+      "updated_value": "22 lutego 2026",
+      "intro": [
+        "40 Below od Fruit Stand Software została zaprojektowana tak, aby pokazywać informacje pogodowe dla Twojej lokalizacji i pomagać Ci je udostępniać, jeśli tego chcesz.",
+        "Ta polityka wyjaśnia prostym językiem, jakich informacji używa aplikacja i jak są one traktowane.",
+        "W skrócie: niczego nie zbieramy i nic nie jest do nas wysyłane."
+      ],
+      "sections": [
+        {
+          "title": "Informacje, których używamy",
+          "subtitle": "Lokalizacja",
+          "paragraphs": [
+            "40 Below używa lokalizacji Twojego urządzenia, aby pokazać pogodę tam, gdzie jesteś.",
+            "Dostęp do lokalizacji możesz wyłączyć w dowolnym momencie w ustawieniach urządzenia."
+          ],
+          "list": [
+            "Aplikacja uzyskuje dostęp do Twojej lokalizacji tylko wtedy, gdy na to pozwolisz.",
+            "Lokalizacja jest używana do pobierania danych pogodowych.",
+            "Twoja lokalizacja nie jest do nas wysyłana ani przez nas przechowywana.",
+            "Lokalizacja jest udostępniana wyłącznie dostawcy danych pogodowych w celu pobrania prognozy."
+          ]
+        },
+        {
+          "title": "Ustawienia i preferencje aplikacji",
+          "paragraphs": [
+            "Aplikacja może przechowywać na Twoim urządzeniu niewielkie ilości informacji, na przykład:",
+            "Te informacje pozostają na Twoim urządzeniu i nie są nam udostępniane."
+          ],
+          "list": [
+            "Ostatnio znane temperatury",
+            "Ostatnio wyświetlane informacje o lokalizacji, jeśli są dostępne, w tym współrzędne i nazwy miejsc"
+          ]
+        },
+        {
+          "title": "Udostępniane obrazy",
+          "paragraphs": [
+            "40 Below może wygenerować obraz z informacjami pogodowymi, jeśli zdecydujesz się go udostępnić."
+          ],
+          "list": [
+            "Obrazy są tworzone lokalnie na Twoim urządzeniu.",
+            "Nie otrzymujemy ani nie przechowujemy udostępnionych obrazów.",
+            "Jeśli udostępnisz obraz, będzie on obsługiwany przez wybraną przez Ciebie aplikację lub usługę, taką jak Wiadomości, Mail albo media społecznościowe, a nie przez nas."
+          ]
+        },
+        {
+          "title": "Informacje, które zbieramy",
+          "paragraphs": [
+            "40 Below zbiera o Tobie następujące informacje:"
+          ],
+          "list": [
+            "Żadnych."
+          ],
+          "closing": "Nie sprzedajemy, nie wynajmujemy ani nie wymieniamy danych osobowych."
+        },
+        {
+          "title": "Usługi podmiotów trzecich",
+          "paragraphs": [
+            "40 Below nie zawiera:"
+          ],
+          "list": [
+            "Sieci reklamowych",
+            "Śledzenia przez podmioty trzecie",
+            "Brokerów danych",
+            "SDK mediów społecznościowych"
+          ],
+          "closing": "Jeśli to się zmieni, zaktualizujemy tę politykę."
+        },
+        {
+          "title": "Prywatność dzieci",
+          "paragraphs": [
+            "40 Below nie zbiera danych osobowych dzieci. Ponieważ aplikacja nie zbiera danych osobowych, jest odpowiednia dla szerokiego grona odbiorców."
+          ]
+        },
+        {
+          "title": "Przechowywanie danych i bezpieczeństwo",
+          "paragraphs": [
+            "Wszystkie dane aplikacji, takie jak ustawienia i preferencje, są przechowywane lokalnie na Twoim urządzeniu. Nie prowadzimy serwerów przechowujących dane użytkowników."
+          ]
+        },
+        {
+          "title": "Twoje wybory",
+          "paragraphs": [
+            "W każdej chwili możesz zarządzać prywatnością:"
+          ],
+          "list": [
+            "Wyłączyć dostęp do lokalizacji w ustawieniach urządzenia",
+            "Usunąć aplikację, aby usunąć wszystkie zapisane preferencje"
+          ],
+          "closing": "Usunięcie aplikacji usuwa wszystkie dane lokalne."
+        },
+        {
+          "title": "Zmiany w tej polityce",
+          "paragraphs": [
+            "Jeśli praktyki dotyczące prywatności w aplikacji się zmienią, ta polityka zostanie zaktualizowana. Data \"Ostatnia aktualizacja\" u góry zawsze będzie wskazywać najnowszą wersję."
+          ]
+        },
+        {
+          "title": "Podsumowanie prywatności w App Store",
+          "paragraphs": [
+            "Dla przejrzystości w App Store:"
+          ],
+          "list": [
+            "Dane powiązane z Tobą: Brak",
+            "Dane używane do śledzenia: Brak",
+            "Zbierane dane: Lokalizacja, używana wyłącznie do prezentowania pogody",
+            "Dane przechowywane przez dewelopera: Brak"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Fakty dotyczące prywatności",
+        "heading": "Fakty dotyczące prywatności",
+        "subhead": "40 Below",
+        "serving": "Na jedno użycie aplikacji",
+        "big_label": "Zbierane dane",
+        "big_value": "Minimalne",
+        "rows": [
+          { "label": "Dane powiązane z Tobą", "value": "0%" },
+          { "label": "Śledzenie między aplikacjami", "value": "0%" },
+          { "label": "Reklamy / brokerzy", "value": "0%" },
+          { "label": "Wykorzystanie danych lokalizacji", "value": "Tylko pogoda" },
+          { "label": "Udostępniane obrazy", "value": "Na urządzeniu" },
+          { "label": "Konta użytkowników", "value": "Brak" },
+          { "label": "Przechowywanie przez dewelopera", "value": "Brak" }
+        ],
+        "footnote": "* Format tego podsumowania jest inspirowany etykietami wartości odżywczych. Pełne informacje znajdziesz w treści polityki."
+      }
+    }
+  },
+  "pt-BR": {
+    "shell": {
+      "nav_support": "Suporte",
+      "footer_privacy": "Política de Privacidade"
+    },
+    "support": {
+      "page_title": "Suporte | Fruit Stand Software",
+      "meta_description": "Suporte para o 40 Below. Envie um e-mail para support@fruitstandsoftware.com se precisar de ajuda ou encontrar algum problema.",
+      "eyebrow": "Suporte",
+      "title": "Precisa de ajuda com o 40 Below?",
+      "body": "Envie um e-mail para {email} se tiver algum problema ou precisar de ajuda.",
+      "button": "Enviar e-mail para o suporte",
+      "subject": "Suporte 40 Below"
+    },
+    "privacy": {
+      "page_title": "Política de Privacidade | Fruit Stand Software",
+      "meta_description": "Política de privacidade do 40 Below da Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Política de Privacidade",
+      "updated_label": "Última atualização:",
+      "updated_value": "22 de fevereiro de 2026",
+      "intro": [
+        "O 40 Below, da Fruit Stand Software, foi criado para mostrar informações do tempo da sua localização e ajudar você a compartilhá-las, se quiser.",
+        "Esta política explica, em linguagem clara, quais informações o app usa e como elas são tratadas.",
+        "Em resumo: não coletamos nada e nada é enviado para nós."
+      ],
+      "sections": [
+        {
+          "title": "Informações que usamos",
+          "subtitle": "Localização",
+          "paragraphs": [
+            "O 40 Below usa a localização do seu dispositivo para mostrar as condições do tempo onde você está.",
+            "Você pode desativar o acesso à localização a qualquer momento nas configurações do seu dispositivo."
+          ],
+          "list": [
+            "O app só acessa sua localização se você permitir.",
+            "A localização é usada para solicitar dados meteorológicos.",
+            "Sua localização não é enviada para nós nem armazenada por nós.",
+            "A localização é compartilhada apenas com o provedor de dados meteorológicos para obter a previsão."
+          ]
+        },
+        {
+          "title": "Ajustes e preferências do app",
+          "paragraphs": [
+            "O app pode armazenar pequenas informações no seu dispositivo, como:",
+            "Essas informações permanecem no seu dispositivo e não são compartilhadas conosco."
+          ],
+          "list": [
+            "Temperaturas conhecidas mais recentes",
+            "Informações do último local visualizado, quando disponíveis, incluindo coordenadas e nomes de lugares"
+          ]
+        },
+        {
+          "title": "Imagens compartilhadas",
+          "paragraphs": [
+            "O 40 Below pode gerar uma imagem com as informações do tempo se você decidir compartilhá-la."
+          ],
+          "list": [
+            "As imagens são criadas localmente no seu dispositivo.",
+            "Nós não recebemos nem armazenamos imagens compartilhadas.",
+            "Se você compartilhar uma imagem, ela será tratada pelo app ou serviço que você escolher, como Mensagens, Mail ou redes sociais, e não por nós."
+          ]
+        },
+        {
+          "title": "Informações que coletamos",
+          "paragraphs": [
+            "O 40 Below coleta as seguintes informações sobre você:"
+          ],
+          "list": [
+            "Nenhuma."
+          ],
+          "closing": "Não vendemos, alugamos nem negociamos dados pessoais."
+        },
+        {
+          "title": "Serviços de terceiros",
+          "paragraphs": [
+            "O 40 Below não inclui:"
+          ],
+          "list": [
+            "Redes de anúncios",
+            "Rastreamento de terceiros",
+            "Corretores de dados",
+            "SDKs de redes sociais"
+          ],
+          "closing": "Se isso mudar, esta política será atualizada."
+        },
+        {
+          "title": "Privacidade infantil",
+          "paragraphs": [
+            "O 40 Below não coleta informações pessoais de crianças. Como o app não coleta dados pessoais, ele é adequado para o público em geral."
+          ]
+        },
+        {
+          "title": "Armazenamento e segurança de dados",
+          "paragraphs": [
+            "Todos os dados do app, como ajustes e preferências, são armazenados localmente no seu dispositivo. Não operamos servidores que armazenem dados de usuários."
+          ]
+        },
+        {
+          "title": "Suas escolhas",
+          "paragraphs": [
+            "Você pode controlar sua privacidade a qualquer momento:"
+          ],
+          "list": [
+            "Desativar o acesso à localização nas configurações do dispositivo",
+            "Apagar o app para remover todas as preferências armazenadas"
+          ],
+          "closing": "Ao apagar o app, todos os dados locais são removidos."
+        },
+        {
+          "title": "Mudanças nesta política",
+          "paragraphs": [
+            "Se as práticas de privacidade do app mudarem, esta política será atualizada. A data de \"Última atualização\" no topo sempre refletirá a versão mais recente."
+          ]
+        },
+        {
+          "title": "Resumo de privacidade da App Store",
+          "paragraphs": [
+            "Para transparência na App Store:"
+          ],
+          "list": [
+            "Dados vinculados a você: Nenhum",
+            "Dados usados para rastreamento: Nenhum",
+            "Dados coletados: Localização, usada apenas para fornecer o clima",
+            "Dados armazenados pelo desenvolvedor: Nenhum"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Informações de privacidade",
+        "heading": "Informações de privacidade",
+        "subhead": "40 Below",
+        "serving": "Por uso do app",
+        "big_label": "Dados coletados",
+        "big_value": "Mínimos",
+        "rows": [
+          { "label": "Dados vinculados a você", "value": "0%" },
+          { "label": "Rastreamento entre apps", "value": "0%" },
+          { "label": "Anúncios / corretores", "value": "0%" },
+          { "label": "Uso de dados de localização", "value": "Somente clima" },
+          { "label": "Imagens compartilhadas", "value": "No dispositivo" },
+          { "label": "Contas de usuário", "value": "Nenhuma" },
+          { "label": "Armazenamento do desenvolvedor", "value": "Nenhum" }
+        ],
+        "footnote": "* O formato deste resumo foi inspirado em rótulos nutricionais. Consulte o texto da política para ver todos os detalhes."
+      }
+    }
+  },
+  "sv": {
+    "shell": {
+      "nav_support": "Support",
+      "footer_privacy": "Integritetspolicy"
+    },
+    "support": {
+      "page_title": "Support | Fruit Stand Software",
+      "meta_description": "Support för 40 Below. Mejla support@fruitstandsoftware.com om du behöver hjälp eller stöter på problem.",
+      "eyebrow": "Support",
+      "title": "Behöver du hjälp med 40 Below?",
+      "body": "Mejla {email} om du har problem eller behöver hjälp.",
+      "button": "Mejla support",
+      "subject": "40 Below support"
+    },
+    "privacy": {
+      "page_title": "Integritetspolicy | Fruit Stand Software",
+      "meta_description": "Integritetspolicy för 40 Below från Fruit Stand Software.",
+      "eyebrow": "40 Below",
+      "title": "Integritetspolicy",
+      "updated_label": "Senast uppdaterad:",
+      "updated_value": "22 februari 2026",
+      "intro": [
+        "40 Below från Fruit Stand Software är utformad för att visa väderinformation för din plats och hjälpa dig att dela den informationen om du vill.",
+        "Den här policyn förklarar med tydligt språk vilken information appen använder och hur den hanteras.",
+        "Kort sagt: vi samlar inte in någonting och ingenting skickas till oss."
+      ],
+      "sections": [
+        {
+          "title": "Information vi använder",
+          "subtitle": "Plats",
+          "paragraphs": [
+            "40 Below använder platsen på din enhet för att visa vädret där du befinner dig.",
+            "Du kan när som helst stänga av åtkomst till plats i inställningarna på din enhet."
+          ],
+          "list": [
+            "Appen använder bara din plats om du tillåter det.",
+            "Platsen används för att hämta väderdata.",
+            "Din plats skickas inte till oss och lagras inte av oss.",
+            "Platsen delas bara med leverantören av väderdata för att hämta prognoser."
+          ]
+        },
+        {
+          "title": "Appinställningar och val",
+          "paragraphs": [
+            "Appen kan lagra små mängder information på din enhet, till exempel:",
+            "Den här informationen stannar på din enhet och delas inte med oss."
+          ],
+          "list": [
+            "Senast kända temperaturer",
+            "Senast visad platsinformation, om tillgänglig, inklusive koordinater och ortsnamn"
+          ]
+        },
+        {
+          "title": "Delade bilder",
+          "paragraphs": [
+            "40 Below kan skapa en bild med väderinformation om du väljer att dela den."
+          ],
+          "list": [
+            "Bilder skapas lokalt på din enhet.",
+            "Vi tar inte emot eller lagrar delade bilder.",
+            "Om du delar en bild hanteras den av appen eller tjänsten du väljer, till exempel Meddelanden, Mail eller sociala medier, inte av oss."
+          ]
+        },
+        {
+          "title": "Information vi samlar in",
+          "paragraphs": [
+            "40 Below samlar in följande information om dig:"
+          ],
+          "list": [
+            "Ingenting."
+          ],
+          "closing": "Vi säljer, hyr inte ut eller handlar med personuppgifter."
+        },
+        {
+          "title": "Tjänster från tredje part",
+          "paragraphs": [
+            "40 Below innehåller inte:"
+          ],
+          "list": [
+            "Annonsnätverk",
+            "Spårning från tredje part",
+            "Datamäklare",
+            "SDK:er för sociala medier"
+          ],
+          "closing": "Om det ändras uppdateras den här policyn."
+        },
+        {
+          "title": "Barns integritet",
+          "paragraphs": [
+            "40 Below samlar inte in personuppgifter från barn. Eftersom appen inte samlar in personuppgifter passar den för en bred publik."
+          ]
+        },
+        {
+          "title": "Lagring och säkerhet",
+          "paragraphs": [
+            "Alla appdata, till exempel inställningar och val, lagras lokalt på din enhet. Vi driver inga servrar som lagrar användardata."
+          ]
+        },
+        {
+          "title": "Dina val",
+          "paragraphs": [
+            "Du kan styra din integritet när som helst:"
+          ],
+          "list": [
+            "Stäng av platsåtkomst i enhetens inställningar",
+            "Radera appen för att ta bort alla sparade inställningar"
+          ],
+          "closing": "När du raderar appen tas alla lokala data bort."
+        },
+        {
+          "title": "Ändringar i den här policyn",
+          "paragraphs": [
+            "Om appens integritetspraxis ändras uppdateras den här policyn. Datumet \"Senast uppdaterad\" högst upp visar alltid den senaste versionen."
+          ]
+        },
+        {
+          "title": "App Store-sammanfattning om integritet",
+          "paragraphs": [
+            "För transparens i App Store:"
+          ],
+          "list": [
+            "Data kopplade till dig: Inga",
+            "Data som används för spårning: Inga",
+            "Insamlade data: Plats, används bara för att visa väder",
+            "Data som lagras av utvecklaren: Inga"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Integritetsfakta",
+        "heading": "Integritetsfakta",
+        "subhead": "40 Below",
+        "serving": "Per appanvändning",
+        "big_label": "Insamlade data",
+        "big_value": "Minimala",
+        "rows": [
+          { "label": "Data kopplade till dig", "value": "0%" },
+          { "label": "Spårning mellan appar", "value": "0%" },
+          { "label": "Annonser / mäklare", "value": "0%" },
+          { "label": "Användning av platsdata", "value": "Endast väder" },
+          { "label": "Delade bilder", "value": "På enheten" },
+          { "label": "Användarkonton", "value": "Inga" },
+          { "label": "Lagring hos utvecklare", "value": "Ingen" }
+        ],
+        "footnote": "* Formatet för sammanfattningen är inspirerat av näringsdeklarationer. Se policyn för fullständig information."
+      }
+    }
+  },
+  "tr": {
+    "shell": {
+      "nav_support": "Destek",
+      "footer_privacy": "Gizlilik Politikası"
+    },
+    "support": {
+      "page_title": "Destek | Fruit Stand Software",
+      "meta_description": "40 Below için destek. Yardıma ihtiyacınız varsa veya bir sorunla karşılaşırsanız support@fruitstandsoftware.com adresine e-posta gönderin.",
+      "eyebrow": "Destek",
+      "title": "40 Below için yardıma mı ihtiyacınız var?",
+      "body": "Bir sorun yaşarsanız veya yardıma ihtiyacınız olursa {email} adresine e-posta gönderin.",
+      "button": "Desteğe e-posta gönder",
+      "subject": "40 Below Destek"
+    },
+    "privacy": {
+      "page_title": "Gizlilik Politikası | Fruit Stand Software",
+      "meta_description": "Fruit Stand Software tarafından sunulan 40 Below için gizlilik politikası.",
+      "eyebrow": "40 Below",
+      "title": "Gizlilik Politikası",
+      "updated_label": "Son güncelleme:",
+      "updated_value": "22 Şubat 2026",
+      "intro": [
+        "Fruit Stand Software'in 40 Below uygulaması, bulunduğunuz yerin hava durumu bilgisini göstermek ve isterseniz bu bilgiyi paylaşmanıza yardımcı olmak için tasarlanmıştır.",
+        "Bu politika, uygulamanın hangi bilgileri kullandığını ve bunların nasıl işlendiğini açık bir dille anlatır.",
+        "Kısa hali şu: Hiçbir şey toplamıyoruz ve bize hiçbir şey gönderilmiyor."
+      ],
+      "sections": [
+        {
+          "title": "Kullandığımız bilgiler",
+          "subtitle": "Konum",
+          "paragraphs": [
+            "40 Below, bulunduğunuz yerdeki hava durumunu göstermek için cihazınızın konumunu kullanır.",
+            "Konum erişimini cihaz ayarlarınızdan istediğiniz zaman kapatabilirsiniz."
+          ],
+          "list": [
+            "Uygulama konumunuza yalnızca izin verirseniz erişir.",
+            "Konum, hava durumu verilerini istemek için kullanılır.",
+            "Konumunuz bize gönderilmez ve tarafımızdan saklanmaz.",
+            "Konum yalnızca tahminleri almak için hava durumu veri sağlayıcısıyla paylaşılır."
+          ]
+        },
+        {
+          "title": "Uygulama ayarları ve tercihler",
+          "paragraphs": [
+            "Uygulama cihazınızda küçük miktarda bilgi saklayabilir; örneğin:",
+            "Bu bilgiler cihazınızda kalır ve bizimle paylaşılmaz."
+          ],
+          "list": [
+            "Bilinen son sıcaklıklar",
+            "Varsa koordinatlar ve yer adları dahil olmak üzere son görüntülenen konum bilgileri"
+          ]
+        },
+        {
+          "title": "Paylaşılan görseller",
+          "paragraphs": [
+            "40 Below, paylaşmayı seçerseniz hava durumu bilgilerinin bir görselini oluşturabilir."
+          ],
+          "list": [
+            "Görseller cihazınızda yerel olarak oluşturulur.",
+            "Paylaşılan görselleri almıyor veya saklamıyoruz.",
+            "Bir görsel paylaşırsanız, bu görsel tarafımızdan değil, seçtiğiniz uygulama veya hizmet tarafından işlenir; örneğin Mesajlar, Mail veya sosyal medya."
+          ]
+        },
+        {
+          "title": "Topladığımız bilgiler",
+          "paragraphs": [
+            "40 Below sizinle ilgili şu bilgileri toplar:"
+          ],
+          "list": [
+            "Hiçbir şey."
+          ],
+          "closing": "Kişisel verileri satmıyor, kiralamıyor veya ticaretini yapmıyoruz."
+        },
+        {
+          "title": "Üçüncü taraf hizmetler",
+          "paragraphs": [
+            "40 Below şunları içermez:"
+          ],
+          "list": [
+            "Reklam ağları",
+            "Üçüncü taraf takibi",
+            "Veri aracıları",
+            "Sosyal medya SDK'ları"
+          ],
+          "closing": "Bu durum değişirse bu politika güncellenir."
+        },
+        {
+          "title": "Çocukların gizliliği",
+          "paragraphs": [
+            "40 Below çocuklardan kişisel bilgi toplamaz. Uygulama kişisel veri toplamadığı için genel kullanıcı kitlesi için uygundur."
+          ]
+        },
+        {
+          "title": "Veri saklama ve güvenlik",
+          "paragraphs": [
+            "Ayarlar ve tercihler gibi tüm uygulama verileri cihazınızda yerel olarak saklanır. Kullanıcı verilerini depolayan sunucular işletmiyoruz."
+          ]
+        },
+        {
+          "title": "Seçimleriniz",
+          "paragraphs": [
+            "Gizliliğinizi istediğiniz zaman kontrol edebilirsiniz:"
+          ],
+          "list": [
+            "Cihaz ayarlarından konum erişimini kapatın",
+            "Kaydedilmiş tüm tercihleri kaldırmak için uygulamayı silin"
+          ],
+          "closing": "Uygulamayı silmek tüm yerel verileri kaldırır."
+        },
+        {
+          "title": "Bu politikadaki değişiklikler",
+          "paragraphs": [
+            "Uygulamanın gizlilik uygulamaları değişirse bu politika güncellenir. Üstte yer alan \"Son güncelleme\" tarihi her zaman en güncel sürümü gösterir."
+          ]
+        },
+        {
+          "title": "App Store gizlilik özeti",
+          "paragraphs": [
+            "App Store şeffaflığı için:"
+          ],
+          "list": [
+            "Sizinle ilişkilendirilen veriler: Yok",
+            "Takip için kullanılan veriler: Yok",
+            "Toplanan veriler: Konum, yalnızca hava durumu sağlamak için kullanılır",
+            "Geliştirici tarafından saklanan veriler: Yok"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "Gizlilik bilgileri",
+        "heading": "Gizlilik bilgileri",
+        "subhead": "40 Below",
+        "serving": "Her uygulama kullanımı için",
+        "big_label": "Toplanan veriler",
+        "big_value": "En az düzeyde",
+        "rows": [
+          { "label": "Sizinle ilişkilendirilen veriler", "value": "0%" },
+          { "label": "Uygulamalar arası takip", "value": "0%" },
+          { "label": "Reklamlar / aracılar", "value": "0%" },
+          { "label": "Konum verisi kullanımı", "value": "Yalnızca hava durumu" },
+          { "label": "Paylaşılan görseller", "value": "Cihazda" },
+          { "label": "Kullanıcı hesapları", "value": "Yok" },
+          { "label": "Geliştirici depolaması", "value": "Yok" }
+        ],
+        "footnote": "* Bu özet biçimi besin etiketi düzeninden esinlenmiştir. Tüm ayrıntılar için politika metnine bakın."
+      }
+    }
+  },
+  "zh-Hans": {
+    "shell": {
+      "nav_support": "支持",
+      "footer_privacy": "隐私政策"
+    },
+    "support": {
+      "page_title": "支持 | Fruit Stand Software",
+      "meta_description": "40 Below 的支持页面。如果您需要帮助或遇到问题，请发送电子邮件至 support@fruitstandsoftware.com。",
+      "eyebrow": "支持",
+      "title": "需要 40 Below 的帮助吗？",
+      "body": "如果您遇到问题或需要帮助，请发送电子邮件至 {email}。",
+      "button": "发送支持邮件",
+      "subject": "40 Below 支持"
+    },
+    "privacy": {
+      "page_title": "隐私政策 | Fruit Stand Software",
+      "meta_description": "Fruit Stand Software 的 40 Below 隐私政策。",
+      "eyebrow": "40 Below",
+      "title": "隐私政策",
+      "updated_label": "最后更新：",
+      "updated_value": "2026年2月22日",
+      "intro": [
+        "Fruit Stand Software 的 40 Below 旨在显示您所在位置的天气信息，并在您愿意时帮助您分享这些信息。",
+        "本政策以清晰易懂的语言说明应用会使用哪些信息，以及这些信息如何被处理。",
+        "简短版本是：我们不收集任何内容，也不会有任何内容发送给我们。"
+      ],
+      "sections": [
+        {
+          "title": "我们使用的信息",
+          "subtitle": "位置",
+          "paragraphs": [
+            "40 Below 使用您设备上的位置信息来显示您所在地点的天气状况。",
+            "您可以随时在设备设置中关闭位置访问权限。"
+          ],
+          "list": [
+            "只有在您允许的情况下，应用才会访问您的位置。",
+            "位置信息仅用于请求天气数据。",
+            "您的位置不会发送给我们，也不会由我们存储。",
+            "位置信息只会与天气数据提供方共享，用于获取天气预报。"
+          ]
+        },
+        {
+          "title": "应用设置和偏好",
+          "paragraphs": [
+            "应用可能会在您的设备上存储少量信息，例如：",
+            "这些信息仅保留在您的设备上，不会与我们共享。"
+          ],
+          "list": [
+            "最近一次已知温度",
+            "最近查看的位置相关信息（如有），包括坐标和地点名称"
+          ]
+        },
+        {
+          "title": "共享图片",
+          "paragraphs": [
+            "如果您选择分享，40 Below 可以生成包含天气信息的图片。"
+          ],
+          "list": [
+            "图片会在您的设备上本地生成。",
+            "我们不会接收或存储您共享的图片。",
+            "如果您分享图片，该图片将由您选择的应用或服务处理，例如“信息”、Mail 或社交媒体，而不是由我们处理。"
+          ]
+        },
+        {
+          "title": "我们收集的信息",
+          "paragraphs": [
+            "40 Below 会收集与您相关的以下信息："
+          ],
+          "list": [
+            "没有。"
+          ],
+          "closing": "我们不会出售、出租或交易个人数据。"
+        },
+        {
+          "title": "第三方服务",
+          "paragraphs": [
+            "40 Below 不包含以下内容："
+          ],
+          "list": [
+            "广告网络",
+            "第三方跟踪",
+            "数据经纪商",
+            "社交媒体 SDK"
+          ],
+          "closing": "如果这方面发生变化，我们会更新本政策。"
+        },
+        {
+          "title": "儿童隐私",
+          "paragraphs": [
+            "40 Below 不会收集儿童的个人信息。由于本应用不收集个人数据，因此适合大众用户使用。"
+          ]
+        },
+        {
+          "title": "数据存储与安全",
+          "paragraphs": [
+            "所有应用数据（如设置和偏好）都仅存储在您的设备本地。我们不运营存储用户数据的服务器。"
+          ]
+        },
+        {
+          "title": "您的选择",
+          "paragraphs": [
+            "您可以随时控制隐私设置："
+          ],
+          "list": [
+            "在设备设置中关闭位置访问权限",
+            "删除应用以清除所有已保存的偏好设置"
+          ],
+          "closing": "删除应用会移除所有本地数据。"
+        },
+        {
+          "title": "本政策的变更",
+          "paragraphs": [
+            "如果应用的隐私实践发生变化，本政策将会更新。页面顶部的“最后更新”日期始终反映最新版本。"
+          ]
+        },
+        {
+          "title": "App Store 隐私摘要",
+          "paragraphs": [
+            "为便于在 App Store 中透明说明："
+          ],
+          "list": [
+            "与您关联的数据：无",
+            "用于跟踪的数据：无",
+            "收集的数据：位置，仅用于提供天气信息",
+            "开发者存储的数据：无"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "隐私信息",
+        "heading": "隐私信息",
+        "subhead": "40 Below",
+        "serving": "每次使用应用",
+        "big_label": "收集的数据",
+        "big_value": "极少",
+        "rows": [
+          { "label": "与您关联的数据", "value": "0%" },
+          { "label": "跨 App 跟踪", "value": "0%" },
+          { "label": "广告 / 经纪商", "value": "0%" },
+          { "label": "位置数据用途", "value": "仅天气" },
+          { "label": "共享图片", "value": "设备本地" },
+          { "label": "用户账户", "value": "无" },
+          { "label": "开发者存储", "value": "无" }
+        ],
+        "footnote": "* 本摘要格式参考了营养成分标签。完整细节请参阅政策正文。"
+      }
+    }
+  },
+  "zh-Hant": {
+    "shell": {
+      "nav_support": "支援",
+      "footer_privacy": "隱私權政策"
+    },
+    "support": {
+      "page_title": "支援 | Fruit Stand Software",
+      "meta_description": "40 Below 支援頁面。如果您需要協助或遇到問題，請寄送電子郵件至 support@fruitstandsoftware.com。",
+      "eyebrow": "支援",
+      "title": "需要 40 Below 的協助嗎？",
+      "body": "如果您遇到問題或需要協助，請寄送電子郵件至 {email}。",
+      "button": "寄送支援郵件",
+      "subject": "40 Below 支援"
+    },
+    "privacy": {
+      "page_title": "隱私權政策 | Fruit Stand Software",
+      "meta_description": "Fruit Stand Software 的 40 Below 隱私權政策。",
+      "eyebrow": "40 Below",
+      "title": "隱私權政策",
+      "updated_label": "最後更新：",
+      "updated_value": "2026年2月22日",
+      "intro": [
+        "Fruit Stand Software 的 40 Below 旨在顯示您所在位置的天氣資訊，並在您願意時協助您分享這些資訊。",
+        "本政策以清楚易懂的方式說明 App 會使用哪些資訊，以及這些資訊如何處理。",
+        "簡短來說：我們不收集任何資料，也不會有任何資料傳送給我們。"
+      ],
+      "sections": [
+        {
+          "title": "我們使用的資訊",
+          "subtitle": "位置",
+          "paragraphs": [
+            "40 Below 會使用您裝置上的位置資訊，顯示您所在位置的天氣狀況。",
+            "您可以隨時在裝置設定中關閉位置存取權限。"
+          ],
+          "list": [
+            "只有在您允許的情況下，App 才會存取您的位置。",
+            "位置資訊僅用於要求天氣資料。",
+            "您的位置不會傳送給我們，也不會由我們儲存。",
+            "位置資訊只會與天氣資料提供者分享，以取得預報。"
+          ]
+        },
+        {
+          "title": "App 設定與偏好",
+          "paragraphs": [
+            "App 可能會在您的裝置上儲存少量資訊，例如：",
+            "這些資訊只會留在您的裝置上，不會與我們分享。"
+          ],
+          "list": [
+            "最近一次已知溫度",
+            "最近查看的位置資訊（如有），包括座標與地點名稱"
+          ]
+        },
+        {
+          "title": "分享的圖片",
+          "paragraphs": [
+            "如果您選擇分享，40 Below 可以產生一張包含天氣資訊的圖片。"
+          ],
+          "list": [
+            "圖片會在您的裝置上本機建立。",
+            "我們不會接收或儲存您分享的圖片。",
+            "如果您分享圖片，圖片將由您選擇的 App 或服務處理，例如「訊息」、Mail 或社群媒體，而不是由我們處理。"
+          ]
+        },
+        {
+          "title": "我們收集的資訊",
+          "paragraphs": [
+            "40 Below 會收集關於您的以下資訊："
+          ],
+          "list": [
+            "沒有。"
+          ],
+          "closing": "我們不會出售、出租或交易個人資料。"
+        },
+        {
+          "title": "第三方服務",
+          "paragraphs": [
+            "40 Below 不包含以下內容："
+          ],
+          "list": [
+            "廣告網路",
+            "第三方追蹤",
+            "資料經紀商",
+            "社群媒體 SDK"
+          ],
+          "closing": "如果這點有所變更，我們會更新本政策。"
+        },
+        {
+          "title": "兒童隱私",
+          "paragraphs": [
+            "40 Below 不會收集兒童的個人資訊。由於本 App 不收集個人資料，因此適合一般大眾使用。"
+          ]
+        },
+        {
+          "title": "資料儲存與安全性",
+          "paragraphs": [
+            "所有 App 資料，例如設定與偏好，都只會儲存在您的裝置本機。我們不營運儲存使用者資料的伺服器。"
+          ]
+        },
+        {
+          "title": "您的選擇",
+          "paragraphs": [
+            "您可以隨時控制隱私設定："
+          ],
+          "list": [
+            "在裝置設定中關閉位置存取權限",
+            "刪除 App 以移除所有已儲存的偏好設定"
+          ],
+          "closing": "刪除 App 會移除所有本機資料。"
+        },
+        {
+          "title": "本政策的變更",
+          "paragraphs": [
+            "如果 App 的隱私作法有所變更，本政策將會更新。頁面上方的「最後更新」日期會始終反映最新版本。"
+          ]
+        },
+        {
+          "title": "App Store 隱私摘要",
+          "paragraphs": [
+            "為了在 App Store 提供透明資訊："
+          ],
+          "list": [
+            "與您連結的資料：無",
+            "用於追蹤的資料：無",
+            "收集的資料：位置，僅用於提供天氣資訊",
+            "由開發者儲存的資料：無"
+          ]
+        }
+      ],
+      "aside": {
+        "aria_label": "隱私資訊",
+        "heading": "隱私資訊",
+        "subhead": "40 Below",
+        "serving": "每次使用 App",
+        "big_label": "收集的資料",
+        "big_value": "極少",
+        "rows": [
+          { "label": "與您連結的資料", "value": "0%" },
+          { "label": "跨 App 追蹤", "value": "0%" },
+          { "label": "廣告 / 經紀商", "value": "0%" },
+          { "label": "位置資料用途", "value": "僅天氣" },
+          { "label": "分享的圖片", "value": "裝置本機" },
+          { "label": "使用者帳號", "value": "無" },
+          { "label": "開發者儲存", "value": "無" }
+        ],
+        "footnote": "* 本摘要格式參考營養標示設計。完整細節請參閱政策全文。"
+      }
+    }
+  }
+}
