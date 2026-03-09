@@ -399,7 +399,9 @@ def render_privacy_main(locale: str) -> str:
 
       <div class="policy-page-grid">
             <article class="policy-main-card reveal">
+              <section class="policy-block">
 {intro_html}
+              </section>
 
 {sections_html}
             </article>

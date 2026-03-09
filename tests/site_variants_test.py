@@ -155,6 +155,31 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertNotIn('data-site="product-name"', english_homepage)
         self.assertNotIn('data-site="release-notes-rich"', english_homepage)
 
+    def test_localized_privacy_pages_follow_root_policy_structure(self):
+        english_privacy = (ROOT / "en-US" / "privacy-policy.html").read_text(encoding="utf-8")
+
+        self.assertIn('<section class="policy-block">', english_privacy)
+        self.assertIn("Your privacy matters to us.", english_privacy)
+        self.assertIn("40 Below uses your location on your device to show weather conditions where you are.", english_privacy)
+        self.assertIn("Last viewed location information if available (coordinates and place names)", english_privacy)
+        self.assertIn("If this changes, this policy will be updated.", english_privacy)
+        self.assertIn(
+            "The &quot;Last updated&quot; date at the top will always reflect the latest version.",
+            english_privacy,
+        )
+        self.assertIn("Data collected: Location (used only to provide weather)", english_privacy)
+        self.assertIn('aria-label="Privacy Nutrition Label"', english_privacy)
+        self.assertIn("Per app usage", english_privacy)
+        self.assertIn("See policy text for complete details.", english_privacy)
+
+        for locale in LOCALES:
+            privacy = (ROOT / locale / "privacy-policy.html").read_text(encoding="utf-8")
+            self.assertEqual(
+                privacy.count('<section class="policy-block">'),
+                11,
+                f"Expected intro plus 10 policy sections for {locale}",
+            )
+
     def test_script_contains_locale_switcher_and_matching_logic(self):
         script = (ROOT / "script.js").read_text(encoding="utf-8")
         styles = (ROOT / "styles" / "base.css").read_text(encoding="utf-8")
