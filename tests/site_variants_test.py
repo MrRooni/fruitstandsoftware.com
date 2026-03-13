@@ -60,6 +60,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn('<html lang="en-US" dir="ltr">', html)
         self.assertIn('<meta name="robots" content="noindex, nofollow" />', html)
         self.assertIn('<link rel="canonical" href="https://fruitstandsoftware.com/redeem.html" />', html)
+        self.assertIn('<meta property="og:image" content="https://fruitstandsoftware.com/40BelowIcons/40BelowLight.png" />', html)
+        self.assertIn('<meta name="twitter:image" content="https://fruitstandsoftware.com/40BelowIcons/40BelowLight.png" />', html)
         self.assertIn(promo["intro"], html)
         self.assertIn(promo["title"], html)
         self.assertIn('src="40BelowIcons/40BelowLight.png"', html)
