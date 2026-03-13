@@ -251,6 +251,80 @@ def app_store_badge_code(locale: str) -> str:
     }[locale]
 
 
+def locale_storefront_region(locale: str) -> str:
+    overrides = {
+        "da": "DK",
+        "fi": "FI",
+        "hi": "IN",
+        "it": "IT",
+        "ja": "JP",
+        "ko": "KR",
+        "no": "NO",
+        "pl": "PL",
+        "sv": "SE",
+        "tr": "TR",
+        "zh-Hans": "CN",
+        "zh-Hant": "TW",
+    }
+    if locale in overrides:
+        return overrides[locale]
+
+    if "-" in locale:
+        return locale.split("-")[1].upper()
+
+    raise ValueError(f"Unsupported locale without storefront mapping: {locale}")
+
+
+def storefront_chart_path(region: str) -> str:
+    return f"https://apps.apple.com/{region.lower()}/iphone/charts/6001?chart=top-paid"
+
+
+def charts_storefronts() -> list[dict[str, str]]:
+    storefronts: list[dict[str, str]] = []
+
+    for locale in LOCALES:
+        region = locale_storefront_region(locale)
+        storefronts.append(
+            {
+                "locale": locale,
+                "region": region,
+                "chart_url": storefront_chart_path(region),
+                "region_name": region_display_name(region),
+            }
+        )
+
+    return storefronts
+
+
+def region_display_name(region: str) -> str:
+    names = {
+        "BR": "Brazil",
+        "CA": "Canada",
+        "CN": "China mainland",
+        "DE": "Germany",
+        "DK": "Denmark",
+        "ES": "Spain",
+        "FI": "Finland",
+        "FR": "France",
+        "GB": "United Kingdom",
+        "IN": "India",
+        "IT": "Italy",
+        "JP": "Japan",
+        "KR": "South Korea",
+        "NL": "Netherlands",
+        "NO": "Norway",
+        "PL": "Poland",
+        "SA": "Saudi Arabia",
+        "SE": "Sweden",
+        "TR": "Turkey",
+        "TW": "Taiwan",
+        "US": "United States",
+    }
+    return names.get(region, region)
+
+
+
+
 def app_store_badge_paths(locale: str) -> dict[str, str]:
     badge_code = app_store_badge_code(locale)
     badge_dir = f"../Download-on-the-App-Store/{badge_code}/Download_on_App_Store"
@@ -360,7 +434,7 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 
 def render_sitemap_xml() -> str:
-    urls = [f"{SITE_URL}/"]
+    urls = [f"{SITE_URL}/", f"{SITE_URL}/redeem.html"]
     for locale in LOCALES:
         for page_kind in ("home", "support", "privacy"):
             urls.append(canonical_url(locale, page_kind))
@@ -1011,6 +1085,144 @@ def render_root_redirect() -> str:
 """
 
 
+def render_charts_page() -> str:
+    storefronts = charts_storefronts()
+    storefront_cards = "\n".join(
+        f"""        <li class="storefront-card reveal">
+          <div class="storefront-card-copy">
+            <p class="chart-card-eyebrow">{escape_html(storefront["region"])}</p>
+            <h2 class="storefront-card-title">{escape_html(storefront["region_name"])}</h2>
+            <p class="storefront-card-detail">Metadata locale: {escape_html(storefront["locale"])}</p>
+          </div>
+          <a
+            class="support-button storefront-card-link"
+            href="{escape_html(storefront["chart_url"])}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the Top Paid iPhone chart for {escape_html(storefront["region_name"])}"
+          >
+            Open chart
+          </a>
+        </li>"""
+        for storefront in storefronts
+    )
+
+    return f"""<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Paid Charts | Fruit Stand Software</title>
+    <meta
+      name="description"
+      content="Open the App Store Top Paid iPhone chart for every storefront represented by this site's localized metadata."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Top Paid Charts" />
+    <meta
+      property="og:description"
+      content="Open the App Store Top Paid iPhone chart for every storefront represented by this site's localized metadata."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{SITE_URL}/charts.html" />
+    <meta property="og:image" content="{SOCIAL_IMAGE_URL}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Top Paid Charts" />
+    <meta
+      name="twitter:description"
+      content="Open the App Store Top Paid iPhone chart for every storefront represented by this site's localized metadata."
+    />
+    <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}" />
+    <link rel="canonical" href="{SITE_URL}/charts.html" />
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/secondary-pages.css" />
+    <link rel="stylesheet" href="styles/variant-1.css" />
+    <link rel="stylesheet" href="styles/charts.css" />
+  </head>
+  <body class="page page-1">
+    <a class="visually-hidden focus-skip" href="#main">Skip to storefront list</a>
+
+    <header class="top-nav">
+      <div class="nav-shell">
+        <a class="nav-brand" href="/en-US/" aria-label="40 Below home">
+          <img class="nav-brand-icon" src="favicon.png" alt="" width="32" height="32" />
+          <span>40 Below</span>
+        </a>
+        <nav class="nav-actions" aria-label="Primary">
+          <a class="nav-link" href="/en-US/support.html">Support</a>
+          <a
+            class="nav-store-link"
+            href="{APP_STORE_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download 40 Below on the App Store"
+          >
+            <img
+              class="badge-light"
+              src="Download-on-the-App-Store/US/Download_on_App_Store/Black_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download on the App Store"
+              width="152"
+              height="52"
+            />
+            <img
+              class="badge-dark"
+              src="Download-on-the-App-Store/US/Download_on_App_Store/White_lockup/SVG/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg"
+              alt="Download on the App Store"
+              width="152"
+              height="52"
+            />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="secondary-shell charts-shell">
+      <section class="secondary-header-card charts-hero reveal">
+        <div class="charts-hero-copy">
+          <p>App Store Dashboard</p>
+          <h1 class="secondary-page-title">Top Paid iPhone Charts</h1>
+          <p class="secondary-page-lead">
+            Open the Top Paid iPhone chart for every storefront represented by the localized
+            metadata in this repo.
+          </p>
+        </div>
+        <div class="charts-hero-meta">
+          <p class="charts-meta-label">Coverage</p>
+          <p class="charts-meta-value">{len(storefronts)} storefronts</p>
+          <p class="charts-meta-footnote">
+            Storefront selection comes directly from the locale directories in `metadata/`.
+            Each link opens the live App Store chart page in a new tab.
+          </p>
+        </div>
+      </section>
+
+      <section class="ranking-list-card reveal" aria-labelledby="ranking-results-title">
+        <div class="chart-card-header">
+          <div>
+            <p class="chart-card-eyebrow">Storefronts</p>
+            <h2 id="ranking-results-title" class="chart-card-title">Available chart links</h2>
+          </div>
+        </div>
+        <ul class="storefront-grid">
+{storefront_cards}
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer secondary-footer">
+      <div class="footer-stack">
+        <p>&copy; <span id="year"></span> Fruit Stand Software</p>
+        <a class="footer-link" href="/en-US/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+"""
+
+
 def build() -> None:
     for locale in LOCALES:
         locale_dir = ROOT / locale
@@ -1023,6 +1235,7 @@ def build() -> None:
         (locale_dir / "privacy-policy.html").write_text(render_secondary_page(locale, "privacy"), encoding="utf-8")
 
     (ROOT / "index.html").write_text(render_root_redirect(), encoding="utf-8")
+    (ROOT / "charts.html").write_text(render_charts_page(), encoding="utf-8")
     (ROOT / "redeem.html").write_text(render_promo_page(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(render_robots_txt(), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(render_sitemap_xml(), encoding="utf-8")

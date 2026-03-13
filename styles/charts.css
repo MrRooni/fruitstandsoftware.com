@@ -1,0 +1,117 @@
+.focus-skip:focus-visible {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  z-index: 20;
+}
+
+.charts-shell,
+.charts-hero-copy,
+.charts-hero-meta,
+.ranking-list-card,
+.storefront-card,
+.storefront-card-copy {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.charts-shell {
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.charts-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: start;
+}
+
+.charts-hero-meta,
+.ranking-list-card,
+.storefront-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.charts-hero-meta,
+.ranking-list-card,
+.storefront-card {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.charts-hero-meta {
+  background: linear-gradient(180deg, rgba(85, 178, 242, 0.12), rgba(28, 98, 160, 0.07));
+}
+
+.charts-meta-label,
+.chart-card-eyebrow {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.charts-meta-value,
+.storefront-card-title,
+.chart-card-title {
+  margin: 0;
+}
+
+.charts-meta-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.charts-meta-footnote,
+.storefront-card-detail {
+  margin: 0;
+  color: var(--muted);
+}
+
+.storefront-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.25rem);
+  margin: 0;
+  padding: 0;
+}
+
+.storefront-card {
+  min-width: 0;
+  align-content: space-between;
+}
+
+.storefront-card-title {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+}
+
+.storefront-card-link {
+  width: fit-content;
+}
+
+@media (max-width: 980px) {
+  .storefront-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .charts-hero,
+  .storefront-grid {
+    grid-template-columns: 1fr;
+  }
+}
