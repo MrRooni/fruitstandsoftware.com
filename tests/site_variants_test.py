@@ -17,6 +17,9 @@ SECONDARY_TRANSLATIONS = json.loads(
 PROMO_TRANSLATIONS = json.loads(
     (ROOT / "promo-page-translations.json").read_text(encoding="utf-8")
 )
+NUMBER_ONE_TRANSLATIONS = json.loads(
+    (ROOT / "number-one-page-translations.json").read_text(encoding="utf-8")
+)
 
 
 class SiteVariantsTest(unittest.TestCase):
@@ -73,6 +76,7 @@ class SiteVariantsTest(unittest.TestCase):
         urls = [node.text for node in root.findall("sm:url/sm:loc", namespace)]
 
         self.assertIn("https://fruitstandsoftware.com/", urls)
+        self.assertIn("https://fruitstandsoftware.com/number-one.html", urls)
         self.assertNotIn("https://fruitstandsoftware.com/redeem.html", urls)
 
         for locale in LOCALES:
@@ -103,6 +107,28 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn(promo["malformed_message"], html)
         self.assertIn(promo["fallback_cta"], html)
         self.assertIn('src="script.js"', html)
+
+    def test_root_number_one_page_exists_with_expected_marketing_shell(self):
+        html = (ROOT / "number-one.html").read_text(encoding="utf-8")
+        page = NUMBER_ONE_TRANSLATIONS["en-US"]
+
+        self.assertIn('<html lang="en-US" dir="ltr">', html)
+        self.assertIn('<link rel="canonical" href="https://fruitstandsoftware.com/number-one.html" />', html)
+        self.assertIn('<meta property="og:url" content="https://fruitstandsoftware.com/number-one.html" />', html)
+        self.assertIn('<meta property="og:image" content="https://fruitstandsoftware.com/40BelowIcons/40BelowLight.png" />', html)
+        self.assertIn('<meta name="twitter:image" content="https://fruitstandsoftware.com/40BelowIcons/40BelowLight.png" />', html)
+        self.assertIn('<meta name="robots" content="index, follow" />', html)
+        self.assertNotIn('noindex, nofollow', html)
+        self.assertIn(page["title"], html)
+        self.assertIn(page["footnote"], html)
+        self.assertIn(page["cta"], html)
+        self.assertIn('src="40BelowIcons/40BelowLight.png"', html)
+        self.assertIn('srcset="40BelowIcons/40BelowDark.png"', html)
+        self.assertIn('Download-on-the-App-Store/US/', html)
+        self.assertIn('class="promo-store-link"', html)
+        self.assertIn(page["badge_alt"], html)
+        self.assertNotIn("window.siteData", html)
+        self.assertNotIn('src="script.js"', html)
 
     def test_all_locales_have_generated_pages(self):
         self.assertGreater(len(LOCALES), 1)
@@ -280,6 +306,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertTrue(translations.exists(), "Missing secondary page translation source")
         promo_translations = ROOT / "promo-page-translations.json"
         self.assertTrue(promo_translations.exists(), "Missing promo page translation source")
+        number_one_translations = ROOT / "number-one-page-translations.json"
+        self.assertTrue(number_one_translations.exists(), "Missing number one page translation source")
 
         generator_source = generator.read_text(encoding="utf-8")
         self.assertIn("metadata", generator_source)
@@ -289,6 +317,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("privacy-policy.html", generator_source)
         self.assertIn("secondary-page-translations.json", generator_source)
         self.assertIn("promo-page-translations.json", generator_source)
+        self.assertIn("number-one-page-translations.json", generator_source)
+        self.assertIn("number-one.html", generator_source)
         self.assertIn("redeem.html", generator_source)
 
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
