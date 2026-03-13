@@ -1,1 +1,3 @@
-Välkommen till den första versionen av 40 Below! Jag hoppas att du tycker om den lika mycket som jag tyckte om att göra den. 40 Below kommer aldrig att be dig om en recension, men om du känner dig generös skulle ett fint 5-stjärnigt betyg uppskattas mycket.
+== Nyheter i version 1.0 ==
+
+• Formateringen och tydligheten i App Stores versionsanteckningar har förbättrats.

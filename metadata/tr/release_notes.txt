@@ -1,1 +1,3 @@
-40 Below’nun ilk sürümüne hoş geldiniz! Umarım onu kullanmaktan, benim geliştirirken aldığım keyif kadar keyif alırsınız. 40 Below sizden asla değerlendirme istemez, ama destek olmak isterseniz güzel bir 5 yıldızlı puan beni çok mutlu eder.
+== Sürüm 1.0'daki Yenilikler ==
+
+• App Store sürüm notlarının biçimlendirmesi ve açıklığı iyileştirildi.

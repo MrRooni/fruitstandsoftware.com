@@ -1,0 +1,13 @@
+{
+  "en-US": {
+    "page_title": "Redeem 40 Below | Fruit Stand Software",
+    "meta_description": "Redeem a promo code for 40 Below on the App Store.",
+    "title": "Redeem your promo code",
+    "intro": "Congratulations, you have been given a rare gift: a bespoke, artisanal promo code for a bespoke, artisanal app. Enjoy!",
+    "icon_alt": "40 Below app icon",
+    "success_cta": "Get 40 Below for Free",
+    "fallback_cta": "Get 40 Below on the App Store",
+    "missing_message": "Oh no! This page was built to give people promo codes for 40 Below, but the promo code is missing. You can still get 40 Below, but it won't be free. Sorry about that!",
+    "malformed_message": "Oh no! This page was built to give people promo codes for 40 Below, but the promo code is wrong somehow. You can still get 40 Below, but it won't be free. Sorry about that!"
+  }
+}

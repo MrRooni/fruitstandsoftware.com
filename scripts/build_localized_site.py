@@ -11,10 +11,14 @@ METADATA_DIR = ROOT / "metadata"
 SECONDARY_PAGE_TRANSLATIONS = json.loads(
     (ROOT / "secondary-page-translations.json").read_text(encoding="utf-8")
 )
+PROMO_PAGE_TRANSLATIONS = json.loads(
+    (ROOT / "promo-page-translations.json").read_text(encoding="utf-8")
+)
 DEFAULT_LOCALE = "en-US"
 SITE_URL = "https://fruitstandsoftware.com"
 COPYRIGHT = "2026 © Fruit Stand Software, LLC"
 APP_STORE_URL = "https://apps.apple.com/app/id6758684366"
+APP_STORE_REDEEM_URL = "https://apps.apple.com/redeem?code="
 
 LOCALES = sorted(
     path.name
@@ -300,6 +304,10 @@ def render_feature_list(features: list[str], indent: str) -> str:
 
 def get_secondary_page_translation(locale: str) -> dict[str, object]:
     return SECONDARY_PAGE_TRANSLATIONS.get(locale, SECONDARY_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
+
+
+def get_promo_page_translation(locale: str = DEFAULT_LOCALE) -> dict[str, object]:
+    return PROMO_PAGE_TRANSLATIONS.get(locale, PROMO_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
 
 
 def render_paragraphs(paragraphs: list[str], indent: str) -> str:
@@ -729,6 +737,77 @@ def render_secondary_page(locale: str, page_kind: str) -> str:
 """
 
 
+def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
+    page = get_promo_page_translation(locale)
+    ui_strings = localized_ui_strings(locale)
+    text_direction = locale_text_direction(locale)
+    config = {
+        "redeemBaseUrl": APP_STORE_REDEEM_URL,
+        "appStoreUrl": APP_STORE_URL,
+        "validPattern": "^[A-Z0-9]{12}$",
+        "successCta": page["success_cta"],
+        "fallbackCta": page["fallback_cta"],
+        "missingMessage": page["missing_message"],
+        "malformedMessage": page["malformed_message"],
+    }
+
+    return f"""<!doctype html>
+<html lang="{locale}" dir="{text_direction}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{escape_html(page["page_title"])}</title>
+    <meta
+      name="description"
+      content="{escape_html(page["meta_description"])}"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="{SITE_URL}/redeem.html" />
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/redeem.css" />
+  </head>
+  <body class="page promo-page">
+    <main class="promo-shell">
+      <section class="promo-card reveal" aria-labelledby="promo-heading">
+        <picture class="promo-icon">
+          <source srcset="40BelowIcons/40BelowDark.png" media="(prefers-color-scheme: dark)" />
+          <img
+            src="40BelowIcons/40BelowLight.png"
+            alt="{escape_html(page["icon_alt"])}"
+            width="240"
+            height="240"
+          />
+        </picture>
+        <div class="promo-copy">
+          <p class="promo-message" data-promo-intro>{escape_html(page["intro"])}</p>
+          <h1 id="promo-heading" class="promo-title" data-promo-title>{escape_html(page["title"])}</h1>
+          <p class="promo-status" data-promo-status role="status" aria-live="polite">
+            {escape_html(page["intro"])}
+          </p>
+        </div>
+        <a
+          class="promo-button"
+          data-promo-button
+          href="{APP_STORE_URL}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{escape_html(ui_strings["app_store"])}"
+        >
+          {escape_html(page["fallback_cta"])}
+        </a>
+      </section>
+    </main>
+
+    <script>
+      window.promoPageConfig = {javascript_value(config)};
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+"""
+
+
 def render_root_redirect() -> str:
     available_locales = javascript_value(LOCALES)
     title = read_metadata(DEFAULT_LOCALE, "name.txt")
@@ -839,6 +918,7 @@ def build() -> None:
         (locale_dir / "privacy-policy.html").write_text(render_secondary_page(locale, "privacy"), encoding="utf-8")
 
     (ROOT / "index.html").write_text(render_root_redirect(), encoding="utf-8")
+    (ROOT / "redeem.html").write_text(render_promo_page(), encoding="utf-8")
 
 
 if __name__ == "__main__":

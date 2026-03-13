@@ -1,1 +1,3 @@
-Welcome to the first version of 40 Below! I hope you enjoy it as much as I enjoyed making it. 40 Below will never prompt you for a review, but if you're feeling kind, a nice 5-star review would sure be great.
+== What's New in Version 1.0 ==
+
+• Improved the formatting and clarity of the App Store release notes.

@@ -91,6 +91,46 @@ function buildLocalePath(locale, currentPath = window.location.pathname) {
   return `/${locale}/`;
 }
 
+function initPromoRedeemPage() {
+  const config = window.promoPageConfig;
+  const button = document.querySelector("[data-promo-button]");
+  const status = document.querySelector("[data-promo-status]");
+  const intro = document.querySelector("[data-promo-intro]");
+  const title = document.querySelector("[data-promo-title]");
+
+  if (!config || !button || !status || !intro || !title) {
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const promo = (params.get("promo") || "").trim();
+  const promoPattern = new RegExp(config.validPattern);
+
+  if (!promo) {
+    intro.hidden = true;
+    title.hidden = true;
+    status.textContent = config.missingMessage;
+    button.textContent = config.fallbackCta;
+    button.setAttribute("href", config.appStoreUrl);
+    return;
+  }
+
+  if (!promoPattern.test(promo)) {
+    intro.hidden = true;
+    title.hidden = true;
+    status.textContent = config.malformedMessage;
+    button.textContent = config.fallbackCta;
+    button.setAttribute("href", config.appStoreUrl);
+    return;
+  }
+
+  intro.hidden = false;
+  title.hidden = false;
+  status.textContent = "";
+  button.textContent = config.successCta;
+  button.setAttribute("href", `${config.redeemBaseUrl}${encodeURIComponent(promo)}`);
+}
+
 function updateScreenshotForThemeAndTime() {
   const darkSource = document.getElementById("hero-screenshot-dark-source");
   if (!darkSource) {
@@ -480,3 +520,4 @@ initYear();
 initReveal();
 observeColorSchemeChanges();
 initGalleryLightbox();
+initPromoRedeemPage();
