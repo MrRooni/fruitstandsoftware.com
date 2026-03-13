@@ -39,9 +39,17 @@
   gap: 1rem;
 }
 
+.promo-actions {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
 .promo-message,
 .promo-title,
-.promo-status {
+.promo-status,
+.promo-footnote {
   margin: 0;
 }
 
@@ -61,6 +69,12 @@
   font-size: 1rem;
 }
 
+.promo-footnote {
+  max-width: 34rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .promo-button {
   display: inline-flex;
   align-items: center;
@@ -73,6 +87,17 @@
   text-decoration: none;
   font-weight: 800;
   font-size: 1rem;
+}
+
+.promo-store-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-badge {
+  width: 180px;
+  height: auto;
 }
 
 .promo-button:hover {

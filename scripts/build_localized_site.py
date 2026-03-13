@@ -14,6 +14,9 @@ SECONDARY_PAGE_TRANSLATIONS = json.loads(
 PROMO_PAGE_TRANSLATIONS = json.loads(
     (ROOT / "promo-page-translations.json").read_text(encoding="utf-8")
 )
+NUMBER_ONE_PAGE_TRANSLATIONS = json.loads(
+    (ROOT / "number-one-page-translations.json").read_text(encoding="utf-8")
+)
 DEFAULT_LOCALE = "en-US"
 SITE_URL = "https://fruitstandsoftware.com"
 COPYRIGHT = "2026 © Fruit Stand Software, LLC"
@@ -434,7 +437,7 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 
 def render_sitemap_xml() -> str:
-    urls = [f"{SITE_URL}/", f"{SITE_URL}/redeem.html"]
+    urls = [f"{SITE_URL}/", f"{SITE_URL}/number-one.html"]
     for locale in LOCALES:
         for page_kind in ("home", "support", "privacy"):
             urls.append(canonical_url(locale, page_kind))
@@ -458,6 +461,10 @@ def get_secondary_page_translation(locale: str) -> dict[str, object]:
 
 def get_promo_page_translation(locale: str = DEFAULT_LOCALE) -> dict[str, object]:
     return PROMO_PAGE_TRANSLATIONS.get(locale, PROMO_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
+
+
+def get_number_one_page_translation(locale: str = DEFAULT_LOCALE) -> dict[str, object]:
+    return NUMBER_ONE_PAGE_TRANSLATIONS.get(locale, NUMBER_ONE_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
 
 
 def render_paragraphs(paragraphs: list[str], indent: str) -> str:
@@ -949,7 +956,7 @@ def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
   </head>
   <body class="page promo-page">
     <main class="promo-shell">
-      <section class="promo-card reveal" aria-labelledby="promo-heading">
+      <section class="promo-card" aria-labelledby="promo-heading">
         <picture class="promo-icon">
           <source srcset="40BelowIcons/40BelowDark.png" media="(prefers-color-scheme: dark)" />
           <img
@@ -983,6 +990,99 @@ def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
       window.promoPageConfig = {javascript_value(config)};
     </script>
     <script src="script.js"></script>
+  </body>
+</html>
+"""
+
+
+def render_number_one_page(locale: str = DEFAULT_LOCALE) -> str:
+    page = get_number_one_page_translation(locale)
+    text_direction = locale_text_direction(locale)
+    social_image_url = f"{SITE_URL}/40BelowIcons/40BelowLight.png"
+    badge_paths = app_store_badge_paths(locale)
+
+    return f"""<!doctype html>
+<html lang="{locale}" dir="{text_direction}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{escape_html(page["page_title"])}</title>
+    <meta
+      name="description"
+      content="{escape_html(page["meta_description"])}"
+    />
+    <meta property="og:title" content="{escape_html(page["page_title"])}" />
+    <meta
+      property="og:description"
+      content="{escape_html(page["meta_description"])}"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{SITE_URL}/number-one.html" />
+    <meta property="og:image" content="{social_image_url}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{escape_html(page["page_title"])}" />
+    <meta
+      name="twitter:description"
+      content="{escape_html(page["meta_description"])}"
+    />
+    <meta name="twitter:image" content="{social_image_url}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{SITE_URL}/number-one.html" />
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/redeem.css" />
+  </head>
+  <body class="page promo-page">
+    <main class="promo-shell">
+      <section class="promo-card" aria-labelledby="promo-heading">
+        <picture class="promo-icon">
+          <source srcset="40BelowIcons/40BelowDark.png" media="(prefers-color-scheme: dark)" />
+          <img
+            src="40BelowIcons/40BelowLight.png"
+            alt="{escape_html(page["icon_alt"])}"
+            width="240"
+            height="240"
+          />
+        </picture>
+        <div class="promo-copy">
+          <h1 id="promo-heading" class="promo-title">{escape_html(page["title"])}</h1>
+          <p class="promo-footnote">{escape_html(page["footnote"])}</p>
+        </div>
+        <div class="promo-actions">
+          <a
+            class="promo-button"
+            href="{APP_STORE_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{escape_html(page["badge_aria_label"])}"
+          >
+            {escape_html(page["cta"])}
+          </a>
+          <a
+            class="promo-store-link"
+            href="{APP_STORE_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{escape_html(page["badge_aria_label"])}"
+          >
+            <img
+              class="promo-badge badge-light"
+              src="{badge_paths["light"].removeprefix('../')}"
+              alt="{escape_html(page["badge_alt"])}"
+              width="180"
+              height="60"
+            />
+            <img
+              class="promo-badge badge-dark"
+              src="{badge_paths["dark"].removeprefix('../')}"
+              alt="{escape_html(page["badge_alt"])}"
+              width="180"
+              height="60"
+            />
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
 """
@@ -1236,6 +1336,7 @@ def build() -> None:
 
     (ROOT / "index.html").write_text(render_root_redirect(), encoding="utf-8")
     (ROOT / "charts.html").write_text(render_charts_page(), encoding="utf-8")
+    (ROOT / "number-one.html").write_text(render_number_one_page(), encoding="utf-8")
     (ROOT / "redeem.html").write_text(render_promo_page(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(render_robots_txt(), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(render_sitemap_xml(), encoding="utf-8")
