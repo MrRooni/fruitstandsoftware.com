@@ -104,7 +104,12 @@ function initPromoRedeemPage() {
 
   const params = new URLSearchParams(window.location.search);
   const promo = (params.get("promo") || "").trim();
+  const name = (params.get("name") || "").trim();
   const promoPattern = new RegExp(config.validPattern);
+  const introLead = name || "Congratulations";
+  const introText = config.introTemplate.replace("Congratulations", introLead);
+
+  intro.textContent = introText;
 
   if (!promo) {
     intro.hidden = true;
