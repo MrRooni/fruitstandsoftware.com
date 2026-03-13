@@ -1,1 +1,3 @@
-Boas-vindas à primeira versão do 40 Below! Espero que você goste dele tanto quanto eu gostei de criá-lo. O 40 Below nunca vai pedir uma avaliação dentro do app, mas, se você quiser dar uma força, uma ótima nota de 5 estrelas seria muito bem-vinda.
+== Novidades da versão 1.0 ==
+
+• Melhoramos a formatação e a clareza das notas de versão da App Store.

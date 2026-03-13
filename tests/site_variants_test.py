@@ -13,6 +13,9 @@ DEFAULT_LOCALE = "en-US"
 SECONDARY_TRANSLATIONS = json.loads(
     (ROOT / "secondary-page-translations.json").read_text(encoding="utf-8")
 )
+PROMO_TRANSLATIONS = json.loads(
+    (ROOT / "promo-page-translations.json").read_text(encoding="utf-8")
+)
 
 
 class SiteVariantsTest(unittest.TestCase):
@@ -49,6 +52,27 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("resolveLocale", html)
         self.assertNotIn('src="site-data.js"', html)
         self.assertNotIn('data-site="product-name"', html)
+
+    def test_root_redeem_page_exists_with_expected_promo_shell(self):
+        html = (ROOT / "redeem.html").read_text(encoding="utf-8")
+        promo = PROMO_TRANSLATIONS["en-US"]
+
+        self.assertIn('<html lang="en-US" dir="ltr">', html)
+        self.assertIn('<meta name="robots" content="noindex, nofollow" />', html)
+        self.assertIn('<link rel="canonical" href="https://fruitstandsoftware.com/redeem.html" />', html)
+        self.assertIn(promo["intro"], html)
+        self.assertIn(promo["title"], html)
+        self.assertIn('src="40BelowIcons/40BelowLight.png"', html)
+        self.assertIn('srcset="40BelowIcons/40BelowDark.png"', html)
+        self.assertIn('data-promo-button', html)
+        self.assertIn('data-promo-intro', html)
+        self.assertIn('data-promo-title', html)
+        self.assertIn('data-promo-status', html)
+        self.assertIn('"validPattern": "^[A-Z0-9]{12}$"', html)
+        self.assertIn(promo["missing_message"], html)
+        self.assertIn(promo["malformed_message"], html)
+        self.assertIn(promo["fallback_cta"], html)
+        self.assertIn('src="script.js"', html)
 
     def test_all_locales_have_generated_pages(self):
         self.assertGreater(len(LOCALES), 1)
@@ -150,7 +174,8 @@ class SiteVariantsTest(unittest.TestCase):
 
         self.assertIn("<h1>40 Below</h1>", english_homepage)
         self.assertIn("Additional, thoughtful features:", english_homepage)
-        self.assertIn("Welcome to the first version of 40 Below!", english_homepage)
+        self.assertIn("What&#x27;s New in Version 1.0", english_homepage)
+        self.assertIn("Improved the formatting and clarity of the App Store release notes.", english_homepage)
         self.assertIn("現在地の気温を華氏と摂氏で確認", japanese_homepage)
         self.assertNotIn('data-site="product-name"', english_homepage)
         self.assertNotIn('data-site="release-notes-rich"', english_homepage)
@@ -197,6 +222,16 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("sameLanguageLocale", script)
         self.assertIn("initLocaleSwitcher();", script)
         self.assertIn("initGalleryLightbox();", script)
+        self.assertIn("function initPromoRedeemPage", script)
+        self.assertIn("window.promoPageConfig", script)
+        self.assertIn('params.get("promo")', script)
+        self.assertIn("new RegExp(config.validPattern)", script)
+        self.assertIn("intro.hidden = true", script)
+        self.assertIn("intro.hidden = false", script)
+        self.assertIn("title.hidden = true", script)
+        self.assertIn("title.hidden = false", script)
+        self.assertIn("config.redeemBaseUrl", script)
+        self.assertIn("initPromoRedeemPage();", script)
         self.assertIn('"touchend"', script)
         self.assertIn("handledTouch", script)
         self.assertNotIn("window.siteData", script)
@@ -207,6 +242,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertTrue(generator.exists(), "Missing localization generator")
         translations = ROOT / "secondary-page-translations.json"
         self.assertTrue(translations.exists(), "Missing secondary page translation source")
+        promo_translations = ROOT / "promo-page-translations.json"
+        self.assertTrue(promo_translations.exists(), "Missing promo page translation source")
 
         generator_source = generator.read_text(encoding="utf-8")
         self.assertIn("metadata", generator_source)
@@ -215,6 +252,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("support.html", generator_source)
         self.assertIn("privacy-policy.html", generator_source)
         self.assertIn("secondary-page-translations.json", generator_source)
+        self.assertIn("promo-page-translations.json", generator_source)
+        self.assertIn("redeem.html", generator_source)
 
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("python3 scripts/build_localized_site.py", readme)

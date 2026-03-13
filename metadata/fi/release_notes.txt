@@ -1,1 +1,3 @@
-Tervetuloa 40 Below’n ensimmäiseen versioon! Toivon, että pidät siitä yhtä paljon kuin minä pidin sen tekemisestä. 40 Below ei koskaan pyydä sinulta arvostelua, mutta jos haluat olla ystävällinen, mukava 5 tähden arvio ilahduttaisi suuresti.
+== Mitä uutta versiossa 1.0 ==
+
+• App Storen julkaisutietojen muotoilua ja selkeyttä on parannettu.

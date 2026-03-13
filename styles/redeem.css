@@ -1,0 +1,90 @@
+.promo-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background:
+    radial-gradient(circle at top, rgba(85, 178, 242, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(28, 98, 160, 0.05), transparent 28%),
+    var(--page);
+}
+
+.promo-shell {
+  width: min(100%, 42rem);
+}
+
+.promo-card {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  padding: clamp(2rem, 6vw, 3.5rem);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.promo-icon {
+  width: min(15rem, 52vw);
+}
+
+.promo-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.promo-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.promo-message,
+.promo-title,
+.promo-status {
+  margin: 0;
+}
+
+.promo-message {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--muted);
+}
+
+.promo-title {
+  font-size: clamp(1.85rem, 5vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.promo-status {
+  max-width: 34rem;
+  font-size: 1rem;
+}
+
+.promo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0.95rem 1.75rem;
+  border-radius: 999px;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.promo-button:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 640px) {
+  .promo-card {
+    padding: 1.5rem;
+  }
+
+  .promo-button {
+    width: 100%;
+  }
+}
