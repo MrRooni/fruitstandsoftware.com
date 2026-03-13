@@ -741,6 +741,7 @@ def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
     page = get_promo_page_translation(locale)
     ui_strings = localized_ui_strings(locale)
     text_direction = locale_text_direction(locale)
+    social_image_url = f"{SITE_URL}/40BelowIcons/40BelowLight.png"
     config = {
         "redeemBaseUrl": APP_STORE_REDEEM_URL,
         "appStoreUrl": APP_STORE_URL,
@@ -761,6 +762,21 @@ def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
       name="description"
       content="{escape_html(page["meta_description"])}"
     />
+    <meta property="og:title" content="{escape_html(page["page_title"])}" />
+    <meta
+      property="og:description"
+      content="{escape_html(page["meta_description"])}"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{SITE_URL}/redeem.html" />
+    <meta property="og:image" content="{social_image_url}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{escape_html(page["page_title"])}" />
+    <meta
+      name="twitter:description"
+      content="{escape_html(page["meta_description"])}"
+    />
+    <meta name="twitter:image" content="{social_image_url}" />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="{SITE_URL}/redeem.html" />
     <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
