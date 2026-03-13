@@ -835,6 +835,7 @@ def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
         "redeemBaseUrl": APP_STORE_REDEEM_URL,
         "appStoreUrl": APP_STORE_URL,
         "validPattern": "^[A-Z0-9]{12}$",
+        "introTemplate": page["intro"],
         "successCta": page["success_cta"],
         "fallbackCta": page["fallback_cta"],
         "missingMessage": page["missing_message"],
