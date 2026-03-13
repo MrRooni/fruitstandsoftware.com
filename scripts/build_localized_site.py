@@ -19,6 +19,8 @@ SITE_URL = "https://fruitstandsoftware.com"
 COPYRIGHT = "2026 © Fruit Stand Software, LLC"
 APP_STORE_URL = "https://apps.apple.com/app/id6758684366"
 APP_STORE_REDEEM_URL = "https://apps.apple.com/redeem?code="
+SOCIAL_IMAGE_URL = f"{SITE_URL}/SocialImage.png"
+FALLBACK_ROOT_LOCALES = ["en-US", "en-GB", "es-ES", "ja", "zh-Hans"]
 
 LOCALES = sorted(
     path.name
@@ -302,6 +304,80 @@ def render_feature_list(features: list[str], indent: str) -> str:
     return "\n".join(f"{indent}<li>{escape_html(feature)}</li>" for feature in features)
 
 
+def software_application_schema(locale: str, url: str) -> str:
+    title = read_metadata(locale, "name.txt")
+    subtitle = read_metadata(locale, "subtitle.txt")
+    promotional_text = read_metadata(locale, "promotional_text.txt")
+    data = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": title,
+        "alternateName": subtitle,
+        "applicationCategory": "WeatherApplication",
+        "operatingSystem": "iOS",
+        "description": promotional_text,
+        "url": url,
+        "image": SOCIAL_IMAGE_URL,
+        "downloadUrl": APP_STORE_URL,
+        "publisher": {
+            "@type": "Organization",
+            "name": "Fruit Stand Software, LLC",
+            "url": SITE_URL,
+        },
+    }
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
+
+def render_root_fallback_links() -> str:
+    locale_labels = {
+        "en-US": "English (US)",
+        "en-GB": "English (UK)",
+        "es-ES": "Español",
+        "ja": "日本語",
+        "zh-Hans": "简体中文",
+    }
+    links = "\n".join(
+        f'        <li><a href="/{locale}/">{escape_html(locale_labels[locale])}</a></li>'
+        for locale in FALLBACK_ROOT_LOCALES
+    )
+    return f"""      <section aria-labelledby="fallback-locales-heading">
+        <h1 id="fallback-locales-heading">40 Below</h1>
+        <p>Redirecting to the best language for your browser.</p>
+        <p>If you are not redirected, choose a language below.</p>
+        <ul>
+{links}
+        </ul>
+        <p><a href="/{DEFAULT_LOCALE}/">Continue to English</a></p>
+      </section>"""
+
+
+def render_robots_txt() -> str:
+    return f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_URL}/sitemap.xml
+"""
+
+
+def render_sitemap_xml() -> str:
+    urls = [f"{SITE_URL}/"]
+    for locale in LOCALES:
+        for page_kind in ("home", "support", "privacy"):
+            urls.append(canonical_url(locale, page_kind))
+
+    url_entries = "\n".join(
+        f"""  <url>
+    <loc>{escape_html(url)}</loc>
+  </url>"""
+        for url in urls
+    )
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{url_entries}
+</urlset>
+"""
+
+
 def get_secondary_page_translation(locale: str) -> dict[str, object]:
     return SECONDARY_PAGE_TRANSLATIONS.get(locale, SECONDARY_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
 
@@ -431,6 +507,7 @@ def render_homepage(locale: str) -> str:
     release_notes = read_metadata(locale, "release_notes.txt")
     hreflang_links = render_hreflang_links("home")
     text_direction = locale_text_direction(locale)
+    structured_data = software_application_schema(locale, canonical_url(locale, "home"))
     footer_locale_switcher = render_locale_switcher(
         locale, indent="        ", wrapper_class="footer-locale-switcher"
     )
@@ -458,8 +535,20 @@ def render_homepage(locale: str) -> str:
       content="{escape_html(promotional_text)}"
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="{canonical_url(locale, "home")}" />
+    <meta property="og:image" content="{SOCIAL_IMAGE_URL}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{escape_html(title)}" />
+    <meta
+      name="twitter:description"
+      content="{escape_html(promotional_text)}"
+    />
+    <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}" />
     <link rel="canonical" href="{canonical_url(locale, "home")}" />
 {hreflang_links}
+    <script type="application/ld+json">
+{structured_data}
+    </script>
     <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png" />
     <link rel="stylesheet" href="../styles/base.css" />
     <link rel="stylesheet" href="../styles/variant-1.css" />
@@ -828,7 +917,7 @@ def render_root_redirect() -> str:
     available_locales = javascript_value(LOCALES)
     title = read_metadata(DEFAULT_LOCALE, "name.txt")
     promotional_text = read_metadata(DEFAULT_LOCALE, "promotional_text.txt")
-    social_image_url = f"{SITE_URL}/SocialImage.png"
+    fallback_links = render_root_fallback_links()
     return f"""<!doctype html>
 <html lang="en">
   <head>
@@ -846,14 +935,14 @@ def render_root_redirect() -> str:
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{SITE_URL}/" />
-    <meta property="og:image" content="{social_image_url}" />
+    <meta property="og:image" content="{SOCIAL_IMAGE_URL}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{escape_html(title)}" />
     <meta
       name="twitter:description"
       content="{escape_html(promotional_text)}"
     />
-    <meta name="twitter:image" content="{social_image_url}" />
+    <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}" />
     <link rel="canonical" href="{SITE_URL}/" />
     <meta http-equiv="refresh" content="0; url=/{DEFAULT_LOCALE}/" />
     <script>
@@ -914,8 +1003,7 @@ def render_root_redirect() -> str:
   </head>
   <body>
     <main>
-      <p>Redirecting to the best language for your browser.</p>
-      <p><a href="/{DEFAULT_LOCALE}/">Continue to English</a></p>
+{fallback_links}
     </main>
   </body>
 </html>
@@ -935,6 +1023,8 @@ def build() -> None:
 
     (ROOT / "index.html").write_text(render_root_redirect(), encoding="utf-8")
     (ROOT / "redeem.html").write_text(render_promo_page(), encoding="utf-8")
+    (ROOT / "robots.txt").write_text(render_robots_txt(), encoding="utf-8")
+    (ROOT / "sitemap.xml").write_text(render_sitemap_xml(), encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 import json
 import pathlib
 import unittest
+import xml.etree.ElementTree as ET
 
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -50,8 +51,34 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("navigator.languages", html)
         self.assertIn("window.location.replace", html)
         self.assertIn("resolveLocale", html)
+        self.assertIn('id="fallback-locales-heading"', html)
+        self.assertIn('href="/en-US/"', html)
+        self.assertIn('href="/en-GB/"', html)
+        self.assertIn('href="/es-ES/"', html)
+        self.assertIn('href="/ja/"', html)
+        self.assertIn('href="/zh-Hans/"', html)
         self.assertNotIn('src="site-data.js"', html)
         self.assertNotIn('data-site="product-name"', html)
+
+    def test_robots_txt_and_sitemap_exist_with_expected_indexable_urls(self):
+        robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+
+        self.assertIn("User-agent: *", robots)
+        self.assertIn("Allow: /", robots)
+        self.assertIn("Sitemap: https://fruitstandsoftware.com/sitemap.xml", robots)
+
+        root = ET.fromstring(sitemap)
+        namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        urls = [node.text for node in root.findall("sm:url/sm:loc", namespace)]
+
+        self.assertIn("https://fruitstandsoftware.com/", urls)
+        self.assertNotIn("https://fruitstandsoftware.com/redeem.html", urls)
+
+        for locale in LOCALES:
+            self.assertIn(f"https://fruitstandsoftware.com/{locale}/", urls)
+            self.assertIn(f"https://fruitstandsoftware.com/{locale}/support.html", urls)
+            self.assertIn(f"https://fruitstandsoftware.com/{locale}/privacy-policy.html", urls)
 
     def test_root_redeem_page_exists_with_expected_promo_shell(self):
         html = (ROOT / "redeem.html").read_text(encoding="utf-8")
@@ -93,6 +120,9 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertIn(f'<html lang="{locale}" dir="{direction}">', homepage)
             self.assertIn(f'rel="canonical" href="https://fruitstandsoftware.com/{locale}/"', homepage)
             self.assertIn("rel=\"alternate\" hreflang=\"x-default\" href=\"https://fruitstandsoftware.com/\"", homepage)
+            self.assertIn('<script type="application/ld+json">', homepage)
+            self.assertIn('"@type": "SoftwareApplication"', homepage)
+            self.assertIn(f'"url": "https://fruitstandsoftware.com/{locale}/"', homepage)
             self.assertNotIn('src="site-data.js"', homepage)
             self.assertIn('src="../script.js"', homepage)
             self.assertIn('class="locale-switcher"', homepage)
