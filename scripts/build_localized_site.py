@@ -595,6 +595,14 @@ def render_homepage(locale: str) -> str:
     description_html = render_paragraph_block(description["description_paragraphs"], "            ")
     features_html = render_feature_list(description["features"], "              ")
     screenshot_alt = escape_html(f"{title} — {subtitle}")
+    gallery_images = [
+        {"src": "Cold_Morning_Dark.png", "alt": "Cold Morning Dark screenshot"},
+        {"src": "Cold_Morning_Dark_Forecast.png", "alt": "Cold Morning Dark Forecast screenshot"},
+        {"src": "Warm_Midday_Light.png", "alt": "Open Warm Midday Light screenshot"},
+        {"src": "Hot_Afternoon_Light.png", "alt": "Hot Afternoon Light screenshot"},
+        {"src": "Cold_Night_Dark.png", "alt": "Cold Night Dark screenshot"},
+        {"src": "Warm_Night_Dark.png", "alt": "Warm Night Dark screenshot"},
+    ]
 
     return f"""<!doctype html>
 <html lang="{locale}" dir="{text_direction}">
@@ -774,8 +782,8 @@ def render_homepage(locale: str) -> str:
                 <img
                   class="lightbox-image"
                   data-lightbox-prev-image
-                  src="../Cold_Morning_Dark.png"
-                  alt=""
+                  src="../{gallery_images[0]["src"]}"
+                  alt="{gallery_images[0]["alt"]}"
                   width="500"
                   height="1036"
                 />
@@ -784,8 +792,8 @@ def render_homepage(locale: str) -> str:
                 <img
                   class="lightbox-image"
                   data-lightbox-image
-                  src="../Warm_Midday_Light.png"
-                  alt=""
+                  src="../{gallery_images[2]["src"]}"
+                  alt="{gallery_images[2]["alt"]}"
                   width="500"
                   height="1036"
                 />
@@ -794,8 +802,8 @@ def render_homepage(locale: str) -> str:
                 <img
                   class="lightbox-image"
                   data-lightbox-next-image
-                  src="../Hot_Afternoon_Light.png"
-                  alt=""
+                  src="../{gallery_images[3]["src"]}"
+                  alt="{gallery_images[3]["alt"]}"
                   width="500"
                   height="1036"
                 />
