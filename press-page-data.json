@@ -1,0 +1,239 @@
+{
+  "en-US": {
+    "page_title": "Press | Fruit Stand Software",
+    "meta_description": "Press kit for 40 Below with screenshots, icons, download bundles, and direct promo-code contact information.",
+    "eyebrow": "Press Kit",
+    "title": "40 Below Press Kit",
+    "lead": "Everything you need to cover 40 Below, including screenshots, app icons, download bundles, and a direct line for promo-code requests.",
+    "overview_heading": "About 40 Below",
+    "overview_intro": "40 Below is built around one simple job: show the local temperature clearly in both Fahrenheit and Celsius.",
+    "overview_outro": "This press kit gathers the essential copy and assets in one place so writers, reviewers, and creators can get what they need quickly.",
+    "factsheet_heading": "Factsheet",
+    "factsheet_intro": "A quick App Store-style snapshot for press coverage.",
+    "factsheet_labels": {
+      "app_name": "App Name",
+      "subtitle": "Subtitle",
+      "developer": "Developer",
+      "website": "Website",
+      "app_store": "App Store",
+      "site_languages": "Site Languages",
+      "promo_contact": "Promo Contact"
+    },
+    "factsheet_store": {
+      "price": "$2.99",
+      "age_value": "4+",
+      "category_value": "Weather",
+      "developer_value": "Fruit Stand Software, LLC",
+      "languages_value": "Localized into 17 languages",
+      "accessibility_value": "Full accessibility support",
+      "privacy_value": "Privacy-preserving. No information collected, ever.",
+      "technology_value": "Built with the latest Apple technology"
+    },
+    "contact_heading": "Promo Codes & Press Contact",
+    "contact_body": "Email {email} if you would like a promo code or have a press question about 40 Below.",
+    "contact_button": "Email Michael",
+    "contact_subject": "40 Below Press Inquiry",
+    "contact_body_prefill": "Hi Michael,%0A%0AI'd like a promo code or more information for coverage of 40 Below.%0A%0AThanks!",
+    "downloads_heading": "Download Assets",
+    "downloads_body": "Download zipped image assets by platform, or grab the combined bundle if you want everything currently available.",
+    "download_note": "Each zip includes app icons plus a short inventory note. iPad and Mac bundles are ready for future screenshots.",
+    "download_button": "Download 40 Below Press Kit",
+    "technology_heading": "Chock Full of Apple Technology",
+    "technology_intro": "40 Below spans the latest Apple frameworks and platform behaviors across iPhone, iPad, and Mac.",
+    "technology_cards": [
+      {
+        "kind": "hero",
+        "title": "Built for Apple platforms",
+        "body": "40 Below supports iPhone, iPad, and Mac through a shared app architecture built for Apple platforms.",
+        "image": "../40-Below-Press-Assets/Product Shots/40_Below_Product_Family_Light.png",
+        "eyebrow": "Platforms"
+      },
+      {
+        "kind": "stack",
+        "title": "Weather, maps, and background refresh",
+        "body": [
+          "WeatherKit powers current conditions, forecasts, cached snapshots, and background temperature refreshes in the main app.",
+          "Core Location handles current-location lookup and authorization so 40 Below can show local temperature automatically.",
+          "MapKit is used for reverse geocoding so raw coordinates become readable city and place names.",
+          "BackgroundTasks keeps temperature and cached location data fresh when the app is not foregrounded."
+        ],
+        "image": "https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-96x96_2x.png"
+      },
+      {
+        "kind": "stack",
+        "title": "Siri, Spotlight, Shortcuts, and Apple Intelligence",
+        "body": [
+          "App Intents powers Siri, Shortcuts, and Spotlight actions for showing the current temperature, speaking it aloud, and opening the forecast.",
+          "SnippetIntent and Apple Intelligence-era intent presentation APIs show inline temperature cards from Siri and Spotlight without always bouncing people into the app.",
+          "NSUserActivity donation and Core Spotlight indexing help iOS surface temperature, forecast, and share actions proactively in search and system suggestions."
+        ],
+        "image": "https://developer.apple.com/assets/elements/icons/visual-intelligence/visual-intelligence-256x256_2x.png"
+      },
+      {
+        "kind": "stack",
+        "title": "Mac-native touches and sharing",
+        "body": [
+          "The Mac app includes menu bar behavior, dock menu integration, multi-window lifecycle support, app activation behavior, and Mac-specific email flow.",
+          "MenuBarExtra and NSStatusItem keep 40 Below resident in the macOS menu bar for at-a-glance temperature access.",
+          "ServiceManagement and a login helper app support Launch at Login on macOS.",
+          "ShareLink, UIActivityViewController, and NSSharingServicePicker provide native Apple sharing across iPhone, iPad, and Mac."
+        ],
+        "image": "../images/finder.png"
+      },
+      {
+        "kind": "stack",
+        "title": "SwiftUI at the center",
+        "body": [
+          "SwiftUI drives the core app UI, settings, onboarding, share-card rendering, and most cross-platform presentation.",
+          "Localization support uses String(localized:), .lproj bundles, InfoPlist.strings, and Locale-aware formatting across app UI, App Intents, and system-facing strings.",
+          "Accessibility uses explicit SwiftUI accessibility labels, hints, and values for temperatures, forecast rows, buttons, and status information, plus adaptations for Reduce Motion and increased contrast."
+        ],
+        "image": "../images/swiftui-256x256_2x.png"
+      }
+    ],
+    "download_labels": {
+      "iphone": "Download iPhone Assets",
+      "ipad": "Download iPad Assets",
+      "mac": "Download Mac Assets",
+      "all": "Download All Assets"
+    },
+    "gallery_heading": "Galleries",
+    "gallery_intro": "Preview the available press images by platform. iPad and Mac sections are set up now and waiting for approved screenshots.",
+    "gallery_sections": {
+      "iphone": {
+        "title": "iPhone Gallery",
+        "description": ""
+      },
+      "ipad": {
+        "title": "iPad Gallery",
+        "description": ""
+      },
+      "mac": {
+        "title": "Mac Gallery",
+        "description": ""
+      }
+    },
+    "empty_state_title": "Assets coming soon",
+    "empty_state_body": "This gallery is wired up and ready for the first approved screenshots.",
+    "lightbox_close": "Close gallery",
+    "lightbox_previous": "Previous image",
+    "lightbox_next": "Next image"
+  },
+  "assets": {
+    "downloads": {
+      "iphone": {
+        "href": "press-assets/downloads/40-below-iphone-assets.zip",
+        "description": "Current iPhone screenshots and app icons."
+      },
+      "ipad": {
+        "href": "press-assets/downloads/40-below-ipad-assets.zip",
+        "description": "Prepared bundle for future iPad screenshots plus app icons."
+      },
+      "mac": {
+        "href": "press-assets/downloads/40-below-mac-assets.zip",
+        "description": "Prepared bundle for future Mac screenshots plus app icons."
+      },
+      "all": {
+        "href": "press-assets/downloads/40-below-all-assets.zip",
+        "description": "Everything currently available in one download."
+      },
+      "press_kit": {
+        "href": "40-Below-Press-Assets.zip",
+        "description": "Complete press kit download."
+      }
+    },
+    "galleries": {
+      "iphone": [
+        {
+          "src": "Cold_Morning_Dark.png",
+          "alt": "40 Below iPhone screenshot in a cold morning dark theme",
+          "label": "Cold Morning Dark"
+        },
+        {
+          "src": "Cold_Morning_Dark_Forecast.png",
+          "alt": "40 Below iPhone forecast screenshot in a cold morning dark theme",
+          "label": "Cold Morning Dark Forecast"
+        },
+        {
+          "src": "Warm_Midday_Light.png",
+          "alt": "40 Below iPhone screenshot in a warm midday light theme",
+          "label": "Warm Midday Light"
+        },
+        {
+          "src": "Hot_Afternoon_Light.png",
+          "alt": "40 Below iPhone screenshot in a hot afternoon light theme",
+          "label": "Hot Afternoon Light"
+        },
+        {
+          "src": "Cold_Night_Dark.png",
+          "alt": "40 Below iPhone screenshot in a cold night dark theme",
+          "label": "Cold Night Dark"
+        },
+        {
+          "src": "Warm_Night_Dark.png",
+          "alt": "40 Below iPhone screenshot in a warm night dark theme",
+          "label": "Warm Night Dark"
+        }
+      ],
+      "ipad": [
+        {
+          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_01_Cold_Morning_Dark.png",
+          "alt": "40 Below iPad screenshot in a cold morning dark theme",
+          "label": "Cold Morning Dark"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_02_Cold_Morning_Dark_Forecast.png",
+          "alt": "40 Below iPad forecast screenshot in a cold morning dark theme",
+          "label": "Cold Morning Dark Forecast"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_03_Warm_Midday_Light.png",
+          "alt": "40 Below iPad screenshot in a warm midday light theme",
+          "label": "Warm Midday Light"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_04_Hot_Afternoon_Light.png",
+          "alt": "40 Below iPad screenshot in a hot afternoon light theme",
+          "label": "Hot Afternoon Light"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_05_Cold_Night_Dark.png",
+          "alt": "40 Below iPad screenshot in a cold night dark theme",
+          "label": "Cold Night Dark"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_06_Warm_Night_Dark.png",
+          "alt": "40 Below iPad screenshot in a warm night dark theme",
+          "label": "Warm Night Dark"
+        }
+      ],
+      "mac": [
+        {
+          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Blue.png",
+          "alt": "40 Below Mac product shot in blue",
+          "label": "Blue"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Orange.png",
+          "alt": "40 Below Mac product shot in orange",
+          "label": "Orange"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Pink.png",
+          "alt": "40 Below Mac product shot in pink",
+          "label": "Pink"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Purple.png",
+          "alt": "40 Below Mac product shot in purple",
+          "label": "Purple"
+        },
+        {
+          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Silver.png",
+          "alt": "40 Below Mac product shot in silver",
+          "label": "Silver"
+        }
+      ]
+    }
+  }
+}

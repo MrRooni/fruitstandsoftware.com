@@ -17,12 +17,15 @@ PROMO_PAGE_TRANSLATIONS = json.loads(
 NUMBER_ONE_PAGE_TRANSLATIONS = json.loads(
     (ROOT / "number-one-page-translations.json").read_text(encoding="utf-8")
 )
+PRESS_PAGE_DATA = json.loads((ROOT / "press-page-data.json").read_text(encoding="utf-8"))
 DEFAULT_LOCALE = "en-US"
+PRESS_PAGE_LOCALE = "en-US"
 SITE_URL = "https://fruitstandsoftware.com"
 COPYRIGHT = "2026 © Fruit Stand Software, LLC"
 APP_STORE_URL = "https://apps.apple.com/app/id6758684366"
 APP_STORE_REDEEM_URL = "https://apps.apple.com/redeem?code="
 SOCIAL_IMAGE_URL = f"{SITE_URL}/SocialImage.png"
+PRESS_CONTACT_EMAIL = "michael@fruitstandsoftware.com"
 FALLBACK_ROOT_LOCALES = ["en-US", "en-GB", "es-ES", "ja", "zh-Hans"]
 
 LOCALES = sorted(
@@ -61,6 +64,8 @@ def locale_path(locale: str, page_kind: str) -> str:
         return f"/{locale}/support.html"
     if page_kind == "privacy":
         return f"/{locale}/privacy-policy.html"
+    if page_kind == "press":
+        return f"/{PRESS_PAGE_LOCALE}/press.html"
     raise ValueError(f"Unsupported page kind: {page_kind}")
 
 
@@ -75,6 +80,15 @@ def render_hreflang_links(page_kind: str) -> str:
     ]
     links.append(f'    <link rel="alternate" hreflang="x-default" href="{SITE_URL}/" />')
     return "\n".join(links)
+
+
+def render_press_hreflang_links() -> str:
+    return "\n".join(
+        [
+            f'    <link rel="alternate" hreflang="{PRESS_PAGE_LOCALE}" href="{canonical_url(PRESS_PAGE_LOCALE, "press")}" />',
+            f'    <link rel="alternate" hreflang="x-default" href="{canonical_url(PRESS_PAGE_LOCALE, "press")}" />',
+        ]
+    )
 
 
 def locale_switcher_label(locale: str) -> str:
@@ -437,7 +451,7 @@ Sitemap: {SITE_URL}/sitemap.xml
 
 
 def render_sitemap_xml() -> str:
-    urls = [f"{SITE_URL}/", f"{SITE_URL}/number-one.html"]
+    urls = [f"{SITE_URL}/", f"{SITE_URL}/number-one.html", canonical_url(PRESS_PAGE_LOCALE, "press")]
     for locale in LOCALES:
         for page_kind in ("home", "support", "privacy"):
             urls.append(canonical_url(locale, page_kind))
@@ -465,6 +479,14 @@ def get_promo_page_translation(locale: str = DEFAULT_LOCALE) -> dict[str, object
 
 def get_number_one_page_translation(locale: str = DEFAULT_LOCALE) -> dict[str, object]:
     return NUMBER_ONE_PAGE_TRANSLATIONS.get(locale, NUMBER_ONE_PAGE_TRANSLATIONS[DEFAULT_LOCALE])
+
+
+def get_press_page(locale: str = PRESS_PAGE_LOCALE) -> dict[str, object]:
+    return PRESS_PAGE_DATA.get(locale, PRESS_PAGE_DATA[PRESS_PAGE_LOCALE])
+
+
+def get_press_assets() -> dict[str, object]:
+    return PRESS_PAGE_DATA["assets"]
 
 
 def render_paragraphs(paragraphs: list[str], indent: str) -> str:
@@ -497,6 +519,40 @@ def render_support_main(locale: str) -> str:
           </div>
         </div>
       </section>"""
+
+
+def render_primary_nav(
+    locale: str, ui_strings: dict[str, str], badge_paths: dict[str, str], shell: dict[str, object], current_page: str = ""
+) -> str:
+    press_current = ' aria-current="page"' if current_page == "press" else ""
+    support_current = ' aria-current="page"' if current_page == "support" else ""
+
+    return f"""        <nav class="nav-actions" aria-label="{escape_html(ui_strings["primary_nav"])}">
+          <a class="nav-link" href="/{PRESS_PAGE_LOCALE}/press.html"{press_current}>Press</a>
+          <a class="nav-link" href="/{locale}/support.html"{support_current}>{escape_html(shell["nav_support"])}</a>
+          <a
+            class="nav-store-link"
+            href="{APP_STORE_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{escape_html(ui_strings["app_store"])}"
+          >
+            <img
+              class="badge-light"
+              src="{badge_paths["light"]}"
+              alt="{escape_html(ui_strings["app_store"])}"
+              width="152"
+              height="52"
+            />
+            <img
+              class="badge-dark"
+              src="{badge_paths["dark"]}"
+              alt="{escape_html(ui_strings["app_store"])}"
+              width="152"
+              height="52"
+            />
+          </a>
+        </nav>"""
 
 
 def render_privacy_sections(sections: list[dict[str, object]]) -> str:
@@ -575,6 +631,413 @@ def render_privacy_main(locale: str) -> str:
       </div>"""
 
 
+def render_press_factsheet(title: str, subtitle: str) -> str:
+    press = get_press_page(PRESS_PAGE_LOCALE)
+    store = press["factsheet_store"]
+    press_kit_download = get_press_assets()["downloads"]["press_kit"]
+    stats = [
+        {
+            "icon": "⛅",
+            "value": f'{store["category_value"]} Category',
+            "detail": "",
+        },
+        {
+            "icon": "🧑‍💻",
+            "value": store["developer_value"],
+            "detail": "",
+        },
+        {
+            "icon": "🌍",
+            "value": store["languages_value"],
+            "detail": "",
+        },
+        {
+            "icon": "♿",
+            "value": store["accessibility_value"],
+            "detail": "",
+        },
+        {
+            "icon": "🔒",
+            "value": store["privacy_value"],
+            "detail": "",
+        },
+        {
+            "icon": "🍎",
+            "value": store["technology_value"],
+            "detail": "",
+        },
+    ]
+    stats_html = "\n".join(
+        [
+            f"""              <article class="press-stat-card">
+                <div class="press-stat-icon" aria-hidden="true">{escape_html(item["icon"])}</div>
+                <div class="press-stat-copy">
+                  <p class="press-stat-value">{escape_html(item["value"])}</p>
+                  {f'<p class="press-stat-detail">{escape_html(item["detail"])}</p>' if item["detail"] else ""}
+                </div>
+              </article>"""
+            for item in stats
+        ]
+    )
+
+    return f"""          <aside class="policy-aside-card reveal press-factsheet-card" aria-labelledby="press-factsheet-heading">
+            <div class="press-card-stack">
+              <h2 id="press-factsheet-heading" class="visually-hidden">{escape_html(press["factsheet_heading"])}</h2>
+              <div class="press-store-summary">
+                <picture class="press-store-icon">
+                  <source srcset="../40BelowIcons/40BelowDark.png" media="(prefers-color-scheme: dark)" />
+                  <img src="../40BelowIcons/40BelowLight.png" alt="" width="88" height="88" />
+                </picture>
+                <div class="press-store-copy">
+                  <p class="press-store-name">{escape_html(title)}</p>
+                  <p class="press-store-subtitle">{escape_html(subtitle)}</p>
+                  <p class="press-store-price">{escape_html(store["price"])}</p>
+                  <p class="press-store-rating" aria-label="Five star App Store rating">⭐ ⭐ ⭐ ⭐ ⭐</p>
+                </div>
+              </div>
+              <div class="press-stats-grid">
+{stats_html}
+              </div>
+              <div class="support-actions press-factsheet-download">
+                <a class="support-button" href="../{escape_html(press_kit_download["href"])}" download>
+                  {escape_html(press["download_button"])}
+                </a>
+              </div>
+            </div>
+          </aside>"""
+
+
+def render_press_download_cards(downloads: dict[str, object], labels: dict[str, str]) -> str:
+    order = ["iphone", "ipad", "mac", "all"]
+    icon_config = {
+        "iphone": {"src": "iphone.png", "width": 32, "height": 32},
+        "ipad": {"src": "ipad.png", "width": 32, "height": 32},
+        "mac": {"src": "mac.png", "width": 32, "height": 32},
+        "all": {"src": "all.png", "width": 43, "height": 32},
+    }
+    cards = []
+    for key in order:
+        item = downloads[key]
+        icon = icon_config[key]
+        icon_class = "press-download-button-icon press-download-button-icon-wide" if key == "all" else "press-download-button-icon"
+        cards.append(
+            f"""          <article class="support-card reveal press-download-card">
+            <div class="press-card-stack press-download-card-single-action">
+              <a class="support-button press-download-button-with-icon" href="../{escape_html(item["href"])}" download>
+                <img class="{icon_class}" src="../images/{escape_html(icon["src"])}" alt="" width="{icon["width"]}" height="{icon["height"]}" />
+                <span>{escape_html(labels[key])}</span>
+              </a>
+            </div>
+          </article>"""
+        )
+
+    return "\n".join(cards)
+
+
+def render_press_gallery_sections(assets: dict[str, object], sections: dict[str, object], empty_title: str, empty_body: str) -> str:
+    rendered_sections = []
+
+    for key in ("iphone", "ipad", "mac"):
+        section = sections[key]
+        images = assets["galleries"][key]
+        group_name = f"press-{key}"
+
+        if images:
+            thumbs = "\n".join(
+                [
+                    f"""              <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="{group_name}" data-gallery-index="{index}" aria-label="Open {escape_html(image["label"])} screenshot">
+                <img src="../{escape_html(image["src"])}" alt="{escape_html(image["alt"])}" width="250" height="518" loading="lazy" />
+              </button>"""
+                    for index, image in enumerate(images)
+                ]
+            )
+            gallery_content = f"""            <div class="gallery-grid press-gallery-grid">
+{thumbs}
+            </div>"""
+        else:
+            gallery_content = f"""            <div class="press-empty-state" role="status" aria-live="polite">
+              <h3>{escape_html(empty_title)}</h3>
+              <p>{escape_html(empty_body)}</p>
+            </div>"""
+
+        rendered_sections.append(
+            f"""        <section class="support-card reveal press-gallery-card" aria-labelledby="{group_name}-heading">
+          <div class="press-card-stack">
+            <h2 id="{group_name}-heading" class="press-card-title">{escape_html(section["title"])}</h2>
+            {'<p>' + escape_html(section["description"]) + '</p>' if section.get("description") else ''}
+          </div>
+{gallery_content}
+        </section>"""
+        )
+
+    return "\n".join(rendered_sections)
+
+
+def render_press_technology_section() -> str:
+    press = get_press_page(PRESS_PAGE_LOCALE)
+    cards = []
+
+    for card in press["technology_cards"]:
+        if card["kind"] == "hero":
+            cards.append(
+                f"""        <article class="support-card reveal press-tech-hero-card" aria-labelledby="press-tech-hero-heading">
+          <div class="press-tech-hero-media">
+            <img src="{escape_html(card["image"])}" alt="" loading="lazy" />
+          </div>
+          <div class="press-tech-hero-copy">
+            <p class="eyebrow">{escape_html(card["eyebrow"])}</p>
+            <h3 id="press-tech-hero-heading" class="press-card-title">{escape_html(card["title"])}</h3>
+            <p>{escape_html(card["body"])}</p>
+          </div>
+        </article>"""
+            )
+            continue
+
+        body_html = "\n".join(f"              <li>{escape_html(item)}</li>" for item in card["body"])
+        cards.append(
+            f"""        <article class="support-card reveal press-tech-card">
+          <div class="press-tech-card-art">
+            <img class="press-tech-card-image" src="{escape_html(card["image"])}" alt="" loading="lazy" />
+          </div>
+          <div class="press-card-stack">
+            <h3 class="press-card-title">{escape_html(card["title"])}</h3>
+            <ul class="press-tech-list">
+{body_html}
+            </ul>
+          </div>
+        </article>"""
+        )
+
+    cards_html = "\n".join(cards)
+
+    return f"""      <section class="press-technology-section" aria-labelledby="press-technology-heading">
+        <div class="secondary-header-card reveal press-technology-header">
+          <h2 id="press-technology-heading" class="press-card-title">{escape_html(press["technology_heading"])}</h2>
+          <p class="secondary-page-lead">{escape_html(press["technology_intro"])}</p>
+        </div>
+        <div class="press-technology-grid">
+{cards_html}
+        </div>
+      </section>"""
+
+
+def render_press_main() -> str:
+    press = get_press_page(PRESS_PAGE_LOCALE)
+    assets = get_press_assets()
+    title = read_metadata(PRESS_PAGE_LOCALE, "name.txt")
+    subtitle = read_metadata(PRESS_PAGE_LOCALE, "subtitle.txt")
+    promotional_text = read_metadata(PRESS_PAGE_LOCALE, "promotional_text.txt")
+    description = parse_description(PRESS_PAGE_LOCALE)
+    factsheet_html = render_press_factsheet(title, subtitle)
+    gallery_sections = render_press_gallery_sections(
+        assets,
+        press["gallery_sections"],
+        press["empty_state_title"],
+        press["empty_state_body"],
+    )
+    technology_section = render_press_technology_section()
+    contact_email_link = '<a href="mailto:michael@fruitstandsoftware.com">michael@fruitstandsoftware.com</a>'
+    contact_body = escape_html(press["contact_body"]).replace("{email}", contact_email_link)
+    subject = html.escape(str(press["contact_subject"]).replace(" ", "%20"), quote=True)
+    body_prefill = html.escape(str(press["contact_body_prefill"]), quote=True)
+
+    return f"""      <section class="secondary-header-card reveal press-hero">
+        <div class="press-card-stack">
+          <h1 class="secondary-page-title">{escape_html(press["title"])}</h1>
+          <p class="secondary-page-lead">{escape_html(press["lead"])}</p>
+        </div>
+      </section>
+
+      <div class="press-intro-grid">
+        <article class="policy-main-card reveal press-overview-card" aria-labelledby="press-overview-heading">
+          <div class="press-card-stack">
+            <h2 id="press-overview-heading" class="press-card-title">{escape_html(press["overview_heading"])}</h2>
+            <p>{escape_html(press["overview_intro"])}</p>
+            <p>{escape_html(promotional_text)}</p>
+            {render_paragraphs(description["description_paragraphs"], "            ")}
+            <p>{escape_html(press["overview_outro"])}</p>
+          </div>
+        </article>
+
+{factsheet_html}
+      </div>
+
+      <section class="press-gallery-stack" aria-labelledby="press-gallery-heading">
+{technology_section}
+{gallery_sections}
+      </section>
+
+      <section class="support-grid press-contact-grid" aria-labelledby="press-contact-heading">
+        <article class="support-card reveal press-contact-card">
+          <div class="press-card-stack">
+            <h2 id="press-contact-heading" class="press-card-title">{escape_html(press["contact_heading"])}</h2>
+            <p>{contact_body}</p>
+            <div class="support-actions">
+              <a class="support-button" href="mailto:{PRESS_CONTACT_EMAIL}?subject={subject}&body={body_prefill}">
+                {escape_html(press["contact_button"])}
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>"""
+
+
+def render_lightbox_markup(previous_image: dict[str, str], image: dict[str, str], next_image: dict[str, str], close_label: str, previous_label: str, next_label: str) -> str:
+    return f"""    <div
+      class="lightbox"
+      data-lightbox
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-title"
+      hidden
+    >
+      <div class="lightbox-backdrop" data-lightbox-close></div>
+      <div class="lightbox-shell">
+        <div class="lightbox-bar">
+          <p id="lightbox-title" class="lightbox-status" aria-live="polite"></p>
+          <button class="lightbox-close" type="button" data-lightbox-close aria-label="{escape_html(close_label)}">
+            Close
+          </button>
+        </div>
+        <div class="lightbox-stage" data-lightbox-stage>
+          <button class="lightbox-arrow" type="button" data-gallery-prev aria-label="{escape_html(previous_label)}">
+            &#8592;
+          </button>
+          <div class="lightbox-viewport" data-lightbox-viewport>
+            <div class="lightbox-track" data-lightbox-track>
+              <div class="lightbox-slide">
+                <img
+                  class="lightbox-image"
+                  data-lightbox-prev-image
+                  src="../{escape_html(previous_image["src"])}"
+                  alt="{escape_html(previous_image["alt"])}"
+                  width="500"
+                  height="1036"
+                />
+              </div>
+              <div class="lightbox-slide">
+                <img
+                  class="lightbox-image"
+                  data-lightbox-image
+                  src="../{escape_html(image["src"])}"
+                  alt="{escape_html(image["alt"])}"
+                  width="500"
+                  height="1036"
+                />
+              </div>
+              <div class="lightbox-slide">
+                <img
+                  class="lightbox-image"
+                  data-lightbox-next-image
+                  src="../{escape_html(next_image["src"])}"
+                  alt="{escape_html(next_image["alt"])}"
+                  width="500"
+                  height="1036"
+                />
+              </div>
+            </div>
+          </div>
+          <button class="lightbox-arrow" type="button" data-gallery-next aria-label="{escape_html(next_label)}">
+            &#8594;
+          </button>
+        </div>
+      </div>
+    </div>"""
+
+
+def render_press_page() -> str:
+    press = get_press_page(PRESS_PAGE_LOCALE)
+    shell = get_secondary_page_translation(PRESS_PAGE_LOCALE)["shell"]
+    ui_strings = localized_ui_strings(PRESS_PAGE_LOCALE)
+    badge_paths = app_store_badge_paths(PRESS_PAGE_LOCALE)
+    text_direction = locale_text_direction(PRESS_PAGE_LOCALE)
+    hreflang_links = render_press_hreflang_links()
+    footer_locale_switcher = render_locale_switcher(
+        PRESS_PAGE_LOCALE, indent="        ", wrapper_class="footer-locale-switcher"
+    )
+    assets = get_press_assets()
+    homepage_gallery = assets["galleries"]["iphone"]
+    lightbox_markup = render_lightbox_markup(
+        homepage_gallery[-1],
+        homepage_gallery[0],
+        homepage_gallery[1],
+        press["lightbox_close"],
+        press["lightbox_previous"],
+        press["lightbox_next"],
+    )
+    gallery_groups = {
+        "press-iphone": assets["galleries"]["iphone"],
+        "press-ipad": assets["galleries"]["ipad"],
+        "press-mac": assets["galleries"]["mac"],
+    }
+    primary_nav = render_primary_nav(PRESS_PAGE_LOCALE, ui_strings, badge_paths, shell, current_page="press")
+
+    return f"""<!doctype html>
+<html lang="{PRESS_PAGE_LOCALE}" dir="{text_direction}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{escape_html(press["page_title"])}</title>
+    <meta
+      name="description"
+      content="{escape_html(press["meta_description"])}"
+    />
+    <meta property="og:title" content="{escape_html(press["page_title"])}" />
+    <meta
+      property="og:description"
+      content="{escape_html(press["meta_description"])}"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{canonical_url(PRESS_PAGE_LOCALE, "press")}" />
+    <meta property="og:image" content="{SOCIAL_IMAGE_URL}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{escape_html(press["page_title"])}" />
+    <meta
+      name="twitter:description"
+      content="{escape_html(press["meta_description"])}"
+    />
+    <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}" />
+    <link rel="canonical" href="{canonical_url(PRESS_PAGE_LOCALE, "press")}" />
+{hreflang_links}
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/secondary-pages.css" />
+    <link rel="stylesheet" href="../styles/variant-1.css" />
+  </head>
+  <body class="page page-1">
+    <header class="top-nav">
+      <div class="nav-shell">
+        <a class="nav-brand" href="/{PRESS_PAGE_LOCALE}/" aria-label="{escape_html(ui_strings["home"])}">
+          <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
+          <span>40 Below</span>
+        </a>
+{primary_nav}
+      </div>
+    </header>
+
+    <main id="main" class="secondary-shell">
+{render_press_main()}
+    </main>
+
+{lightbox_markup}
+
+    <footer class="site-footer secondary-footer">
+      <div class="footer-stack">
+        <p>© <span id="year"></span> Fruit Stand Software</p>
+        <a class="footer-link" href="/{PRESS_PAGE_LOCALE}/privacy-policy.html">{escape_html(shell["footer_privacy"])}</a>
+{footer_locale_switcher}
+      </div>
+    </footer>
+
+    <script>
+      window.galleryGroups = {javascript_value(gallery_groups)};
+    </script>
+    <script src="../script.js"></script>
+  </body>
+</html>
+"""
+
+
 def render_homepage(locale: str) -> str:
     translation = get_secondary_page_translation(locale)
     shell = translation["shell"]
@@ -603,6 +1066,15 @@ def render_homepage(locale: str) -> str:
         {"src": "Cold_Night_Dark.png", "alt": "Cold Night Dark screenshot"},
         {"src": "Warm_Night_Dark.png", "alt": "Warm Night Dark screenshot"},
     ]
+    primary_nav = render_primary_nav(locale, ui_strings, badge_paths, shell)
+    lightbox_markup = render_lightbox_markup(
+        gallery_images[-1],
+        gallery_images[0],
+        gallery_images[2],
+        "Close gallery",
+        "Previous image",
+        "Next image",
+    )
 
     return f"""<!doctype html>
 <html lang="{locale}" dir="{text_direction}">
@@ -649,31 +1121,7 @@ def render_homepage(locale: str) -> str:
           <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
           <span>40 Below</span>
         </a>
-        <nav class="nav-actions" aria-label="{escape_html(ui_strings["primary_nav"])}">
-          <a class="nav-link" href="/{locale}/support.html">{escape_html(shell["nav_support"])}</a>
-          <a
-            class="nav-store-link"
-            href="{APP_STORE_URL}"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="{escape_html(ui_strings["app_store"])}"
-          >
-            <img
-              class="badge-light"
-              src="{badge_paths["light"]}"
-              alt="{escape_html(ui_strings["app_store"])}"
-              width="152"
-              height="52"
-            />
-            <img
-              class="badge-dark"
-              src="{badge_paths["dark"]}"
-              alt="{escape_html(ui_strings["app_store"])}"
-              width="152"
-              height="52"
-            />
-          </a>
-        </nav>
+{primary_nav}
       </div>
     </header>
 
@@ -734,88 +1182,29 @@ def render_homepage(locale: str) -> str:
           <h2 id="gallery-heading">Gallery</h2>
         </div>
         <div class="gallery-grid">
-          <button class="gallery-thumb" type="button" data-gallery-index="0" aria-label="Open Cold Morning Dark screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="0" aria-label="Open Cold Morning Dark screenshot">
             <img src="../Cold_Morning_Dark.png" alt="Cold Morning Dark screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="1" aria-label="Open Cold Morning Dark Forecast screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="1" aria-label="Open Cold Morning Dark Forecast screenshot">
             <img src="../Cold_Morning_Dark_Forecast.png" alt="Cold Morning Dark Forecast screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="2" aria-label="Open Warm Midday Light screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="2" aria-label="Open Warm Midday Light screenshot">
             <img src="../Warm_Midday_Light.png" alt="Open Warm Midday Light screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="3" aria-label="Open Hot Afternoon Light screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="3" aria-label="Open Hot Afternoon Light screenshot">
             <img src="../Hot_Afternoon_Light.png" alt="Hot Afternoon Light screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="4" aria-label="Open Cold Night Dark screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="4" aria-label="Open Cold Night Dark screenshot">
             <img src="../Cold_Night_Dark.png" alt="Cold Night Dark screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="5" aria-label="Open Warm Night Dark screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="5" aria-label="Open Warm Night Dark screenshot">
             <img src="../Warm_Night_Dark.png" alt="Warm Night Dark screenshot" width="250" height="518" loading="lazy" />
           </button>
         </div>
       </section>
     </main>
 
-    <div
-      class="lightbox"
-      data-lightbox
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="lightbox-title"
-      hidden
-    >
-      <div class="lightbox-backdrop" data-lightbox-close></div>
-      <div class="lightbox-shell">
-        <div class="lightbox-bar">
-          <p id="lightbox-title" class="lightbox-status" aria-live="polite"></p>
-          <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close gallery">
-            Close
-          </button>
-        </div>
-        <div class="lightbox-stage" data-lightbox-stage>
-          <button class="lightbox-arrow" type="button" data-gallery-prev aria-label="Previous image">
-            &#8592;
-          </button>
-          <div class="lightbox-viewport" data-lightbox-viewport>
-            <div class="lightbox-track" data-lightbox-track>
-              <div class="lightbox-slide">
-                <img
-                  class="lightbox-image"
-                  data-lightbox-prev-image
-                  src="../{gallery_images[0]["src"]}"
-                  alt="{gallery_images[0]["alt"]}"
-                  width="500"
-                  height="1036"
-                />
-              </div>
-              <div class="lightbox-slide">
-                <img
-                  class="lightbox-image"
-                  data-lightbox-image
-                  src="../{gallery_images[2]["src"]}"
-                  alt="{gallery_images[2]["alt"]}"
-                  width="500"
-                  height="1036"
-                />
-              </div>
-              <div class="lightbox-slide">
-                <img
-                  class="lightbox-image"
-                  data-lightbox-next-image
-                  src="../{gallery_images[3]["src"]}"
-                  alt="{gallery_images[3]["alt"]}"
-                  width="500"
-                  height="1036"
-                />
-              </div>
-            </div>
-          </div>
-          <button class="lightbox-arrow" type="button" data-gallery-next aria-label="Next image">
-            &#8594;
-          </button>
-        </div>
-      </div>
-    </div>
+{lightbox_markup}
 
     <footer class="site-footer">
       <div class="footer-stack">
@@ -825,6 +1214,9 @@ def render_homepage(locale: str) -> str:
       </div>
     </footer>
 
+    <script>
+      window.galleryGroups = {javascript_value({"default": gallery_images})};
+    </script>
     <script src="../script.js"></script>
   </body>
 </html>
@@ -844,6 +1236,7 @@ def render_secondary_page(locale: str, page_kind: str) -> str:
     )
     footer_link = f"/{locale}/privacy-policy.html"
     main_content = render_support_main(locale) if page_kind == "support" else render_privacy_main(locale)
+    primary_nav = render_primary_nav(locale, ui_strings, badge_paths, shell, current_page=page_kind)
 
     return f"""<!doctype html>
 <html lang="{locale}" dir="{text_direction}">
@@ -869,31 +1262,7 @@ def render_secondary_page(locale: str, page_kind: str) -> str:
           <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
           <span>40 Below</span>
         </a>
-        <nav class="nav-actions" aria-label="{escape_html(ui_strings["primary_nav"])}">
-          <a class="nav-link" href="/{locale}/support.html"{' aria-current="page"' if page_kind == "support" else ""}>{escape_html(shell["nav_support"])}</a>
-          <a
-            class="nav-store-link"
-            href="{APP_STORE_URL}"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="{escape_html(ui_strings["app_store"])}"
-          >
-            <img
-              class="badge-light"
-              src="{badge_paths["light"]}"
-              alt="{escape_html(ui_strings["app_store"])}"
-              width="152"
-              height="52"
-            />
-            <img
-              class="badge-dark"
-              src="{badge_paths["dark"]}"
-              alt="{escape_html(ui_strings["app_store"])}"
-              width="152"
-              height="52"
-            />
-          </a>
-        </nav>
+{primary_nav}
       </div>
     </header>
 
@@ -1258,6 +1627,7 @@ def render_charts_page() -> str:
           <span>40 Below</span>
         </a>
         <nav class="nav-actions" aria-label="Primary">
+          <a class="nav-link" href="/en-US/press.html">Press</a>
           <a class="nav-link" href="/en-US/support.html">Support</a>
           <a
             class="nav-store-link"
@@ -1341,6 +1711,8 @@ def build() -> None:
             site_data_path.unlink()
         (locale_dir / "support.html").write_text(render_secondary_page(locale, "support"), encoding="utf-8")
         (locale_dir / "privacy-policy.html").write_text(render_secondary_page(locale, "privacy"), encoding="utf-8")
+        if locale == PRESS_PAGE_LOCALE:
+            (locale_dir / "press.html").write_text(render_press_page(), encoding="utf-8")
 
     (ROOT / "index.html").write_text(render_root_redirect(), encoding="utf-8")
     (ROOT / "charts.html").write_text(render_charts_page(), encoding="utf-8")

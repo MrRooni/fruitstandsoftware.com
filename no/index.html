@@ -81,6 +81,7 @@
           <span>40 Below</span>
         </a>
         <nav class="nav-actions" aria-label="Hovednavigasjon">
+          <a class="nav-link" href="/en-US/press.html">Press</a>
           <a class="nav-link" href="/no/support.html">Support</a>
           <a
             class="nav-store-link"
@@ -170,22 +171,22 @@
           <h2 id="gallery-heading">Gallery</h2>
         </div>
         <div class="gallery-grid">
-          <button class="gallery-thumb" type="button" data-gallery-index="0" aria-label="Open Cold Morning Dark screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="0" aria-label="Open Cold Morning Dark screenshot">
             <img src="../Cold_Morning_Dark.png" alt="Cold Morning Dark screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="1" aria-label="Open Cold Morning Dark Forecast screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="1" aria-label="Open Cold Morning Dark Forecast screenshot">
             <img src="../Cold_Morning_Dark_Forecast.png" alt="Cold Morning Dark Forecast screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="2" aria-label="Open Warm Midday Light screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="2" aria-label="Open Warm Midday Light screenshot">
             <img src="../Warm_Midday_Light.png" alt="Open Warm Midday Light screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="3" aria-label="Open Hot Afternoon Light screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="3" aria-label="Open Hot Afternoon Light screenshot">
             <img src="../Hot_Afternoon_Light.png" alt="Hot Afternoon Light screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="4" aria-label="Open Cold Night Dark screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="4" aria-label="Open Cold Night Dark screenshot">
             <img src="../Cold_Night_Dark.png" alt="Cold Night Dark screenshot" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-index="5" aria-label="Open Warm Night Dark screenshot">
+          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="5" aria-label="Open Warm Night Dark screenshot">
             <img src="../Warm_Night_Dark.png" alt="Warm Night Dark screenshot" width="250" height="518" loading="lazy" />
           </button>
         </div>
@@ -218,6 +219,16 @@
                 <img
                   class="lightbox-image"
                   data-lightbox-prev-image
+                  src="../Warm_Night_Dark.png"
+                  alt="Warm Night Dark screenshot"
+                  width="500"
+                  height="1036"
+                />
+              </div>
+              <div class="lightbox-slide">
+                <img
+                  class="lightbox-image"
+                  data-lightbox-image
                   src="../Cold_Morning_Dark.png"
                   alt="Cold Morning Dark screenshot"
                   width="500"
@@ -227,19 +238,9 @@
               <div class="lightbox-slide">
                 <img
                   class="lightbox-image"
-                  data-lightbox-image
+                  data-lightbox-next-image
                   src="../Warm_Midday_Light.png"
                   alt="Open Warm Midday Light screenshot"
-                  width="500"
-                  height="1036"
-                />
-              </div>
-              <div class="lightbox-slide">
-                <img
-                  class="lightbox-image"
-                  data-lightbox-next-image
-                  src="../Hot_Afternoon_Light.png"
-                  alt="Hot Afternoon Light screenshot"
                   width="500"
                   height="1036"
                 />
@@ -286,6 +287,9 @@
       </div>
     </footer>
 
+    <script>
+      window.galleryGroups = {"default": [{"src": "Cold_Morning_Dark.png", "alt": "Cold Morning Dark screenshot"}, {"src": "Cold_Morning_Dark_Forecast.png", "alt": "Cold Morning Dark Forecast screenshot"}, {"src": "Warm_Midday_Light.png", "alt": "Open Warm Midday Light screenshot"}, {"src": "Hot_Afternoon_Light.png", "alt": "Hot Afternoon Light screenshot"}, {"src": "Cold_Night_Dark.png", "alt": "Cold Night Dark screenshot"}, {"src": "Warm_Night_Dark.png", "alt": "Warm Night Dark screenshot"}]};
+    </script>
     <script src="../script.js"></script>
   </body>
 </html>

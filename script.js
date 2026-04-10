@@ -2,38 +2,66 @@ const DEFAULT_LOCALE = "en-US";
 const LOCALE_STORAGE_KEY = "fruitstandsoftware.locale";
 const NOON_HOUR = 12;
 const SWIPE_THRESHOLD = 48;
-const galleryImages = [
-  {
-    src: "Cold_Morning_Dark.png",
-    alt: "40 Below screen in a cold morning dark theme",
-    label: "Cold Morning Dark",
-  },
-  {
-    src: "Cold_Morning_Dark_Forecast.png",
-    alt: "40 Below forecast screen in a cold morning dark theme",
-    label: "Cold Morning Dark Forecast",
-  },
-  {
-    src: "Warm_Midday_Light.png",
-    alt: "40 Below screen in a warm midday light theme",
-    label: "Warm Midday Light",
-  },
-  {
-    src: "Hot_Afternoon_Light.png",
-    alt: "40 Below screen in a hot afternoon light theme",
-    label: "Hot Afternoon Light",
-  },
-  {
-    src: "Cold_Night_Dark.png",
-    alt: "40 Below screen in a cold night dark theme",
-    label: "Cold Night Dark",
-  },
-  {
-    src: "Warm_Night_Dark.png",
-    alt: "40 Below screen in a warm night dark theme",
-    label: "Warm Night Dark",
-  },
-];
+const defaultGalleryGroups = {
+  default: [
+    {
+      src: "Cold_Morning_Dark.png",
+      alt: "40 Below screen in a cold morning dark theme",
+      label: "Cold Morning Dark",
+    },
+    {
+      src: "Cold_Morning_Dark_Forecast.png",
+      alt: "40 Below forecast screen in a cold morning dark theme",
+      label: "Cold Morning Dark Forecast",
+    },
+    {
+      src: "Warm_Midday_Light.png",
+      alt: "40 Below screen in a warm midday light theme",
+      label: "Warm Midday Light",
+    },
+    {
+      src: "Hot_Afternoon_Light.png",
+      alt: "40 Below screen in a hot afternoon light theme",
+      label: "Hot Afternoon Light",
+    },
+    {
+      src: "Cold_Night_Dark.png",
+      alt: "40 Below screen in a cold night dark theme",
+      label: "Cold Night Dark",
+    },
+    {
+      src: "Warm_Night_Dark.png",
+      alt: "40 Below screen in a warm night dark theme",
+      label: "Warm Night Dark",
+    },
+  ],
+};
+
+function getGalleryGroups() {
+  if (window.galleryGroups && typeof window.galleryGroups === "object") {
+    return window.galleryGroups;
+  }
+
+  return defaultGalleryGroups;
+}
+
+function resolveGalleryAssetPath(src) {
+  if (!src) {
+    return "";
+  }
+
+  if (
+    src.startsWith("../") ||
+    src.startsWith("./") ||
+    src.startsWith("/") ||
+    src.startsWith("http://") ||
+    src.startsWith("https://")
+  ) {
+    return src;
+  }
+
+  return `../${src}`;
+}
 
 function getAvailableLocales() {
   return Array.from(document.querySelectorAll(".locale-switcher option"))
@@ -86,6 +114,10 @@ function buildLocalePath(locale, currentPath = window.location.pathname) {
 
   if (currentPath.endsWith("/privacy-policy.html")) {
     return `/${locale}/privacy-policy.html`;
+  }
+
+  if (currentPath.endsWith("/press.html")) {
+    return locale === DEFAULT_LOCALE ? `/${DEFAULT_LOCALE}/press.html` : `/${locale}/`;
   }
 
   return `/${locale}/`;
@@ -150,6 +182,7 @@ function updateScreenshotForThemeAndTime() {
 }
 
 function initGalleryLightbox() {
+  const galleryGroups = getGalleryGroups();
   const lightbox = document.querySelector("[data-lightbox]");
   const lightboxImage = document.querySelector("[data-lightbox-image]");
   const previousImage = document.querySelector("[data-lightbox-prev-image]");
@@ -161,7 +194,10 @@ function initGalleryLightbox() {
   const previousButton = document.querySelector("[data-gallery-prev]");
   const nextButton = document.querySelector("[data-gallery-next]");
   const closeButtons = document.querySelectorAll("[data-lightbox-close]");
-  const thumbs = document.querySelectorAll("[data-gallery-index]");
+  const thumbs = Array.from(document.querySelectorAll("[data-gallery-index]")).filter((thumb) => {
+    const groupName = thumb.getAttribute("data-gallery-group") || "default";
+    return Array.isArray(galleryGroups[groupName]) && galleryGroups[groupName].length > 0;
+  });
 
   if (
     !lightbox ||
@@ -177,6 +213,7 @@ function initGalleryLightbox() {
     return;
   }
 
+  let activeGroup = thumbs[0].getAttribute("data-gallery-group") || "default";
   let activeIndex = 0;
   let lastFocused = null;
   let touchStartX = 0;
@@ -185,8 +222,13 @@ function initGalleryLightbox() {
   let isAnimating = false;
   let pendingStep = 0;
 
+  function getActiveImages() {
+    return galleryGroups[activeGroup] || [];
+  }
+
   function getWrappedIndex(index) {
-    return (index + galleryImages.length) % galleryImages.length;
+    const activeImages = getActiveImages();
+    return (index + activeImages.length) % activeImages.length;
   }
 
   function isTouchOnControl(target) {
@@ -217,17 +259,21 @@ function initGalleryLightbox() {
   }
 
   function renderLightboxImage() {
-    const previous = galleryImages[getWrappedIndex(activeIndex - 1)];
-    const image = galleryImages[activeIndex];
-    const next = galleryImages[getWrappedIndex(activeIndex + 1)];
+    const activeImages = getActiveImages();
+    const previous = activeImages[getWrappedIndex(activeIndex - 1)];
+    const image = activeImages[activeIndex];
+    const next = activeImages[getWrappedIndex(activeIndex + 1)];
 
-    previousImage.setAttribute("src", `../${previous.src}`);
+    previousImage.setAttribute("src", resolveGalleryAssetPath(previous.src));
     previousImage.setAttribute("alt", previous.alt);
-    lightboxImage.setAttribute("src", `../${image.src}`);
+    lightboxImage.setAttribute("src", resolveGalleryAssetPath(image.src));
     lightboxImage.setAttribute("alt", image.alt);
-    nextImage.setAttribute("src", `../${next.src}`);
+    nextImage.setAttribute("src", resolveGalleryAssetPath(next.src));
     nextImage.setAttribute("alt", next.alt);
-    lightboxStatus.textContent = `${image.label} (${activeIndex + 1}/${galleryImages.length})`;
+    lightboxStatus.textContent = `${image.label} (${activeIndex + 1}/${activeImages.length})`;
+    const disableArrows = activeImages.length < 2;
+    previousButton.disabled = disableArrows;
+    nextButton.disabled = disableArrows;
   }
 
   function finishSnap(nextIndex) {
@@ -250,7 +296,8 @@ function initGalleryLightbox() {
     setTrackOffset(offset);
   }
 
-  function openLightbox(index) {
+  function openLightbox(groupName, index) {
+    activeGroup = groupName;
     activeIndex = index;
     lastFocused = document.activeElement;
     resetDragOffset();
@@ -321,7 +368,8 @@ function initGalleryLightbox() {
   thumbs.forEach((thumb) => {
     thumb.addEventListener("click", () => {
       const index = Number.parseInt(thumb.getAttribute("data-gallery-index") || "0", 10);
-      openLightbox(index);
+      const groupName = thumb.getAttribute("data-gallery-group") || "default";
+      openLightbox(groupName, index);
     });
   });
 

@@ -20,6 +20,7 @@ PROMO_TRANSLATIONS = json.loads(
 NUMBER_ONE_TRANSLATIONS = json.loads(
     (ROOT / "number-one-page-translations.json").read_text(encoding="utf-8")
 )
+PRESS_PAGE_DATA = json.loads((ROOT / "press-page-data.json").read_text(encoding="utf-8"))
 
 
 class SiteVariantsTest(unittest.TestCase):
@@ -77,6 +78,7 @@ class SiteVariantsTest(unittest.TestCase):
 
         self.assertIn("https://fruitstandsoftware.com/", urls)
         self.assertIn("https://fruitstandsoftware.com/number-one.html", urls)
+        self.assertIn("https://fruitstandsoftware.com/en-US/press.html", urls)
         self.assertNotIn("https://fruitstandsoftware.com/redeem.html", urls)
 
         for locale in LOCALES:
@@ -133,6 +135,7 @@ class SiteVariantsTest(unittest.TestCase):
     def test_all_locales_have_generated_pages(self):
         self.assertGreater(len(LOCALES), 1)
         self.assertEqual(sorted(SECONDARY_TRANSLATIONS), LOCALES)
+        press_link = 'href="/en-US/press.html"'
 
         for locale in LOCALES:
             locale_dir = ROOT / locale
@@ -159,6 +162,7 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertIn(f'href="/{locale}/privacy-policy.html"', homepage)
             self.assertNotIn('data-site="', homepage)
             self.assertNotIn("window.siteData", homepage)
+            self.assertIn(press_link, homepage)
             self.assertIn(f'>{translation["shell"]["nav_support"]}</a>', homepage)
             self.assertIn(f'>{translation["shell"]["footer_privacy"]}</a>', homepage)
 
@@ -172,6 +176,8 @@ class SiteVariantsTest(unittest.TestCase):
             self.assertIn("policy-page-grid", privacy)
             self.assertIn(translation["support"]["title"], support)
             self.assertIn(translation["privacy"]["title"], privacy)
+            self.assertIn(press_link, support)
+            self.assertIn(press_link, privacy)
             self.assertIn(translation["shell"]["nav_support"], support)
             self.assertIn(translation["shell"]["footer_privacy"], privacy)
 
@@ -191,6 +197,32 @@ class SiteVariantsTest(unittest.TestCase):
                 self.assertIn(homepage_link, homepage)
                 self.assertIn(support_link, support)
                 self.assertIn(privacy_link, privacy)
+
+    def test_press_page_exists_with_expected_content_and_downloads(self):
+        html = (ROOT / "en-US" / "press.html").read_text(encoding="utf-8")
+        press = PRESS_PAGE_DATA["en-US"]
+        assets = PRESS_PAGE_DATA["assets"]
+
+        self.assertIn('<html lang="en-US" dir="ltr">', html)
+        self.assertIn('<link rel="canonical" href="https://fruitstandsoftware.com/en-US/press.html" />', html)
+        self.assertIn('href="/en-US/press.html" aria-current="page"', html)
+        self.assertIn(press["title"], html)
+        self.assertIn(press["download_button"], html)
+        self.assertIn(press["technology_heading"], html)
+        self.assertIn("Built for Apple platforms", html)
+        self.assertIn("SwiftUI drives the core app UI", html)
+        self.assertNotIn('id="press-gallery-heading"', html)
+        self.assertIn("mailto:michael@fruitstandsoftware.com", html)
+        self.assertIn("window.galleryGroups", html)
+        self.assertIn('data-gallery-group="press-iphone"', html)
+        self.assertIn('data-gallery-group="press-ipad"', html)
+        self.assertIn('data-gallery-group="press-mac"', html)
+        self.assertIn("40-Below-Press-Assets/Product Shots/iPad/", html)
+        self.assertIn("40-Below-Press-Assets/Product Shots/Mac/", html)
+        self.assertIn(assets["downloads"]["press_kit"]["href"], html)
+        self.assertLess(html.index('id="press-mac-heading"'), html.index('id="press-contact-heading"'))
+
+        self.assertTrue((ROOT / "40-Below-Press-Assets.zip").is_file())
 
     def test_english_and_non_english_locales_use_expected_copy(self):
         english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
