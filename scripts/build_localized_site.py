@@ -489,11 +489,11 @@ def get_press_assets() -> dict[str, object]:
     return PRESS_PAGE_DATA["assets"]
 
 
-def root_asset_path(path: str) -> str:
-    if path.startswith(("http://", "https://", "/")):
+def press_asset_path(path: str) -> str:
+    if path.startswith(("http://", "https://", "../")):
         return path
 
-    return f"/{path.removeprefix('../')}"
+    return f"../{path.removeprefix('/')}"
 
 
 def render_paragraphs(paragraphs: list[str], indent: str) -> str:
@@ -692,8 +692,8 @@ def render_press_factsheet(title: str, subtitle: str) -> str:
               <h2 id="press-factsheet-heading" class="visually-hidden">{escape_html(press["factsheet_heading"])}</h2>
               <div class="press-store-summary">
                 <picture class="press-store-icon">
-                  <source srcset="{root_asset_path("40BelowIcons/40BelowDark.png")}" media="(prefers-color-scheme: dark)" />
-                  <img src="{root_asset_path("40BelowIcons/40BelowLight.png")}" alt="" width="88" height="88" />
+                  <source srcset="{press_asset_path("40BelowIcons/40BelowDark.png")}" media="(prefers-color-scheme: dark)" />
+                  <img src="{press_asset_path("40BelowIcons/40BelowLight.png")}" alt="" width="88" height="88" />
                 </picture>
                 <div class="press-store-copy">
                   <p class="press-store-name">{escape_html(title)}</p>
@@ -706,7 +706,7 @@ def render_press_factsheet(title: str, subtitle: str) -> str:
 {stats_html}
               </div>
               <div class="support-actions press-factsheet-download">
-                <a class="support-button" href="{escape_html(root_asset_path(press_kit_download["href"]))}" download>
+                <a class="support-button" href="{escape_html(press_asset_path(press_kit_download["href"]))}" download>
                   {escape_html(press["download_button"])}
                 </a>
               </div>
@@ -726,7 +726,7 @@ def render_press_gallery_sections(assets: dict[str, object], sections: dict[str,
             thumbs = "\n".join(
                 [
                     f"""              <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="{group_name}" data-gallery-index="{index}" aria-label="Open {escape_html(image["label"])} screenshot">
-                <img src="{escape_html(root_asset_path(image["src"]))}" alt="{escape_html(image["alt"])}" width="250" height="518" loading="lazy" />
+                <img src="{escape_html(press_asset_path(image["src"]))}" alt="{escape_html(image["alt"])}" width="250" height="518" loading="lazy" />
               </button>"""
                     for index, image in enumerate(images)
                 ]
@@ -762,7 +762,7 @@ def render_press_technology_section() -> str:
             cards.append(
                 f"""        <article class="support-card reveal press-tech-hero-card" aria-labelledby="press-tech-hero-heading">
           <div class="press-tech-hero-media">
-            <img src="{escape_html(root_asset_path(card["image"]))}" alt="" loading="lazy" />
+            <img src="{escape_html(press_asset_path(card["image"]))}" alt="" loading="lazy" />
           </div>
           <div class="press-tech-hero-copy">
             <p class="eyebrow">{escape_html(card["eyebrow"])}</p>
@@ -777,7 +777,7 @@ def render_press_technology_section() -> str:
         cards.append(
             f"""        <article class="support-card reveal press-tech-card">
           <div class="press-tech-card-art">
-            <img class="press-tech-card-image" src="{escape_html(root_asset_path(card["image"]))}" alt="" loading="lazy" />
+            <img class="press-tech-card-image" src="{escape_html(press_asset_path(card["image"]))}" alt="" loading="lazy" />
           </div>
           <div class="press-card-stack">
             <h3 class="press-card-title">{escape_html(card["title"])}</h3>
@@ -872,7 +872,7 @@ def render_lightbox_markup(
     use_root_paths: bool = False,
 ) -> str:
     def lightbox_src(src: str) -> str:
-        return root_asset_path(src) if use_root_paths else f"../{src}"
+        return press_asset_path(src) if use_root_paths else f"../{src}"
 
     return f"""    <div
       class="lightbox"
@@ -940,7 +940,7 @@ def render_press_page() -> str:
     press = get_press_page(PRESS_PAGE_LOCALE)
     shell = get_secondary_page_translation(PRESS_PAGE_LOCALE)["shell"]
     ui_strings = localized_ui_strings(PRESS_PAGE_LOCALE)
-    badge_paths = {key: root_asset_path(path) for key, path in app_store_badge_paths(PRESS_PAGE_LOCALE).items()}
+    badge_paths = {key: press_asset_path(path) for key, path in app_store_badge_paths(PRESS_PAGE_LOCALE).items()}
     text_direction = locale_text_direction(PRESS_PAGE_LOCALE)
     hreflang_links = render_press_hreflang_links()
     footer_locale_switcher = render_locale_switcher(
@@ -958,9 +958,9 @@ def render_press_page() -> str:
         use_root_paths=True,
     )
     gallery_groups = {
-        "press-iphone": [{**image, "src": root_asset_path(image["src"])} for image in assets["galleries"]["iphone"]],
-        "press-ipad": [{**image, "src": root_asset_path(image["src"])} for image in assets["galleries"]["ipad"]],
-        "press-mac": [{**image, "src": root_asset_path(image["src"])} for image in assets["galleries"]["mac"]],
+        "press-iphone": [{**image, "src": press_asset_path(image["src"])} for image in assets["galleries"]["iphone"]],
+        "press-ipad": [{**image, "src": press_asset_path(image["src"])} for image in assets["galleries"]["ipad"]],
+        "press-mac": [{**image, "src": press_asset_path(image["src"])} for image in assets["galleries"]["mac"]],
     }
     primary_nav = render_primary_nav(PRESS_PAGE_LOCALE, ui_strings, badge_paths, shell, current_page="press")
 
@@ -991,16 +991,16 @@ def render_press_page() -> str:
     <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}" />
     <link rel="canonical" href="{canonical_url(PRESS_PAGE_LOCALE, "press")}" />
 {hreflang_links}
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
-    <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/secondary-pages.css" />
-    <link rel="stylesheet" href="/styles/variant-1.css" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/secondary-pages.css" />
+    <link rel="stylesheet" href="../styles/variant-1.css" />
   </head>
   <body class="page page-1">
     <header class="top-nav">
       <div class="nav-shell">
         <a class="nav-brand" href="/{PRESS_PAGE_LOCALE}/" aria-label="{escape_html(ui_strings["home"])}">
-          <img class="nav-brand-icon" src="/favicon.png" alt="" width="32" height="32" />
+          <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
           <span>40 Below</span>
         </a>
 {primary_nav}
@@ -1024,7 +1024,7 @@ def render_press_page() -> str:
     <script>
       window.galleryGroups = {javascript_value(gallery_groups)};
     </script>
-    <script src="/script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
 """
