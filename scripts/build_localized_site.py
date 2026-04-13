@@ -504,6 +504,17 @@ def render_list_items(items: list[str], indent: str) -> str:
     return "\n".join(f"{indent}<li>{escape_html(item)}</li>" for item in items)
 
 
+def render_app_store_description(description: dict[str, object], indent: str) -> str:
+    description_html = render_paragraphs(description["description_paragraphs"], indent)
+    features_html = render_list_items(description["features"], f"{indent}  ")
+    return f"""{description_html}
+{indent}<p class="feature-heading">{escape_html(description["feature_heading"])}</p>
+{indent}<ul class="feature-list">
+{features_html}
+{indent}</ul>
+{indent}<p>{escape_html(description["location_text"])}</p>"""
+
+
 def render_support_main(locale: str) -> str:
     translation = get_secondary_page_translation(locale)
     support = translation["support"]
@@ -638,7 +649,7 @@ def render_privacy_main(locale: str) -> str:
       </div>"""
 
 
-def render_press_factsheet(title: str, subtitle: str) -> str:
+def render_press_factsheet(title: str) -> str:
     press = get_press_page(PRESS_PAGE_LOCALE)
     store = press["factsheet_store"]
     press_kit_download = get_press_assets()["downloads"]["press_kit"]
@@ -697,7 +708,6 @@ def render_press_factsheet(title: str, subtitle: str) -> str:
                 </picture>
                 <div class="press-store-copy">
                   <p class="press-store-name">{escape_html(title)}</p>
-                  <p class="press-store-subtitle">{escape_html(subtitle)}</p>
                   <p class="press-store-price">{escape_html(store["price"])}</p>
                   <p class="press-store-rating" aria-label="Five star App Store rating">⭐ ⭐ ⭐ ⭐ ⭐</p>
                 </div>
@@ -758,21 +768,6 @@ def render_press_technology_section() -> str:
     cards = []
 
     for card in press["technology_cards"]:
-        if card["kind"] == "hero":
-            cards.append(
-                f"""        <article class="support-card reveal press-tech-hero-card" aria-labelledby="press-tech-hero-heading">
-          <div class="press-tech-hero-media">
-            <img src="{escape_html(press_asset_path(card["image"]))}" alt="" loading="lazy" />
-          </div>
-          <div class="press-tech-hero-copy">
-            <p class="eyebrow">{escape_html(card["eyebrow"])}</p>
-            <h3 id="press-tech-hero-heading" class="press-card-title">{escape_html(card["title"])}</h3>
-            <p>{escape_html(card["body"])}</p>
-          </div>
-        </article>"""
-            )
-            continue
-
         body_html = "\n".join(f"              <li>{escape_html(item)}</li>" for item in card["body"])
         cards.append(
             f"""        <article class="support-card reveal press-tech-card">
@@ -805,10 +800,9 @@ def render_press_main() -> str:
     press = get_press_page(PRESS_PAGE_LOCALE)
     assets = get_press_assets()
     title = read_metadata(PRESS_PAGE_LOCALE, "name.txt")
-    subtitle = read_metadata(PRESS_PAGE_LOCALE, "subtitle.txt")
-    promotional_text = read_metadata(PRESS_PAGE_LOCALE, "promotional_text.txt")
     description = parse_description(PRESS_PAGE_LOCALE)
-    factsheet_html = render_press_factsheet(title, subtitle)
+    app_store_description = render_app_store_description(description, "            ")
+    factsheet_html = render_press_factsheet(title)
     gallery_sections = render_press_gallery_sections(
         assets,
         press["gallery_sections"],
@@ -826,20 +820,21 @@ def render_press_main() -> str:
           <h1 class="secondary-page-title">{escape_html(press["title"])}</h1>
           <p class="secondary-page-lead">{escape_html(press["lead"])}</p>
         </div>
+        <div class="press-hero-media">
+          <img src="../40-Below-Press-Assets/Product Shots/40_Below_Product_Family_Light.png" alt="" width="1024" height="640" />
+        </div>
       </section>
 
       <div class="press-intro-grid">
+{factsheet_html}
+
         <article class="policy-main-card reveal press-overview-card" aria-labelledby="press-overview-heading">
           <div class="press-card-stack">
-            <h2 id="press-overview-heading" class="press-card-title">{escape_html(press["overview_heading"])}</h2>
-            <p>{escape_html(press["overview_intro"])}</p>
-            <p>{escape_html(promotional_text)}</p>
-            {render_paragraphs(description["description_paragraphs"], "            ")}
+            <h2 id="press-overview-heading" class="visually-hidden">{escape_html(press["overview_heading"])}</h2>
+{app_store_description}
             <p>{escape_html(press["overview_outro"])}</p>
           </div>
         </article>
-
-{factsheet_html}
       </div>
 
       <section class="press-gallery-stack" aria-labelledby="press-gallery-heading">

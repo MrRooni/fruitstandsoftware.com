@@ -4,10 +4,9 @@
     "meta_description": "Press kit for 40 Below with screenshots, icons, download bundles, and direct promo-code contact information.",
     "eyebrow": "Press Kit",
     "title": "40 Below Press Kit",
-    "lead": "Everything you need to cover 40 Below, including screenshots, app icons, download bundles, and a direct line for promo-code requests.",
+    "lead": "Everything you need to cover 40 Below, including screenshots, app icons, and email for promo-code requests.",
     "overview_heading": "About 40 Below",
-    "overview_intro": "40 Below is built around one simple job: show the local temperature clearly in both Fahrenheit and Celsius.",
-    "overview_outro": "This press kit gathers the essential copy and assets in one place so writers, reviewers, and creators can get what they need quickly.",
+    "overview_outro": "This press kit gathers everything you need to cover 40 Below, but if you have any other questions or need anything else, just use the email link at the bottom of this page to shoot me a note. I'll get right back to you. Thanks for taking a look!",
     "factsheet_heading": "Factsheet",
     "factsheet_intro": "A quick App Store-style snapshot for press coverage.",
     "factsheet_labels": {
@@ -39,13 +38,6 @@
     "technology_heading": "Chock Full of Apple Technology",
     "technology_intro": "40 Below spans the latest Apple frameworks and platform behaviors across iPhone, iPad, and Mac.",
     "technology_cards": [
-      {
-        "kind": "hero",
-        "title": "Built for Apple platforms",
-        "body": "40 Below supports iPhone, iPad, and Mac through a shared app architecture built for Apple platforms.",
-        "image": "../40-Below-Press-Assets/Product Shots/40_Below_Product_Family_Light.png",
-        "eyebrow": "Platforms"
-      },
       {
         "kind": "stack",
         "title": "Weather, maps, and background refresh",
