@@ -772,33 +772,15 @@ def render_press_gallery_sections(assets: dict[str, object], sections: dict[str,
 
 def render_press_technology_section() -> str:
     press = get_press_page(PRESS_PAGE_LOCALE)
-    cards = []
-
-    for card in press["technology_cards"]:
-        body_html = "\n".join(f"              <li>{escape_html(item)}</li>" for item in card["body"])
-        cards.append(
-            f"""        <article class="support-card reveal press-tech-card">
-          <div class="press-tech-card-art">
-            <img class="press-tech-card-image" src="{escape_html(press_asset_path(card["image"]))}" alt="" loading="lazy" />
-          </div>
-          <div class="press-card-stack">
-            <h3 class="press-card-title">{escape_html(card["title"])}</h3>
-            <ul class="press-tech-list">
-{body_html}
-            </ul>
-          </div>
-        </article>"""
-        )
-
-    cards_html = "\n".join(cards)
+    bullet_items = render_list_items(press["technology_bullets"], "            ")
 
     return f"""      <section class="press-technology-section" aria-labelledby="press-technology-heading">
         <div class="secondary-header-card reveal press-technology-header">
           <h2 id="press-technology-heading" class="press-card-title">{escape_html(press["technology_heading"])}</h2>
           <p class="secondary-page-lead">{escape_html(press["technology_intro"])}</p>
-        </div>
-        <div class="press-technology-grid">
-{cards_html}
+          <ul class="press-technology-list">
+{bullet_items}
+          </ul>
         </div>
       </section>"""
 

@@ -37,49 +37,14 @@
     "download_button": "Download 40 Below Press Kit",
     "technology_heading": "Chock Full of Apple Technology and Built With Purpose",
     "technology_intro": "40 Below was built with the latest and greatest Apple frameworks and technologies. Mac and iOS were each considered thoughtfully to ensure 40 Below feels right at home and behaves like it should - not like a port that simply checks a box.",
-    "technology_cards": [
-      {
-        "kind": "stack",
-        "title": "Weather, maps, and background refresh",
-        "body": [
-          "WeatherKit powers current conditions, forecasts, cached snapshots, and background temperature refreshes in the main app.",
-          "Core Location handles current-location lookup and authorization so 40 Below can show local temperature automatically.",
-          "MapKit is used for reverse geocoding so raw coordinates become readable city and place names.",
-          "BackgroundTasks keeps temperature and cached location data fresh when the app is not foregrounded."
-        ],
-        "image": "https://developer.apple.com/assets/elements/icons/weatherkit/weatherkit-96x96_2x.png"
-      },
-      {
-        "kind": "stack",
-        "title": "Siri, Spotlight, Shortcuts, and Apple Intelligence",
-        "body": [
-          "App Intents powers Siri, Shortcuts, and Spotlight actions for showing the current temperature, speaking it aloud, and opening the forecast.",
-          "SnippetIntent and Apple Intelligence-era intent presentation APIs show inline temperature cards from Siri and Spotlight without always bouncing people into the app.",
-          "NSUserActivity donation and Core Spotlight indexing help iOS surface temperature, forecast, and share actions proactively in search and system suggestions."
-        ],
-        "image": "https://developer.apple.com/assets/elements/icons/visual-intelligence/visual-intelligence-256x256_2x.png"
-      },
-      {
-        "kind": "stack",
-        "title": "Mac-native touches and sharing",
-        "body": [
-          "The Mac app includes menu bar behavior, dock menu integration, multi-window lifecycle support, app activation behavior, and Mac-specific email flow.",
-          "MenuBarExtra and NSStatusItem keep 40 Below resident in the macOS menu bar for at-a-glance temperature access.",
-          "ServiceManagement and a login helper app support Launch at Login on macOS.",
-          "ShareLink, UIActivityViewController, and NSSharingServicePicker provide native Apple sharing across iPhone, iPad, and Mac."
-        ],
-        "image": "../images/finder.png"
-      },
-      {
-        "kind": "stack",
-        "title": "SwiftUI at the center",
-        "body": [
-          "SwiftUI drives the core app UI, settings, onboarding, share-card rendering, and most cross-platform presentation.",
-          "Localization support uses String(localized:), .lproj bundles, InfoPlist.strings, and Locale-aware formatting across app UI, App Intents, and system-facing strings.",
-          "Accessibility uses explicit SwiftUI accessibility labels, hints, and values for temperatures, forecast rows, buttons, and status information, plus adaptations for Reduce Motion and increased contrast."
-        ],
-        "image": "../images/swiftui-256x256_2x.png"
-      }
+    "technology_bullets": [
+      "Uses Apple’s own WeatherKit framework for timely, hyperlocal weather information.",
+      "Efficiently keeps itself up to date in the background so the latest temperature information is always available.",
+      "Integrates with Siri, Spotlight, and Shortcuts. Supports screen-free workflows whether your phone is in your pocket or connected to CarPlay. “Hey Siri, what’s the weather in 40 Below?” will give you local conditions in both Fahrenheit and Celsius.",
+      "40 Below for macOS can run in the background as a menu bar app and will start at login, so it’s always there when you need it.",
+      "Fully localized into 17 languages, with locale-aware layout: depending on your locale, 40 Below will prioritize Fahrenheit or Celsius in the UI.",
+      "Full accessibility support including VoiceOver navigation, Dynamic Type for increased text sizes, and high contrast and reduced motion support.",
+      "40 Below for Mac and 40 Below for iOS share a common codebase, but each one is designed and purpose-built for their respective platforms, meaning you can expect a Mac app experience on Mac, and an iOS experience on your mobile devices."
     ],
     "gallery_heading": "Galleries",
     "gallery_intro": "Preview the available press images by platform. iPad and Mac sections are set up now and waiting for approved screenshots.",
