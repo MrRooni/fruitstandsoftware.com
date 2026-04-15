@@ -40,6 +40,11 @@
   gap: clamp(1.25rem, 3vw, 2rem);
 }
 
+.press-hero .secondary-page-lead,
+.press-technology-header .secondary-page-lead {
+  max-width: none;
+}
+
 .press-hero-actions {
   margin-top: 0.25rem;
 }

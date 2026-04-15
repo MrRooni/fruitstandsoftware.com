@@ -200,6 +200,7 @@ class SiteVariantsTest(unittest.TestCase):
 
     def test_press_page_exists_with_expected_content_and_downloads(self):
         html = (ROOT / "en-US" / "press.html").read_text(encoding="utf-8")
+        css = (ROOT / "styles" / "secondary-pages.css").read_text(encoding="utf-8")
         press = PRESS_PAGE_DATA["en-US"]
         assets = PRESS_PAGE_DATA["assets"]
 
@@ -215,6 +216,9 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn("Uses Apple’s own WeatherKit framework", html)
         self.assertIn("connected to CarPlay", html)
         self.assertNotIn("press-tech-card", html)
+        self.assertIn(".press-hero .secondary-page-lead", css)
+        self.assertIn(".press-technology-header .secondary-page-lead", css)
+        self.assertIn("max-width: none;", css)
         self.assertNotIn('id="press-gallery-heading"', html)
         self.assertIn("mailto:michael@fruitstandsoftware.com", html)
         self.assertIn("window.galleryGroups", html)
