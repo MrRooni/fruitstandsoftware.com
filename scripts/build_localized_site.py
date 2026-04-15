@@ -656,13 +656,15 @@ def render_press_factsheet(title: str) -> str:
     stats = [
         {
             "icon": "⛅",
-            "value": f'{store["category_value"]} Category',
+            "value": f'Found in the <strong>{escape_html(store["category_value"])} category</strong> on the App Store',
             "detail": "",
+            "allows_html": True,
         },
         {
             "icon": "🧑‍💻",
-            "value": store["developer_value"],
+            "value": f'Built by <strong>{escape_html(store["developer_value"])}</strong>',
             "detail": "",
+            "allows_html": True,
         },
         {
             "icon": "🌍",
@@ -685,12 +687,17 @@ def render_press_factsheet(title: str) -> str:
             "detail": "",
         },
     ]
+
+    def stat_value_html(item: dict[str, object]) -> str:
+        value = str(item["value"])
+        return value if item.get("allows_html") else escape_html(value)
+
     stats_html = "\n".join(
         [
             f"""              <article class="press-stat-card">
                 <div class="press-stat-icon" aria-hidden="true">{escape_html(item["icon"])}</div>
                 <div class="press-stat-copy">
-                  <p class="press-stat-value">{escape_html(item["value"])}</p>
+                  <p class="press-stat-value">{stat_value_html(item)}</p>
                   {f'<p class="press-stat-detail">{escape_html(item["detail"])}</p>' if item["detail"] else ""}
                 </div>
               </article>"""
