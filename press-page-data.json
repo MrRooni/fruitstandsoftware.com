@@ -41,10 +41,10 @@
       "Uses Apple’s own WeatherKit framework for timely, hyperlocal weather information.",
       "Efficiently keeps itself up to date in the background so the latest temperature information is always available.",
       "Integrates with Siri, Spotlight, and Shortcuts. Supports screen-free workflows whether your phone is in your pocket or connected to CarPlay. “Hey Siri, what’s the weather in 40 Below?” will give you local conditions in both Fahrenheit and Celsius.",
-      "40 Below for macOS can run in the background as a menu bar app and will start at login, so it’s always there when you need it.",
       "Fully localized into 17 languages, with locale-aware layout: depending on your locale, 40 Below will prioritize Fahrenheit or Celsius in the UI.",
       "Full accessibility support including VoiceOver navigation, Dynamic Type for increased text sizes, and high contrast and reduced motion support.",
-      "40 Below for Mac and 40 Below for iOS share a common codebase, but each one is designed and purpose-built for their respective platforms, meaning you can expect a Mac app experience on Mac, and an iOS experience on your mobile devices."
+      "On macOS, 40 Below can run in the background as a menu bar app and will start at login, so it’s always there when you need it.",
+      "40 Below for Mac and 40 Below for iOS share a common codebase, but each one is designed and purpose-built for their respective platforms, meaning you can expect a Mac experience on your Mac, and an iOS experience on your mobile devices."
     ],
     "gallery_heading": "Galleries",
     "gallery_intro": "Preview the available press images by platform. iPad and Mac sections are set up now and waiting for approved screenshots.",
