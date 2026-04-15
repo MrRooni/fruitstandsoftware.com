@@ -847,6 +847,9 @@ def render_press_main() -> str:
             <h2 id="press-contact-heading" class="press-card-title">{escape_html(press["contact_heading"])}</h2>
             <p>{contact_body}</p>
             <div class="support-actions">
+              <a class="support-button" href="{download_href}" download>
+                {escape_html(press["download_button"])}
+              </a>
               <a class="support-button" href="mailto:{PRESS_CONTACT_EMAIL}?subject={subject}&body={body_prefill}">
                 {escape_html(press["contact_button"])}
               </a>
