@@ -40,6 +40,19 @@
   gap: clamp(1.25rem, 3vw, 2rem);
 }
 
+.press-hero-actions {
+  margin-top: 0.25rem;
+}
+
+.press-hero-download-button {
+  min-height: 3.4rem;
+  padding: 0.95rem 1.35rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--blue) 86%, #49d0ff 14%), var(--blue));
+  box-shadow: 0 18px 36px -20px color-mix(in srgb, var(--blue) 74%, #000 26%);
+  font-size: clamp(1rem, 2vw, 1.14rem);
+}
+
 .press-hero-media {
   padding: clamp(0.7rem, 2vw, 1.25rem);
   border-radius: calc(var(--radius) - 8px);

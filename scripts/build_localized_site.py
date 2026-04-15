@@ -803,11 +803,18 @@ def render_press_main() -> str:
     contact_body = escape_html(press["contact_body"]).replace("{email}", contact_email_link)
     subject = html.escape(str(press["contact_subject"]).replace(" ", "%20"), quote=True)
     body_prefill = html.escape(str(press["contact_body_prefill"]), quote=True)
+    press_kit_download = get_press_assets()["downloads"]["press_kit"]
+    download_href = escape_html(press_asset_path(press_kit_download["href"]))
 
     return f"""      <section class="secondary-header-card reveal press-hero">
         <div class="press-card-stack">
           <h1 class="secondary-page-title">{escape_html(press["title"])}</h1>
           <p class="secondary-page-lead">{escape_html(press["lead"])}</p>
+          <div class="support-actions press-hero-actions">
+            <a class="support-button press-hero-download-button" href="{download_href}" download>
+              {escape_html(press["download_button"])}
+            </a>
+          </div>
         </div>
         <div class="press-hero-media">
           <picture>

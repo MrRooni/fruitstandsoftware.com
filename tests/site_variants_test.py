@@ -208,6 +208,7 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn('href="/en-US/press.html" aria-current="page"', html)
         self.assertIn(press["title"], html)
         self.assertIn(press["download_button"], html)
+        self.assertGreaterEqual(html.count(press["download_button"]), 2)
         self.assertIn(press["technology_heading"], html)
         self.assertIn("press-hero-media", html)
         self.assertNotIn("Built for Apple platforms", html)
