@@ -821,7 +821,10 @@ def render_press_main() -> str:
           <p class="secondary-page-lead">{escape_html(press["lead"])}</p>
         </div>
         <div class="press-hero-media">
-          <img src="../40-Below-Press-Assets/Product Shots/40_Below_Product_Family_Light.png" alt="" width="1024" height="640" />
+          <picture>
+            <source srcset="../images/Product_Family_Dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="../images/Product_Family_Light.png" alt="" width="1024" height="640" />
+          </picture>
         </div>
       </section>
 
