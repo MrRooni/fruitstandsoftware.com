@@ -230,7 +230,7 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn(assets["downloads"]["press_kit"]["href"], html)
         self.assertLess(html.index('id="press-mac-heading"'), html.index('id="press-contact-heading"'))
 
-        self.assertTrue((ROOT / "40-Below-Press-Assets.zip").is_file())
+        self.assertTrue((ROOT / "40 Below Press Kit.zip").is_file())
 
     def test_english_and_non_english_locales_use_expected_copy(self):
         english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
