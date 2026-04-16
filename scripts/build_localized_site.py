@@ -1562,6 +1562,86 @@ def render_root_redirect() -> str:
 """
 
 
+def render_location_page() -> str:
+    return f"""<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
+    <title>Open 40 Below App Clip</title>
+    <meta
+      name="description"
+      content="Open a lightweight 40 Below temperature experience from an App Clip Code."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Open 40 Below App Clip" />
+    <meta
+      property="og:description"
+      content="Open a lightweight 40 Below temperature experience from an App Clip Code."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{SITE_URL}/location/" />
+    <meta property="og:image" content="{SOCIAL_IMAGE_URL}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Open 40 Below App Clip" />
+    <meta
+      name="twitter:description"
+      content="Open a lightweight 40 Below temperature experience from an App Clip Code."
+    />
+    <meta name="twitter:image" content="{SOCIAL_IMAGE_URL}" />
+    <link rel="canonical" href="{SITE_URL}/location/" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/secondary-pages.css" />
+    <link rel="stylesheet" href="../styles/variant-1.css" />
+  </head>
+  <body class="page page-1">
+    <a class="visually-hidden focus-skip" href="#main">Skip to App Clip fallback</a>
+
+    <header class="top-nav">
+      <div class="nav-shell">
+        <a class="nav-brand" href="/en-US/" aria-label="40 Below home">
+          <img class="nav-brand-icon" src="../favicon.png" alt="" width="32" height="32" />
+          <span>40 Below</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main" class="secondary-shell">
+      <section class="secondary-header-card reveal" aria-labelledby="location-fallback-title">
+        <p>App Clip</p>
+        <h1 id="location-fallback-title" class="secondary-page-title">Open 40 Below</h1>
+        <p class="secondary-page-lead">
+          This link opens a lightweight 40 Below temperature experience on iPhone.
+        </p>
+        <div class="support-actions">
+          <a
+            class="support-button"
+            href="{APP_STORE_URL}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download 40 Below on the App Store"
+          >
+            Download 40 Below
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer secondary-footer">
+      <div class="footer-stack">
+        <p>&copy; <span id="year"></span> Fruit Stand Software</p>
+        <a class="footer-link" href="/en-US/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
+"""
+
+
 def render_charts_page() -> str:
     storefronts = charts_storefronts()
     storefront_cards = "\n".join(
@@ -1719,6 +1799,9 @@ def build() -> None:
     (ROOT / "charts.html").write_text(render_charts_page(), encoding="utf-8")
     (ROOT / "number-one.html").write_text(render_number_one_page(), encoding="utf-8")
     (ROOT / "redeem.html").write_text(render_promo_page(), encoding="utf-8")
+    location_dir = ROOT / "location"
+    location_dir.mkdir(exist_ok=True)
+    (location_dir / "index.html").write_text(render_location_page(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(render_robots_txt(), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(render_sitemap_xml(), encoding="utf-8")
 

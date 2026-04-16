@@ -29,6 +29,7 @@ class SiteVariantsTest(unittest.TestCase):
         generated_pages = [
             ROOT / "index.html",
             ROOT / "en-US" / "press.html",
+            ROOT / "location" / "index.html",
             ROOT / "redeem.html",
             ROOT / "number-one.html",
             ROOT / "charts.html",
@@ -88,6 +89,18 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn('href="/zh-Hans/"', html)
         self.assertNotIn('src="site-data.js"', html)
         self.assertNotIn('data-site="product-name"', html)
+
+    def test_location_fallback_page_exists_for_app_clip_invocations(self):
+        html = (ROOT / "location" / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn('<html lang="en-US">', html)
+        self.assertIn(SMART_APP_BANNER_META, html)
+        self.assertIn('<meta name="robots" content="noindex, nofollow" />', html)
+        self.assertIn('<link rel="canonical" href="https://fruitstandsoftware.com/location/" />', html)
+        self.assertIn('id="location-fallback-title"', html)
+        self.assertIn("Open 40 Below", html)
+        self.assertIn("This link opens a lightweight 40 Below temperature experience on iPhone.", html)
+        self.assertIn('href="https://apps.apple.com/app/40-below/id6759849820"', html)
 
     def test_robots_txt_and_sitemap_exist_with_expected_indexable_urls(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
