@@ -28,7 +28,7 @@ window.siteData = {
       "40 Below uses your location to show local conditions. You can control location access at any time in Settings.",
     releaseNotes:
       "Welcome to the first version of 40 Below! I hope you enjoy it as much as I enjoyed making it. 40 Below will never prompt you for a review, but if you're feeling kind, a nice 5-star review would sure be great.",
-    appStoreUrl: "https://apps.apple.com/app/id6758684366",
+    appStoreUrl: "https://apps.apple.com/app/40-below/id6759849820",
     screenshot: {
       src: "Cupertino-morning.png",
       alt: "40 Below app screen showing the current temperature and local weather in Cupertino",
