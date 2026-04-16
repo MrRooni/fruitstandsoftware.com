@@ -1,3 +1,23 @@
-== Nyheter i version 1.0 ==
+== Nyheter i version 2.0 ==
 
-• Formateringen och tydligheten i App Stores versionsanteckningar har förbättrats.
+Tack till alla som har använt 40 Below och skickat feedback! Det har varit väldigt roligt att bygga den här lilla appen, och i den här versionen finns flera riktigt fina tillägg och förbättringar. Den största nyheten är ändå utan tvekan stödet för Siri.
+
+Med den här uppdateringen har 40 Below nu fullt stöd för Siri och Siri-genvägar. Det betyder att du kan fråga Siri: "Vad är temperaturen i 40 Below?" och få temperaturen för din nuvarande plats i både Fahrenheit och Celsius. Det fungerar både när du har AirPods i öronen och när telefonen är ansluten till CarPlay. Om du ber Siri att "visa vädret i 40 Below" visas en snygg vy direkt på skärmen utan att du behöver öppna appen. Dessutom går de här funktionerna att automatisera. Appen Genvägar gör dem tillgängliga så att du kan använda dem i dina egna genvägar.
+
+40 Below ber sällan om ett omdöme, så om appen har varit användbar för dig och du har en stund över skulle ett betyg eller en recension uppskattas väldigt mycket.
+
+NYTT
+• Lade till nya Siri-genvägar och förbättrade stödet för åtgärder i Genvägar och Siri.
+• Lade till ett prognoskort för Siri.
+• Lade till en vy för daglig prognos bredvid timprognosen.
+• Lade till möjligheten att mejla supporten; titta i Om-vyn på iOS.
+
+FÖRBÄTTRAT
+• Åtgärdade ett problem där draghandtaget för prognosen svarade på tryck men inte på faktisk dragning.
+• Förbättrade tillförlitligheten kring uppdateringar av plats och väder.
+• Förbättrade inläsningsbeteendet så att förloppet fortsätter att visas tills temperatur och platsdetaljer har uppdaterats helt.
+
+ÅTGÄRDAT
+• Justerade App Store-länkar för att lösa ett problem där App Store rapporterade att 40 Below var "inte tillgänglig" i vissa regioner.
+• Åtgärdade ett problem där temperaturer kanske inte uppdaterades korrekt efter att platsen ändrats.
+• Minskat antalet mindre hjälpsamma felmeddelanden om plats.

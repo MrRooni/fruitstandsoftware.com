@@ -1,3 +1,23 @@
-== Nowości w wersji 1.0 ==
+== Co nowego w wersji 2.0 ==
 
-• Poprawiono formatowanie i przejrzystość notatek o wydaniu w App Store.
+Dziękujemy wszystkim, którzy korzystają z 40 Below i dzielą się opiniami! Tworzenie tej małej aplikacji to była ogromna frajda, a ta wersja przynosi kilka naprawdę świetnych nowości i ulepszeń. Najważniejszą z nich jest bez wątpienia obsługa Siri.
+
+Od tej aktualizacji 40 Below w pełni obsługuje Siri i Skróty Siri. Oznacza to, że możesz zapytać Siri: „Jaka jest temperatura w 40 Below?” i otrzymasz temperaturę dla bieżącej lokalizacji zarówno w stopniach Fahrenheita, jak i Celsjusza. Działa to zarówno wtedy, gdy masz w uszach AirPods, jak i wtedy, gdy telefon jest podłączony do CarPlay. Jeśli poprosisz Siri: „Pokaż pogodę w 40 Below”, zobaczysz piękny widok bezpośrednio na ekranie, bez otwierania aplikacji. Co więcej, te funkcje można też wykorzystać w automatyzacjach. Aplikacja Skróty udostępnia je, dzięki czemu możesz dodawać je do własnych skrótów.
+
+40 Below bardzo rzadko prosi o ocenę, więc jeśli aplikacja okazała się dla Ciebie przydatna i masz chwilę, ocena lub recenzja będą naprawdę mile widziane.
+
+NOWOŚCI
+• Dodano nowe Skróty Siri i ulepszono obsługę akcji w Skrótach oraz Siri.
+• Dodano kartę prognozy dla Siri.
+• Dodano widok prognozy dziennej obok prognozy godzinowej.
+• Dodano możliwość wysłania wiadomości e-mail do pomocy technicznej; zajrzyj do ekranu Informacje w iOS.
+
+ULEPSZENIA
+• Naprawiono problem, przez który uchwyt przeciągania prognozy reagował na stuknięcia, ale nie na faktyczne przeciąganie.
+• Poprawiono niezawodność odświeżania lokalizacji i pogody.
+• Ulepszono działanie ładowania, aby wskaźnik postępu pozostawał widoczny do czasu pełnej aktualizacji temperatury i szczegółów lokalizacji.
+
+POPRAWKI
+• Dostosowano łącza do App Store, aby naprawić problem, przez który App Store wyświetlał 40 Below jako „niedostępne” w niektórych regionach.
+• Naprawiono problem, przez który temperatury mogły nie aktualizować się poprawnie po zmianie lokalizacji.
+• Ograniczono mało pomocne komunikaty błędów lokalizacji.

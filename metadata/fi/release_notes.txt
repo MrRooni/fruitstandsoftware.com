@@ -1,3 +1,23 @@
-== Mitä uutta versiossa 1.0 ==
+== Uutta versiossa 2.0 ==
 
-• App Storen julkaisutietojen muotoilua ja selkeyttä on parannettu.
+Kiitos kaikille, jotka ovat käyttäneet 40 Below'ta ja lähettäneet palautetta! Tämän pienen sovelluksen rakentaminen on ollut todella hauskaa, ja tässä versiossa on mukana monta mukavaa lisäystä ja parannusta. Suurin uutinen on kuitenkin ehdottomasti Siri-tuki!
+
+Tämän päivityksen myötä 40 Below tukee nyt täysin Siriä ja Siri-oikopolkuja. Voit siis kysyä Siriltä: "Mikä on lämpötila 40 Below'ssa?" ja se kertoo nykyisen sijaintisi lämpötilan kätevästi sekä fahrenheiteina että celsiusasteina. Tämä toimii sekä silloin, kun käytät AirPodeja, että silloin, kun puhelin on yhdistetty CarPlayhin. Jos pyydät Siriä näyttämään sään 40 Below'ssa, se tuo kauniin näkymän suoraan näytölle ilman, että sovellusta tarvitsee avata. Lisäksi nämä toiminnot ovat automatisoitavissa! Oikotiet-sovellus tarjoaa ne käyttöösi, joten voit hyödyntää niitä omissa oikoteissäsi.
+
+40 Below pyytää arvostelua vain harvoin, joten jos sovellus on ollut sinulle hyödyllinen ja sinulla on hetki aikaa, arvio tai arvostelu olisi todella mahtava ja erittäin arvostettu.
+
+UUTTA
+• Lisätty uusia Siri-oikopolkuja sekä parannettu toimintotukea Oikoteissä ja Sirissä.
+• Lisätty Sirille uusi ennustekortti.
+• Lisätty tuntiennusteen rinnalle päivänäkymä ennusteelle.
+• Lisätty mahdollisuus lähettää sähköpostia tukeen; tutustu iOS:n Tietoja-näkymään.
+
+PARANNETTU
+• Korjattu ongelma, jossa ennusteen vetokahva reagoi napautuksiin mutta ei varsinaiseen vetämiseen.
+• Parannettu sijainnin ja sään päivitysten luotettavuutta.
+• Parannettu latauskäyttäytymistä niin, että eteneminen pysyy näkyvissä, kunnes lämpötila- ja sijaintitiedot ovat täysin päivittyneet.
+
+KORJATTU
+• Muokattu App Store -linkkejä, jotta korjaantui ongelma, jossa App Store ilmoitti 40 Below'n olevan "ei saatavilla" tietyillä alueilla.
+• Korjattu ongelma, jossa lämpötilat eivät välttämättä päivittyneet oikein sijainnin vaihtamisen jälkeen.
+• Vähennetty turhia sijaintivirheilmoituksia.

@@ -184,6 +184,7 @@ function updateScreenshotForThemeAndTime() {
 function initGalleryLightbox() {
   const galleryGroups = getGalleryGroups();
   const lightbox = document.querySelector("[data-lightbox]");
+  const lightboxShell = document.querySelector(".lightbox-shell");
   const lightboxImage = document.querySelector("[data-lightbox-image]");
   const previousImage = document.querySelector("[data-lightbox-prev-image]");
   const nextImage = document.querySelector("[data-lightbox-next-image]");
@@ -201,6 +202,7 @@ function initGalleryLightbox() {
 
   if (
     !lightbox ||
+    !lightboxShell ||
     !lightboxImage ||
     !previousImage ||
     !nextImage ||
@@ -263,13 +265,28 @@ function initGalleryLightbox() {
     const previous = activeImages[getWrappedIndex(activeIndex - 1)];
     const image = activeImages[activeIndex];
     const next = activeImages[getWrappedIndex(activeIndex + 1)];
+    const imageMaxWidth = image.lightbox_max_width || image.lightboxMaxWidth || image.width || 520;
+
+    lightboxShell.style.setProperty("--lightbox-image-max-width", `${imageMaxWidth}px`);
 
     previousImage.setAttribute("src", resolveGalleryAssetPath(previous.src));
     previousImage.setAttribute("alt", previous.alt);
+    previousImage.setAttribute("width", previous.lightbox_width || previous.lightboxWidth || previous.width || 500);
+    previousImage.setAttribute(
+      "height",
+      previous.lightbox_height || previous.lightboxHeight || previous.height || 1036
+    );
     lightboxImage.setAttribute("src", resolveGalleryAssetPath(image.src));
     lightboxImage.setAttribute("alt", image.alt);
+    lightboxImage.setAttribute("width", image.lightbox_width || image.lightboxWidth || image.width || 500);
+    lightboxImage.setAttribute(
+      "height",
+      image.lightbox_height || image.lightboxHeight || image.height || 1036
+    );
     nextImage.setAttribute("src", resolveGalleryAssetPath(next.src));
     nextImage.setAttribute("alt", next.alt);
+    nextImage.setAttribute("width", next.lightbox_width || next.lightboxWidth || next.width || 500);
+    nextImage.setAttribute("height", next.lightbox_height || next.lightboxHeight || next.height || 1036);
     lightboxStatus.textContent = `${image.label} (${activeIndex + 1}/${activeImages.length})`;
     const disableArrows = activeImages.length < 2;
     previousButton.disabled = disableArrows;

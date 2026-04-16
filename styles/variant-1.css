@@ -16,7 +16,7 @@ body.page-1 {
 }
 
 .page-1 .hero {
-  grid-template-columns: 0.98fr 1.02fr;
+  grid-template-columns: 1fr;
   align-items: start;
 }
 

@@ -1,3 +1,23 @@
-== Novedades de la versión 1.0 ==
+== Novedades de la versión 2.0 ==
 
-• Se ha mejorado el formato y la claridad de las notas de la versión del App Store.
+¡Gracias a todas las personas que han usado 40 Below y han enviado sus comentarios! Ha sido muy divertido crear esta pequeña app, y esta versión trae incorporaciones y mejoras realmente estupendas. Pero la gran protagonista, sin duda, es la compatibilidad con Siri.
+
+Con esta actualización, 40 Below ahora ofrece compatibilidad total con Siri y con los atajos de Siri. Eso significa que puedes preguntarle a Siri: "¿Qué temperatura hace en 40 Below?" y te dirá la temperatura de tu ubicación actual tanto en Fahrenheit como en Celsius. Esto funciona cuando llevas puestos los AirPods y también cuando tu teléfono está conectado a CarPlay. Si le dices a Siri: "Muéstrame el tiempo en 40 Below", te mostrará una vista preciosa directamente en la pantalla sin necesidad de abrir la app. Además, todo esto se puede automatizar. La app Atajos expone estas funciones para que puedas utilizarlas en tus propios atajos.
+
+40 Below casi nunca te pide una reseña, así que si la app te ha resultado útil y tienes un momento, una valoración o reseña sería fantástica y muy de agradecer.
+
+NUEVO
+• Se han añadido nuevos atajos de Siri y se ha mejorado la compatibilidad con acciones en Atajos y Siri.
+• Se ha añadido una tarjeta de previsión para Siri.
+• Se ha añadido una vista de previsión diaria junto a la previsión por horas.
+• Se ha añadido la posibilidad de enviar un correo al soporte; echa un vistazo a la pantalla Acerca de en iOS.
+
+MEJORAS
+• Se ha corregido un problema por el que el asa de arrastre de la previsión respondía a los toques, pero no al arrastre real.
+• Se ha mejorado la fiabilidad de las actualizaciones de ubicación y del tiempo.
+• Se ha mejorado el comportamiento de carga para que el progreso siga visible hasta que la temperatura y los datos de ubicación se actualicen por completo.
+
+CORRECCIONES
+• Se han ajustado los enlaces de la App Store para corregir un problema por el que la App Store mostraba 40 Below como "no disponible" en determinadas regiones.
+• Se ha corregido un problema por el que las temperaturas podían no actualizarse correctamente después de cambiar de ubicación.
+• Se han reducido los mensajes de error de ubicación poco útiles.

@@ -35,6 +35,107 @@ LOCALES = sorted(
     if path.is_dir() and path.name != "review_information"
 )
 
+IPHONE_HOMEPAGE_IMAGES = [
+    {
+        "src": "Cold_Morning_Dark.png",
+        "alt": "40 Below iPhone screenshot in a cold morning dark theme",
+        "label": "Cold Morning Dark",
+        "width": 250,
+        "height": 518,
+        "lightbox_width": 500,
+        "lightbox_height": 1036,
+        "lightbox_max_width": 520,
+    },
+    {
+        "src": "Cold_Morning_Dark_Forecast.png",
+        "alt": "40 Below iPhone forecast screenshot in a cold morning dark theme",
+        "label": "Cold Morning Dark Forecast",
+        "width": 250,
+        "height": 518,
+        "lightbox_width": 500,
+        "lightbox_height": 1036,
+        "lightbox_max_width": 520,
+    },
+    {
+        "src": "Warm_Midday_Light.png",
+        "alt": "40 Below iPhone screenshot in a warm midday light theme",
+        "label": "Warm Midday Light",
+        "width": 250,
+        "height": 518,
+        "lightbox_width": 500,
+        "lightbox_height": 1036,
+        "lightbox_max_width": 520,
+    },
+    {
+        "src": "Hot_Afternoon_Light.png",
+        "alt": "40 Below iPhone screenshot in a hot afternoon light theme",
+        "label": "Hot Afternoon Light",
+        "width": 250,
+        "height": 518,
+        "lightbox_width": 500,
+        "lightbox_height": 1036,
+        "lightbox_max_width": 520,
+    },
+    {
+        "src": "Cold_Night_Dark.png",
+        "alt": "40 Below iPhone screenshot in a cold night dark theme",
+        "label": "Cold Night Dark",
+        "width": 250,
+        "height": 518,
+        "lightbox_width": 500,
+        "lightbox_height": 1036,
+        "lightbox_max_width": 520,
+    },
+    {
+        "src": "Warm_Night_Dark.png",
+        "alt": "40 Below iPhone screenshot in a warm night dark theme",
+        "label": "Warm Night Dark",
+        "width": 250,
+        "height": 518,
+        "lightbox_width": 500,
+        "lightbox_height": 1036,
+        "lightbox_max_width": 520,
+    },
+]
+IMAC_HOMEPAGE_IMAGES = [
+    {
+        "src": "images/iMac M4 24-inch Purple.png",
+        "alt": "40 Below iMac product image on a purple iMac",
+        "label": "Purple iMac",
+    },
+    {
+        "src": "images/iMac M4 24-inch Blue 2.png",
+        "alt": "40 Below iMac product image on a blue iMac",
+        "label": "Blue iMac Alternate",
+    },
+    {
+        "src": "images/iMac M4 24-inch Orange.png",
+        "alt": "40 Below iMac product image on an orange iMac",
+        "label": "Orange iMac",
+    },
+    {
+        "src": "images/iMac M4 24-inch Blue.png",
+        "alt": "40 Below iMac product image on a blue iMac",
+        "label": "Blue iMac",
+    },
+    {
+        "src": "images/iMac M4 24-inch Pink.png",
+        "alt": "40 Below iMac product image on a pink iMac",
+        "label": "Pink iMac",
+    },
+]
+
+for image in IMAC_HOMEPAGE_IMAGES:
+    image.update(
+        {
+            "width": 1200,
+            "height": 1021,
+            "lightbox_width": 1200,
+            "lightbox_height": 1021,
+            "lightbox_max_width": 1200,
+        }
+    )
+
 
 def read_metadata(locale: str, name: str) -> str:
     return (METADATA_DIR / locale / name).read_text(encoding="utf-8").strip()
@@ -122,126 +223,231 @@ def localized_ui_strings(locale: str) -> dict[str, str]:
             "home": "الصفحة الرئيسية لتطبيق 40 Below",
             "primary_nav": "التنقل الرئيسي",
             "app_store": "نزّل 40 Below من App Store",
+            "gallery": "المعرض",
+            "iphone_gallery": "معرض iPhone",
+            "imac_gallery": "معرض iMac",
+            "product_family_alt": "عائلة منتجات 40 Below على iPhone وiPad وMac",
+            "open_gallery_image": "افتح صورة {label}",
         },
         "da": {
             "choose_language": "Vælg sprog",
             "home": "40 Below forside",
             "primary_nav": "Primær navigation",
             "app_store": "Hent 40 Below i App Store",
+            "gallery": "Galleri",
+            "iphone_gallery": "iPhone-galleri",
+            "imac_gallery": "iMac-galleri",
+            "product_family_alt": "40 Below-produktfamilien på iPhone, iPad og Mac",
+            "open_gallery_image": "Åbn billedet {label}",
         },
         "de-DE": {
             "choose_language": "Sprache wählen",
             "home": "40 Below Startseite",
             "primary_nav": "Hauptnavigation",
             "app_store": "40 Below im App Store laden",
+            "gallery": "Galerie",
+            "iphone_gallery": "iPhone-Galerie",
+            "imac_gallery": "iMac-Galerie",
+            "product_family_alt": "40 Below-Produktfamilie auf iPhone, iPad und Mac",
+            "open_gallery_image": "Bild {label} öffnen",
         },
         "en-CA": {
             "choose_language": "Choose language",
             "home": "40 Below home",
             "primary_nav": "Primary",
             "app_store": "Download 40 Below on the App Store",
+            "gallery": "Gallery",
+            "iphone_gallery": "iPhone Gallery",
+            "imac_gallery": "iMac Gallery",
+            "product_family_alt": "40 Below product family on iPhone, iPad, and Mac",
+            "open_gallery_image": "Open {label} image",
         },
         "en-GB": {
             "choose_language": "Choose language",
             "home": "40 Below home",
             "primary_nav": "Primary",
             "app_store": "Download 40 Below on the App Store",
+            "gallery": "Gallery",
+            "iphone_gallery": "iPhone Gallery",
+            "imac_gallery": "iMac Gallery",
+            "product_family_alt": "40 Below product family on iPhone, iPad and Mac",
+            "open_gallery_image": "Open {label} image",
         },
         "en-US": {
             "choose_language": "Choose language",
             "home": "40 Below home",
             "primary_nav": "Primary",
             "app_store": "Download 40 Below on the App Store",
+            "gallery": "Gallery",
+            "iphone_gallery": "iPhone Gallery",
+            "imac_gallery": "iMac Gallery",
+            "product_family_alt": "40 Below product family on iPhone, iPad, and Mac",
+            "open_gallery_image": "Open {label} image",
         },
         "es-ES": {
             "choose_language": "Elegir idioma",
             "home": "Inicio de 40 Below",
             "primary_nav": "Navegación principal",
             "app_store": "Descarga 40 Below en el App Store",
+            "gallery": "Galería",
+            "iphone_gallery": "Galería de iPhone",
+            "imac_gallery": "Galería de iMac",
+            "product_family_alt": "Familia de productos de 40 Below en iPhone, iPad y Mac",
+            "open_gallery_image": "Abrir imagen {label}",
         },
         "fi": {
             "choose_language": "Valitse kieli",
             "home": "40 Below -etusivu",
             "primary_nav": "Ensisijainen navigointi",
             "app_store": "Lataa 40 Below App Storesta",
+            "gallery": "Galleria",
+            "iphone_gallery": "iPhone-galleria",
+            "imac_gallery": "iMac-galleria",
+            "product_family_alt": "40 Below -tuoteperhe iPhonessa, iPadissa ja Macissa",
+            "open_gallery_image": "Avaa kuva {label}",
         },
         "fr-FR": {
             "choose_language": "Choisir la langue",
             "home": "Accueil de 40 Below",
             "primary_nav": "Navigation principale",
             "app_store": "Télécharger 40 Below sur l’App Store",
+            "gallery": "Galerie",
+            "iphone_gallery": "Galerie iPhone",
+            "imac_gallery": "Galerie iMac",
+            "product_family_alt": "Famille de produits 40 Below sur iPhone, iPad et Mac",
+            "open_gallery_image": "Ouvrir l’image {label}",
         },
         "hi": {
             "choose_language": "भाषा चुनें",
             "home": "40 Below होम",
             "primary_nav": "मुख्य नेविगेशन",
             "app_store": "App Store पर 40 Below डाउनलोड करें",
+            "gallery": "गैलरी",
+            "iphone_gallery": "iPhone गैलरी",
+            "imac_gallery": "iMac गैलरी",
+            "product_family_alt": "iPhone, iPad और Mac पर 40 Below उत्पाद परिवार",
+            "open_gallery_image": "{label} छवि खोलें",
         },
         "it": {
             "choose_language": "Scegli la lingua",
             "home": "Home di 40 Below",
             "primary_nav": "Navigazione principale",
             "app_store": "Scarica 40 Below sull’App Store",
+            "gallery": "Galleria",
+            "iphone_gallery": "Galleria iPhone",
+            "imac_gallery": "Galleria iMac",
+            "product_family_alt": "Famiglia di prodotti 40 Below su iPhone, iPad e Mac",
+            "open_gallery_image": "Apri immagine {label}",
         },
         "ja": {
             "choose_language": "言語を選択",
             "home": "40 Belowのホーム",
             "primary_nav": "主要ナビゲーション",
             "app_store": "App Storeで40 Belowをダウンロード",
+            "gallery": "ギャラリー",
+            "iphone_gallery": "iPhoneギャラリー",
+            "imac_gallery": "iMacギャラリー",
+            "product_family_alt": "iPhone、iPad、Macで使える40 Belowの製品ファミリー",
+            "open_gallery_image": "{label}の画像を開く",
         },
         "ko": {
             "choose_language": "언어 선택",
             "home": "40 Below 홈",
             "primary_nav": "기본 탐색",
             "app_store": "App Store에서 40 Below 다운로드",
+            "gallery": "갤러리",
+            "iphone_gallery": "iPhone 갤러리",
+            "imac_gallery": "iMac 갤러리",
+            "product_family_alt": "iPhone, iPad 및 Mac의 40 Below 제품군",
+            "open_gallery_image": "{label} 이미지 열기",
         },
         "nl-NL": {
             "choose_language": "Taal kiezen",
             "home": "40 Below-home",
             "primary_nav": "Hoofdnavigatie",
             "app_store": "Download 40 Below in de App Store",
+            "gallery": "Galerij",
+            "iphone_gallery": "iPhone-galerij",
+            "imac_gallery": "iMac-galerij",
+            "product_family_alt": "40 Below-productfamilie op iPhone, iPad en Mac",
+            "open_gallery_image": "Afbeelding {label} openen",
         },
         "no": {
             "choose_language": "Velg språk",
             "home": "40 Below hjem",
             "primary_nav": "Hovednavigasjon",
             "app_store": "Last ned 40 Below i App Store",
+            "gallery": "Galleri",
+            "iphone_gallery": "iPhone-galleri",
+            "imac_gallery": "iMac-galleri",
+            "product_family_alt": "40 Below-produktfamilien på iPhone, iPad og Mac",
+            "open_gallery_image": "Åpne bildet {label}",
         },
         "pl": {
             "choose_language": "Wybierz język",
             "home": "Strona główna 40 Below",
             "primary_nav": "Nawigacja główna",
             "app_store": "Pobierz 40 Below w App Store",
+            "gallery": "Galeria",
+            "iphone_gallery": "Galeria iPhone’a",
+            "imac_gallery": "Galeria iMaca",
+            "product_family_alt": "Rodzina produktów 40 Below na iPhonie, iPadzie i Macu",
+            "open_gallery_image": "Otwórz obraz {label}",
         },
         "pt-BR": {
             "choose_language": "Escolher idioma",
             "home": "Página inicial do 40 Below",
             "primary_nav": "Navegação principal",
             "app_store": "Baixe 40 Below na App Store",
+            "gallery": "Galeria",
+            "iphone_gallery": "Galeria do iPhone",
+            "imac_gallery": "Galeria do iMac",
+            "product_family_alt": "Família de produtos do 40 Below no iPhone, iPad e Mac",
+            "open_gallery_image": "Abrir imagem {label}",
         },
         "sv": {
             "choose_language": "Välj språk",
             "home": "40 Below startsida",
             "primary_nav": "Huvudnavigering",
             "app_store": "Hämta 40 Below i App Store",
+            "gallery": "Galleri",
+            "iphone_gallery": "iPhone-galleri",
+            "imac_gallery": "iMac-galleri",
+            "product_family_alt": "40 Below-produktfamiljen på iPhone, iPad och Mac",
+            "open_gallery_image": "Öppna bilden {label}",
         },
         "tr": {
             "choose_language": "Dil seçin",
             "home": "40 Below ana sayfası",
             "primary_nav": "Birincil gezinme",
             "app_store": "40 Below’u App Store’dan indirin",
+            "gallery": "Galeri",
+            "iphone_gallery": "iPhone Galerisi",
+            "imac_gallery": "iMac Galerisi",
+            "product_family_alt": "iPhone, iPad ve Mac’te 40 Below ürün ailesi",
+            "open_gallery_image": "{label} görselini aç",
         },
         "zh-Hans": {
             "choose_language": "选择语言",
             "home": "40 Below 首页",
             "primary_nav": "主导航",
             "app_store": "在 App Store 下载 40 Below",
+            "gallery": "图库",
+            "iphone_gallery": "iPhone 图库",
+            "imac_gallery": "iMac 图库",
+            "product_family_alt": "iPhone、iPad 和 Mac 上的 40 Below 产品系列",
+            "open_gallery_image": "打开{label}图像",
         },
         "zh-Hant": {
             "choose_language": "選擇語言",
             "home": "40 Below 首頁",
             "primary_nav": "主要導覽",
             "app_store": "在 App Store 下載 40 Below",
+            "gallery": "圖庫",
+            "iphone_gallery": "iPhone 圖庫",
+            "imac_gallery": "iMac 圖庫",
+            "product_family_alt": "iPhone、iPad 和 Mac 上的 40 Below 產品系列",
+            "open_gallery_image": "開啟{label}影像",
         },
     }
     return strings[locale]
@@ -876,6 +1082,12 @@ def render_lightbox_markup(
     def lightbox_src(src: str) -> str:
         return press_asset_path(src) if use_root_paths else f"../{src}"
 
+    def lightbox_width(item: dict[str, object]) -> int:
+        return int(item.get("lightbox_width", 500))
+
+    def lightbox_height(item: dict[str, object]) -> int:
+        return int(item.get("lightbox_height", 1036))
+
     return f"""    <div
       class="lightbox"
       data-lightbox
@@ -904,8 +1116,8 @@ def render_lightbox_markup(
                   data-lightbox-prev-image
                   src="{escape_html(lightbox_src(previous_image["src"]))}"
                   alt="{escape_html(previous_image["alt"])}"
-                  width="500"
-                  height="1036"
+                  width="{lightbox_width(previous_image)}"
+                  height="{lightbox_height(previous_image)}"
                 />
               </div>
               <div class="lightbox-slide">
@@ -914,8 +1126,8 @@ def render_lightbox_markup(
                   data-lightbox-image
                   src="{escape_html(lightbox_src(image["src"]))}"
                   alt="{escape_html(image["alt"])}"
-                  width="500"
-                  height="1036"
+                  width="{lightbox_width(image)}"
+                  height="{lightbox_height(image)}"
                 />
               </div>
               <div class="lightbox-slide">
@@ -924,8 +1136,8 @@ def render_lightbox_markup(
                   data-lightbox-next-image
                   src="{escape_html(lightbox_src(next_image["src"]))}"
                   alt="{escape_html(next_image["alt"])}"
-                  width="500"
-                  height="1036"
+                  width="{lightbox_width(next_image)}"
+                  height="{lightbox_height(next_image)}"
                 />
               </div>
             </div>
@@ -1033,6 +1245,133 @@ def render_press_page() -> str:
 """
 
 
+def gallery_asset_path(path: str) -> str:
+    if path.startswith(("http://", "https://", "../", "/")):
+        return path
+
+    return f"../{path}"
+
+
+def render_homepage_gallery(
+    images: list[dict[str, object]],
+    group_name: str,
+    open_template: str,
+    grid_class: str = "",
+    thumb_class: str = "",
+) -> str:
+    class_names = "gallery-grid"
+    if grid_class:
+        class_names = f"{class_names} {grid_class}"
+    button_class_names = "gallery-thumb"
+    if thumb_class:
+        button_class_names = f"{button_class_names} {thumb_class}"
+
+    thumbs = "\n".join(
+        f"""          <button class="{escape_html(button_class_names)}" type="button" data-gallery-group="{escape_html(group_name)}" data-gallery-index="{index}" aria-label="{escape_html(open_template.format(label=image["label"]))}">
+            <img src="{escape_html(gallery_asset_path(str(image["src"])))}" alt="{escape_html(str(image["alt"]))}" width="{int(image["width"])}" height="{int(image["height"])}" loading="lazy" />
+          </button>"""
+        for index, image in enumerate(images)
+    )
+
+    return f"""      <section class="content-block gallery-block reveal">
+        <div class="{escape_html(class_names)}">
+{thumbs}
+        </div>
+      </section>"""
+
+
+def is_release_note_bullet(line: str) -> bool:
+    return line.strip().startswith("•")
+
+
+def clean_release_note_bullet(line: str) -> str:
+    return line.strip().removeprefix("•").strip()
+
+
+def next_release_note_line(lines: list[str], start_index: int) -> str | None:
+    for line in lines[start_index:]:
+        stripped = line.strip()
+        if stripped:
+            return stripped
+
+    return None
+
+
+def render_release_note_list(lines: list[str], indent: str) -> str:
+    items = "\n".join(
+        f"{indent}  <li>{escape_html(clean_release_note_bullet(line))}</li>" for line in lines
+    )
+    return f"""{indent}<ul class="release-note-list">
+{items}
+{indent}</ul>"""
+
+
+def render_release_notes(release_notes: str) -> str:
+    raw_lines = release_notes.splitlines()
+    lines = [line.rstrip() for line in raw_lines]
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+
+    title = "Release Notes"
+    if lines:
+        title_match = re.fullmatch(r"==\s*(.*?)\s*==", lines[0].strip())
+        if title_match:
+            title = title_match.group(1)
+            lines = lines[1:]
+
+    blocks: list[str] = []
+    index = 0
+    while index < len(lines):
+        line = lines[index].strip()
+        if not line:
+            index += 1
+            continue
+
+        if is_release_note_bullet(line):
+            bullet_lines: list[str] = []
+            while index < len(lines) and is_release_note_bullet(lines[index]):
+                bullet_lines.append(lines[index])
+                index += 1
+            blocks.append(render_release_note_list(bullet_lines, "          "))
+            continue
+
+        next_line = next_release_note_line(lines, index + 1)
+        if next_line is not None and is_release_note_bullet(next_line):
+            heading = line
+            index += 1
+            while index < len(lines) and not lines[index].strip():
+                index += 1
+            bullet_lines = []
+            while index < len(lines) and is_release_note_bullet(lines[index]):
+                bullet_lines.append(lines[index])
+                index += 1
+            blocks.append(
+                f"""          <section class="release-note-group">
+            <h3>{escape_html(heading)}</h3>
+{render_release_note_list(bullet_lines, "            ")}
+          </section>"""
+            )
+            continue
+
+        paragraph_lines = [line]
+        index += 1
+        while index < len(lines) and lines[index].strip():
+            paragraph_lines.append(lines[index].strip())
+            index += 1
+        paragraph = " ".join(paragraph_lines)
+        blocks.append(f'          <p class="release-note-paragraph">{escape_html(paragraph)}</p>')
+
+    body = "\n".join(blocks)
+    return f"""      <section class="content-block release-block reveal" aria-labelledby="release-notes-heading">
+        <div class="release-notes">
+          <h2 id="release-notes-heading">{escape_html(title)}</h2>
+{body}
+        </div>
+      </section>"""
+
+
 def render_homepage(locale: str) -> str:
     translation = get_secondary_page_translation(locale)
     shell = translation["shell"]
@@ -1052,20 +1391,30 @@ def render_homepage(locale: str) -> str:
     )
     description_html = render_paragraph_block(description["description_paragraphs"], "            ")
     features_html = render_feature_list(description["features"], "              ")
-    screenshot_alt = escape_html(f"{title} — {subtitle}")
-    gallery_images = [
-        {"src": "Cold_Morning_Dark.png", "alt": "Cold Morning Dark screenshot"},
-        {"src": "Cold_Morning_Dark_Forecast.png", "alt": "Cold Morning Dark Forecast screenshot"},
-        {"src": "Warm_Midday_Light.png", "alt": "Open Warm Midday Light screenshot"},
-        {"src": "Hot_Afternoon_Light.png", "alt": "Hot Afternoon Light screenshot"},
-        {"src": "Cold_Night_Dark.png", "alt": "Cold Night Dark screenshot"},
-        {"src": "Warm_Night_Dark.png", "alt": "Warm Night Dark screenshot"},
-    ]
+    release_notes_html = render_release_notes(release_notes)
+    iphone_gallery = IPHONE_HOMEPAGE_IMAGES
+    imac_gallery = IMAC_HOMEPAGE_IMAGES
+    gallery_groups = {
+        "homepage-iphone": iphone_gallery,
+        "homepage-mac": imac_gallery,
+    }
+    iphone_gallery_html = render_homepage_gallery(
+        iphone_gallery,
+        "homepage-iphone",
+        ui_strings["open_gallery_image"],
+    )
+    imac_gallery_html = render_homepage_gallery(
+        imac_gallery,
+        "homepage-mac",
+        ui_strings["open_gallery_image"],
+        "press-gallery-grid",
+        "press-gallery-thumb",
+    )
     primary_nav = render_primary_nav(locale, ui_strings, badge_paths, shell)
     lightbox_markup = render_lightbox_markup(
-        gallery_images[-1],
-        gallery_images[0],
-        gallery_images[2],
+        iphone_gallery[-1],
+        iphone_gallery[0],
+        iphone_gallery[1],
         "Close gallery",
         "Previous image",
         "Next image",
@@ -1142,6 +1491,18 @@ def render_homepage(locale: str) -> str:
               <p class="hero-subtitle">{escape_html(subtitle)}</p>
             </div>
           </div>
+          <picture class="hero-product-family">
+            <source
+              srcset="../images/Product_Family_Dark.png"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img
+              src="../images/Product_Family_Light.png"
+              alt="{escape_html(ui_strings["product_family_alt"])}"
+              width="1472"
+              height="1000"
+            />
+          </picture>
           <p class="hero-promo">{escape_html(promotional_text)}</p>
           <div class="hero-description prose-block">
 {description_html}
@@ -1152,52 +1513,13 @@ def render_homepage(locale: str) -> str:
             <p>{escape_html(description["location_text"])}</p>
           </div>
         </div>
-        <figure class="screen-frame">
-          <picture>
-            <source
-              id="hero-screenshot-dark-source"
-              srcset="../Cold_Morning_Dark.png"
-              media="(prefers-color-scheme: dark)"
-            />
-            <img
-              src="../Warm_Midday_Light.png"
-              alt="{screenshot_alt}"
-              width="500"
-              height="1036"
-            />
-          </picture>
-        </figure>
       </section>
 
-      <section class="content-block release-block reveal">
-        <p class="release-copy">{escape_html(release_notes)}</p>
-      </section>
+{release_notes_html}
 
-      <section class="content-block gallery-block reveal" aria-labelledby="gallery-heading">
-        <div class="gallery-head">
-          <h2 id="gallery-heading">Gallery</h2>
-        </div>
-        <div class="gallery-grid">
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="0" aria-label="Open Cold Morning Dark screenshot">
-            <img src="../Cold_Morning_Dark.png" alt="Cold Morning Dark screenshot" width="250" height="518" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="1" aria-label="Open Cold Morning Dark Forecast screenshot">
-            <img src="../Cold_Morning_Dark_Forecast.png" alt="Cold Morning Dark Forecast screenshot" width="250" height="518" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="2" aria-label="Open Warm Midday Light screenshot">
-            <img src="../Warm_Midday_Light.png" alt="Open Warm Midday Light screenshot" width="250" height="518" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="3" aria-label="Open Hot Afternoon Light screenshot">
-            <img src="../Hot_Afternoon_Light.png" alt="Hot Afternoon Light screenshot" width="250" height="518" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="4" aria-label="Open Cold Night Dark screenshot">
-            <img src="../Cold_Night_Dark.png" alt="Cold Night Dark screenshot" width="250" height="518" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="5" aria-label="Open Warm Night Dark screenshot">
-            <img src="../Warm_Night_Dark.png" alt="Warm Night Dark screenshot" width="250" height="518" loading="lazy" />
-          </button>
-        </div>
-      </section>
+{iphone_gallery_html}
+
+{imac_gallery_html}
     </main>
 
 {lightbox_markup}
@@ -1211,7 +1533,7 @@ def render_homepage(locale: str) -> str:
     </footer>
 
     <script>
-      window.galleryGroups = {javascript_value({"default": gallery_images})};
+      window.galleryGroups = {javascript_value(gallery_groups)};
     </script>
     <script src="../script.js"></script>
   </body>

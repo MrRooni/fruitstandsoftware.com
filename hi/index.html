@@ -131,6 +131,18 @@
               <p class="hero-subtitle">स्थानीय तापमान °F और °C में</p>
             </div>
           </div>
+          <picture class="hero-product-family">
+            <source
+              srcset="../images/Product_Family_Dark.png"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img
+              src="../images/Product_Family_Light.png"
+              alt="iPhone, iPad और Mac पर 40 Below उत्पाद परिवार"
+              width="1472"
+              height="1000"
+            />
+          </picture>
           <p class="hero-promo">जहाँ आप हैं वहाँ का तापमान फ़ारेनहाइट और सेल्सियस में देखें, घंटेवार पूर्वानुमान जाँचें, और कुछ ही सेकंड में साफ़ तापमान कार्ड साझा करें।</p>
           <div class="hero-description prose-block">
             <p>40 Below को एक ही मुख्य उद्देश्य के साथ डिज़ाइन और बनाया गया है: आपको बाहर का मौजूदा तापमान फ़ारेनहाइट और सेल्सियस, दोनों में दिखाना। हममें से कई लोगों के दोस्त, परिवार और सहकर्मी दूसरे देशों में रहते हैं, और मौसम पर होने वाली सबसे आसान बातचीत भी थोड़ी अटक सकती है जब लोग अलग-अलग तापमान मापों का इस्तेमाल करते हैं। 40 Below इस झंझट को खत्म कर देता है। सामने दिखने वाले बड़े तापमान के साथ, आप हमेशा कुछ ही क्षणों में किसी को उस पैमाने में मौसम बता सकते हैं जिसे वह समझता है।</p>
@@ -144,51 +156,81 @@
             <p>40 Below स्थानीय मौसम दिखाने के लिए आपकी लोकेशन का उपयोग करता है। आप किसी भी समय सेटिंग्स में लोकेशन एक्सेस नियंत्रित कर सकते हैं।</p>
           </div>
         </div>
-        <figure class="screen-frame">
-          <picture>
-            <source
-              id="hero-screenshot-dark-source"
-              srcset="../Cold_Morning_Dark.png"
-              media="(prefers-color-scheme: dark)"
-            />
-            <img
-              src="../Warm_Midday_Light.png"
-              alt="40 Below — स्थानीय तापमान °F और °C में"
-              width="500"
-              height="1036"
-            />
-          </picture>
-        </figure>
       </section>
 
-      <section class="content-block release-block reveal">
-        <p class="release-copy">== संस्करण 1.0 में नया क्या है ==
-
-• App Store के रिलीज़ नोट्स के फ़ॉर्मैट और स्पष्टता में सुधार किया गया है।</p>
-      </section>
-
-      <section class="content-block gallery-block reveal" aria-labelledby="gallery-heading">
-        <div class="gallery-head">
-          <h2 id="gallery-heading">Gallery</h2>
+      <section class="content-block release-block reveal" aria-labelledby="release-notes-heading">
+        <div class="release-notes">
+          <h2 id="release-notes-heading">संस्करण 2.0 में नया क्या है</h2>
+          <p class="release-note-paragraph">40 Below का उपयोग करने और प्रतिक्रिया देने वाले सभी लोगों का धन्यवाद! इस छोटे ऐप को बनाना बहुत मज़ेदार रहा है, और इस संस्करण में कई सचमुच शानदार नए जोड़ और सुधार शामिल हैं। लेकिन सबसे बड़ी खास बात तो निश्चित रूप से Siri सपोर्ट है।</p>
+          <p class="release-note-paragraph">इस अपडेट के साथ 40 Below में अब पूरा Siri और Siri Shortcuts सपोर्ट है। यानी आप Siri से पूछ सकते हैं, &quot;40 Below में तापमान क्या है?&quot; और वह आपके मौजूदा स्थान के लिए तापमान फ़ारेनहाइट और सेल्सियस दोनों में बता देगी। यह तब भी काम करता है जब आपने AirPods लगाए हों और तब भी जब आपका फ़ोन CarPlay से जुड़ा हो। अगर आप Siri से कहें, &quot;40 Below में मौसम दिखाओ&quot;, तो ऐप खोले बिना ही वह स्क्रीन पर एक सुंदर दृश्य दिखा देगी। इसके अलावा, ये सब चीज़ें ऑटोमेशन में भी इस्तेमाल की जा सकती हैं। Shortcuts ऐप इन सुविधाओं को उपलब्ध कराता है, ताकि आप इन्हें अपने Shortcuts में इस्तेमाल कर सकें।</p>
+          <p class="release-note-paragraph">40 Below आपसे बहुत कम ही रिव्यू माँगता है, इसलिए अगर यह आपके काम आया है और आपके पास थोड़ा समय है, तो एक रेटिंग या रिव्यू हमारे लिए बहुत मददगार और बेहद सराहनीय होगा।</p>
+          <section class="release-note-group">
+            <h3>नया</h3>
+            <ul class="release-note-list">
+              <li>नए Siri Shortcuts जोड़े गए और Shortcuts तथा Siri के लिए बेहतर action support जोड़ा गया।</li>
+              <li>Siri forecast card जोड़ा गया।</li>
+              <li>hourly forecast के साथ daily forecast view जोड़ा गया।</li>
+              <li>iOS पर support को ईमेल करने की सुविधा जोड़ी गई; About sheet देखें।</li>
+            </ul>
+          </section>
+          <section class="release-note-group">
+            <h3>बेहतर किया गया</h3>
+            <ul class="release-note-list">
+              <li>उस समस्या को ठीक किया गया जिसमें forecast drag handle टैप पर प्रतिक्रिया देता था लेकिन वास्तव में drag नहीं होता था।</li>
+              <li>location और weather refreshes की reliability बेहतर की गई।</li>
+              <li>loading behavior को बेहतर किया गया ताकि तापमान और location details पूरी तरह अपडेट होने तक progress दिखाई देती रहे।</li>
+            </ul>
+          </section>
+          <section class="release-note-group">
+            <h3>ठीक किया गया</h3>
+            <ul class="release-note-list">
+              <li>App Store links समायोजित किए गए ताकि उस समस्या को ठीक किया जा सके जिसमें कुछ क्षेत्रों में App Store, 40 Below को &quot;उपलब्ध नहीं&quot; बता रहा था।</li>
+              <li>उस समस्या को ठीक किया गया जिसमें location बदलने के बाद तापमान सही तरह अपडेट नहीं हो पाता था।</li>
+              <li>बेकार location error messages को कम किया गया।</li>
+            </ul>
+          </section>
         </div>
+      </section>
+
+      <section class="content-block gallery-block reveal">
         <div class="gallery-grid">
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="0" aria-label="Open Cold Morning Dark screenshot">
-            <img src="../Cold_Morning_Dark.png" alt="Cold Morning Dark screenshot" width="250" height="518" loading="lazy" />
+          <button class="gallery-thumb" type="button" data-gallery-group="homepage-iphone" data-gallery-index="0" aria-label="Cold Morning Dark छवि खोलें">
+            <img src="../Cold_Morning_Dark.png" alt="40 Below iPhone screenshot in a cold morning dark theme" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="1" aria-label="Open Cold Morning Dark Forecast screenshot">
-            <img src="../Cold_Morning_Dark_Forecast.png" alt="Cold Morning Dark Forecast screenshot" width="250" height="518" loading="lazy" />
+          <button class="gallery-thumb" type="button" data-gallery-group="homepage-iphone" data-gallery-index="1" aria-label="Cold Morning Dark Forecast छवि खोलें">
+            <img src="../Cold_Morning_Dark_Forecast.png" alt="40 Below iPhone forecast screenshot in a cold morning dark theme" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="2" aria-label="Open Warm Midday Light screenshot">
-            <img src="../Warm_Midday_Light.png" alt="Open Warm Midday Light screenshot" width="250" height="518" loading="lazy" />
+          <button class="gallery-thumb" type="button" data-gallery-group="homepage-iphone" data-gallery-index="2" aria-label="Warm Midday Light छवि खोलें">
+            <img src="../Warm_Midday_Light.png" alt="40 Below iPhone screenshot in a warm midday light theme" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="3" aria-label="Open Hot Afternoon Light screenshot">
-            <img src="../Hot_Afternoon_Light.png" alt="Hot Afternoon Light screenshot" width="250" height="518" loading="lazy" />
+          <button class="gallery-thumb" type="button" data-gallery-group="homepage-iphone" data-gallery-index="3" aria-label="Hot Afternoon Light छवि खोलें">
+            <img src="../Hot_Afternoon_Light.png" alt="40 Below iPhone screenshot in a hot afternoon light theme" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="4" aria-label="Open Cold Night Dark screenshot">
-            <img src="../Cold_Night_Dark.png" alt="Cold Night Dark screenshot" width="250" height="518" loading="lazy" />
+          <button class="gallery-thumb" type="button" data-gallery-group="homepage-iphone" data-gallery-index="4" aria-label="Cold Night Dark छवि खोलें">
+            <img src="../Cold_Night_Dark.png" alt="40 Below iPhone screenshot in a cold night dark theme" width="250" height="518" loading="lazy" />
           </button>
-          <button class="gallery-thumb" type="button" data-gallery-group="default" data-gallery-index="5" aria-label="Open Warm Night Dark screenshot">
-            <img src="../Warm_Night_Dark.png" alt="Warm Night Dark screenshot" width="250" height="518" loading="lazy" />
+          <button class="gallery-thumb" type="button" data-gallery-group="homepage-iphone" data-gallery-index="5" aria-label="Warm Night Dark छवि खोलें">
+            <img src="../Warm_Night_Dark.png" alt="40 Below iPhone screenshot in a warm night dark theme" width="250" height="518" loading="lazy" />
+          </button>
+        </div>
+      </section>
+
+      <section class="content-block gallery-block reveal">
+        <div class="gallery-grid press-gallery-grid">
+          <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="homepage-mac" data-gallery-index="0" aria-label="Purple iMac छवि खोलें">
+            <img src="../images/iMac M4 24-inch Purple.png" alt="40 Below iMac product image on a purple iMac" width="1200" height="1021" loading="lazy" />
+          </button>
+          <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="homepage-mac" data-gallery-index="1" aria-label="Blue iMac Alternate छवि खोलें">
+            <img src="../images/iMac M4 24-inch Blue 2.png" alt="40 Below iMac product image on a blue iMac" width="1200" height="1021" loading="lazy" />
+          </button>
+          <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="homepage-mac" data-gallery-index="2" aria-label="Orange iMac छवि खोलें">
+            <img src="../images/iMac M4 24-inch Orange.png" alt="40 Below iMac product image on an orange iMac" width="1200" height="1021" loading="lazy" />
+          </button>
+          <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="homepage-mac" data-gallery-index="3" aria-label="Blue iMac छवि खोलें">
+            <img src="../images/iMac M4 24-inch Blue.png" alt="40 Below iMac product image on a blue iMac" width="1200" height="1021" loading="lazy" />
+          </button>
+          <button class="gallery-thumb press-gallery-thumb" type="button" data-gallery-group="homepage-mac" data-gallery-index="4" aria-label="Pink iMac छवि खोलें">
+            <img src="../images/iMac M4 24-inch Pink.png" alt="40 Below iMac product image on a pink iMac" width="1200" height="1021" loading="lazy" />
           </button>
         </div>
       </section>
@@ -221,7 +263,7 @@
                   class="lightbox-image"
                   data-lightbox-prev-image
                   src="../Warm_Night_Dark.png"
-                  alt="Warm Night Dark screenshot"
+                  alt="40 Below iPhone screenshot in a warm night dark theme"
                   width="500"
                   height="1036"
                 />
@@ -231,7 +273,7 @@
                   class="lightbox-image"
                   data-lightbox-image
                   src="../Cold_Morning_Dark.png"
-                  alt="Cold Morning Dark screenshot"
+                  alt="40 Below iPhone screenshot in a cold morning dark theme"
                   width="500"
                   height="1036"
                 />
@@ -240,8 +282,8 @@
                 <img
                   class="lightbox-image"
                   data-lightbox-next-image
-                  src="../Warm_Midday_Light.png"
-                  alt="Open Warm Midday Light screenshot"
+                  src="../Cold_Morning_Dark_Forecast.png"
+                  alt="40 Below iPhone forecast screenshot in a cold morning dark theme"
                   width="500"
                   height="1036"
                 />
@@ -289,7 +331,7 @@
     </footer>
 
     <script>
-      window.galleryGroups = {"default": [{"src": "Cold_Morning_Dark.png", "alt": "Cold Morning Dark screenshot"}, {"src": "Cold_Morning_Dark_Forecast.png", "alt": "Cold Morning Dark Forecast screenshot"}, {"src": "Warm_Midday_Light.png", "alt": "Open Warm Midday Light screenshot"}, {"src": "Hot_Afternoon_Light.png", "alt": "Hot Afternoon Light screenshot"}, {"src": "Cold_Night_Dark.png", "alt": "Cold Night Dark screenshot"}, {"src": "Warm_Night_Dark.png", "alt": "Warm Night Dark screenshot"}]};
+      window.galleryGroups = {"homepage-iphone": [{"src": "Cold_Morning_Dark.png", "alt": "40 Below iPhone screenshot in a cold morning dark theme", "label": "Cold Morning Dark", "width": 250, "height": 518, "lightbox_width": 500, "lightbox_height": 1036, "lightbox_max_width": 520}, {"src": "Cold_Morning_Dark_Forecast.png", "alt": "40 Below iPhone forecast screenshot in a cold morning dark theme", "label": "Cold Morning Dark Forecast", "width": 250, "height": 518, "lightbox_width": 500, "lightbox_height": 1036, "lightbox_max_width": 520}, {"src": "Warm_Midday_Light.png", "alt": "40 Below iPhone screenshot in a warm midday light theme", "label": "Warm Midday Light", "width": 250, "height": 518, "lightbox_width": 500, "lightbox_height": 1036, "lightbox_max_width": 520}, {"src": "Hot_Afternoon_Light.png", "alt": "40 Below iPhone screenshot in a hot afternoon light theme", "label": "Hot Afternoon Light", "width": 250, "height": 518, "lightbox_width": 500, "lightbox_height": 1036, "lightbox_max_width": 520}, {"src": "Cold_Night_Dark.png", "alt": "40 Below iPhone screenshot in a cold night dark theme", "label": "Cold Night Dark", "width": 250, "height": 518, "lightbox_width": 500, "lightbox_height": 1036, "lightbox_max_width": 520}, {"src": "Warm_Night_Dark.png", "alt": "40 Below iPhone screenshot in a warm night dark theme", "label": "Warm Night Dark", "width": 250, "height": 518, "lightbox_width": 500, "lightbox_height": 1036, "lightbox_max_width": 520}], "homepage-mac": [{"src": "images/iMac M4 24-inch Purple.png", "alt": "40 Below iMac product image on a purple iMac", "label": "Purple iMac", "width": 1200, "height": 1021, "lightbox_width": 1200, "lightbox_height": 1021, "lightbox_max_width": 1200}, {"src": "images/iMac M4 24-inch Blue 2.png", "alt": "40 Below iMac product image on a blue iMac", "label": "Blue iMac Alternate", "width": 1200, "height": 1021, "lightbox_width": 1200, "lightbox_height": 1021, "lightbox_max_width": 1200}, {"src": "images/iMac M4 24-inch Orange.png", "alt": "40 Below iMac product image on an orange iMac", "label": "Orange iMac", "width": 1200, "height": 1021, "lightbox_width": 1200, "lightbox_height": 1021, "lightbox_max_width": 1200}, {"src": "images/iMac M4 24-inch Blue.png", "alt": "40 Below iMac product image on a blue iMac", "label": "Blue iMac", "width": 1200, "height": 1021, "lightbox_width": 1200, "lightbox_height": 1021, "lightbox_max_width": 1200}, {"src": "images/iMac M4 24-inch Pink.png", "alt": "40 Below iMac product image on a pink iMac", "label": "Pink iMac", "width": 1200, "height": 1021, "lightbox_width": 1200, "lightbox_height": 1021, "lightbox_max_width": 1200}]};
     </script>
     <script src="../script.js"></script>
   </body>

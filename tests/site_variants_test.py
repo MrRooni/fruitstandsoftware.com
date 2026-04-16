@@ -311,11 +311,49 @@ class SiteVariantsTest(unittest.TestCase):
 
         self.assertIn("<h1>40 Below</h1>", english_homepage)
         self.assertIn("Additional, thoughtful features:", english_homepage)
-        self.assertIn("What&#x27;s New in Version 1.0", english_homepage)
-        self.assertIn("Improved the formatting and clarity of the App Store release notes.", english_homepage)
+        self.assertIn('<section class="content-block release-block reveal" aria-labelledby="release-notes-heading">', english_homepage)
+        self.assertIn('<h2 id="release-notes-heading">What&#x27;s New in Version 2.0</h2>', english_homepage)
+        self.assertIn('<h3>NEW</h3>', english_homepage)
+        self.assertIn('<h3>IMPROVED</h3>', english_homepage)
+        self.assertIn('<h3>FIXED</h3>', english_homepage)
+        self.assertIn("<li>Added new Siri Shortcuts and improved action support for Shortcuts and Siri.</li>", english_homepage)
         self.assertIn("現在地の気温を華氏と摂氏で確認", japanese_homepage)
+        self.assertIn("<h3>新機能</h3>", japanese_homepage)
+        self.assertIn("<li>新しい Siri ショートカットを追加し、ショートカットと Siri のアクション対応を強化しました。</li>", japanese_homepage)
+        self.assertNotIn("== What&#x27;s New", english_homepage)
+        self.assertNotIn('class="release-copy"', english_homepage)
         self.assertNotIn('data-site="product-name"', english_homepage)
         self.assertNotIn('data-site="release-notes-rich"', english_homepage)
+
+    def test_homepage_uses_product_family_hero_and_mac_gallery(self):
+        english_homepage = (ROOT / "en-US" / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn("../images/Product_Family_Light.png", english_homepage)
+        self.assertIn("../images/Product_Family_Dark.png", english_homepage)
+        self.assertNotIn('<figure class="screen-frame">', english_homepage)
+        self.assertLess(
+            english_homepage.index('class="hero-product-family"'),
+            english_homepage.index('class="hero-promo"'),
+        )
+        self.assertLess(
+            english_homepage.index('data-gallery-group="homepage-iphone"'),
+            english_homepage.index('data-gallery-group="homepage-mac"'),
+        )
+        self.assertNotIn("iPhone Gallery", english_homepage)
+        self.assertNotIn("iMac Gallery", english_homepage)
+        self.assertNotIn("imac-gallery-heading", english_homepage)
+        self.assertIn('data-gallery-group="homepage-iphone"', english_homepage)
+        self.assertIn('data-gallery-group="homepage-mac"', english_homepage)
+        self.assertIn('<div class="gallery-grid press-gallery-grid">', english_homepage)
+        self.assertIn('class="gallery-thumb press-gallery-thumb"', english_homepage)
+        self.assertIn('src="../images/iMac M4 24-inch Purple.png"', english_homepage)
+        self.assertIn('src="../images/iMac M4 24-inch Blue 2.png"', english_homepage)
+        self.assertIn('src="../images/iMac M4 24-inch Orange.png"', english_homepage)
+        self.assertIn('src="../images/iMac M4 24-inch Blue.png"', english_homepage)
+        self.assertIn('src="../images/iMac M4 24-inch Pink.png"', english_homepage)
+        self.assertIn('width="1200" height="1021"', english_homepage)
+        self.assertIn('"homepage-iphone"', english_homepage)
+        self.assertIn('"homepage-mac"', english_homepage)
 
     def test_localized_privacy_pages_follow_root_policy_structure(self):
         english_privacy = (ROOT / "en-US" / "privacy-policy.html").read_text(encoding="utf-8")

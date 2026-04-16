@@ -1,3 +1,23 @@
-== Nieuw in versie 1.0 ==
+== Wat is er nieuw in versie 2.0 ==
 
-• De opmaak en duidelijkheid van de releasenotes voor de App Store zijn verbeterd.
+Dank aan iedereen die 40 Below heeft gebruikt en feedback heeft gegeven! Het was ontzettend leuk om deze kleine app te bouwen, en in deze versie zitten een aantal echt fijne toevoegingen en verbeteringen. De grootste blikvanger is zonder twijfel de ondersteuning voor Siri.
+
+Met deze update biedt 40 Below nu volledige ondersteuning voor Siri en Siri-opdrachten. Dat betekent dat je Siri kunt vragen: "Wat is de temperatuur in 40 Below?" en dan krijg je voor je huidige locatie de temperatuur te horen in zowel Fahrenheit als Celsius. Dit werkt als je AirPods in hebt en ook wanneer je telefoon is verbonden met CarPlay. Als je Siri vraagt: "Laat me het weer in 40 Below zien", krijg je direct een mooie weergave op het scherm te zien, zonder dat je de app hoeft te openen. Bovendien zijn deze functies ook te automatiseren. De Opdrachten-app maakt ze beschikbaar, zodat je ze in je eigen opdrachten kunt gebruiken.
+
+40 Below vraagt maar zelden om een beoordeling, dus als je de app nuttig vindt en je even tijd hebt, dan zouden een waardering of recensie enorm welkom zijn.
+
+NIEUW
+• Nieuwe Siri-opdrachten toegevoegd en de ondersteuning voor acties in Opdrachten en Siri verbeterd.
+• Een nieuwe Siri-kaart voor de weersverwachting toegevoegd.
+• Een dagverwachting toegevoegd naast de uurverwachting.
+• De mogelijkheid toegevoegd om support te mailen; bekijk het Infopaneel op iOS.
+
+VERBETERD
+• Een probleem opgelost waarbij de sleepgreep van de verwachting wel op tikken reageerde, maar niet echt kon worden gesleept.
+• De betrouwbaarheid van locatie- en weerverversingen verbeterd.
+• Het laadgedrag verbeterd zodat de voortgang zichtbaar blijft totdat temperatuur en locatiedetails volledig zijn bijgewerkt.
+
+OPGELOST
+• App Store-links aangepast om een probleem op te lossen waarbij de App Store 40 Below in bepaalde regio's als "niet beschikbaar" meldde.
+• Een probleem opgelost waarbij temperaturen na het wijzigen van locatie mogelijk niet correct werden bijgewerkt.
+• Weinig behulpzame locatiefoutmeldingen verminderd.

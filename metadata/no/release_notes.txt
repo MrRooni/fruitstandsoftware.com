@@ -1,3 +1,23 @@
-== Hva er nytt i versjon 1.0 ==
+== Hva er nytt i versjon 2.0 ==
 
-• Formateringen og tydeligheten i App Store-utgivelsesnotatene er forbedret.
+Takk til alle som har brukt 40 Below og sendt inn tilbakemeldinger! Det har vært veldig gøy å lage denne lille appen, og denne versjonen byr på flere virkelig fine tillegg og forbedringer. Den største nyheten er likevel uten tvil Siri-støtte.
+
+Med denne oppdateringen har 40 Below nå full støtte for Siri og Siri-snarveier. Det betyr at du kan spørre Siri: "Hva er temperaturen i 40 Below?" og få temperaturen for stedet du er nå oppgitt i både Fahrenheit og Celsius. Dette fungerer både når du bruker AirPods og når telefonen er koblet til CarPlay. Hvis du spør Siri: "Vis meg været i 40 Below", får du en flott visning direkte på skjermen uten at du trenger å åpne appen. I tillegg kan disse funksjonene brukes i automatiseringer. Snarveier-appen gjør dem tilgjengelige, slik at du kan bruke dem i dine egne snarveier.
+
+40 Below ber sjelden om en vurdering, så hvis appen har vært nyttig for deg og du har et lite øyeblikk, hadde en stjernerangering eller anmeldelse vært fantastisk og satt stor pris på.
+
+NYTT
+• La til nye Siri-snarveier og forbedret handlingsstøtte for Snarveier og Siri.
+• La til et nytt varselkort for Siri.
+• La til en visning for dagsvarsel ved siden av timevarselet.
+• La til muligheten for å sende e-post til support; ta en titt på Om-visningen i iOS.
+
+FORBEDRET
+• Rettet et problem der drahåndtaket for varselet reagerte på trykk, men ikke på faktisk draing.
+• Forbedret påliteligheten rundt oppdatering av posisjon og vær.
+• Forbedret innlastingsoppførselen slik at fremdriften forblir synlig til temperatur og stedsdetaljer er fullt oppdatert.
+
+FIKSET
+• Justerte App Store-lenker for å rette et problem der App Store rapporterte at 40 Below var "ikke tilgjengelig" i enkelte regioner.
+• Rettet et problem der temperaturene kanskje ikke ble riktig oppdatert etter at du byttet sted.
+• Reduserte lite hjelpsomme feilmeldinger om posisjon.

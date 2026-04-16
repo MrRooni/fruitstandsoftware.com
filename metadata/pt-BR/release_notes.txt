@@ -1,3 +1,23 @@
-== Novidades da versão 1.0 ==
+== Novidades da versão 2.0 ==
 
-• Melhoramos a formatação e a clareza das notas de versão da App Store.
+Muito obrigado a todo mundo que usou o 40 Below e enviou feedback! Foi muito divertido criar este app, e esta versão traz várias adições e melhorias realmente legais. Mas o grande destaque, sem dúvida, é o suporte à Siri.
+
+Com esta atualização, o 40 Below agora tem suporte completo à Siri e aos Atalhos da Siri. Isso significa que você pode perguntar à Siri: "Qual é a temperatura no 40 Below?" e ela vai informar a temperatura da sua localização atual em Fahrenheit e Celsius. Isso funciona tanto com os AirPods no ouvido quanto com o telefone conectado ao CarPlay. Se você disser à Siri: "Mostre a previsão no 40 Below", ela exibirá uma bela visualização diretamente na tela, sem precisar abrir o app. Além disso, tudo isso também pode ser automatizado. O app Atalhos expõe esses recursos para que você os use nos seus próprios atalhos.
+
+O 40 Below raramente pede uma avaliação, então, se o app tem sido útil para você e você tiver um momento, uma nota ou avaliação seria incrível e muito apreciada.
+
+NOVO
+• Adicionados novos Atalhos da Siri e melhor suporte a ações no Atalhos e na Siri.
+• Adicionado um novo cartão de previsão para a Siri.
+• Adicionada uma visualização de previsão diária ao lado da previsão por hora.
+• Adicionada a opção de enviar um e-mail para o suporte; confira a tela Sobre no iOS.
+
+MELHORIAS
+• Corrigido um problema em que a alça de arrastar da previsão respondia a toques, mas não ao arrasto de fato.
+• Melhorada a confiabilidade das atualizações de localização e clima.
+• Melhorado o comportamento de carregamento para que o progresso permaneça visível até que temperatura e detalhes de localização sejam totalmente atualizados.
+
+CORREÇÕES
+• Ajustados os links da App Store para corrigir um problema em que a App Store informava que o 40 Below "não está disponível" em certas regiões.
+• Corrigido um problema em que as temperaturas poderiam não ser atualizadas corretamente após mudar de localização.
+• Reduzidas mensagens de erro de localização pouco úteis.

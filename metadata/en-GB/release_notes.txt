@@ -1,3 +1,23 @@
-== What's New in Version 1.0 ==
+== What's New in Version 2.0 ==
 
-• Improved the formatting and clarity of the App Store release notes.
+Thank you to everyone who has used 40 Below and shared feedback! It has been great fun building this little app, and this version includes some genuinely lovely additions and improvements. The standout feature, though, has to be Siri support.
+
+With this update, 40 Below now has full Siri and Siri Shortcuts support. That means you can ask Siri, "What's the temperature in 40 Below?" and it will helpfully tell you the temperature in both Fahrenheit and Celsius for your current location. This works when you've got AirPods in and when your phone is connected to CarPlay. If you ask Siri, "Show me the weather in 40 Below", it will present a beautiful view right on the screen without needing to open the app. On top of that, these features are scriptable, so the Shortcuts app lets you use them in your own Shortcuts.
+
+40 Below rarely asks for a review, so if you've found it useful and have a moment, a rating or review would be brilliant and much appreciated.
+
+NEW
+• Added new Siri Shortcuts and improved action support for Shortcuts and Siri.
+• Added a Siri forecast card.
+• Added a daily forecast view alongside the hourly forecast.
+• Added the ability to email support; have a look at the About sheet on iOS.
+
+IMPROVED
+• Fixed an issue where the forecast drag handle could respond to taps but not actual dragging.
+• Improved reliability around location and weather refreshes.
+• Improved loading behaviour so progress stays visible until temperature and location details are fully updated.
+
+FIXED
+• Adjusted App Store links to fix an issue where the App Store was reporting 40 Below as "not available" in certain regions.
+• Fixed an issue where temperatures might not update correctly after changing locations.
+• Reduced unhelpful location error messages.

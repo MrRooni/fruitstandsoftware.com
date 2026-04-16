@@ -1,3 +1,23 @@
-== Sürüm 1.0'daki Yenilikler ==
+== Sürüm 2.0'daki Yenilikler ==
 
-• App Store sürüm notlarının biçimlendirmesi ve açıklığı iyileştirildi.
+40 Below'u kullanan ve geri bildirim paylaşan herkese teşekkürler! Bu küçük uygulamayı geliştirmek çok keyifliydi ve bu sürümde gerçekten hoş yeni eklemeler ve iyileştirmeler var. Ama manşetin yıldızı kesinlikle Siri desteği!
+
+Bu güncellemeyle birlikte 40 Below artık tam Siri ve Siri Kestirmeleri desteğine sahip. Yani Siri'ye "40 Below'da hava kaç derece?" diye sorabilir, bulunduğunuz konum için sıcaklığı hem Fahrenheit hem de Santigrat olarak öğrenebilirsiniz. Bu özellik AirPods kullanırken de, telefonunuz CarPlay'e bağlıyken de çalışır. Siri'ye "40 Below'da havayı göster" derseniz, uygulamayı açmanıza gerek kalmadan ekranda güzel bir görünüm sunar. Üstelik tüm bunlar otomasyonlara da uygundur! Kestirmeler uygulaması bu özellikleri sunar, böylece onları kendi kestirmelerinizde kullanabilirsiniz.
+
+40 Below sizi çok sık değerlendirme yapmaya davet etmez; ama uygulamayı faydalı bulduysanız ve vaktiniz varsa, vereceğiniz bir puan ya da yorum bizi çok mutlu eder.
+
+YENİ
+• Siri Kestirmeleri için yeni kısayollar ve Kestirmeler ile Siri için geliştirilmiş eylem desteği eklendi.
+• Siri için yeni bir tahmin kartı eklendi.
+• Saatlik tahminin yanına günlük tahmin görünümü eklendi.
+• iOS'ta destek ekibine e-posta gönderme özelliği eklendi; Hakkında sayfasına göz atın.
+
+İYİLEŞTİRİLDİ
+• Tahmin sürükleme tutamacının dokunmaya tepki verip gerçekten sürüklenememesi sorunu giderildi.
+• Konum ve hava durumu yenilemelerinin güvenilirliği artırıldı.
+• Yükleme davranışı iyileştirildi; böylece sıcaklık ve konum ayrıntıları tamamen güncellenene kadar ilerleme göstergesi görünür kalır.
+
+DÜZELTİLDİ
+• App Store'un bazı bölgelerde 40 Below'u "kullanılamıyor" olarak göstermesine neden olan sorunu gidermek için App Store bağlantıları düzenlendi.
+• Konum değiştirildikten sonra sıcaklıkların doğru güncellenmemesine neden olan bir sorun düzeltildi.
+• Fayda sağlamayan konum hata mesajları azaltıldı.
