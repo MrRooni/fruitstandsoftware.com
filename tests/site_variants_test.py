@@ -250,8 +250,8 @@ class SiteVariantsTest(unittest.TestCase):
         self.assertIn('data-gallery-group="press-iphone"', html)
         self.assertIn('data-gallery-group="press-ipad"', html)
         self.assertIn('data-gallery-group="press-mac"', html)
-        self.assertIn("40-Below-Press-Assets/Product Shots/iPad/", html)
-        self.assertIn("40-Below-Press-Assets/Product Shots/Mac/", html)
+        self.assertIn("40 Below Press Kit/Product Shots/iPad/", html)
+        self.assertIn("40 Below Press Kit/Product Shots/Mac/", html)
         self.assertIn(assets["downloads"]["press_kit"]["href"], html)
         self.assertLess(html.index('id="press-mac-heading"'), html.index('id="press-contact-heading"'))
 

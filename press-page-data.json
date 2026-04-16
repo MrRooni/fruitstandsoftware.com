@@ -110,59 +110,59 @@
       ],
       "ipad": [
         {
-          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_01_Cold_Morning_Dark.png",
+          "src": "40 Below Press Kit/Product Shots/iPad/40_Below_iPad_01_Cold_Morning_Dark.png",
           "alt": "40 Below iPad screenshot in a cold morning dark theme",
           "label": "Cold Morning Dark"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_02_Cold_Morning_Dark_Forecast.png",
+          "src": "40 Below Press Kit/Product Shots/iPad/40_Below_iPad_02_Cold_Morning_Dark_Forecast.png",
           "alt": "40 Below iPad forecast screenshot in a cold morning dark theme",
           "label": "Cold Morning Dark Forecast"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_03_Warm_Midday_Light.png",
+          "src": "40 Below Press Kit/Product Shots/iPad/40_Below_iPad_03_Warm_Midday_Light.png",
           "alt": "40 Below iPad screenshot in a warm midday light theme",
           "label": "Warm Midday Light"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_04_Hot_Afternoon_Light.png",
+          "src": "40 Below Press Kit/Product Shots/iPad/40_Below_iPad_04_Hot_Afternoon_Light.png",
           "alt": "40 Below iPad screenshot in a hot afternoon light theme",
           "label": "Hot Afternoon Light"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_05_Cold_Night_Dark.png",
+          "src": "40 Below Press Kit/Product Shots/iPad/40_Below_iPad_05_Cold_Night_Dark.png",
           "alt": "40 Below iPad screenshot in a cold night dark theme",
           "label": "Cold Night Dark"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/iPad/40_Below_iPad_06_Warm_Night_Dark.png",
+          "src": "40 Below Press Kit/Product Shots/iPad/40_Below_iPad_06_Warm_Night_Dark.png",
           "alt": "40 Below iPad screenshot in a warm night dark theme",
           "label": "Warm Night Dark"
         }
       ],
       "mac": [
         {
-          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Blue.png",
+          "src": "40 Below Press Kit/Product Shots/Mac/40_Below_Blue.png",
           "alt": "40 Below Mac product shot in blue",
           "label": "Blue"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Orange.png",
+          "src": "40 Below Press Kit/Product Shots/Mac/40_Below_Orange.png",
           "alt": "40 Below Mac product shot in orange",
           "label": "Orange"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Pink.png",
+          "src": "40 Below Press Kit/Product Shots/Mac/40_Below_Pink.png",
           "alt": "40 Below Mac product shot in pink",
           "label": "Pink"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Purple.png",
+          "src": "40 Below Press Kit/Product Shots/Mac/40_Below_Purple.png",
           "alt": "40 Below Mac product shot in purple",
           "label": "Purple"
         },
         {
-          "src": "40-Below-Press-Assets/Product Shots/Mac/40_Below_Silver.png",
+          "src": "40 Below Press Kit/Product Shots/Mac/40_Below_Silver.png",
           "alt": "40 Below Mac product shot in silver",
           "label": "Silver"
         }
