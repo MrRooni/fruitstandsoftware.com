@@ -733,13 +733,13 @@ def render_support_main(locale: str) -> str:
     body = escape_html(support["body"]).replace("{email}", email_link)
     subject = html.escape(str(support["subject"]).replace(" ", "%20"), quote=True)
 
-    return f"""      <section class="secondary-header-card reveal">
+    return f"""      <section class="secondary-header-card">
         <p>{escape_html(support["eyebrow"])}</p>
         <h1 class="secondary-page-title">{escape_html(support["title"])}</h1>
       </section>
 
       <section class="support-grid">
-        <div class="support-card reveal">
+        <div class="support-card">
           <p>{body}</p>
           <div class="support-actions">
             <a class="support-button" href="mailto:support@fruitstandsoftware.com?subject={subject}">
@@ -818,7 +818,7 @@ def render_privacy_aside(aside: dict[str, object]) -> str:
         ]
     )
 
-    return f"""            <aside class="policy-aside-card reveal" aria-label="{escape_html(aside["aria_label"])}">
+    return f"""            <aside class="policy-aside-card" aria-label="{escape_html(aside["aria_label"])}">
               <section class="nutrition-label">
                 <p class="nutrition-heading">{escape_html(aside["heading"])}</p>
                 <p class="nutrition-subhead">{escape_html(aside["subhead"])}</p>
@@ -841,14 +841,14 @@ def render_privacy_main(locale: str) -> str:
     sections_html = render_privacy_sections(privacy["sections"])
     aside_html = render_privacy_aside(privacy["aside"])
 
-    return f"""      <section class="secondary-header-card reveal">
+    return f"""      <section class="secondary-header-card">
         <p>{escape_html(privacy["eyebrow"])}</p>
         <h1 class="secondary-page-title">{escape_html(privacy["title"])}</h1>
         <p class="policy-updated"><strong>{escape_html(privacy["updated_label"])}</strong> {escape_html(privacy["updated_value"])}</p>
       </section>
 
       <div class="policy-page-grid">
-            <article class="policy-main-card reveal">
+            <article class="policy-main-card">
               <section class="policy-block">
 {intro_html}
               </section>
@@ -916,7 +916,7 @@ def render_press_factsheet(title: str) -> str:
         ]
     )
 
-    return f"""          <aside class="policy-aside-card reveal press-factsheet-card" aria-labelledby="press-factsheet-heading">
+    return f"""          <aside class="policy-aside-card press-factsheet-card" aria-labelledby="press-factsheet-heading">
             <div class="press-card-stack">
               <h2 id="press-factsheet-heading" class="visually-hidden">{escape_html(press["factsheet_heading"])}</h2>
               <div class="press-store-summary">
@@ -969,7 +969,7 @@ def render_press_gallery_sections(assets: dict[str, object], sections: dict[str,
             </div>"""
 
         rendered_sections.append(
-            f"""        <section class="support-card reveal press-gallery-card" aria-labelledby="{group_name}-heading">
+            f"""        <section class="support-card press-gallery-card" aria-labelledby="{group_name}-heading">
           <div class="press-card-stack">
             <h2 id="{group_name}-heading" class="press-card-title">{escape_html(section["title"])}</h2>
             {'<p>' + escape_html(section["description"]) + '</p>' if section.get("description") else ''}
@@ -986,7 +986,7 @@ def render_press_technology_section() -> str:
     bullet_items = render_list_items(press["technology_bullets"], "            ")
 
     return f"""      <section class="press-technology-section" aria-labelledby="press-technology-heading">
-        <div class="secondary-header-card reveal press-technology-header">
+        <div class="secondary-header-card press-technology-header">
           <h2 id="press-technology-heading" class="press-card-title">{escape_html(press["technology_heading"])}</h2>
           <p class="secondary-page-lead">{escape_html(press["technology_intro"])}</p>
           <ul class="press-technology-list">
@@ -1017,7 +1017,7 @@ def render_press_main() -> str:
     press_kit_download = get_press_assets()["downloads"]["press_kit"]
     download_href = escape_html(press_asset_path(press_kit_download["href"]))
 
-    return f"""      <section class="secondary-header-card reveal press-hero">
+    return f"""      <section class="secondary-header-card press-hero">
         <div class="press-card-stack">
           <h1 class="secondary-page-title">{escape_html(press["title"])}</h1>
           <p class="secondary-page-lead">{escape_html(press["lead"])}</p>
@@ -1038,7 +1038,7 @@ def render_press_main() -> str:
       <div class="press-intro-grid">
 {factsheet_html}
 
-        <article class="policy-main-card reveal press-overview-card" aria-labelledby="press-overview-heading">
+        <article class="policy-main-card press-overview-card" aria-labelledby="press-overview-heading">
           <div class="press-card-stack">
             <h2 id="press-overview-heading" class="visually-hidden">{escape_html(press["overview_heading"])}</h2>
 {app_store_description}
@@ -1053,7 +1053,7 @@ def render_press_main() -> str:
       </section>
 
       <section class="support-grid press-contact-grid" aria-labelledby="press-contact-heading">
-        <article class="support-card reveal press-contact-card">
+        <article class="support-card press-contact-card">
           <div class="press-card-stack">
             <h2 id="press-contact-heading" class="press-card-title">{escape_html(press["contact_heading"])}</h2>
             <p>{contact_body}</p>
@@ -1273,7 +1273,7 @@ def render_homepage_gallery(
         for index, image in enumerate(images)
     )
 
-    return f"""      <section class="content-block gallery-block reveal">
+    return f"""      <section class="content-block gallery-block">
         <div class="{escape_html(class_names)}">
 {thumbs}
         </div>
@@ -1364,7 +1364,7 @@ def render_release_notes(release_notes: str) -> str:
         blocks.append(f'          <p class="release-note-paragraph">{escape_html(paragraph)}</p>')
 
     body = "\n".join(blocks)
-    return f"""      <section class="content-block release-block reveal" aria-labelledby="release-notes-heading">
+    return f"""      <section class="content-block release-block" aria-labelledby="release-notes-heading">
         <div class="release-notes">
           <h2 id="release-notes-heading">{escape_html(title)}</h2>
 {body}
@@ -1471,7 +1471,7 @@ def render_homepage(locale: str) -> str:
     </header>
 
     <main id="main" class="page-shell">
-      <section class="hero hero-editorial reveal">
+      <section class="hero hero-editorial">
         <div class="hero-copy">
           <div class="hero-title-lockup">
             <picture class="hero-icon">
@@ -1931,7 +1931,7 @@ def render_location_page() -> str:
     </header>
 
     <main id="main" class="secondary-shell">
-      <section class="secondary-header-card reveal" aria-labelledby="location-fallback-title">
+      <section class="secondary-header-card" aria-labelledby="location-fallback-title">
         <p>App Clip</p>
         <h1 id="location-fallback-title" class="secondary-page-title">Open 40 Below</h1>
         <p class="secondary-page-lead">
@@ -1967,7 +1967,7 @@ def render_location_page() -> str:
 def render_charts_page() -> str:
     storefronts = charts_storefronts()
     storefront_cards = "\n".join(
-        f"""        <li class="storefront-card reveal">
+        f"""        <li class="storefront-card">
           <div class="storefront-card-copy">
             <p class="chart-card-eyebrow">{escape_html(storefront["region"])}</p>
             <h2 class="storefront-card-title">{escape_html(storefront["region_name"])}</h2>
@@ -2059,7 +2059,7 @@ def render_charts_page() -> str:
     </header>
 
     <main id="main" class="secondary-shell charts-shell">
-      <section class="secondary-header-card charts-hero reveal">
+      <section class="secondary-header-card charts-hero">
         <div class="charts-hero-copy">
           <p>App Store Dashboard</p>
           <h1 class="secondary-page-title">Top Paid iPhone Charts</h1>
@@ -2078,7 +2078,7 @@ def render_charts_page() -> str:
         </div>
       </section>
 
-      <section class="ranking-list-card reveal" aria-labelledby="ranking-results-title">
+      <section class="ranking-list-card" aria-labelledby="ranking-results-title">
         <div class="chart-card-header">
           <div>
             <p class="chart-card-eyebrow">Storefronts</p>

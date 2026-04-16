@@ -626,19 +626,6 @@ body.lightbox-open {
   font-weight: 700;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(1rem);
-  transition:
-    opacity 420ms ease,
-    transform 420ms ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (max-width: 1024px) {
   .nav-shell {
     min-height: auto;
@@ -754,9 +741,4 @@ body.lightbox-open {
     transition-duration: 0.01ms !important;
   }
 
-  .reveal,
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
 }

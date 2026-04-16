@@ -311,7 +311,7 @@ class SiteVariantsTest(unittest.TestCase):
 
         self.assertIn("<h1>40 Below</h1>", english_homepage)
         self.assertIn("Additional, thoughtful features:", english_homepage)
-        self.assertIn('<section class="content-block release-block reveal" aria-labelledby="release-notes-heading">', english_homepage)
+        self.assertIn('<section class="content-block release-block" aria-labelledby="release-notes-heading">', english_homepage)
         self.assertIn('<h2 id="release-notes-heading">What&#x27;s New in Version 2.0</h2>', english_homepage)
         self.assertIn('<h3>NEW</h3>', english_homepage)
         self.assertIn('<h3>IMPROVED</h3>', english_homepage)

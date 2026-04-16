@@ -550,29 +550,6 @@ function initYear() {
   });
 }
 
-function initReveal() {
-  const revealItems = document.querySelectorAll(".reveal");
-
-  if (!("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-}
-
 function observeColorSchemeChanges() {
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -587,7 +564,6 @@ function observeColorSchemeChanges() {
 updateScreenshotForThemeAndTime();
 initLocaleSwitcher();
 initYear();
-initReveal();
 observeColorSchemeChanges();
 initGalleryLightbox();
 initPromoRedeemPage();

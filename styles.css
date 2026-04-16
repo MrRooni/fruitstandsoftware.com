@@ -492,17 +492,6 @@ a {
   line-height: 1.35;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 500ms ease, transform 500ms ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (prefers-color-scheme: dark) {
   body {
     background:
@@ -599,8 +588,4 @@ a {
     animation-duration: 0ms !important;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
