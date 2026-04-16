@@ -21,9 +21,34 @@ NUMBER_ONE_TRANSLATIONS = json.loads(
     (ROOT / "number-one-page-translations.json").read_text(encoding="utf-8")
 )
 PRESS_PAGE_DATA = json.loads((ROOT / "press-page-data.json").read_text(encoding="utf-8"))
+SMART_APP_BANNER_META = '<meta name="apple-itunes-app" content="app-id=6759849820" />'
 
 
 class SiteVariantsTest(unittest.TestCase):
+    def test_all_generated_pages_include_smart_app_banner(self):
+        generated_pages = [
+            ROOT / "index.html",
+            ROOT / "en-US" / "press.html",
+            ROOT / "redeem.html",
+            ROOT / "number-one.html",
+            ROOT / "charts.html",
+        ]
+
+        for locale in LOCALES:
+            locale_dir = ROOT / locale
+            generated_pages.extend(
+                [
+                    locale_dir / "index.html",
+                    locale_dir / "support.html",
+                    locale_dir / "privacy-policy.html",
+                ]
+            )
+
+        for page in generated_pages:
+            with self.subTest(page=page.relative_to(ROOT)):
+                html = page.read_text(encoding="utf-8")
+                self.assertIn(SMART_APP_BANNER_META, html)
+
     def test_root_index_is_a_redirect_shell(self):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
 

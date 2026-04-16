@@ -23,6 +23,7 @@ PRESS_PAGE_LOCALE = "en-US"
 SITE_URL = "https://fruitstandsoftware.com"
 COPYRIGHT = "2026 © Fruit Stand Software, LLC"
 APP_STORE_URL = "https://apps.apple.com/app/40-below/id6759849820"
+APP_STORE_APP_ID = APP_STORE_URL.rsplit("/id", 1)[1]
 APP_STORE_REDEEM_URL = "https://apps.apple.com/redeem?code="
 SOCIAL_IMAGE_URL = f"{SITE_URL}/SocialImage.png"
 PRESS_CONTACT_EMAIL = "michael@fruitstandsoftware.com"
@@ -71,6 +72,10 @@ def locale_path(locale: str, page_kind: str) -> str:
 
 def canonical_url(locale: str, page_kind: str) -> str:
     return f"{SITE_URL}{locale_path(locale, page_kind)}"
+
+
+def smart_app_banner_meta() -> str:
+    return f'<meta name="apple-itunes-app" content="app-id={APP_STORE_APP_ID}" />'
 
 
 def render_hreflang_links(page_kind: str) -> str:
@@ -966,6 +971,7 @@ def render_press_page() -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>{escape_html(press["page_title"])}</title>
     <meta
       name="description"
@@ -1070,6 +1076,7 @@ def render_homepage(locale: str) -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>{title} | {subtitle}</title>
     <meta
       name="description"
@@ -1232,6 +1239,7 @@ def render_secondary_page(locale: str, page_kind: str) -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>{escape_html(page["page_title"])}</title>
     <meta
       name="description"
@@ -1294,6 +1302,7 @@ def render_promo_page(locale: str = DEFAULT_LOCALE) -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>{escape_html(page["page_title"])}</title>
     <meta
       name="description"
@@ -1372,6 +1381,7 @@ def render_number_one_page(locale: str = DEFAULT_LOCALE) -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>{escape_html(page["page_title"])}</title>
     <meta
       name="description"
@@ -1464,6 +1474,7 @@ def render_root_redirect() -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>{escape_html(title)}</title>
     <meta
       name="description"
@@ -1578,6 +1589,7 @@ def render_charts_page() -> str:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {smart_app_banner_meta()}
     <title>Top Paid Charts | Fruit Stand Software</title>
     <meta
       name="description"
